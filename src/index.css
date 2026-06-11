@@ -1,0 +1,41 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Lora", ui-serif, Georgia, Cambria, serif;
+}
+
+:root {
+  font-family: 'Inter', system-ui, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Force all titles / headings in the website to be serif */
+h1, h2, h3, h4, h5, h6, .font-serif-heading {
+  font-family: "Lora", ui-serif, Georgia, Cambria, serif !important;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #fff;
+}
+
+#root {
+  width: 100%;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}

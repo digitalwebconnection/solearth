@@ -1,0 +1,141 @@
+import { useEffect, useState } from 'react'
+
+const slides = [
+  {
+    img: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1600&q=80',
+    headline: 'Australia\'s #1 Solar\nInstallation Experts',
+    sub: 'Switch to clean energy today and save up to $2,500 on your power bills annually.',
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80',
+    headline: 'Premium Solar Panels\nAt Unbeatable Prices',
+    sub: 'High-efficiency solar systems starting from just $3,499. Government rebates available.',
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=1600&q=80',
+    headline: 'Power Your Future\nWith Clean Energy',
+    sub: 'Join 12,000+ Australian homeowners already saving with SolEarth Energy.',
+  },
+]
+
+export default function HeroSection() {
+  const [current, setCurrent] = useState(0)
+  const [animating, setAnimating] = useState(false)
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setAnimating(true)
+      setTimeout(() => {
+        setCurrent((c) => (c + 1) % slides.length)
+        setAnimating(false)
+      }, 500)
+    }, 5000)
+    return () => clearInterval(timer)
+  }, [])
+
+  const slide = slides[current]
+
+  return (
+    <section className="relative h-[92vh] min-h-[600px] overflow-hidden">
+      {/* Background image */}
+      {slides.map((s, i) => (
+        <div
+          key={i}
+          className="absolute inset-0 transition-opacity duration-1000"
+          style={{ opacity: i === current ? 1 : 0 }}
+        >
+          <img
+            src={s.img}
+            alt=""
+            className="w-full h-full object-cover"
+          />
+        </div>
+      ))}
+
+      {/* Dark overlay gradient */}
+      <div className="absolute inset-0 bg-linear-to-r from-[#0a1f44]/90 via-[#0a1f44]/70 to-transparent" />
+
+      {/* Content */}
+      <div className="relative z-10 h-full flex items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <div className="max-w-2xl">
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 bg-[#F8C000]/20 border border-[#F8C000]/40 text-[#F8C000] text-xs font-bold tracking-widest uppercase px-4 py-2 rounded-full mb-6">
+              <span className="w-2 h-2 bg-[#F8C000] rounded-full animate-pulse" />
+              Trusted By 12,000+ Australians
+            </div>
+
+            {/* Headline */}
+            <h1
+              className={`text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6 transition-all duration-500 ${
+                animating ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'
+              }`}
+              style={{ whiteSpace: 'pre-line' }}
+            >
+              {slide.headline}
+            </h1>
+
+            <p
+              className={`text-lg text-gray-200 mb-8 leading-relaxed transition-all duration-500 delay-100 ${
+                animating ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'
+              }`}
+            >
+              {slide.sub}
+            </p>
+
+            {/* CTAs */}
+            <div className="flex flex-wrap gap-4">
+              <a
+                href="#packages"
+                className="bg-[#F8C000] hover:bg-[#e0ad00] text-white font-bold px-8 py-4 rounded-full text-base transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-0.5"
+              >
+                View Solar Packages →
+              </a>
+              <a
+                href="#contact"
+                className="bg-white/10 hover:bg-white/20 border-2 border-white/40 text-white font-bold px-8 py-4 rounded-full text-base backdrop-blur-sm transition-all duration-300"
+              >
+                Get Free Quote
+              </a>
+            </div>
+
+            {/* Trust badges */}
+            <div className="flex flex-wrap gap-6 mt-10">
+              {[
+                { val: '12K+', label: 'Installations' },
+                { val: '10yr', label: 'Warranty' },
+                { val: '$2.5K', label: 'Avg Savings/yr' },
+                { val: '4.9★', label: 'Google Rating' },
+              ].map((b) => (
+                <div key={b.label} className="flex flex-col">
+                  <span className="text-2xl font-extrabold text-[#F8C000]">{b.val}</span>
+                  <span className="text-gray-300 text-xs font-medium">{b.label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Slide indicators */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+        {slides.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrent(i)}
+            className={`h-1.5 rounded-full transition-all duration-300 ${
+              i === current ? 'w-8 bg-[#F8C000]' : 'w-2 bg-white/40'
+            }`}
+          />
+        ))}
+      </div>
+
+      {/* Bottom wave */}
+      <div className="absolute bottom-0 left-0 right-0 z-10">
+        <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 80L60 66.7C120 53.3 240 26.7 360 20C480 13.3 600 26.7 720 33.3C840 40 960 40 1080 36.7C1200 33.3 1320 26.7 1380 23.3L1440 20V80H1380C1320 80 1200 80 1080 80C960 80 840 80 720 80C600 80 480 80 360 80C240 80 120 820 60 80H0Z" fill="white" />
+        </svg>
+      </div>
+    </section>
+  )
+}
