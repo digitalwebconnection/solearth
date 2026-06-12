@@ -8,7 +8,7 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
     // Disable scrolling while loading
     document.body.style.overflow = 'hidden'
 
-    const duration = 2500 // 2.5 seconds
+    const duration = 800 // 0.8 seconds
     const intervalTime = 30
     const steps = duration / intervalTime
     const increment = 100 / steps

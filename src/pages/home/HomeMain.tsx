@@ -10,7 +10,6 @@ import WhyUsSection from './WhyUsSection'
 import TestimonialsSection from './TestimonialsSection'
 import ConsultationSection from './ConsultationSection'
 import BrandPartnersSection from './BrandPartnersSection'
-import ContactSection from './ContactSection'
 import Products from './Products'
 import Process from './Process'
 
@@ -31,7 +30,7 @@ export default function HomeMain() {
       <TestimonialsSection />
       <ConsultationSection />
       <BrandPartnersSection />
-      <ContactSection />
+
     </>
   )
 }

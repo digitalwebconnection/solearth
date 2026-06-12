@@ -1,11 +1,13 @@
-const QUICK_LINKS = [
-  { label: 'Home', href: '#' },
-  { label: 'Products', href: '#' },
-  { label: 'About Us', href: '#' },
-  { label: 'Our Projects', href: '#' },
-  { label: 'Contact Us', href: '#' },
-]
+import { Link } from 'react-router-dom'
 import logo from "../assets/Frame 1 (3).png"
+
+const QUICK_LINKS = [
+  { label: 'Home', href: '/' },
+  { label: 'Products', href: '/#products' },
+  { label: 'About Us', href: '/about' },
+  { label: 'Our Projects', href: '/#process' },
+  { label: 'Contact Us', href: '/#contact' },
+]
 
 const OFFICES = [
   {
@@ -116,12 +118,12 @@ export default function Footer() {
             <ul className="flex flex-col gap-2">
               {QUICK_LINKS.map((link) => (
                 <li key={link.label}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     className="text-gray-600 text-sm hover:text-[#1D6FB8] font-medium transition-colors"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

@@ -31,7 +31,7 @@ import {
 
 const SERVICES_LIST = [
   {
-    text: 'Residential Solar',
+     text: 'Residential Solar',
     image: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=600&q=80',
     icon: Sun,
     title: 'Residential Solar Installation',

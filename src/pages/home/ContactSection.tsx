@@ -58,7 +58,7 @@ export default function ContactSection() {
   ]
 
   return (
-    <section id="contact" className="relative bg-[#06101f] text-white overflow-hidden">
+    <section  className="relative bg-[#06101f] text-white overflow-hidden">
 
       {/* ── ANIMATED DRIFTING ORBS ────────────────────────── */}
       <motion.div
@@ -254,7 +254,7 @@ export default function ContactSection() {
           >
             {/* Animated glow ring */}
             <motion.div
-              className="absolute inset-[-3px] rounded-[2.5rem] pointer-events-none"
+              className="absolute inset-[-3px] rounded-lg pointer-events-none"
               style={{
                 background: 'linear-gradient(135deg, #1B74BB55, #F8A80033, #28A8E455, #F8A80033, #1B74BB55)',
                 backgroundSize: '300% 300%',
@@ -262,9 +262,9 @@ export default function ContactSection() {
               animate={{ backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'] }}
               transition={{ duration: 6, repeat: Infinity, ease: 'linear' }}
             />
-            <div className="absolute -inset-2 bg-linear-to-br from-[#1B74BB]/20 to-[#F8A800]/15 rounded-[2.75rem] blur-xl pointer-events-none" />
+            <div className="absolute -inset-2 bg-linear-to-br from-[#1B74BB]/20 to-[#F8A800]/15 rounded-lg blur-xl pointer-events-none" />
 
-            <div className="relative bg-white/6 backdrop-blur-xl border border-white/12 rounded-[2.5rem] p-8 sm:p-10 overflow-hidden">
+            <div className="relative bg-white/6 backdrop-blur-xl border border-white/12 rounded-lg p-8 sm:p-10 overflow-hidden">
               {/* Animated top accent line */}
               <motion.div
                 className="absolute top-0 left-0 right-0 h-[2px] bg-linear-to-r from-transparent via-[#1B74BB] to-transparent"
