@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from 'react'
 import { gsap } from 'gsap'
 import logo from "../assets/Frame 1 (3).png"
 import { Link, useLocation } from 'react-router-dom'
+import { Sun, Zap, Battery, Award, Check, ChevronRight } from 'lucide-react'
 
 const NAV_LINKS = [
   { label: 'Home', href: '/' },
@@ -55,6 +56,251 @@ function DropdownMenu({
       ))}
     </div>
   )
+}
+
+const PRODUCTS_MAP = {
+  "Solar Panels": [
+    { name: "Jinko Solar Panels", slug: "jinko-solar-panels" },
+    { name: "JA Solar Panels", slug: "ja-solar-panels" },
+    { name: "AIKO Solar Panels", slug: "aiko-solar-panels" },
+    { name: "Canadian Solar Panels", slug: "canadian-solar-panels" },
+    { name: "DAS Solar Panels", slug: "das-solar-panels" },
+    { name: "DMEGC Solar Panels", slug: "dmegc-solar-panels" },
+    { name: "Eging Solar Panels", slug: "eging-solar-panels" },
+    { name: "Risen Solar Panels", slug: "risen-solar-panels" },
+    { name: "Trina Solar Panels", slug: "trina-solar-panels" },
+    { name: "Longi Solar Panels", slug: "longi-solar-panels" },
+  ],
+  "Solar Inverters": [
+    { name: "GoodWe Inverters", slug: "goodwe-inverters" },
+    { name: "Sungrow Inverters", slug: "sungrow-inverters" },
+    { name: "Growatt Inverters", slug: "growatt-inverters" },
+    { name: "Solis Inverters", slug: "solis-inverters" },
+    { name: "SAJ Inverters", slug: "saj-inverters" },
+    { name: "Solix Inverters", slug: "solix-inverters" },
+  ],
+  "Solar Batteries": [
+    { name: "FoxESS Battery", slug: "foxess-battery" },
+    { name: "Growatt Battery Systems", slug: "growatt-battery-systems" },
+    { name: "SAJ Battery Systems", slug: "saj-battery-systems" },
+    { name: "Anker Solix Battery Systems", slug: "anker-solix-battery-systems" },
+    { name: "Sungrow Battery Systems", slug: "sungrow-battery-systems" },
+    { name: "Alpha ESS Battery Systems", slug: "alpha-ess-battery-systems" },
+    { name: "Neovolt Battery Systems", slug: "neovolt-battery-systems" },
+    { name: "Sigenergy Battery Systems", slug: "sigenergy-battery-systems" },
+  ],
+};
+
+function ProductsMegaMenu({
+  isOpen,
+  onClose,
+}: {
+  isOpen: boolean
+  onClose: () => void
+}) {
+  const [activeCategory, setActiveCategory] = useState<"Solar Panels" | "Solar Inverters" | "Solar Batteries">("Solar Panels");
+
+  const getInitialBadge = (name: string) => {
+    const cleaned = name
+      .replace("Solar Panels", "")
+      .replace("Inverters", "")
+      .replace("Battery Systems", "")
+      .replace("Battery", "")
+      .trim();
+    const words = cleaned.split(" ");
+    if (words.length >= 2) {
+      return (words[0][0] + words[1][0]).toUpperCase();
+    }
+    return cleaned.substring(0, 2).toUpperCase();
+  };
+
+  const getBrandSubtitle = (name: string) => {
+    if (name.includes("Jinko")) return "Ultra-high efficiency TOPCon";
+    if (name.includes("JA Solar")) return "Reliable high-output modules";
+    if (name.includes("AIKO")) return "Premium all-back contact cells";
+    if (name.includes("Canadian")) return "Bifacial dual-glass modules";
+    if (name.includes("DAS")) return "Advanced N-type technology";
+    if (name.includes("DMEGC")) return "Premium black aesthetic panels";
+    if (name.includes("Eging")) return "Cost-effective high-yield panels";
+    if (name.includes("Risen")) return "High-performance mono modules";
+    if (name.includes("Trina")) return "Industry leading smart panels";
+    if (name.includes("Longi")) return "High-efficiency monocrystalline";
+
+    if (name.includes("GoodWe")) return "Hybrid & grid-tied solutions";
+    if (name.includes("Sungrow")) return "World's most efficient inverters";
+    if (name.includes("Growatt")) return "Smart residential hybrid brains";
+    if (name.includes("Solis")) return "Reliable multi-MPPT inverters";
+    if (name.includes("SAJ")) return "Smart energy management systems";
+    if (name.includes("Anker")) return "Premium hybrid energy hubs";
+
+    if (name.includes("BYD")) return "Safe LFP blade cell storage";
+    if (name.includes("Tesla")) return "Iconic whole-home backup battery";
+    if (name.includes("FoxESS")) return "High-voltage stackable storage";
+    if (name.includes("Neovolt")) return "Premium Australian battery units";
+    if (name.includes("Sigenergy")) return "AI-powered integrated storage";
+    if (name.includes("Alpha")) return "Modular lithium-ion storage";
+
+    return "Tier-1 accredited solar hardware";
+  };
+
+  const tabs = [
+    {
+      id: "Solar Panels" as const,
+      title: "Solar Panels",
+      desc: "10 Premium Brands",
+      icon: <Sun className="w-5 h-5" />,
+      colorClass: "text-[#FE9900]",
+      bgClass: "bg-[#FE9900]/10",
+      activeBg: "border-l-4 border-l-[#FE9900]",
+    },
+    {
+      id: "Solar Inverters" as const,
+      title: "Inverters",
+      desc: "6 Smart brains",
+      icon: <Zap className="w-5 h-5" />,
+      colorClass: "text-sky-500",
+      bgClass: "bg-sky-500/10",
+      activeBg: "border-l-4 border-l-sky-500",
+    },
+    {
+      id: "Solar Batteries" as const,
+      title: "Batteries",
+      desc: "8 Storage systems",
+      icon: <Battery className="w-5 h-5" />,
+      colorClass: "text-emerald-500",
+      bgClass: "bg-emerald-500/10",
+      activeBg: "border-l-4 border-l-emerald-500",
+    },
+  ];
+
+  return (
+    <div
+      className={`absolute top-full left-1/2 -translate-x-1/2 w-full max-w-4xl mt-3 bg-white/99 backdrop-blur-2xl rounded-lg shadow-[0_30px_80px_rgba(10,31,68,0.22),0_15px_40px_rgba(10,31,68,0.12)] border border-slate-200/50 overflow-hidden z-50 transition-all duration-300 transform origin-top ${isOpen
+          ? 'opacity-100 scale-y-100 pointer-events-auto'
+          : 'opacity-0 scale-y-95 pointer-events-none'
+        }`}
+    >
+      <div className="grid grid-cols-12 min-h-[420px]">
+
+        {/* Left Side: Category Tabs (35% width / col-span-4) */}
+        <div className="col-span-4 bg-slate-50/70 p-6 border-r border-slate-100 flex flex-col justify-between">
+          <div className="space-y-3">
+            <span className="text-[10px] text-slate-900 font-black uppercase tracking-wider block mb-4">
+              Categories
+            </span>
+
+            <div className="flex flex-col gap-2">
+              {tabs.map((tab) => {
+                const isActive = activeCategory === tab.id;
+                return (
+                  <button
+                    key={tab.id}
+                    onMouseEnter={() => setActiveCategory(tab.id)}
+                    className={`w-full text-left p-3.5 rounded-lg flex items-center gap-4 transition-all duration-200 ${isActive
+                        ? `bg-white shadow-lg shadow-black/60 border border-slate-300 ${tab.activeBg}`
+                        : "hover:bg-slate-100/50 border border-transparent"
+                      }`}
+                  >
+                    <div className={`p-2.5 rounded-xl shadow-lg shadow-black/30 ${tab.bgClass} ${tab.colorClass} shrink-0`}>
+                      {tab.icon}
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-extrabold text-[#004093]">
+                        {tab.title}
+                      </h4>
+                      <span className="text-[10px] font-bold text-slate-900">
+                        {tab.desc}
+                      </span>
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Spotlight banner inside tab list */}
+          <div className="mt-8 pt-6 border-t border-slate-200/60 space-y-4">
+            <div className="flex items-center gap-1.5 px-2.5 py-1 bg-[#004093]/5 rounded-full w-max text-[9px] font-black uppercase tracking-wider text-[#004093]">
+              <Award className="w-3 h-3 text-[#FE9900]" />
+              <span>CEC Retailer</span>
+            </div>
+            <p className="text-[10.5px] leading-relaxed text-slate-900 font-medium">
+              SAA-accredited Tier-1 products engineered for severe Australian summer conditions.
+            </p>
+            <a
+              href="/#contact"
+              onClick={onClose}
+              className="inline-flex items-center gap-2 text-xs font-black text-[#FE9900] hover:text-[#004093] transition group/btn"
+            >
+              Get Free Assessment
+              <span className="transform group-hover/btn:translate-x-1 transition-transform">→</span>
+            </a>
+          </div>
+        </div>
+
+        {/* Right Side: Tab Contents (65% width / col-span-8) */}
+        <div className="col-span-8 p-6 flex flex-col justify-between">
+          <div className="space-y-4">
+            {/* Header info */}
+            <div className="flex items-center justify-between border-b border-slate-100 pb-3">
+              <span className="text-[10px] text-slate-900 font-black uppercase tracking-wider">
+                Accredited Hardware
+              </span>
+              <span className="px-2 py-0.5 rounded-full bg-slate-100 text-slate-900 text-[9px] font-black">
+                {PRODUCTS_MAP[activeCategory].length} Options
+              </span>
+            </div>
+
+            {/* Dynamic Grid */}
+            <div className="grid grid-cols-2 pb-10 gap-3 max-h-[300px] overflow-y-auto pr-1 scrollbar-thin scrollbar-thumb-slate-100 hover:scrollbar-thumb-slate-200">
+              {PRODUCTS_MAP[activeCategory].map((item) => (
+                <Link
+                  key={item.slug}
+                  to={`/product/${item.slug}`}
+                  onClick={onClose}
+                  className="group flex items-center justify-between p-2.5 bg-slate-50/20 hover:bg-white border border-slate-300/30 hover:border-slate-200/60 hover:shadow-lg shadow-black/40 rounded-lg transition-all duration-200"
+                >
+                  <div className="flex items-center gap-3 truncate">
+                    {/* Brand Badge */}
+                    <div className="w-8 h-8 rounded-xl bg-[#004093]/5 text-[#004093] text-xs font-black flex items-center justify-center shrink-0 group-hover:bg-[#FE9900]/15 group-hover:text-[#FE9900] transition-colors duration-200">
+                      {getInitialBadge(item.name)}
+                    </div>
+                    <div className="truncate">
+                      <h5 className="text-xs font-bold text-slate-800 truncate group-hover:text-[#004093] transition-colors duration-200">
+                        {item.name}
+                      </h5>
+                      <span className="block text-[9px] text-slate-400 font-semibold truncate">
+                        {getBrandSubtitle(item.name)}
+                      </span>
+                    </div>
+                  </div>
+                  <ChevronRight className="w-4 h-4 text-slate-300 opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all duration-200 shrink-0" />
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Quick links footer inside content */}
+          <div className="pt-4 border-t border-slate-100 flex justify-between items-center text-[10px] text-slate-900 font-semibold">
+            <span className="flex items-center gap-1">
+              <Check className="w-3.5 h-3.5 text-emerald-500" /> 25-Year Warranties
+            </span>
+            <span className="flex items-center gap-1">
+              <Check className="w-3.5 h-3.5 text-emerald-500" /> CEC Certified
+            </span>
+            <a
+              href="/#contact"
+              onClick={onClose}
+              className="text-[#004093] hover:text-[#FE9900] font-black uppercase tracking-wider flex items-center gap-1 transition-colors"
+            >
+              Book Free Assessment →
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  );
 }
 
 export default function Navbar() {
@@ -123,7 +369,7 @@ export default function Navbar() {
     <header className="fixed top-4 left-0 right-0 z-50 font-serif">
       <div
         ref={navRef}
-        className="w-[95%] mx-auto bg-white rounded-full border border-gray-200 shadow-[0_8px_30px_rgba(0,0,0,0.08)]"
+        className="relative w-[95%] mx-auto bg-white rounded-full border border-gray-200 shadow-[0_8px_30px_rgba(0,0,0,0.08)]"
       >
         <div className="flex items-center justify-between h-[74px] px-6 lg:px-10">
 
@@ -131,7 +377,7 @@ export default function Navbar() {
           <Link to="/" className="flex items-center shrink-0">
             <img
               src={logo}
-              alt="Aussie Sun Solar"
+              alt="Solearth Energy"
               className="h-14 w-auto object-contain"
             />
           </Link>
@@ -208,7 +454,7 @@ export default function Navbar() {
                   <div className="h-[3px] bg-[#F8C000] rounded-full mx-auto w-8" />
                 )}
 
-                {link.children && (
+                {link.children && link.label !== 'Products' && (
                   <DropdownMenu
                     items={link.children}
                     isOpen={openDropdown === link.label}
@@ -269,6 +515,12 @@ export default function Navbar() {
           </button>
         </div>
 
+        {/* Products Mega Menu centered to navbar */}
+        <ProductsMegaMenu
+          isOpen={openDropdown === 'Products'}
+          onClose={() => setOpenDropdown(null)}
+        />
+
         {/* Mobile Menu */}
         {mobileOpen && (
           <div className="lg:hidden border-t border-gray-100 p-5 bg-white">
@@ -305,18 +557,40 @@ export default function Navbar() {
                     </button>
 
                     {mobileExpanded === link.label && (
-                      <div className="pl-4 border-l-2 border-blue-100">
-                        {link.children.map((child) => (
-                          <Link
-                            key={child.label}
-                            to={child.href}
-                            className="block py-2 text-sm text-gray-600"
-                            onClick={() => setMobileOpen(false)}
-                          >
-                            {child.label}
-                          </Link>
-                        ))}
-                      </div>
+                      link.label === 'Products' ? (
+                        <div className="pl-4 border-l-2 border-blue-100 space-y-4 max-h-[300px] overflow-y-auto mt-2">
+                          {Object.entries(PRODUCTS_MAP).map(([category, items]) => (
+                            <div key={category} className="space-y-1">
+                              <span className="block text-[10px] font-black uppercase tracking-wider text-[#004093]">
+                                {category}
+                              </span>
+                              {items.map((item) => (
+                                <Link
+                                  key={item.slug}
+                                  to={`/product/${item.slug}`}
+                                  className="block py-1 text-xs font-semibold text-gray-600 hover:text-[#FE9900]"
+                                  onClick={() => setMobileOpen(false)}
+                                >
+                                  {item.name}
+                                </Link>
+                              ))}
+                            </div>
+                          ))}
+                        </div>
+                      ) : (
+                        <div className="pl-4 border-l-2 border-blue-100">
+                          {link.children.map((child) => (
+                            <Link
+                              key={child.label}
+                              to={child.href}
+                              className="block py-2 text-sm text-gray-600"
+                              onClick={() => setMobileOpen(false)}
+                            >
+                              {child.label}
+                            </Link>
+                          ))}
+                        </div>
+                      )
                     )}
                   </>
                 ) : (

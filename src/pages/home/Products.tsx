@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Award, FileText, Sun, Zap, Battery, Car } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import CardSwap, { Card } from './CardSwap';
 
 interface ProductTab {
@@ -12,6 +13,7 @@ interface ProductTab {
   accent: string;
   specs: { label: string; value: string }[];
   features: string[];
+  brands?: { name: string; slug: string }[];
 }
 
 export default function Products() {
@@ -43,6 +45,13 @@ export default function Products() {
         'Temperature coefficient: –0.30%/°C (best-in-class)',
         'All-black & silver frame options available',
       ],
+      brands: [
+        { name: 'Jinko Solar', slug: 'jinko-solar-panels' },
+        { name: 'JA Solar', slug: 'ja-solar-panels' },
+        { name: 'AIKO Solar', slug: 'aiko-solar-panels' },
+        { name: 'Trina Solar', slug: 'trina-solar-panels' },
+        { name: 'LONGi Solar', slug: 'longi-solar-panels' },
+      ],
     },
     {
       id: 'inverters',
@@ -66,6 +75,12 @@ export default function Products() {
         'Fanless silent cooling — no moving parts to fail',
         'IP65 rated — suitable for outdoor wall installation',
       ],
+      brands: [
+        { name: 'GoodWe', slug: 'goodwe-inverters' },
+        { name: 'Sungrow', slug: 'sungrow-inverters' },
+        { name: 'Growatt', slug: 'growatt-inverters' },
+        { name: 'Solis', slug: 'solis-inverters' },
+      ],
     },
     {
       id: 'batteries',
@@ -88,6 +103,12 @@ export default function Products() {
         'Integrated BMS with thermal runaway prevention',
         'Compatible with all major hybrid inverter brands',
         '10-Year product warranty — Australian backed',
+      ],
+      brands: [
+        { name: 'FoxESS', slug: 'foxess-battery' },
+        { name: 'Growatt', slug: 'growatt-battery-systems' },
+        { name: 'Anker Solix', slug: 'anker-solix-battery-systems' },
+        { name: 'Alpha ESS', slug: 'alpha-ess-battery-systems' },
       ],
     },
     {
@@ -315,6 +336,26 @@ export default function Products() {
                 </div>
               ))}
             </div>
+
+            {/* Featured Brands Links */}
+            {currentTab.brands && (
+              <div className="mb-6">
+                <span className="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2.5">
+                  Explore Featured Brands:
+                </span>
+                <div className="flex flex-wrap gap-2">
+                  {currentTab.brands.map((brand) => (
+                    <Link
+                      key={brand.slug}
+                      to={`/product/${brand.slug}`}
+                      className="px-4 py-1.5 bg-gray-50 border border-gray-200 hover:border-[#f5a623] hover:text-[#f5a623] text-xs font-bold text-gray-700 rounded-full transition duration-300"
+                    >
+                      {brand.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-3">

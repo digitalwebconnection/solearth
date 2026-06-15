@@ -4,11 +4,10 @@ import Footer from './components/Footer'
 import HomeMain from './pages/home/HomeMain'
 import AboutMain from './pages/about/AboutMain'
 import ContactSection from './pages/home/ContactSection'
-
+import ProductDetailMain from './pages/ProductDetail'
+import { ToastProvider } from './pages/ui/Toast'
 
 function AppContent() {
-
-
   return (
     <>
       <Navbar />
@@ -16,6 +15,7 @@ function AppContent() {
         <Routes>
           <Route path="/" element={<HomeMain />} />
           <Route path="/about" element={<AboutMain />} />
+          <Route path="/product/:slug" element={<ProductDetailMain />} />
         </Routes>
       </main>
       <ContactSection />
@@ -27,9 +27,12 @@ function AppContent() {
 function App() {
   return (
     <BrowserRouter>
-      <AppContent />
+      <ToastProvider>
+        <AppContent />
+      </ToastProvider>
     </BrowserRouter>
   )
 }
 
 export default App
+
