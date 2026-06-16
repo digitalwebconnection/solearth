@@ -58,7 +58,7 @@ export default function ContactSection() {
   ]
 
   return (
-    <section  className="relative bg-[#06101f] text-white overflow-hidden">
+    <section id="contact" className="relative bg-[#06101f] text-white overflow-hidden">
 
       {/* ── ANIMATED DRIFTING ORBS ────────────────────────── */}
       <motion.div

@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from 'react'
 import { gsap } from 'gsap'
 import logo from "../assets/Frame 1 (3).png"
 import { Link, useLocation } from 'react-router-dom'
-import { Sun, Zap, Battery, Award, Check, ChevronRight } from 'lucide-react'
+import { Sun, Zap, Battery, Award, Check, ChevronRight, Home, Building2, Wrench } from 'lucide-react'
 
 const NAV_LINKS = [
   { label: 'Home', href: '/' },
@@ -11,10 +11,36 @@ const NAV_LINKS = [
     label: 'Services',
     href: '/#services',
     children: [
-      { label: 'Solar Installation', href: '/#services' },
-      { label: 'Battery Storage', href: '/#battery' },
-      { label: 'System Maintenance', href: '/#process' },
-      { label: 'Energy Audit', href: '/#process' },
+
+      {
+        label: 'Residential Solar',
+        href: '/residential/6-6kw',
+        children: [
+          { label: '6.6kW Solar System', href: '/residential/6-6kw' },
+          { label: '10.3kW Solar System', href: '/residential/10-3kw' },
+          { label: '13.2kW Solar System', href: '/residential/13-2kw' },
+          { label: '20kW Solar System', href: '/residential/20kw' },
+          { label: 'Smart EV Charger', href: '/residential/ev-charger' },
+        ]
+      },
+      {
+        label: 'Commercial Solar',
+        href: '/commercial/30kw',
+        children: [
+          { label: '30kW Solar System', href: '/commercial/30kw' },
+          { label: '50kW Solar System', href: '/commercial/50kw' },
+          { label: '100kW Solar System', href: '/commercial/100kw' },
+        ]
+      },
+      {
+        label: 'Solar Services',
+        href: '/services/installation',
+        children: [
+          { label: 'Solar Panel Installation', href: '/services/installation' },
+          { label: 'Solar Panel Cleaning', href: '/services/cleaning' },
+          { label: 'Solar Panel Maintenance', href: '/services/maintenance' },
+        ]
+      }
     ],
   },
   {
@@ -27,35 +53,305 @@ const NAV_LINKS = [
       { label: 'EV Chargers', href: '/#products' },
     ],
   },
-  { label: 'Our Projects', href: '/#process' },
-  { label: 'Contact Us', href: '/#contact' },
+  { label: 'Our Projects', href: '/projects' },
+  { label: 'Contact Us', href: '/contact' },
 ]
 
 function DropdownMenu({
   items,
   isOpen,
+  onClose,
 }: {
-  items: { label: string; href: string }[]
+  items: any[]
   isOpen: boolean
+  onClose?: () => void
 }) {
+  const [hoveredItem, setHoveredItem] = useState<string | null>(null)
+
   return (
     <div
-      className={`absolute top-full left-0 mt-3 w-56 bg-white  rounded-2xl shadow-xl border border-gray-100 overflow-hidden z-50 transition-all duration-200 ${isOpen
+      className={`absolute top-full left-1/2 -translate-x-1/2 mt-3 w-64 bg-white rounded-lg shadow-lg border border-slate-205 z-50 transition-all duration-200 ${isOpen
         ? 'opacity-100 translate-y-0 pointer-events-auto'
         : 'opacity-0 -translate-y-2 pointer-events-none'
         }`}
     >
-      {items.map((item) => (
-        <Link
-          key={item.label}
-          to={item.href}
-          className="block px-5 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-[#28A8E0] font-medium transition-all"
-        >
-          {item.label}
-        </Link>
-      ))}
+      {/* Top Arrow Pointer */}
+      <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-white border-t border-l border-slate-205 rotate-45 z-10" />
+
+      <div className="relative bg-white rounded-lg overflow-hidden z-20 py-1">
+        {items.map((item) => {
+          const hasChildren = !!item.children;
+          const isHovered = hoveredItem === item.label;
+
+          return (
+            <div
+              key={item.label}
+              className="relative"
+              onMouseEnter={() => {
+                if (hasChildren) setHoveredItem(item.label)
+              }}
+              onMouseLeave={() => {
+                if (hasChildren) setHoveredItem(null)
+              }}
+            >
+              {hasChildren ? (
+                <div
+                  className="w-full flex items-center justify-between px-5 py-3 text-xs font-bold text-slate-705 text-slate-700 hover:bg-[#004093]/5 hover:text-[#004093] transition-all duration-155 cursor-pointer border-b border-slate-50 last:border-b-0"
+                >
+                  <span>{item.label}</span>
+                  <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
+                </div>
+              ) : (
+                <Link
+                  to={item.href}
+                  onClick={onClose}
+                  className="block px-5 py-3 text-xs font-bold text-slate-705 text-slate-700 hover:bg-[#004093]/5 hover:text-[#004093] transition-all duration-155 border-b border-slate-50 last:border-b-0"
+                >
+                  {item.label}
+                </Link>
+              )}
+
+              {/* Sub-sub dropdown menu */}
+              {hasChildren && (
+                <div
+                  className={`absolute left-full top-0 ml-1 w-56 bg-white rounded-lg shadow-lg border border-slate-205 z-50 transition-all duration-200 ${isHovered
+                    ? 'opacity-100 translate-x-0 pointer-events-auto'
+                    : 'opacity-0 -translate-x-2 pointer-events-none'
+                    }`}
+                >
+                  <div className="py-1">
+                    {item.children.map((subItem: any) => (
+                      <Link
+                        key={subItem.label}
+                        to={subItem.href}
+                        onClick={() => {
+                          if (onClose) onClose();
+                          setHoveredItem(null);
+                        }}
+                        className="block px-5 py-2.5 text-[11px] font-bold text-slate-650 hover:bg-[#004093]/5 hover:text-[#004093] transition-all duration-150 border-b border-slate-50 last:border-b-0"
+                      >
+                        {subItem.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          )
+        })}
+      </div>
     </div>
   )
+}
+
+const SERVICES_MAP = {
+  "Residential Solar": [
+    { name: "6.6kW Solar System", subtitle: "Perfect for couples & small homes", href: "/residential/6-6kw" },
+    { name: "10.3kW Solar System", subtitle: "The gold standard for modern families", href: "/residential/10-3kw" },
+    { name: "13.2kW Solar System", subtitle: "Zero-compromise energy independence", href: "/residential/13-2kw" },
+    { name: "20kW Solar System", subtitle: "Large homes & multi-phase power", href: "/residential/20kw" },
+    { name: "Smart EV Charger", subtitle: "Smart vehicle charging integration", href: "/residential/ev-charger" },
+  ],
+  "Commercial Solar": [
+    { name: "30kW Solar System", subtitle: "Ideal for small offices & shops", href: "/commercial/30kw" },
+    { name: "50kW Solar System", subtitle: "Perfect for medium commercial builds", href: "/commercial/50kw" },
+    { name: "100kW Solar System", subtitle: "Maximum savings for large industries", href: "/commercial/100kw" },
+  ],
+  "Solar Services": [
+    { name: "Solar Panel Installation", subtitle: "CEC-accredited professional installation", href: "/services/installation" },
+    { name: "Solar Panel Cleaning", subtitle: "Maximize system efficiency & output", href: "/services/cleaning" },
+    { name: "Solar Panel Maintenance", subtitle: "Comprehensive health checks & repair", href: "/services/maintenance" },
+  ],
+};
+
+function ServicesMegaMenu({
+  isOpen,
+  onClose,
+  onMouseEnter,
+  onMouseLeave,
+}: {
+  isOpen: boolean
+  onClose: () => void
+  onMouseEnter?: () => void
+  onMouseLeave?: () => void
+}) {
+  const [activeCategory, setActiveCategory] = useState<"Residential Solar" | "Commercial Solar" | "Solar Services">("Residential Solar");
+
+  const getInitialBadge = (name: string) => {
+    if (name.includes("6.6kW")) return "6.6";
+    if (name.includes("10.3kW")) return "10";
+    if (name.includes("13.2kW")) return "13";
+    if (name.includes("20kW")) return "20";
+    if (name.includes("EV")) return "EV";
+    if (name.includes("30kW")) return "30";
+    if (name.includes("50kW")) return "50";
+    if (name.includes("100kW")) return "100";
+    if (name.includes("Installation")) return "IN";
+    if (name.includes("Cleaning")) return "CL";
+    if (name.includes("Maintenance")) return "MA";
+    return "SS";
+  };
+
+  const tabs = [
+    {
+      id: "Residential Solar" as const,
+      title: "Residential Solar",
+      desc: "5 Package Options",
+      icon: <Home className="w-5 h-5" />,
+      colorClass: "text-[#FE9900]",
+      bgClass: "bg-[#FE9900]/10",
+      activeBg: "border-l-4 border-l-[#FE9900]",
+    },
+    {
+      id: "Commercial Solar" as const,
+      title: "Commercial Solar",
+      desc: "3 System Capacities",
+      icon: <Building2 className="w-5 h-5" />,
+      colorClass: "text-sky-500",
+      bgClass: "bg-sky-500/10",
+      activeBg: "border-l-4 border-l-sky-500",
+    },
+    {
+      id: "Solar Services" as const,
+      title: "Solar Services",
+      desc: "Maintenance & Care",
+      icon: <Wrench className="w-5 h-5" />,
+      colorClass: "text-emerald-500",
+      bgClass: "bg-emerald-500/10",
+      activeBg: "border-l-4 border-l-emerald-500",
+    },
+  ];
+
+  return (
+    <div
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+      className={`absolute top-full left-1/2 -translate-x-1/2 w-full max-w-4xl mt-3 bg-white/99 backdrop-blur-2xl rounded-lg shadow-[0_30px_80px_rgba(10,31,68,0.22),0_15px_40px_rgba(10,31,68,0.12)] border border-slate-200/50 overflow-hidden z-50 transition-all duration-300 transform origin-top ${isOpen
+          ? 'opacity-100 scale-y-100 pointer-events-auto'
+          : 'opacity-0 scale-y-95 pointer-events-none'
+        }`}
+    >
+      <div className="grid grid-cols-12 min-h-[420px]">
+
+        {/* Left Side: Category Tabs (35% width / col-span-4) */}
+        <div className="col-span-4 bg-slate-50/70 p-6 border-r border-slate-100 flex flex-col justify-between">
+          <div className="space-y-3">
+            <span className="text-[10px] text-slate-900 font-black uppercase tracking-wider block mb-4">
+              Categories
+            </span>
+
+            <div className="flex flex-col gap-2">
+              {tabs.map((tab) => {
+                const isActive = activeCategory === tab.id;
+                return (
+                  <button
+                    key={tab.id}
+                    onMouseEnter={() => setActiveCategory(tab.id)}
+                    className={`w-full text-left p-3.5 rounded-lg flex items-center gap-4 transition-all duration-200 ${isActive
+                        ? "bg-white shadow-lg shadow-black/5 border border-slate-200 " + tab.activeBg
+                        : "hover:bg-slate-100/50 border border-transparent"
+                      }`}
+                  >
+                    <div className={`p-2.5 rounded-xl shadow-lg shadow-black/5 ${tab.bgClass} ${tab.colorClass} shrink-0`}>
+                      {tab.icon}
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-extrabold text-[#004093]">
+                        {tab.title}
+                      </h4>
+                      <span className="text-[10px] font-bold text-slate-500">
+                        {tab.desc}
+                      </span>
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Spotlight banner inside tab list */}
+          <div className="mt-8 pt-6 border-t border-slate-200/60 space-y-4">
+            <div className="flex items-center gap-1.5 px-2.5 py-1 bg-[#004093]/5 rounded-full w-max text-[9px] font-black uppercase tracking-wider text-[#004093]">
+              <Award className="w-3 h-3 text-[#FE9900]" />
+              <span>CEC Accredited</span>
+            </div>
+            <p className="text-[10.5px] leading-relaxed text-slate-500 font-medium">
+              Expert energy solutions and lifetime maintenance by CEC-accredited engineers.
+            </p>
+            <a
+              href="/#contact"
+              onClick={onClose}
+              className="inline-flex items-center gap-2 text-xs font-black text-[#FE9900] hover:text-[#004093] transition group/btn"
+            >
+              Get Free Assessment
+              <span className="transform group-hover/btn:translate-x-1 transition-transform">→</span>
+            </a>
+          </div>
+        </div>
+
+        {/* Right Side: Tab Contents (65% width / col-span-8) */}
+        <div className="col-span-8 p-6 flex flex-col justify-between">
+          <div className="space-y-4">
+            {/* Header info */}
+            <div className="flex items-center justify-between border-b border-slate-100 pb-3">
+              <span className="text-[10px] text-slate-400 font-black uppercase tracking-wider">
+                Services & Capacity
+              </span>
+              <span className="px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 text-[9px] font-black">
+                {SERVICES_MAP[activeCategory].length} Options
+              </span>
+            </div>
+
+            {/* Dynamic Grid */}
+            <div className="grid grid-cols-2 pb-10 gap-3 max-h-[300px] overflow-y-auto pr-1">
+              {SERVICES_MAP[activeCategory].map((item) => (
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  onClick={onClose}
+                  className="group flex items-center justify-between p-2.5 bg-slate-50/20 hover:bg-white border border-slate-100 hover:border-slate-200/60 hover:shadow-lg shadow-black/5 rounded-lg transition-all duration-200"
+                >
+                  <div className="flex items-center gap-3 truncate">
+                    {/* Brand Badge */}
+                    <div className="w-8 h-8 rounded-xl bg-[#004093]/5 text-[#004093] text-xs font-black flex items-center justify-center shrink-0 group-hover:bg-[#FE9900]/15 group-hover:text-[#FE9900] transition-colors duration-200">
+                      {getInitialBadge(item.name)}
+                    </div>
+                    <div className="truncate">
+                      <h5 className="text-xs font-bold text-slate-800 truncate group-hover:text-[#004093] transition-colors duration-200">
+                        {item.name}
+                      </h5>
+                      <span className="block text-[9px] text-slate-450 truncate">
+                        {item.subtitle}
+                      </span>
+                    </div>
+                  </div>
+                  <ChevronRight className="w-4 h-4 text-slate-300 opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all duration-200 shrink-0" />
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Quick links footer inside content */}
+          <div className="pt-4 border-t border-slate-100 flex justify-between items-center text-[10px] text-slate-900 font-semibold">
+            <span className="flex items-center gap-1">
+              <Check className="w-3.5 h-3.5 text-emerald-500" /> 10-Year Workmanship
+            </span>
+            <span className="flex items-center gap-1">
+              <Check className="w-3.5 h-3.5 text-emerald-500" /> CEC Certified Installers
+            </span>
+            <a
+              href="/#contact"
+              onClick={onClose}
+              className="text-[#004093] hover:text-[#FE9900] font-black uppercase tracking-wider flex items-center gap-1 transition-colors"
+            >
+              Book Free Assessment →
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  );
 }
 
 const PRODUCTS_MAP = {
@@ -94,9 +390,13 @@ const PRODUCTS_MAP = {
 function ProductsMegaMenu({
   isOpen,
   onClose,
+  onMouseEnter,
+  onMouseLeave,
 }: {
   isOpen: boolean
   onClose: () => void
+  onMouseEnter?: () => void
+  onMouseLeave?: () => void
 }) {
   const [activeCategory, setActiveCategory] = useState<"Solar Panels" | "Solar Inverters" | "Solar Batteries">("Solar Panels");
 
@@ -175,6 +475,8 @@ function ProductsMegaMenu({
 
   return (
     <div
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
       className={`absolute top-full left-1/2 -translate-x-1/2 w-full max-w-4xl mt-3 bg-white/99 backdrop-blur-2xl rounded-lg shadow-[0_30px_80px_rgba(10,31,68,0.22),0_15px_40px_rgba(10,31,68,0.12)] border border-slate-200/50 overflow-hidden z-50 transition-all duration-300 transform origin-top ${isOpen
           ? 'opacity-100 scale-y-100 pointer-events-auto'
           : 'opacity-0 scale-y-95 pointer-events-none'
@@ -311,13 +613,43 @@ export default function Navbar() {
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null)
 
   const navRef = useRef<HTMLDivElement>(null)
+  const hoverTimeoutRef = useRef<any>(null)
+
+  const handleDropdownOpen = (label: string) => {
+    if (hoverTimeoutRef.current) {
+      clearTimeout(hoverTimeoutRef.current)
+      hoverTimeoutRef.current = null
+    }
+    setOpenDropdown(label)
+  }
+
+  const handleDropdownClose = () => {
+    if (hoverTimeoutRef.current) {
+      clearTimeout(hoverTimeoutRef.current)
+    }
+    hoverTimeoutRef.current = setTimeout(() => {
+      setOpenDropdown(null)
+    }, 150)
+  }
+
+  useEffect(() => {
+    return () => {
+      if (hoverTimeoutRef.current) {
+        clearTimeout(hoverTimeoutRef.current)
+      }
+    }
+  }, [])
 
   useEffect(() => {
     if (location.pathname === '/about') {
       setActiveLink('About Us')
+    } else if (location.pathname === '/projects') {
+      setActiveLink('Our Projects')
+    } else if (location.pathname === '/contact') {
+      setActiveLink('Contact Us')
     } else if (location.pathname === '/') {
       if (location.hash === '#services') {
-        setActiveLink('Services')
+        setActiveLink('Solar Services')
       } else if (location.hash === '#products') {
         setActiveLink('Products')
       } else if (location.hash === '#contact') {
@@ -371,7 +703,7 @@ export default function Navbar() {
         ref={navRef}
         className="relative w-[95%] mx-auto bg-white rounded-full border border-gray-200 shadow-[0_8px_30px_rgba(0,0,0,0.08)]"
       >
-        <div className="flex items-center justify-between h-[74px] px-6 lg:px-10">
+        <div className="flex items-center justify-between h-[74px] px-6 lg:px-4">
 
           {/* Logo */}
           <Link to="/" className="flex items-center shrink-0">
@@ -385,7 +717,22 @@ export default function Navbar() {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-3">
             {NAV_LINKS.map((link) => (
-              <div key={link.label} className="relative">
+              <div
+                key={link.label}
+                className="relative"
+                onMouseEnter={(e) => {
+                  handleMouseEnter(e);
+                  if (link.children) {
+                    handleDropdownOpen(link.label);
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  handleMouseLeave(e);
+                  if (link.children) {
+                    handleDropdownClose();
+                  }
+                }}
+              >
                 {link.children ? (
                   <button
                     onClick={() => {
@@ -394,8 +741,6 @@ export default function Navbar() {
                         openDropdown === link.label ? null : link.label
                       )
                     }}
-                    onMouseEnter={handleMouseEnter}
-                    onMouseLeave={handleMouseLeave}
                     className={`flex items-center gap-1 px-3 py-2 text-[15px] font-semibold transition-all duration-200 overflow-hidden ${activeLink === link.label
                       ? 'text-[#F8C000]'
                       : 'text-[#1D6FB8] hover:text-[#28A8E0]'
@@ -432,8 +777,6 @@ export default function Navbar() {
                       setActiveLink(link.label)
                       setOpenDropdown(null)
                     }}
-                    onMouseEnter={handleMouseEnter}
-                    onMouseLeave={handleMouseLeave}
                     className={`flex items-center gap-1 px-3 py-2 text-[15px] font-semibold transition-all duration-200 overflow-hidden ${activeLink === link.label
                       ? 'text-[#F8C000]'
                       : 'text-[#1D6FB8] hover:text-[#28A8E0]'
@@ -454,10 +797,11 @@ export default function Navbar() {
                   <div className="h-[3px] bg-[#F8C000] rounded-full mx-auto w-8" />
                 )}
 
-                {link.children && link.label !== 'Products' && (
+                {link.children && link.label !== 'Products' && link.label !== 'Services' && (
                   <DropdownMenu
                     items={link.children}
                     isOpen={openDropdown === link.label}
+                    onClose={() => setOpenDropdown(null)}
                   />
                 )}
               </div>
@@ -515,10 +859,20 @@ export default function Navbar() {
           </button>
         </div>
 
+        {/* Services Mega Menu centered to navbar */}
+        <ServicesMegaMenu
+          isOpen={openDropdown === 'Services'}
+          onClose={() => setOpenDropdown(null)}
+          onMouseEnter={() => handleDropdownOpen('Services')}
+          onMouseLeave={handleDropdownClose}
+        />
+
         {/* Products Mega Menu centered to navbar */}
         <ProductsMegaMenu
           isOpen={openDropdown === 'Products'}
           onClose={() => setOpenDropdown(null)}
+          onMouseEnter={() => handleDropdownOpen('Products')}
+          onMouseLeave={handleDropdownClose}
         />
 
         {/* Mobile Menu */}
@@ -578,16 +932,37 @@ export default function Navbar() {
                           ))}
                         </div>
                       ) : (
-                        <div className="pl-4 border-l-2 border-blue-100">
-                          {link.children.map((child) => (
-                            <Link
-                              key={child.label}
-                              to={child.href}
-                              className="block py-2 text-sm text-gray-600"
-                              onClick={() => setMobileOpen(false)}
-                            >
-                              {child.label}
-                            </Link>
+                        <div className="pl-4 border-l-2 border-blue-100 space-y-2">
+                          {link.children.map((child: any) => (
+                            <div key={child.label}>
+                              {child.children ? (
+                                <div className="space-y-1 py-1">
+                                  <span className="block text-xs font-bold text-slate-800 uppercase tracking-wider">
+                                    {child.label}
+                                  </span>
+                                  <div className="pl-3 border-l border-slate-200 space-y-1">
+                                    {child.children.map((subChild: any) => (
+                                      <Link
+                                        key={subChild.label}
+                                        to={subChild.href}
+                                        className="block py-1.5 text-xs text-gray-600 hover:text-[#004093] font-semibold"
+                                        onClick={() => setMobileOpen(false)}
+                                      >
+                                        {subChild.label}
+                                      </Link>
+                                    ))}
+                                  </div>
+                                </div>
+                              ) : (
+                                <Link
+                                  to={child.href}
+                                  className="block py-2 text-sm text-gray-600 font-semibold"
+                                  onClick={() => setMobileOpen(false)}
+                                >
+                                  {child.label}
+                                </Link>
+                              )}
+                            </div>
                           ))}
                         </div>
                       )

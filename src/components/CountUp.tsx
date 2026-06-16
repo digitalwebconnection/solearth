@@ -1,4 +1,4 @@
-import { useInView, useMotionValue, useSpring } from 'framer-motion'
+import { useInView, useMotionValue, useSpring } from 'motion/react'
 import { useCallback, useEffect, useRef } from 'react'
 
 interface CountUpProps {

@@ -6,8 +6,8 @@ const QUICK_LINKS = [
   { label: 'Home', href: '/' },
   { label: 'Products', href: '/#products' },
   { label: 'About Us', href: '/about' },
-  { label: 'Our Projects', href: '/#process' },
-  { label: 'Contact Us', href: '/#contact' },
+  { label: 'Our Projects', href: '/projects' },
+  { label: 'Contact Us', href: '/contact' },
 ];
 
 const OFFICES = [
@@ -160,9 +160,9 @@ export default function Footer() {
       <div className="border-t border-slate-200 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 py-5 flex flex-wrap items-center justify-between gap-4">
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
-            <a href="#" className="text-slate-400 text-xs hover:text-[#004093] font-semibold transition-colors">Privacy Policy</a>
-            <a href="#" className="text-slate-400 text-xs hover:text-[#004093] font-semibold transition-colors">Terms & Conditions</a>
-            <a href="#" className="text-slate-400 text-xs hover:text-[#004093] font-semibold transition-colors">Complaints Policy</a>
+            <Link to="/privacy-policy" className="text-slate-400 text-xs hover:text-[#004093] font-semibold transition-colors">Privacy Policy</Link>
+            <Link to="/terms-conditions" className="text-slate-400 text-xs hover:text-[#004093] font-semibold transition-colors">Terms & Conditions</Link>
+            <Link to="/complaints-policy" className="text-slate-400 text-xs hover:text-[#004093] font-semibold transition-colors">Complaints Policy</Link>
           </div>
           <p className="text-slate-400 text-xs font-semibold">
             ©2026 <strong className="text-slate-600">SOLEARTH ENERGY PTY LTD</strong> ABN 11 111 111 111
