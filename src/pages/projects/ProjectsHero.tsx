@@ -35,7 +35,7 @@ export default function ProjectsHero() {
 
 
       {/* Hero Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10 md:mt-0 relative z-20 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         {/* Left Column: Headline and CTAs */}
         <div className="lg:col-span-9 text-left flex flex-col justify-center">
           <motion.div

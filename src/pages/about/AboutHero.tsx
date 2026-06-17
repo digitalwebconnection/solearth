@@ -36,7 +36,7 @@ export default function AboutHero() {
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-[#F8C000]/10 blur-3xl pointer-events-none z-10" />
 
       {/* Hero Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10 md:mt-0 relative z-20 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         {/* Left Column: Mission Wording & CTAs */}
         <div className="lg:col-span-9 text-left flex flex-col justify-center">
           <motion.div

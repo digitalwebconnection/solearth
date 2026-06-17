@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from 'react'
 import { gsap } from 'gsap'
 import logo from "../assets/Frame 1 (3).png"
 import { Link, useLocation } from 'react-router-dom'
-import { Sun, Zap, Battery, Award, Check, ChevronRight, Home, Building2, Wrench } from 'lucide-react'
+import { Sun, Zap, Battery, Award, Check, ChevronRight, Home, Building2, Wrench, X, Phone, Mail, ChevronDown, Sparkles } from 'lucide-react'
 import { useQuoteModal } from './QuoteModal'
 
 const NAV_LINKS = [
@@ -888,122 +888,198 @@ export default function Navbar() {
           onMouseLeave={handleDropdownClose}
         />
 
-        {/* Mobile Menu */}
-        {mobileOpen && (
-          <div className="lg:hidden border-t border-gray-100 p-5 bg-white max-h-[calc(100vh-100px)] overflow-y-auto rounded-b-2xl shadow-xl">
-            {NAV_LINKS.map((link) => (
-              <div key={link.label}>
-                {link.children ? (
-                  <>
-                    <button
-                      className="w-full flex items-center justify-between py-3 text-left font-semibold text-gray-700"
-                      onClick={() => {
-                        setMobileExpanded(
-                          mobileExpanded === link.label
-                            ? null
-                            : link.label
-                        )
-                      }}
-                    >
-                      <span>{link.label}</span>
-                      <svg
-                        className={`w-4 h-4 transition-transform ${mobileExpanded === link.label
-                          ? 'rotate-180'
-                          : ''
-                          }`}
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M19 9l-7 7-7-7"
-                        />
-                      </svg>
-                    </button>
+        {/* Mobile Full Screen Menu Overlay */}
+        <div
+          className={`fixed inset-0 z-100 lg:hidden transition-all duration-300 ease-in-out ${
+            mobileOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+          }`}
+        >
+          {/* Blur backdrop overlay */}
+          <div
+            className="absolute inset-0 bg-slate-900/60 backdrop-blur-md transition-opacity duration-300"
+            onClick={() => setMobileOpen(false)}
+          />
 
-                    {mobileExpanded === link.label && (
-                      link.label === 'Products' ? (
-                        <div className="pl-4 border-l-2 border-blue-100 space-y-4 max-h-[300px] overflow-y-auto mt-2">
-                          {Object.entries(PRODUCTS_MAP).map(([category, items]) => (
-                            <div key={category} className="space-y-1">
-                              <span className="block text-[10px] font-black uppercase tracking-wider text-[#004093]">
-                                {category}
-                              </span>
-                              {items.map((item) => (
-                                <Link
-                                  key={item.slug}
-                                  to={`/product/${item.slug}`}
-                                  className="block py-1 text-xs font-semibold text-gray-600 hover:text-[#FE9900]"
-                                  onClick={() => setMobileOpen(false)}
-                                >
-                                  {item.name}
-                                </Link>
-                              ))}
-                            </div>
-                          ))}
-                        </div>
-                      ) : (
-                        <div className="pl-4 border-l-2 border-blue-100 space-y-2">
-                          {link.children.map((child: any) => (
-                            <div key={child.label}>
-                              {child.children ? (
-                                <div className="space-y-1 py-1">
-                                  <span className="block text-xs font-bold text-slate-800 uppercase tracking-wider">
-                                    {child.label}
-                                  </span>
-                                  <div className="pl-3 border-l border-slate-200 space-y-1">
-                                    {child.children.map((subChild: any) => (
-                                      <Link
-                                        key={subChild.label}
-                                        to={subChild.href}
-                                        className="block py-1.5 text-xs text-gray-600 hover:text-[#004093] font-semibold"
-                                        onClick={() => setMobileOpen(false)}
-                                      >
-                                        {subChild.label}
-                                      </Link>
-                                    ))}
+          {/* Drawer contents */}
+          <div
+            className={`absolute top-0 right-0 bottom-0 w-[88%] max-w-[420px] bg-white flex flex-col justify-between transition-transform duration-300 ease-out shadow-2xl ${
+              mobileOpen ? 'translate-x-0' : 'translate-x-full'
+            }`}
+          >
+            {/* Header */}
+            <div className="flex items-center justify-between px-6 py-5 border-b border-slate-100">
+              <Link to="/" onClick={() => setMobileOpen(false)} className="flex items-center shrink-0">
+                <img src={logo} alt="Solearth Energy" className="h-10 w-auto object-contain" />
+              </Link>
+              <button
+                onClick={() => setMobileOpen(false)}
+                className="p-2 text-slate-500 hover:text-slate-800 hover:bg-slate-100 rounded-full transition-all duration-200 cursor-pointer"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+
+            {/* Scrollable Navigation Body */}
+            <div className="flex-1 overflow-y-auto px-6 py-6 space-y-4">
+              <div className="space-y-1.5">
+                {NAV_LINKS.map((link) => {
+                  const hasChildren = !!link.children;
+                  const isExpanded = mobileExpanded === link.label;
+
+                  return (
+                    <div key={link.label} className="border-b border-slate-50 pb-1.5 last:border-0 last:pb-0">
+                      {hasChildren ? (
+                        <>
+                          <button
+                            className="w-full flex items-center justify-between py-3.5 text-left font-serif text-[17px] font-bold text-[#004093] hover:text-[#FE9900] transition-colors"
+                            onClick={() => setMobileExpanded(isExpanded ? null : link.label)}
+                          >
+                            <span>{link.label}</span>
+                            <ChevronDown
+                              className={`w-4 h-4 text-[#004093] transition-transform duration-300 ${
+                                isExpanded ? 'rotate-180 text-[#FE9900]' : ''
+                              }`}
+                            />
+                          </button>
+
+                          {/* Smooth expanded submenu list */}
+                          <div
+                            className={`pl-3 border-l-2 border-slate-100 overflow-hidden transition-all duration-300 ease-in-out ${
+                              isExpanded ? 'max-h-[800px] opacity-100 mt-1 pb-3' : 'max-h-0 opacity-0 pointer-events-none'
+                            }`}
+                          >
+                            {link.label === 'Products' ? (
+                              <div className="space-y-4 pt-1">
+                                {Object.entries(PRODUCTS_MAP).map(([category, items]) => (
+                                  <div key={category} className="space-y-2">
+                                    <span className="block text-[10px] font-black uppercase tracking-wider text-[#004093] opacity-60">
+                                      {category}
+                                    </span>
+                                    <div className="grid grid-cols-1 gap-1.5">
+                                      {items.map((item) => (
+                                        <Link
+                                          key={item.slug}
+                                          to={`/product/${item.slug}`}
+                                          className="flex items-center justify-between p-2 rounded-lg bg-slate-50 hover:bg-slate-100 text-xs font-bold text-slate-700 hover:text-[#FE9900] transition-colors"
+                                          onClick={() => {
+                                            setMobileOpen(false);
+                                            setMobileExpanded(null);
+                                          }}
+                                        >
+                                          <span>{item.name}</span>
+                                          <ChevronRight className="w-3.5 h-3.5 opacity-60" />
+                                        </Link>
+                                      ))}
+                                    </div>
                                   </div>
-                                </div>
-                              ) : (
-                                <Link
-                                  to={child.href}
-                                  className="block py-2 text-sm text-gray-600 font-semibold"
-                                  onClick={() => setMobileOpen(false)}
-                                >
-                                  {child.label}
-                                </Link>
-                              )}
-                            </div>
-                          ))}
-                        </div>
-                      )
-                    )}
-                  </>
-                ) : (
-                  <Link
-                    to={link.href}
-                    className="block w-full py-3 text-left font-semibold text-gray-700"
-                    onClick={() => setMobileOpen(false)}
-                  >
-                    {link.label}
-                  </Link>
-                )}
+                                ))}
+                              </div>
+                            ) : (
+                              <div className="space-y-4 pt-1">
+                                {link.children.map((child: any) => (
+                                  <div key={child.label} className="space-y-2">
+                                    {child.children ? (
+                                      <>
+                                        <span className="block text-[10px] font-black uppercase tracking-wider text-[#004093] opacity-60">
+                                          {child.label}
+                                        </span>
+                                        <div className="grid grid-cols-1 gap-1.5">
+                                          {child.children.map((subChild: any) => (
+                                            <Link
+                                              key={subChild.label}
+                                              to={subChild.href}
+                                              className="flex items-center justify-between p-2 rounded-lg bg-slate-50 hover:bg-slate-100 text-xs font-bold text-slate-700 hover:text-[#FE9900] transition-colors"
+                                              onClick={() => {
+                                                setMobileOpen(false);
+                                                setMobileExpanded(null);
+                                              }}
+                                            >
+                                              <span>{subChild.label}</span>
+                                              <ChevronRight className="w-3.5 h-3.5 opacity-60" />
+                                            </Link>
+                                          ))}
+                                        </div>
+                                      </>
+                                    ) : (
+                                      <Link
+                                        to={child.href}
+                                        className="block py-1.5 text-[14px] font-bold text-slate-700 hover:text-[#FE9900] transition-colors"
+                                        onClick={() => {
+                                          setMobileOpen(false);
+                                          setMobileExpanded(null);
+                                        }}
+                                      >
+                                        {child.label}
+                                      </Link>
+                                    )}
+                                  </div>
+                                ))}
+                              </div>
+                            )}
+                          </div>
+                        </>
+                      ) : (
+                        <Link
+                          to={link.href}
+                          className="block py-3.5 text-left font-serif text-[17px] font-bold text-[#004093] hover:text-[#FE9900] transition-colors"
+                          onClick={() => {
+                            setMobileOpen(false);
+                            setMobileExpanded(null);
+                          }}
+                        >
+                          {link.label}
+                        </Link>
+                      )}
+                    </div>
+                  );
+                })}
               </div>
-            ))}
 
-            <button
-              className="mt-4 w-full flex items-center justify-center bg-[#f5a623] text-white font-bold py-3 rounded-full cursor-pointer"
-              onClick={() => {
-                setMobileOpen(false)
-                openQuoteModal('Mobile Navbar CTA')
-              }}
-            >
-              Get A Quote →
-            </button>
+              {/* Promo Badge / Info Area in Menu body */}
+              <div className="mt-8 p-4 bg-amber-50/70 border border-amber-200/50 rounded-2xl flex items-start gap-3">
+                <Sparkles className="w-5 h-5 text-[#FE9900] shrink-0 mt-0.5" />
+                <div>
+                  <h5 className="text-[11px] font-black uppercase tracking-widest text-[#004093]">Government Rebate</h5>
+                  <p className="text-[10px] leading-relaxed text-slate-600 font-semibold mt-0.5">
+                    NSW & QLD solar incentives available! Check your eligible system configuration rebates.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Quick Contact & Action Footer */}
+            <div className="p-6 border-t border-slate-100 bg-slate-50 space-y-4">
+              <div className="grid grid-cols-2 gap-3">
+                <a
+                  href="tel:1300672194"
+                  className="flex flex-col items-center justify-center p-3 rounded-xl bg-white border border-slate-200 hover:border-[#004093] hover:shadow-md transition group text-center"
+                >
+                  <Phone className="w-4.5 h-4.5 text-[#FE9900] mb-1 group-hover:scale-110 transition-transform" />
+                  <span className="text-[9px] font-black uppercase text-slate-400 tracking-wider">Call Now</span>
+                  <span className="text-[11px] font-bold text-slate-800">1300 672 194</span>
+                </a>
+                <a
+                  href="mailto:info@solearth.com.au"
+                  className="flex flex-col items-center justify-center p-3 rounded-xl bg-white border border-slate-200 hover:border-[#004093] hover:shadow-md transition group text-center"
+                >
+                  <Mail className="w-4.5 h-4.5 text-blue-500 mb-1 group-hover:scale-110 transition-transform" />
+                  <span className="text-[9px] font-black uppercase text-slate-400 tracking-wider">Email Us</span>
+                  <span className="text-[11px] font-bold text-slate-800 truncate max-w-full">info@solearth...</span>
+                </a>
+              </div>
+
+              <button
+                className="w-full flex items-center justify-center gap-2 bg-[#FE9900] hover:bg-[#e08900] text-white font-bold py-3.5 rounded-full shadow-lg shadow-[#FE9900]/15 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 cursor-pointer text-sm"
+                onClick={() => {
+                  setMobileOpen(false);
+                  openQuoteModal('Mobile Navbar Side Drawer');
+                }}
+              >
+                Get Free Assessment & Quote →
+              </button>
+            </div>
           </div>
-        )}
+        </div>
       </div>
     </header>
   )

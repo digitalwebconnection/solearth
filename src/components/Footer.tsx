@@ -25,19 +25,19 @@ const OFFICES = [
 
 export default function Footer() {
   return (
-    <footer className="bg-white text-slate-800 font-serif border-t border-slate-200 mt-auto pt-16">
+    <footer className="bg-white text-slate-800 font-serif border-t border-slate-200 mt-auto pt-10 md:pt-16">
 
       {/* ── Main Footer Grid ── */}
-      <div className="max-w-7xl mx-auto px-6 lg:px-0 pb-6">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 pb-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
 
           {/* Column 1: Brand & Socials */}
-          <div className="flex flex-col gap-6 lg:border-r lg:border-slate-100 lg:pr-8">
+          <div className="flex flex-col gap-6 items-center lg:items-start text-center lg:text-left lg:border-r lg:border-slate-100 lg:pr-8">
             <div className="flex items-center gap-2">
               <img
                 src={logo}
                 alt="SolEarth Energy"
-                className="h-26 w-auto object-contain"
+                className="h-20 md:h-24 w-auto object-contain"
                 onError={(e) => { e.currentTarget.style.display = 'none' }}
               />
             </div>
@@ -158,8 +158,8 @@ export default function Footer() {
 
       {/* ── Policies & Copyright Bar ── */}
       <div className="border-t border-slate-200 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-5 flex flex-wrap items-center justify-between gap-4">
-          <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-5 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+          <div className="flex flex-wrap items-center justify-center md:justify-start gap-x-6 gap-y-2">
             <Link to="/privacy-policy" className="text-slate-800 text-xs hover:text-[#004093] font-semibold transition-colors">Privacy Policy</Link>
             <Link to="/terms-conditions" className="text-slate-800 text-xs hover:text-[#004093] font-semibold transition-colors">Terms & Conditions</Link>
             <Link to="/complaints-policy" className="text-slate-800 text-xs hover:text-[#004093] font-semibold transition-colors">Complaints Policy</Link>
@@ -172,11 +172,11 @@ export default function Footer() {
 
       {/* ── Disclaimer Bar ── */}
       <div className="bg-[#fafbfe] border-t border-slate-200/60">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-5 flex flex-col md:flex-row md:items-end justify-between gap-6">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-5 flex flex-col md:flex-row items-center md:items-end justify-between gap-6 text-center md:text-left">
           <p className="text-[10px] text-slate-800 leading-relaxed max-w-4xl font-semibold">
             <span className="text-slate-900 font-bold">Disclaimer:</span> This Solar Promotion is valid for standard metro grid-connected installations only. Pricing accounts for Small Scale Technology Certificates (STCs) assigned directly to SolEarth Energy or its partners. Custom layout factors (double-storey, tile/tin roofs, power phases, or switchboard upgrades) may incur charges. Price match guarantees apply to CEC certified quotes for identical hardware.
           </p>
-          <div className="flex flex-col items-end gap-1.5 shrink-0 text-right">
+          <div className="flex flex-col items-center md:items-end gap-1.5 shrink-0 text-center md:text-right">
             <p className="text-[10px] text-slate-900 font-semibold italic">*Terms & conditions apply.</p>
             <p className="text-[10px] text-slate-400 font-semibold">
               Developed by{' '}

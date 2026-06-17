@@ -38,7 +38,7 @@ export default function HeroSection() {
   const slide = slides[current]
 
   return (
-    <section className="relative h-[92vh] min-h-[600px] overflow-hidden">
+    <section className="relative h-full md:h-[92vh] min-h-[600px] overflow-hidden">
       {/* Background image */}
       {slides.map((s, i) => (
         <div
@@ -58,8 +58,8 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-linear-to-r from-[#0a1f44]/90 via-[#0a1f44]/70 to-transparent" />
 
       {/* Content */}
-      <div className="relative z-10 h-full flex items-center">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div className="relative z-10 h-full flex items-center my-25 md:my-0 ">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8  w-full">
           <div className="max-w-2xl">
             {/* Badge */}
             <div className="inline-flex items-center gap-2 bg-[#F8C000]/20 border border-[#F8C000]/40 text-[#F8C000] text-xs font-bold tracking-widest uppercase px-4 py-2 rounded-full mb-6">
