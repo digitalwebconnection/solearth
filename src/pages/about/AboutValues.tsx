@@ -17,7 +17,7 @@ export default function AboutValues() {
       title: 'Innovation & Performance',
       desc: 'We continuously evaluate cutting-edge solar technologies, hybrid battery systems, and smart home solutions to deliver maximum efficiency.',
       color: 'text-amber-500 bg-amber-50 border-amber-100',
-      bgImage: 'https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=800&q=80'
+      bgImage: '/images/solar/solar-residential-house.jpg'
     },
     {
       id: '03',
@@ -51,7 +51,7 @@ export default function AboutValues() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0a1f44] mb-4"
+            className="text-3xl md:text-5xl font-serif font-bold text-[#0a1f44] mb-4"
           >
             Our Core Principles
           </motion.h2>
@@ -60,7 +60,7 @@ export default function AboutValues() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-gray-900 text-lg leading-relaxed"
+            className="text-sm md:text-base leading-relaxed text-gray-900"
           >
             The values that drive our team to deliver top-tier solar services every day.
           </motion.p>
@@ -103,11 +103,11 @@ export default function AboutValues() {
                     <Icon className="w-6 h-6" />
                   </div>
 
-                  <h3 className="text-2xl font-extrabold text-[#0a1f44] mb-4 group-hover:text-white transition-colors duration-300">
+                  <h3 className="text-2xl md:text-3xl font-serif font-semibold text-[#0a1f44] mb-4 group-hover:text-white transition-colors duration-300">
                     {v.title}
                   </h3>
                   
-                  <p className="text-gray-900 group-hover:text-white text-sm leading-relaxed text-justify group-hover:text-slate-250 transition-colors duration-300">
+                  <p className="text-sm md:text-base leading-relaxed text-justify text-gray-900 group-hover:text-white group-hover:text-slate-250 transition-colors duration-300">
                     {v.desc}
                   </p>
                 </div>

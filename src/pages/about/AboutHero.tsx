@@ -1,8 +1,9 @@
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
-
+import { useQuoteModal } from '../../components/QuoteModal'
 
 export default function AboutHero() {
+  const { openQuoteModal } = useQuoteModal()
   const handleScrollDown = () => {
     const element = document.getElementById('our-story')
     if (element) {
@@ -15,7 +16,7 @@ export default function AboutHero() {
       {/* Static Background Image with Ken Burns zoom entry effect */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <motion.img
-          src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1920&q=80"
+          src="/images/solar/solar-panel-rooftop.jpg"
           alt="Premium Solar Panels Close Up"
           initial={{ scale: 1.1, opacity: 0 }}
           animate={{ scale: 1.02, opacity: 1 }}
@@ -83,12 +84,12 @@ export default function AboutHero() {
               Read Our Story
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
-            <a
-              href="/#contact"
-              className="bg-white/10 hover:bg-white/20 border-2 border-white/30 text-white font-bold px-10 py-2 rounded-full text-base backdrop-blur-sm transition-all duration-300 flex items-center justify-center cursor-pointer"
+            <button
+              onClick={() => openQuoteModal('About Page Hero')}
+              className="bg-white/10 hover:bg-white/20 border-2 border-white/30 text-white font-bold px-10 py-2 rounded-full text-base backdrop-blur-sm transition-all duration-300 flex items-center justify-center cursor-pointer border-none"
             >
               Get a Free Quote
-            </a>
+            </button>
           </motion.div>
         </div>
 

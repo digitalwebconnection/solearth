@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import Lenis from 'lenis'
 import Navbar from './components/Navbar'
@@ -16,12 +16,27 @@ import ResidentialMain from './pages/residential/ResidentialMain'
 import CommercialMain from './pages/commercial/CommercialMain'
 import ServiceMain from './pages/services/ServiceMain'
 import { ToastProvider } from './pages/ui/Toast'
+import Preloader from './components/Preloader'
+import { QuoteModalProvider } from './components/QuoteModal'
+import CookieConsent from './components/CookieConsent'
+import WhatsAppChat from './components/WhatsAppChat'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
 
   useEffect(() => {
-    window.scrollTo(0, 0)
+    // Lenis manages the scroll position — we must call its API directly.
+    // `immediate: true` skips the smooth animation and snaps instantly to top.
+    const lenis = (window as unknown as Record<string, unknown>).lenis as {
+      scrollTo: (target: number, opts: { immediate: boolean }) => void
+    } | undefined
+
+    if (lenis) {
+      lenis.scrollTo(0, { immediate: true })
+    } else {
+      // Fallback for the very first render before Lenis mounts
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
+    }
   }, [pathname])
 
   return null
@@ -55,17 +70,30 @@ function AppContent() {
 }
 
 function App() {
+  // showPreloader controls whether the preloader DOM node is mounted.
+  // showContent controls whether the site content is mounted (always true after first render).
+  // This way the site content loads silently underneath the fixed-position preloader,
+  // eliminating the white flash that occurred when content mounted AFTER the preloader unmounted.
+  const [showPreloader, setShowPreloader] = useState(true)
+  const [showContent, setShowContent] = useState(false)
+
+  const handlePreloaderComplete = () => {
+    // Reveal the site content the moment the preloader starts fading
+    setShowContent(true)
+    // Remove the preloader from the DOM after its CSS fade-out finishes (700ms transition + buffer)
+    setTimeout(() => setShowPreloader(false), 800)
+  }
+
   useEffect(() => {
     const lenis = new Lenis({
-      lerp: 0.04,            // Lower = silkier glide (0.05–0.1 range)
+      lerp: 0.04,
       smoothWheel: true,
-      wheelMultiplier: 1.0,  // Slightly faster wheel to compensate for lower lerp
-      touchMultiplier: 1.5,  // Snappy on mobile touch
+      wheelMultiplier: 1.0,
+      touchMultiplier: 1.5,
       infinite: false,
     })
-    
-    // @ts-ignore
-    window.lenis = lenis
+
+    ;(window as unknown as Record<string, unknown>).lenis = lenis
 
     let raf: number
     const loop = (time: number) => {
@@ -84,7 +112,20 @@ function App() {
     <BrowserRouter>
       <ScrollToTop />
       <ToastProvider>
-        <AppContent />
+        <QuoteModalProvider>
+          {/* App content renders underneath the preloader from the very start */}
+          {showContent && (
+            <>
+              <AppContent />
+              <CookieConsent />
+              <WhatsAppChat />
+            </>
+          )}
+          {/* Preloader is fixed-position, covering all content until its fade-out ends */}
+          {showPreloader && (
+            <Preloader onComplete={handlePreloaderComplete} />
+          )}
+        </QuoteModalProvider>
       </ToastProvider>
     </BrowserRouter>
   )

@@ -59,7 +59,7 @@ export default function BrandPartnersSection() {
             Powered By{' '}
             <span className="text-[#1B74BB]">Leading Solar Brands</span>
           </h2>
-          <p className="text-slate-500 text-sm sm:text-base max-w-2xl mx-auto mt-5 leading-relaxed">
+          <p className="text-slate-900 text-sm sm:text-base max-w-2xl mx-auto mt-5 leading-relaxed">
             We partner with globally trusted manufacturers to deliver reliable solar systems built for
             performance, efficiency, and long-term energy savings.
           </p>
@@ -131,7 +131,7 @@ export default function BrandPartnersSection() {
           transition={{ delay: 0.4 }}
           className="flex flex-col sm:flex-row items-center justify-between gap-4 mt-14 pt-8 border-t border-slate-100"
         >
-          <p className="text-xs text-slate-400 font-medium text-center sm:text-left">
+          <p className="text-xs text-slate-800 font-medium text-center sm:text-left">
             All brands are CEC accredited &amp; certified for Australian residential and commercial installations.
           </p>
           <div className="inline-flex items-center gap-2 bg-emerald-50 border border-emerald-100 text-emerald-700 text-[11px] font-black px-4 py-2 rounded-full whitespace-nowrap uppercase tracking-wider">

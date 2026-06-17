@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Sun, CloudSun, Cloud, TreePine, Sparkles, DollarSign, Percent, Clock, ArrowRight } from 'lucide-react';
 import Counter from '../../components/Counter';
+import { useQuoteModal } from '../../components/QuoteModal';
 
 interface StateData {
   code: string;
@@ -15,6 +16,7 @@ export default function SolarCalculator() {
   const [monthlyBill, setMonthlyBill] = useState<number>(350);
   const [sunHours, setSunHours] = useState<number>(4.5);
   const [batteryCapacity, setBatteryCapacity] = useState<number>(10);
+  const { openQuoteModal } = useQuoteModal();
 
   const statesData: StateData[] = [
     { code: 'QLD', name: 'Queensland', rate: 0.30, fit: 0.08 },
@@ -29,10 +31,10 @@ export default function SolarCalculator() {
   // Mathematical modeling of bill & solar output
   const dailyUsageKwh = monthlyBill / (currentState.rate * 30.4);
   const recommendedSystemSizeKw = Math.min(15, Math.max(3.3, parseFloat(((dailyUsageKwh * 1.25) / sunHours).toFixed(1))));
-  
+
   // Savings Model
-  const selfConsumptionFactor = batteryCapacity > 0 
-    ? Math.min(0.95, 0.65 + (batteryCapacity * 0.025)) 
+  const selfConsumptionFactor = batteryCapacity > 0
+    ? Math.min(0.95, 0.65 + (batteryCapacity * 0.025))
     : 0.35;
 
   const exportFactor = 1 - selfConsumptionFactor;
@@ -51,7 +53,7 @@ export default function SolarCalculator() {
   const federalRebate = recommendedSystemSizeKw * 380;
   const netInvestment = Math.max(2500, systemCost - federalRebate);
   const paybackYears = parseFloat((netInvestment / annualSavings).toFixed(1));
-  
+
   const treesSaved = Math.round(annualSavings * 0.016);
 
   // SVG Circular progress details
@@ -63,9 +65,10 @@ export default function SolarCalculator() {
 
   return (
     <section id="calculator" aria-label="Interactive Solar Savings Calculator" className="py-24 bg-slate-50 relative overflow-hidden">
-      
+
       {/* Inline styles for energy flow stroke-dashoffset animation */}
-      <style dangerouslySetInnerHTML={{__html: `
+      <style dangerouslySetInnerHTML={{
+        __html: `
         @keyframes radialSpin {
           from { transform: rotate(0deg); }
           to { transform: rotate(360deg); }
@@ -80,7 +83,7 @@ export default function SolarCalculator() {
       <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-[#F8C000]/5 rounded-full blur-3xl pointer-events-none glowing-bg-circle" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
         {/* Header section */}
         <div className="text-center max-w-3xl mx-auto mb-20 space-y-4">
           <div className="flex items-center justify-center space-x-2.5">
@@ -88,25 +91,25 @@ export default function SolarCalculator() {
             <span className="text-xs font-bold text-[#1B74BB] uppercase tracking-widest">Interactive Yield Model</span>
             <span className="h-0.5 w-8 bg-[#F8C000] rounded-full" />
           </div>
-          <h2 className="text-4xl md:text-5xl font-black leading-tight text-slate-900 tracking-tight">
+          <h2 className="text-3xl md:text-5xl font-serif font-bold leading-tight text-slate-900 tracking-tight">
             Calculate Your Solar ROI
           </h2>
-          <p className="text-slate-500 text-sm sm:text-base leading-relaxed">
+          <p className="text-sm md:text-base leading-relaxed text-slate-500">
             Enter your exact energy billing details to model system yield, savings speedometers, and solar investment viability in your region.
           </p>
         </div>
 
         {/* Outer grid with entry animation */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start"
         >
-          
+
           {/* Left Column: Input Panel */}
           <div className="lg:col-span-6 space-y-10">
-            
+
             {/* Input 1: State Selection */}
             <div className="space-y-3 text-left">
               <label className="text-xs font-extrabold text-slate-800 uppercase tracking-wider block">Your State / Territory</label>
@@ -115,11 +118,10 @@ export default function SolarCalculator() {
                   <button
                     key={s.code}
                     onClick={() => setSelectedState(s.code)}
-                    className={`px-4 py-2 rounded-xl text-xs font-extrabold transition-all cursor-pointer border ${
-                      selectedState === s.code
+                    className={`px-4 py-2 rounded-xl text-xs font-extrabold transition-all cursor-pointer border ${selectedState === s.code
                         ? 'bg-[#1B74BB] border-transparent text-white shadow-md scale-105'
-                        : 'bg-white border-slate-200 text-slate-600 hover:border-slate-300'
-                    }`}
+                        : 'bg-white border-slate-200 text-slate-800 hover:border-slate-300'
+                      }`}
                   >
                     {s.code}
                   </button>
@@ -137,7 +139,7 @@ export default function SolarCalculator() {
                   <label className="text-xs font-extrabold text-slate-800 uppercase tracking-wider block">Average Monthly Bill</label>
                   <span className="text-xs text-slate-400 font-semibold block mt-0.5">Type or slide your billing amount</span>
                 </div>
-                
+
                 {/* Numeric Input Field */}
                 <div className="relative flex items-center">
                   <span className="absolute left-3 text-slate-400 font-bold text-lg">$</span>
@@ -185,7 +187,7 @@ export default function SolarCalculator() {
                   <label className="text-xs font-extrabold text-slate-800 uppercase tracking-wider block">Home Battery capacity</label>
                   <span className="text-xs text-slate-400 font-semibold block mt-0.5">Increases night energy coverage</span>
                 </div>
-                
+
                 {/* Numeric Input for Battery */}
                 <div className="relative flex items-center">
                   <input
@@ -243,11 +245,10 @@ export default function SolarCalculator() {
                     <button
                       key={option.hours}
                       onClick={() => setSunHours(option.hours)}
-                      className={`flex flex-col items-center justify-center p-4 rounded-2xl border transition-all cursor-pointer text-center ${
-                        isSelected 
-                          ? 'border-[#1B74BB] bg-[#1B74BB]/5 text-[#1B74BB] shadow-sm scale-[1.02]' 
-                          : 'border-slate-200 bg-white text-slate-600 hover:border-slate-350'
-                      }`}
+                      className={`flex flex-col items-center justify-center p-4 rounded-2xl border transition-all cursor-pointer text-center ${isSelected
+                          ? 'border-[#1B74BB] bg-[#1B74BB]/5 text-[#1B74BB] shadow-sm scale-[1.02]'
+                          : 'border-slate-200 bg-white text-slate-800 hover:border-slate-350'
+                        }`}
                     >
                       <IconComponent className={`w-6 h-6 mb-2 ${isSelected ? 'text-[#1B74BB]' : 'text-slate-400'}`} />
                       <span className="text-xs font-extrabold block">{option.label}</span>
@@ -258,13 +259,13 @@ export default function SolarCalculator() {
               </div>
             </div>
 
-     
+
 
           </div>
 
           {/* Right Column: Live Savings Dashboard */}
           <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-10 items-start">
-            
+
             {/* Top Left: Radial Gauge with Orbit Ring */}
             <div className="flex flex-col items-center sm:items-start text-center sm:text-left space-y-3">
               <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest flex items-center gap-1.5">
@@ -277,7 +278,7 @@ export default function SolarCalculator() {
                   transition={{ repeat: Infinity, duration: 10, ease: 'linear' }}
                   className="absolute w-[164px] h-[164px] border border-dashed border-[#1B74BB]/20 rounded-full pointer-events-none"
                 />
-                
+
                 {/* SVG Radial Gauge */}
                 <svg height={radius * 2} width={radius * 2} className="-rotate-90 relative z-10">
                   <circle
@@ -387,7 +388,7 @@ export default function SolarCalculator() {
                   <span className="text-xs font-extrabold text-slate-400 ml-1.5">Trees / yr</span>
                 </div>
               </div>
-              
+
               {/* Dynamic tree count visualizer with staggered spring motion */}
               <div className="flex gap-1 flex-wrap pt-2 min-h-[24px]">
                 {Array.from({ length: Math.min(15, Math.max(2, Math.round(treesSaved / 8))) }).map((_, i) => (
@@ -401,7 +402,7 @@ export default function SolarCalculator() {
                   </motion.div>
                 ))}
                 {treesSaved > 96 && (
-                  <motion.span 
+                  <motion.span
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     className="text-[10px] font-extrabold text-emerald-500 shrink-0 mt-0.5"
@@ -425,14 +426,14 @@ export default function SolarCalculator() {
                   </span>
                 </div>
               </div>
-              
-              <a
-                href="#contact"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-linear-to-r from-[#1B74BB] to-[#28A8E4] text-white font-extrabold text-xs rounded-xl shadow-md hover:shadow-lg transition-all cursor-pointer hover:scale-[1.01]"
+
+              <button
+                onClick={() => openQuoteModal(`Calculator: ${recommendedSystemSizeKw}kW System (${selectedState})`)}
+                className="inline-flex items-center gap-2 px-6 py-3 bg-linear-to-r from-[#1B74BB] to-[#28A8E4] text-white font-extrabold text-xs rounded-xl shadow-md hover:shadow-lg transition-all cursor-pointer hover:scale-[1.01] border-none"
               >
                 <span>Request Custom Blueprint</span>
                 <ArrowRight className="w-4 h-4" />
-              </a>  
+              </button>
             </div>
 
           </div>

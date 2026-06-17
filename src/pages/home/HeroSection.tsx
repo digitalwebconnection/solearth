@@ -1,18 +1,19 @@
 import { useEffect, useState } from 'react'
+import { useQuoteModal } from '../../components/QuoteModal'
 
 const slides = [
   {
-    img: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1600&q=80',
+    img: '/images/solar/solar-panel-rooftop.jpg',
     headline: 'Australia\'s #1 Solar\nInstallation Experts',
     sub: 'Switch to clean energy today and save up to $2,500 on your power bills annually.',
   },
   {
-    img: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80',
+    img: '/images/solar/solar-workers-roof.jpg',
     headline: 'Premium Solar Panels\nAt Unbeatable Prices',
     sub: 'High-efficiency solar systems starting from just $3,499. Government rebates available.',
   },
   {
-    img: 'https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=1600&q=80',
+    img: '/images/solar/solar-sunset-array.jpg',
     headline: 'Power Your Future\nWith Clean Energy',
     sub: 'Join 12,000+ Australian homeowners already saving with SolEarth Energy.',
   },
@@ -33,6 +34,7 @@ export default function HeroSection() {
     return () => clearInterval(timer)
   }, [])
 
+  const { openQuoteModal } = useQuoteModal()
   const slide = slides[current]
 
   return (
@@ -67,7 +69,7 @@ export default function HeroSection() {
 
             {/* Headline */}
             <h1
-              className={`text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6 transition-all duration-500 ${
+              className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6 transition-all duration-500 ${
                 animating ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'
               }`}
               style={{ whiteSpace: 'pre-line' }}
@@ -76,7 +78,7 @@ export default function HeroSection() {
             </h1>
 
             <p
-              className={`text-lg text-gray-200 mb-8 leading-relaxed transition-all duration-500 delay-100 ${
+              className={`text-sm sm:text-base md:text-lg text-gray-200 mb-8 leading-relaxed transition-all duration-500 delay-100 ${
                 animating ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'
               }`}
             >
@@ -91,12 +93,12 @@ export default function HeroSection() {
               >
                 View Solar Packages →
               </a>
-              <a
-                href="#contact"
-                className="bg-white/10 hover:bg-white/20 border-2 border-white/40 text-white font-bold px-8 py-4 rounded-full text-base backdrop-blur-sm transition-all duration-300"
+              <button
+                onClick={() => openQuoteModal('Homepage Hero')}
+                className="bg-white/10 hover:bg-white/20 border-2 border-white/40 text-white font-bold px-8 py-4 rounded-full text-base backdrop-blur-sm transition-all duration-300 cursor-pointer"
               >
                 Get Free Quote
-              </a>
+              </button>
             </div>
 
             {/* Trust badges */}

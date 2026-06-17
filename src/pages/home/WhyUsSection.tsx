@@ -12,19 +12,19 @@ const reasons = [
     title: 'Government Rebates Applied',
     desc: 'We handle all the paperwork so you automatically receive maximum STC government rebates.',
     icon: FileText,
-    image: 'https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=600&q=80'
+    image: '/images/solar/solar-residential-house.jpg'
   },
   {
     title: 'Premium Tier-1 Panels',
     desc: 'We only install Tier-1 bankable solar panels with proven performance and longevity.',
     icon: Zap,
-    image: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=600&q=80'
+    image: '/images/solar/solar-panel-rooftop.jpg'
   },
   {
     title: 'After-Sales Support',
     desc: 'Our dedicated support team is available 7 days a week for monitoring, servicing and advice.',
     icon: Handshake,
-    image: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80'
+    image: '/images/solar/solar-engineer-panel.jpg'
   },
   {
     title: 'Transparent Pricing',
@@ -36,7 +36,7 @@ const reasons = [
     title: 'Local Australian Company',
     desc: 'Proudly Australian-owned and operated with offices in NSW and QLD.',
     icon: Map,
-    image: 'https://images.unsplash.com/photo-1592833159155-c62df1b65634?auto=format&fit=crop&w=600&q=80'
+    image: '/images/solar/solar-aerial-farm.jpg'
   }
 ];
 
@@ -52,10 +52,10 @@ export default function WhyUsSection() {
             <span className="text-xs font-bold text-[#1B74BB] uppercase tracking-widest">Our Advantage</span>
             <span className="h-0.5 w-8 bg-[#F8C000] rounded-full" />
           </div>
-          <h2 className="text-4xl md:text-5xl font-black leading-tight text-[#0a1f44] tracking-tight">
+          <h2 className="text-3xl md:text-5xl font-serif font-bold leading-tight text-[#0a1f44] tracking-tight">
             Why Australians Choose SolEarth
           </h2>
-          <p className="text-slate-900 max-w-7xl mx-auto text-sm sm:text-base">
+          <p className="text-sm md:text-base leading-relaxed text-slate-900 max-w-7xl mx-auto">
             We're committed to making your switch to solar seamless, affordable, and rewarding for decades to come.
           </p>
         </div>
@@ -83,9 +83,9 @@ export default function WhyUsSection() {
                   <div className="absolute bottom-0 left-0 right-0 p-6 bg-linear-to-t from-slate-950/90 via-slate-950/40 to-transparent text-left z-20">
                     <div className="flex items-center gap-3">
                       <span className="p-2 bg-white/10 rounded-xl backdrop-blur-xs text-[#F8C000] filter drop-shadow-md">
-                        <r.icon className="w-6 h-6 stroke-[2]" />
+                        <r.icon className="w-6 h-6 stroke-2" />
                       </span>
-                      <h3 className="font-extrabold text-white text-base md:text-lg tracking-tight filter drop-shadow-md">
+                      <h3 className="text-2xl md:text-3xl font-serif font-semibold text-white tracking-tight filter drop-shadow-md">
                         {r.title}
                       </h3>
                     </div>
@@ -104,10 +104,10 @@ export default function WhyUsSection() {
                       </span>
                       <span className="h-1.5 w-6 bg-[#F8C000] rounded-full animate-pulse" />
                     </div>
-                    <h3 className="font-black text-white text-base md:text-lg tracking-tight mb-2">
+                    <h3 className="text-2xl md:text-3xl font-serif font-semibold text-white tracking-tight mb-2">
                       {r.title}
                     </h3>
-                    <p className="text-slate-300 text-xs md:text-sm leading-relaxed font-medium">
+                    <p className="text-sm md:text-base leading-relaxed text-slate-300">
                       {r.desc}
                     </p>
                   </div>

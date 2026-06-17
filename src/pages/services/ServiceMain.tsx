@@ -3,6 +3,8 @@ import { SERVICES_PAGES_DATA } from '../../data/servicesData'
 import ServiceHero from './sections/ServiceHero'
 import ServiceContent from './sections/ServiceContent'
 import ServiceDifference from './sections/ServiceDifference'
+import ServiceProcess from './sections/ServiceProcess'
+
 
 export default function ServiceMain() {
   const { slug } = useParams<{ slug: string }>()
@@ -19,6 +21,7 @@ export default function ServiceMain() {
       <ServiceHero
         title={pageData.title}
         heroSubtitle={pageData.heroSubtitle}
+        heroImage={pageData.heroImage}
       />
       <ServiceContent
         introTitle={pageData.introTitle}
@@ -28,6 +31,10 @@ export default function ServiceMain() {
       <ServiceDifference
         difference={pageData.difference}
       />
+      <ServiceProcess
+        processSteps={pageData.processSteps}
+      />
+  
     </div>
   )
 }

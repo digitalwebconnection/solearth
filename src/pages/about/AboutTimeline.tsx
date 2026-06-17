@@ -101,7 +101,7 @@ export default function AboutTimeline() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0a1f44] mb-4"
+            className="text-3xl md:text-5xl font-serif font-bold text-[#0a1f44] mb-4"
           >
             Our Journey So Far
           </motion.h2>
@@ -110,7 +110,7 @@ export default function AboutTimeline() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-gray-900 text-lg leading-relaxed"
+            className="text-sm md:text-base leading-relaxed text-gray-900"
           >
             A look back at how we built one of Australia\'s leading solar installation networks.
           </motion.p>
@@ -183,7 +183,7 @@ export default function AboutTimeline() {
                       </div>
                     </div>
 
-                    <h3 className="text-2xl font-extrabold text-[#0a1f44] mb-3 group-hover:text-[#28A8E0] transition-colors duration-300 relative z-10">
+                    <h3 className="text-2xl md:text-3xl font-serif font-semibold text-[#0a1f44] mb-3 group-hover:text-[#28A8E0] transition-colors duration-300 relative z-10">
                       {event.title}
                     </h3>
                     

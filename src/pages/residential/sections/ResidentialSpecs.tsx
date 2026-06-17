@@ -67,32 +67,30 @@ export default function ResidentialSpecs({
     },
   ]
 
-  const featuredSolarPanelImage = details.panels.image || "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&q=80&w=1200"
+  const featuredSolarPanelImage = details.panels.image || "/images/solar/solar-panel-rooftop.jpg"
 
   return (
-    <section className="py-24 bg-slate-50 text-slate-800 relative overflow-hidden">
+    <section className="py-10 bg-slate-50 text-slate-800 relative overflow-hidden">
       {/* Soft background light spots */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#004093]/5 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2  bg-[#004093]/5  pointer-events-none"></div>
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10 space-y-16">
+      <div className="max-w-7xl mx-auto px-6 relative z-10 space-y-10">
 
         {/* Header Block */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
           <div className="lg:col-span-8 space-y-4">
-            <span className="text-[11px] text-[#FE9900] font-black uppercase tracking-widest block">
-              Residential Technology Stack
-            </span>
-            <h2 className="text-3xl md:text-5xl font-black font-serif text-[#004093] leading-tight">
+
+            <h2 className="text-3xl md:text-5xl font-serif font-bold text-[#004093] leading-tight">
               {introTitle}
             </h2>
-            <p className="text-sm md:text-base font-semibold text-slate-500 leading-relaxed max-w-3xl">
+            <p className="text-sm md:text-base leading-relaxed text-slate-900 max-w-3xl">
               {introDesc}
             </p>
           </div>
 
           {/* Savings & Yield Highlight */}
           <div className="lg:col-span-4 flex lg:justify-end">
-            <div className="bg-[#004093] text-white px-8 py-5 rounded-2xl flex items-center justify-between shadow-xl shadow-[#004093]/10 w-full lg:max-w-xs border border-white/10">
+            <div className="bg-[#004093] text-white px-5 py-5 rounded-lg flex items-center justify-between shadow-xl shadow-[#004093]/10 w-full lg:max-w-xs border border-white/10">
               <div className="space-y-0.5">
                 <span className="block text-[9px] font-black uppercase tracking-widest text-[#FE9900]">
                   Target Yield
@@ -111,14 +109,14 @@ export default function ResidentialSpecs({
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="relative rounded-3xl overflow-hidden shadow-2xl border border-slate-200/80 group h-[300px] md:h-[450px]"
+          className="relative rounded-lg overflow-hidden shadow-2xl border border-slate-200/80 group h-[300px] md:h-[450px]"
         >
           <img
             src={featuredSolarPanelImage}
             alt="Solar Panel System Panoramic View"
-            className="w-full h-full object-cover transition-transform duration-[6000ms] ease-out group-hover:scale-105"
+            className="w-full h-full object-cover transition-transform duration-6000 ease-out group-hover:scale-105"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
+          <div className="absolute inset-0 bg-linear-to-t from-slate-950/70 via-transparent to-transparent"></div>
 
           {/* Badge & Caption overlays */}
           <div className="absolute bottom-6 left-6 right-6 flex flex-col md:flex-row md:items-end justify-between gap-4 text-white">
@@ -126,7 +124,7 @@ export default function ResidentialSpecs({
               <span className="text-[10px] uppercase font-black tracking-widest text-[#FE9900] block">
                 SolEarth Installation
               </span>
-              <h3 className="text-xl md:text-2xl font-black font-serif">
+              <h3 className="text-2xl md:text-3xl font-serif font-semibold">
                 Clean Energy Council Accredited Standard
               </h3>
               <p className="text-xs text-slate-200 font-medium max-w-2xl">
@@ -149,10 +147,10 @@ export default function ResidentialSpecs({
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className={`bg-white rounded-2xl p-6 border ${item.borderClass} shadow-lg shadow-black/[0.02] hover:shadow-xl transition-all duration-500 relative overflow-hidden group flex flex-col justify-between min-h-[350px] ${item.glowClass}`}
+              className={`bg-white rounded-lg p-6 border ${item.borderClass} shadow-lg shadow-black  hover:shadow-xl transition-all duration-500 relative overflow-hidden group flex flex-col justify-between min-h-[350px] ${item.glowClass}`}
             >
               {/* Color Box Animation on hover (slides up from bottom behind content) */}
-              <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${item.colorClass} group-hover:h-full transition-all duration-500 ease-out z-0 opacity-0 group-hover:opacity-100`}></div>
+              <div className={`absolute bottom-0 left-0 right-0 h-1 bg-linear-to-r ${item.colorClass} group-hover:h-full transition-all duration-500 ease-out z-0 opacity-0 group-hover:opacity-100`}></div>
 
               <div className="space-y-5 relative z-10 transition-colors duration-500 group-hover:text-white">
                 {/* Header row: Icon box and tag */}
@@ -170,10 +168,10 @@ export default function ResidentialSpecs({
                   <span className="text-[9px] font-black uppercase tracking-wider text-[#FE9900] group-hover:text-amber-200 transition-colors">
                     {item.label}
                   </span>
-                  <h4 className="text-base font-black text-[#004093] group-hover:text-white transition-colors">
+                  <h4 className="text-2xl md:text-3xl font-serif font-semibold text-[#004093] group-hover:text-white transition-colors">
                     {item.data.title}
                   </h4>
-                  <p className="text-xs leading-relaxed text-slate-500 group-hover:text-slate-100 transition-colors font-semibold">
+                  <p className="text-sm md:text-base leading-relaxed text-slate-500 group-hover:text-slate-100 transition-colors font-semibold">
                     {item.data.desc}
                   </p>
                 </div>
@@ -182,7 +180,7 @@ export default function ResidentialSpecs({
               {/* Bullet Points */}
               <ul className="space-y-2 pt-4 border-t border-slate-100 group-hover:border-white/10 relative z-10 transition-colors duration-500 mt-6">
                 {item.data.points.map((pt, ptIdx) => (
-                  <li key={ptIdx} className="flex items-center gap-2 text-xs font-semibold text-slate-600 group-hover:text-slate-100 transition-colors">
+                  <li key={ptIdx} className="flex items-center gap-2 text-xs font-semibold text-slate-800 group-hover:text-slate-100 transition-colors">
                     <ShieldCheck className="w-4 h-4 text-emerald-500 shrink-0 group-hover:text-white" />
                     <span>{pt}</span>
                   </li>
@@ -193,8 +191,8 @@ export default function ResidentialSpecs({
         </div>
 
         {/* Bottom Helper Warning & Call back triggers */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-4">
-          <div className="lg:col-span-8 bg-white p-6 rounded-2xl border border-slate-200/60 shadow-lg shadow-black/5 flex items-center gap-4">
+        <div className="grid grid-cols-1 lg:grid-cols-12  ">
+          <div className="lg:col-span-8 bg-white p-6 rounded-l-lg shadow-black border border-slate-400/60 shadow-lg flex items-center gap-4">
             <div className="w-12 h-12 rounded-full bg-red-50 text-red-500 flex items-center justify-center shrink-0">
               <ShieldAlert className="w-6 h-6" />
             </div>
@@ -206,16 +204,16 @@ export default function ResidentialSpecs({
             </div>
           </div>
 
-          <div className="lg:col-span-4 bg-gradient-to-br from-[#FE9900] to-[#E28000] text-white p-6 rounded-2xl shadow-xl flex items-center justify-between gap-4">
+          <div className="lg:col-span-4 bg-linear-to-br from-[#FE9900] to-[#E28000] text-white p-6 rounded-r-lg shadow-lg shadow-black flex items-center justify-between gap-4">
             <div className="space-y-1">
               <h5 className="text-xs font-black">Need Technical Support?</h5>
               <p className="text-[10px] text-slate-100/90 font-medium">Chat directly with a certified CEC engineer</p>
             </div>
             <a
-              href="tel:1300111111"
-              className="bg-white text-[#E28000] hover:bg-[#004093] hover:text-white text-xs font-black uppercase tracking-wider py-2.5 px-4 rounded-xl transition shadow-md shrink-0"
+              href="tel:1300672194"
+              className="bg-white text-[#E28000] hover:bg-[#004093] hover:text-white text-xs font-black uppercase tracking-wider py-2.5 px-4 rounded-lg transition shadow-md shadow-black shrink-0"
             >
-              Call 1300
+              Call 1300 672 194
             </a>
           </div>
         </div>

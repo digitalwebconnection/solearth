@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { ChevronDown, Sparkles } from "lucide-react";
 import type { ProductData } from "../../data/products";
+import { useQuoteModal } from "../../components/QuoteModal";
 
 interface ProductFAQProps {
   product: ProductData;
 }
 
 export const ProductFAQ: React.FC<ProductFAQProps> = ({ product }) => {
+  const { openQuoteModal } = useQuoteModal();
   const panelFAQs = [
     {
       q: `What is the efficiency of ${product.brand} Solar Panels?`,
@@ -80,12 +82,12 @@ export const ProductFAQ: React.FC<ProductFAQProps> = ({ product }) => {
   return (
     <section className="relative overflow-hidden bg-white py-16 md:py-0 border-t border-slate-100">
       <div className="mx-auto max-w-7xl px-6 relative">
-        
+
         {/* Ambient background glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#FE9900]/3 rounded-full blur-3xl pointer-events-none" />
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start relative z-10">
-          
+
           {/* LEFT COLUMN: STICKY HEADER & HELP WIDGET */}
           <div className="lg:col-span-4 lg:sticky lg:top-28 space-y-6">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#004093]/5 rounded-full border border-[#004093]/10 text-[10px] font-black uppercase tracking-wider text-[#004093]">
@@ -97,7 +99,7 @@ export const ProductFAQ: React.FC<ProductFAQProps> = ({ product }) => {
               Frequently Asked Questions
             </h2>
 
-            <p className="text-slate-600 text-sm md:text-base leading-relaxed font-medium">
+            <p className="text-slate-800 text-sm md:text-base leading-relaxed font-medium">
               Everything you need to know about installation, warranty, performance, compatibility, and product support.
             </p>
 
@@ -108,12 +110,12 @@ export const ProductFAQ: React.FC<ProductFAQProps> = ({ product }) => {
               <p className="text-slate-500 text-xs font-semibold leading-relaxed">
                 Speak directly with our Sydney-based engineers to get a customized solar assessment for your property.
               </p>
-              <a 
-                href="#contact" 
-                className="inline-flex items-center justify-center bg-[#FE9900] hover:bg-[#e08600] text-white py-3.5 px-6 rounded-xl text-xs font-black uppercase tracking-wider transition-colors duration-200 w-full text-center shadow-xs"
+              <button
+                onClick={() => openQuoteModal(`FAQ Support: ${product.brand} ${product.category}`)}
+                className="inline-flex items-center justify-center bg-[#FE9900] hover:bg-[#e08600] text-white py-3.5 px-6 rounded-xl text-xs font-black uppercase tracking-wider transition-colors duration-200 w-full text-center shadow-xs cursor-pointer border-none"
               >
                 Contact Support
-              </a>
+              </button>
             </div>
           </div>
 
@@ -121,42 +123,39 @@ export const ProductFAQ: React.FC<ProductFAQProps> = ({ product }) => {
           <div className="lg:col-span-8 divide-y divide-slate-100">
             {faqs.map((faq, idx) => {
               const isOpen = openIdx === idx;
-              
+
               return (
                 <div key={idx} className="py-5 first:pt-0 last:pb-0">
                   <button
                     onClick={() => toggleFAQ(idx)}
                     className="w-full flex items-center justify-between gap-6 py-4 text-left cursor-pointer group"
                   >
-                    <span className={`text-base md:text-lg font-black transition-colors duration-200 leading-snug ${
-                      isOpen ? "text-[#FE9900]" : "text-[#004093] group-hover:text-[#FE9900]"
-                    }`}>
+                    <span className={`text-base md:text-lg font-black transition-colors duration-200 leading-snug ${isOpen ? "text-[#FE9900]" : "text-[#004093] group-hover:text-[#FE9900]"
+                      }`}>
                       {faq.q}
                     </span>
-                    
-                    <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 ${
-                      isOpen 
-                        ? "bg-[#004093] text-white rotate-180" 
+
+                    <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 ${isOpen
+                        ? "bg-[#004093] text-white rotate-180"
                         : "bg-slate-50 text-slate-400 group-hover:bg-[#004093] group-hover:text-white"
-                    }`}>
+                      }`}>
                       <ChevronDown size={14} className="transition-transform duration-300" />
                     </div>
                   </button>
 
                   {/* Expandable Panel */}
                   <div
-                    className={`grid transition-all duration-300 ease-in-out overflow-hidden ${
-                      isOpen 
-                        ? "grid-rows-[1fr] opacity-100 mt-2" 
+                    className={`grid transition-all duration-300 ease-in-out overflow-hidden ${isOpen
+                        ? "grid-rows-[1fr] opacity-100 mt-2"
                         : "grid-rows-[0fr] opacity-0"
-                    }`}
+                      }`}
                   >
                     <div className="overflow-hidden">
                       <div className="pb-4 pr-10 space-y-4">
-                        <p className="text-slate-600 text-sm md:text-base font-semibold leading-relaxed">
+                        <p className="text-slate-800 text-sm md:text-base font-semibold leading-relaxed">
                           {faq.a}
                         </p>
-                        
+
                         <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#FE9900]/10 rounded-full border border-[#FE9900]/50 text-[9px] font-black uppercase tracking-wider text-[#004093]">
                           <Sparkles size={8} className="text-[#FE9900]" />
                           Solar Expert Answer

@@ -2,6 +2,8 @@ import { useParams, Navigate } from 'react-router-dom'
 import { COMMERCIAL_PAGES_DATA } from '../../data/commercialData'
 import CommercialHero from './sections/CommercialHero'
 import CommercialSpecs from './sections/CommercialSpecs'
+import CommercialProcess from './sections/CommercialProcess'
+import CommercialROICalculator from './sections/CommercialROICalculator'
 import CommercialFAQ from './sections/CommercialFAQ'
 
 export default function CommercialMain() {
@@ -25,9 +27,19 @@ export default function CommercialMain() {
         savings={pageData.savings}
         introTitle={pageData.introTitle}
         introDesc={pageData.introDesc}
+        specsTabConfig={pageData.specsTabConfig}
         details={pageData.details}
       />
-      <CommercialFAQ />
+      <CommercialProcess
+        processSteps={pageData.processSteps}
+        systemSize={pageData.title}
+      />
+      <CommercialROICalculator
+        comparisonColumns={pageData.comparisonColumns}
+        comparisonRows={pageData.comparisonRows}
+      />
+
+      <CommercialFAQ trustSection={pageData.trustSection} />
     </div>
   )
 }

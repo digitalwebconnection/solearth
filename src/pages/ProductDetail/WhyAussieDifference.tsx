@@ -45,7 +45,7 @@ export const WhyAussieDifference: React.FC = () => {
   return (
     <section className="py-10 md:py-10 bg-white border-t border-slate-100 overflow-hidden">
       <div className="mx-auto max-w-7xl px-6 relative">
-        
+
         {/* Soft decorative background blurs */}
         <div className="absolute top-1/4 left-1/4 w-[400px] h-[400px] bg-[#004093]/3 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-[#FE9900]/3 rounded-full blur-3xl pointer-events-none" />
@@ -56,33 +56,32 @@ export const WhyAussieDifference: React.FC = () => {
             <Sparkles size={10} className="text-[#004093]" />
             Solearth Difference
           </span>
-          
+
           <h2 className="text-3xl md:text-5xl font-black text-[#004093] leading-tight tracking-tight">
             Why More Australians Trust Us?
           </h2>
-          
-          <p className="text-slate-600 text-sm md:text-base leading-relaxed font-medium">
+
+          <p className="text-slate-800 text-sm md:text-base leading-relaxed font-medium">
             Hover or click over our engineering advantages, compliance standards, and support networks below.
           </p>
         </div>
 
         {/* Double Accordion Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-start relative z-10">
-          
+
           {/* COLUMN 1: LEFT ACCORDION */}
           <div className="space-y-4">
             {leftBenefits.map((benefit, idx) => {
               const IconComp = benefit.icon;
               const isOpen = openLeft === idx;
-              
+
               return (
-                <div 
+                <div
                   key={idx}
-                  className={`border rounded-2xl transition-all duration-300 ${
-                    isOpen 
-                      ? "bg-slate-50/50 border-[#004093]/20 shadow-xs" 
+                  className={`border rounded-2xl transition-all duration-300 ${isOpen
+                      ? "bg-slate-50/50 border-[#004093]/20 shadow-xs"
                       : "bg-white border-slate-400/60 hover:border-slate-300"
-                  }`}
+                    }`}
                   onMouseEnter={() => setOpenLeft(idx)}
                 >
                   <button
@@ -90,20 +89,18 @@ export const WhyAussieDifference: React.FC = () => {
                     className="w-full text-left p-5 flex items-center justify-between gap-4 cursor-pointer"
                   >
                     <div className="flex items-center gap-4">
-                      <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-colors duration-300 ${
-                        isOpen ? "bg-[#004093] text-white" : "bg-[#004093]/5 text-[#004093]"
-                      }`}>
+                      <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-colors duration-300 ${isOpen ? "bg-[#004093] text-white" : "bg-[#004093]/5 text-[#004093]"
+                        }`}>
                         <IconComp size={18} />
                       </div>
-                      
+
                       <span className="text-sm md:text-base font-black text-[#004093] leading-none">
                         {benefit.title}
                       </span>
                     </div>
 
-                    <div className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 transition-colors duration-300 ${
-                      isOpen ? "bg-white border border-slate-200 text-[#004093]" : "bg-slate-50 text-slate-400"
-                    }`}>
+                    <div className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 transition-colors duration-300 ${isOpen ? "bg-white border border-slate-200 text-[#004093]" : "bg-slate-50 text-slate-400"
+                      }`}>
                       {isOpen ? <Minus size={14} /> : <Plus size={14} />}
                     </div>
                   </button>
@@ -118,7 +115,7 @@ export const WhyAussieDifference: React.FC = () => {
                         className="overflow-hidden"
                       >
                         <div className="px-5 pb-5 pl-[60px]">
-                          <p className="text-slate-600 text-xs md:text-sm font-semibold leading-relaxed">
+                          <p className="text-slate-800 text-xs md:text-sm font-semibold leading-relaxed">
                             {benefit.desc}
                           </p>
                         </div>
@@ -135,15 +132,14 @@ export const WhyAussieDifference: React.FC = () => {
             {rightBenefits.map((benefit, idx) => {
               const IconComp = benefit.icon;
               const isOpen = openRight === idx;
-              
+
               return (
-                <div 
+                <div
                   key={idx}
-                  className={`border rounded-2xl transition-all duration-300 ${
-                    isOpen 
-                      ? "bg-slate-50/50 border-[#004093]/20 shadow-xs" 
+                  className={`border rounded-2xl transition-all duration-300 ${isOpen
+                      ? "bg-slate-50/50 border-[#004093]/20 shadow-xs"
                       : "bg-white border-slate-400/60 hover:border-slate-300"
-                  }`}
+                    }`}
                   onMouseEnter={() => setOpenRight(idx)}
                 >
                   <button
@@ -151,20 +147,18 @@ export const WhyAussieDifference: React.FC = () => {
                     className="w-full text-left p-5 flex items-center justify-between gap-4 cursor-pointer"
                   >
                     <div className="flex items-center gap-4">
-                      <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-colors duration-300 ${
-                        isOpen ? "bg-[#004093] text-white" : "bg-[#004093]/5 text-[#004093]"
-                      }`}>
+                      <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-colors duration-300 ${isOpen ? "bg-[#004093] text-white" : "bg-[#004093]/5 text-[#004093]"
+                        }`}>
                         <IconComp size={18} />
                       </div>
-                      
+
                       <span className="text-sm md:text-base font-black text-[#004093] leading-none">
                         {benefit.title}
                       </span>
                     </div>
 
-                    <div className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 transition-colors duration-300 ${
-                      isOpen ? "bg-white border border-slate-200 text-[#004093]" : "bg-slate-50 text-slate-400"
-                    }`}>
+                    <div className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 transition-colors duration-300 ${isOpen ? "bg-white border border-slate-200 text-[#004093]" : "bg-slate-50 text-slate-400"
+                      }`}>
                       {isOpen ? <Minus size={14} /> : <Plus size={14} />}
                     </div>
                   </button>
@@ -179,7 +173,7 @@ export const WhyAussieDifference: React.FC = () => {
                         className="overflow-hidden"
                       >
                         <div className="px-5 pb-5 pl-[60px]">
-                          <p className="text-slate-600 text-xs md:text-sm font-semibold leading-relaxed">
+                          <p className="text-slate-800 text-xs md:text-sm font-semibold leading-relaxed">
                             {benefit.desc}
                           </p>
                         </div>

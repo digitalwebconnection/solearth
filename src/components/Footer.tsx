@@ -25,8 +25,8 @@ const OFFICES = [
 
 export default function Footer() {
   return (
-    <footer className="bg-white text-slate-600 border-t border-slate-200 mt-auto pt-16">
-      
+    <footer className="bg-white text-slate-800 font-serif border-t border-slate-200 mt-auto pt-16">
+
       {/* ── Main Footer Grid ── */}
       <div className="max-w-7xl mx-auto px-6 lg:px-0 pb-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
@@ -44,7 +44,7 @@ export default function Footer() {
             <p className="text-slate-500 text-xs md:text-sm font-semibold leading-relaxed">
               Australia's trusted partner in renewable energy. We deliver high-efficiency solar panel integration and premium battery backup systems across NSW & QLD.
             </p>
- 
+
           </div>
 
           {/* Column 2: Quick Links */}
@@ -82,7 +82,7 @@ export default function Footer() {
                 <div>
                   <h5 className="text-slate-400 text-[10px] font-black uppercase tracking-wider">Call Hotline</h5>
                   <a href="tel:1300672194" className="text-slate-800 text-xs md:text-sm font-black hover:text-[#004093] transition">
-                    1300 111 111  
+                    1300 672 194
                   </a>
                 </div>
               </li>
@@ -142,9 +142,9 @@ export default function Footer() {
       <div className="border-t border-slate-200 bg-[#fafbfe]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-4">
-            <img 
-              src="https://aussiesunsolar.com.au/assets/sec-logo-D0BGLpHg.svg" 
-              alt="Smart Energy Council Logo" 
+            <img
+              src="https://aussiesunsolar.com.au/assets/sec-logo-D0BGLpHg.svg"
+              alt="Smart Energy Council Logo"
               className="h-9 w-auto object-contain opacity-85 hover:opacity-100 transition"
             />
           </div>
@@ -160,12 +160,12 @@ export default function Footer() {
       <div className="border-t border-slate-200 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 py-5 flex flex-wrap items-center justify-between gap-4">
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
-            <Link to="/privacy-policy" className="text-slate-400 text-xs hover:text-[#004093] font-semibold transition-colors">Privacy Policy</Link>
-            <Link to="/terms-conditions" className="text-slate-400 text-xs hover:text-[#004093] font-semibold transition-colors">Terms & Conditions</Link>
-            <Link to="/complaints-policy" className="text-slate-400 text-xs hover:text-[#004093] font-semibold transition-colors">Complaints Policy</Link>
+            <Link to="/privacy-policy" className="text-slate-800 text-xs hover:text-[#004093] font-semibold transition-colors">Privacy Policy</Link>
+            <Link to="/terms-conditions" className="text-slate-800 text-xs hover:text-[#004093] font-semibold transition-colors">Terms & Conditions</Link>
+            <Link to="/complaints-policy" className="text-slate-800 text-xs hover:text-[#004093] font-semibold transition-colors">Complaints Policy</Link>
           </div>
           <p className="text-slate-400 text-xs font-semibold">
-            ©2026 <strong className="text-slate-600">SOLEARTH ENERGY PTY LTD</strong> ABN 11 111 111 111
+            ©2026 <strong className="text-slate-800">SOLEARTH ENERGY PTY LTD</strong> ABN 11 111 111 111
           </p>
         </div>
       </div>
@@ -173,11 +173,11 @@ export default function Footer() {
       {/* ── Disclaimer Bar ── */}
       <div className="bg-[#fafbfe] border-t border-slate-200/60">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 py-5 flex flex-col md:flex-row md:items-end justify-between gap-6">
-          <p className="text-[10px] text-slate-400 leading-relaxed max-w-4xl font-semibold">
-            <span className="text-slate-500 font-bold">Disclaimer:</span> This Solar Promotion is valid for standard metro grid-connected installations only. Pricing accounts for Small Scale Technology Certificates (STCs) assigned directly to SolEarth Energy or its partners. Custom layout factors (double-storey, tile/tin roofs, power phases, or switchboard upgrades) may incur charges. Price match guarantees apply to CEC certified quotes for identical hardware.
+          <p className="text-[10px] text-slate-800 leading-relaxed max-w-4xl font-semibold">
+            <span className="text-slate-900 font-bold">Disclaimer:</span> This Solar Promotion is valid for standard metro grid-connected installations only. Pricing accounts for Small Scale Technology Certificates (STCs) assigned directly to SolEarth Energy or its partners. Custom layout factors (double-storey, tile/tin roofs, power phases, or switchboard upgrades) may incur charges. Price match guarantees apply to CEC certified quotes for identical hardware.
           </p>
           <div className="flex flex-col items-end gap-1.5 shrink-0 text-right">
-            <p className="text-[10px] text-slate-500 font-semibold italic">*Terms & conditions apply.</p>
+            <p className="text-[10px] text-slate-900 font-semibold italic">*Terms & conditions apply.</p>
             <p className="text-[10px] text-slate-400 font-semibold">
               Developed by{' '}
               <a href="#" className="text-[#004093] hover:underline font-bold">Digital Web Connection</a>

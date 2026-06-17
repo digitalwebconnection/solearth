@@ -92,7 +92,7 @@ export const RESIDENTIAL_PAGES_DATA: Record<string, ResidentialData> = {
     heroBannerSub: "Complete system from just $3,990* fully installed",
     introTitle: "Powering Small Australian Homes Efficiently",
     introDesc: "Our 6.6kW solar system is the most popular residential choice across NSW & QLD. It strikes the perfect balance between upfront affordability and maximum household offset, providing clean energy to run standard appliances throughout the day.",
-    backgroundImage: "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&q=80&w=1600",
+    backgroundImage: "/images/solar/solar-panel-rooftop.jpg",
     timeline: DEFAULT_SOLAR_TIMELINE,
     details: {
       panels: {
@@ -100,28 +100,28 @@ export const RESIDENTIAL_PAGES_DATA: Record<string, ResidentialData> = {
         spec: "15 x Premium Modules",
         desc: "High-efficiency monocrystalline solar panels with exceptional low-light performance.",
         points: ["25-Year Product Warranty", "21.8% Module Efficiency", "Salt-mist & Ammonia resistant"],
-        image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&q=80&w=600"
+        image: "/images/solar/solar-panel-rooftop.jpg"
       },
       inverter: {
         title: "Smart Solar Inverter",
         spec: "5kW Single-Phase",
         desc: "Intelligent string inverter with built-in Wi-Fi monitoring and smart export control features.",
         points: ["10-Year Local Warranty", "98.4% Peak Efficiency", "IP66 Protection rating"],
-        image: "https://images.unsplash.com/photo-1620038614049-9d97a5f9c996?auto=format&fit=crop&q=80&w=600"
+        image: "/images/solar/solar-inverter-tech.jpg"
       },
       battery: {
         title: "Battery Ready System",
         spec: "Hybrid Inverter Upgrade",
         desc: "Ready to pair with lead-storage or lithium-ion systems for complete overnight power backup.",
         points: ["Seamless plug-and-play storage", "Backup power routing capability", "VPP (Virtual Power Plant) ready"],
-        image: "https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?auto=format&fit=crop&q=80&w=600"
+        image: "/images/solar/solar-inverter-tech.jpg"
       },
       installation: {
         title: "Premium Installation",
         spec: "CEC Certified Engineers",
         desc: "Professional site survey, wind-rated roof racking, and lifetime workmanship warranty protection.",
         points: ["10-Year Workmanship Warranty", "Clean Energy Council Approved", "Safety switch integration"],
-        image: "https://images.unsplash.com/photo-1542332213-9b5a5a3f3c5b?auto=format&fit=crop&q=80&w=600"
+        image: "/images/solar/solar-installation-crew.jpg"
       }
     }
   },
@@ -133,7 +133,7 @@ export const RESIDENTIAL_PAGES_DATA: Record<string, ResidentialData> = {
     heroBannerSub: "Optimized dual-tracker layout from $5,490* installed",
     introTitle: "Maximize Efficiency & Protect Against Rising Tariffs",
     introDesc: "For households running ducted air conditioning, pool pumps, and multiple computer setups, the 10.3kW package delivers substantial daily solar output. Designed to capture early morning and late afternoon sun via multi-string arrays.",
-    backgroundImage: "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&q=80&w=1600",
+    backgroundImage: "/images/solar/solar-residential-house.jpg",
     timeline: DEFAULT_SOLAR_TIMELINE,
     details: {
       panels: {
@@ -141,28 +141,28 @@ export const RESIDENTIAL_PAGES_DATA: Record<string, ResidentialData> = {
         spec: "23 x Premium Modules",
         desc: "Premium dual-glass solar panels offering enhanced mechanical load stability and PID resistance.",
         points: ["25-Year Product Warranty", "22.2% Module Efficiency", "Anti-soiling surface coating"],
-        image: "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&q=80&w=600"
+        image: "/images/solar/solar-residential-house.jpg"
       },
       inverter: {
         title: "Smart Solar Inverter",
         spec: "8.2kW Smart Inverter",
         desc: "Dual-MPPT tracker inverter designed to handle shadow casting and split roof layouts.",
         points: ["10-Year Local Warranty", "98.6% Peak Efficiency", "Real-time app notifications"],
-        image: "https://images.unsplash.com/photo-1620038614049-9d97a5f9c996?auto=format&fit=crop&q=80&w=600"
+        image: "/images/solar/solar-inverter-tech.jpg"
       },
       battery: {
         title: "Battery Storage System",
         spec: "Optional 5kWh - 10kWh",
         desc: "Easily expandable storage to keep your critical circuits active during blackout conditions.",
         points: ["Lithium Iron Phosphate (LFP)", "6000+ cycle life", "Zero-maintenance cell structure"],
-        image: "https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?auto=format&fit=crop&q=80&w=600"
+        image: "/images/solar/solar-inverter-tech.jpg"
       },
       installation: {
         title: "Premium Installation",
         spec: "CEC Certified Engineers",
         desc: "High-quality switchboard cabling, heavy-duty DC isolators, and complete utility connection filing.",
         points: ["10-Year Workmanship Warranty", "Smart meter verification", "Local utility application handled"],
-        image: "https://images.unsplash.com/photo-1542332213-9b5a5a3f3c5b?auto=format&fit=crop&q=80&w=600"
+        image: "/images/solar/solar-installation-crew.jpg"
       }
     }
   },
@@ -174,7 +174,7 @@ export const RESIDENTIAL_PAGES_DATA: Record<string, ResidentialData> = {
     heroBannerSub: "High capacity system with hybrid configuration options",
     introTitle: "Unparalleled Solar Harvest for Heavy Energy Users",
     introDesc: "Maximize your roof space with a high-capacity 13.2kW system. Ideal for homeowners aiming for complete net-zero emissions, electric vehicle charging, or large-scale multi-zone heating and cooling.",
-    backgroundImage: "https://images.unsplash.com/photo-1613665813446-82a78c468a1d?auto=format&fit=crop&q=80&w=1600",
+    backgroundImage: "/images/solar/solar-hero-wide.jpg",
     timeline: DEFAULT_SOLAR_TIMELINE,
     details: {
       panels: {
@@ -182,28 +182,28 @@ export const RESIDENTIAL_PAGES_DATA: Record<string, ResidentialData> = {
         spec: "30 x Premium Modules",
         desc: "Premium all-black aesthetic modules with advanced N-Type cell structures for premium longevity.",
         points: ["30-Year Linear Output Warranty", "22.5% Module Efficiency", "Excellent heat coefficient"],
-        image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&q=80&w=600"
+        image: "/images/solar/solar-panel-rooftop.jpg"
       },
       inverter: {
         title: "Smart Solar Inverter",
         spec: "10kW Three-Phase Inverter",
         desc: "Commercial-grade residential inverter supporting perfectly balanced three-phase household feed.",
         points: ["10-Year Local Warranty", "98.7% Peak Efficiency", "Multi-MPPT optimization"],
-        image: "https://images.unsplash.com/photo-1620038614049-9d97a5f9c996?auto=format&fit=crop&q=80&w=600"
+        image: "/images/solar/solar-inverter-tech.jpg"
       },
       battery: {
         title: "Battery Storage System",
         spec: "VPP Integration Ready",
         desc: "High-voltage hybrid battery compatibility for direct solar self-consumption and battery export profits.",
         points: ["Emergency power reserve mode", "EPS rapid switchover (<10ms)", "App-controlled discharge profiles"],
-        image: "https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?auto=format&fit=crop&q=80&w=600"
+        image: "/images/solar/solar-inverter-tech.jpg"
       },
       installation: {
         title: "Premium Installation",
         spec: "CEC Certified Engineers",
         desc: "Premium structural framing, heavy duty isolator shrouds, and grid-connection pre-approvals.",
         points: ["10-Year Workmanship Warranty", "Switchboard upgrade evaluation", "Full regulatory signoff"],
-        image: "https://images.unsplash.com/photo-1542332213-9b5a5a3f3c5b?auto=format&fit=crop&q=80&w=600"
+        image: "/images/solar/solar-installation-crew.jpg"
       }
     }
   },
@@ -215,7 +215,7 @@ export const RESIDENTIAL_PAGES_DATA: Record<string, ResidentialData> = {
     heroBannerSub: "Ultimate energy independence with three-phase support",
     introTitle: "Industrial Capacity Tailored for Modern Estates",
     introDesc: "Designed for large multi-generational homes, underfloor heating networks, and multiple EV charging ports. The 20kW system provides commercial-scale energy production to ensure zero reliance on the retail power grid.",
-    backgroundImage: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1600",
+    backgroundImage: "/images/solar/solar-smart-home.jpg",
     timeline: DEFAULT_SOLAR_TIMELINE,
     details: {
       panels: {
@@ -223,28 +223,28 @@ export const RESIDENTIAL_PAGES_DATA: Record<string, ResidentialData> = {
         spec: "45 x Premium Modules",
         desc: "TOPCon high-density cells engineered to deliver maximal output per square meter of roof space.",
         points: ["25-Year Product Warranty", "22.3% Module Efficiency", "Superior low light absorption"],
-        image: "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&q=80&w=600"
+        image: "/images/solar/solar-residential-house.jpg"
       },
       inverter: {
         title: "Smart Solar Inverter",
         spec: "15kW / 20kW Three-Phase",
         desc: "Premium high-power inverter with intelligent active cooling and smart grid interaction systems.",
         points: ["10-Year Local Warranty", "98.8% Peak Efficiency", "Dual configuration setup"],
-        image: "https://images.unsplash.com/photo-1620038614049-9d97a5f9c996?auto=format&fit=crop&q=80&w=600"
+        image: "/images/solar/solar-inverter-tech.jpg"
       },
       battery: {
         title: "Battery Storage System",
         spec: "Large Storage Matrix",
         desc: "Expandable to 30kWh+ to handle peak household consumption entirely off-grid if required.",
         points: ["Scalable modular system", "High-discharge power capabilities", "Smart load shedding integration"],
-        image: "https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?auto=format&fit=crop&q=80&w=600"
+        image: "/images/solar/solar-inverter-tech.jpg"
       },
       installation: {
         title: "Premium Installation",
         spec: "CEC Certified Engineers",
         desc: "Full structural roof assessment, engineering certification, and utility interface mapping.",
         points: ["10-Year Workmanship Warranty", "Structural compliance certificate", "Post-install audit verification"],
-        image: "https://images.unsplash.com/photo-1542332213-9b5a5a3f3c5b?auto=format&fit=crop&q=80&w=600"
+        image: "/images/solar/solar-installation-crew.jpg"
       }
     }
   },
@@ -256,7 +256,7 @@ export const RESIDENTIAL_PAGES_DATA: Record<string, ResidentialData> = {
     heroBannerSub: "Charge your EV with 100% free solar power",
     introTitle: "Intelligent Electric Vehicle Charging Solutions",
     introDesc: "Stop exporting your solar surplus to the grid for pennies. Our Smart EV Chargers dynamically adjust charge rate based on real-time solar production, letting you charge your vehicle directly from the sun.",
-    backgroundImage: "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&q=80&w=1600",
+    backgroundImage: "/images/solar/ev-charging-solar.jpg",
     timeline: [
       {
         num: "01",
@@ -313,28 +313,28 @@ export const RESIDENTIAL_PAGES_DATA: Record<string, ResidentialData> = {
         spec: "Eco-Charging Integration",
         desc: "Monitors home consumption and diverts excess solar generation directly to your vehicle's battery.",
         points: ["Charge only from excess solar", "Scheduled charging times", "Dynamic load balancing"],
-        image: "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&q=80&w=600"
+        image: "/images/solar/ev-charging-solar.jpg"
       },
       inverter: {
         title: "Charger Core Hardware",
         spec: "7.4kW Single / 22kW Three-Phase",
         desc: "Weatherproof sleek charger compatible with all current electric vehicles in the Australian market.",
         points: ["Universal Type 2 socket", "Wi-Fi & Bluetooth app control", "IP65 Weatherproof rating"],
-        image: "https://images.unsplash.com/photo-1620038614049-9d97a5f9c996?auto=format&fit=crop&q=80&w=600"
+        image: "/images/solar/solar-inverter-tech.jpg"
       },
       battery: {
         title: "Battery Storage Synergy",
         spec: "Smart Power Routing",
         desc: "Coordinate EV charging and home battery storage to optimize overnight tariffs and avoid peak rates.",
         points: ["Prioritize home or car storage", "Peak tariff avoidance", "Overnight battery charging override"],
-        image: "https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?auto=format&fit=crop&q=80&w=600"
+        image: "/images/solar/solar-inverter-tech.jpg"
       },
       installation: {
         title: "Premium Installation",
         spec: "Licensed Electricians",
         desc: "Dedicated safety circuit breaker, wall or pedestal mount setup, and complete system testing.",
         points: ["10-Year Workmanship Warranty", "RCBO safety switch included", "User tutorial on handover"],
-        image: "https://images.unsplash.com/photo-1542332213-9b5a5a3f3c5b?auto=format&fit=crop&q=80&w=600"
+        image: "/images/solar/solar-installation-crew.jpg"
       }
     }
   }

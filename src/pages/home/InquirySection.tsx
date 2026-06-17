@@ -144,7 +144,7 @@ export default function InquirySection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="flex flex-wrap justify-center gap-3 md:gap-4 mb-16"
+          className="flex flex-wrap justify-center font-serif gap-3 md:gap-4 mb-16"
         >
           {OPTION_TABS.map((tab) => {
             const isActive = selectedTab === tab.id;

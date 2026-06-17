@@ -1,4 +1,8 @@
+import { useQuoteModal } from '../../components/QuoteModal'
+
 export default function CtaBanner() {
+  const { openQuoteModal } = useQuoteModal()
+
   return (
     <section className="py-16 bg-linear-to-r from-[#F8C000] to-[#e0ad00]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -21,12 +25,12 @@ export default function CtaBanner() {
               </svg>
               1300 672 194
             </a>
-            <a
-              href="#contact"
-              className="flex items-center justify-center gap-2 bg-white/20 hover:bg-white/30 border-2 border-white/50 text-white font-extrabold px-8 py-4 rounded-full transition-all duration-300 text-base"
+            <button
+              onClick={() => openQuoteModal('Cta Banner')}
+              className="flex items-center justify-center gap-2 bg-white/20 hover:bg-white/30 border-2 border-white/50 text-white font-extrabold px-8 py-4 rounded-full transition-all duration-300 text-base cursor-pointer"
             >
               Get Free Quote →
-            </a>
+            </button>
           </div>
         </div>
       </div>

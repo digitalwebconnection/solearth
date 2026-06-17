@@ -32,7 +32,7 @@ import {
 const SERVICES_LIST = [
   {
      text: 'Residential Solar',
-    image: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=600&q=80',
+    image: '/images/solar/solar-panel-rooftop.jpg',
     icon: Sun,
     title: 'Residential Solar Installation',
     desc: 'Custom rooftop solar installations tailored to your household energy footprint. Minimize grid dependency and maximize clean energy generation.',
@@ -40,7 +40,7 @@ const SERVICES_LIST = [
   },
   {
     text: 'Commercial Solar',
-    image: 'https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=600&q=80',
+    image: '/images/solar/solar-residential-house.jpg',
     icon: Building2,
     title: 'Commercial Solar Installation',
     desc: 'Scale up your business with scalable rooftop arrays designed to cut operational electricity expenses and fulfill green corporate objectives.',
@@ -48,7 +48,7 @@ const SERVICES_LIST = [
   },
   {
     text: 'Industrial Solar',
-    image: 'https://images.unsplash.com/photo-1548613053-220a29df127b?auto=format&fit=crop&w=600&q=80',
+    image: '/images/solar/commercial-solar-roof.jpg',
     icon: Factory,
     title: 'Industrial Solar Solutions',
     desc: 'Heavy-duty solar architectures engineered for manufacturing plants, cold stores, and warehouses requiring peak power delivery.',
@@ -56,7 +56,7 @@ const SERVICES_LIST = [
   },
   {
     text: 'Panel Maintenance',
-    image: 'https://images.unsplash.com/photo-1620000617482-821324eb9a14?auto=format&fit=crop&w=600&q=80',
+    image: '/images/solar/solar-panel-closeup.jpg',
     icon: Wrench,
     title: 'Solar Panel Maintenance',
     desc: 'Preventative check-ups, electrical testing, and performance optimization to ensure your systems generate maximum power indefinitely.',
@@ -64,7 +64,7 @@ const SERVICES_LIST = [
   },
   {
     text: 'Panel Cleaning',
-    image: 'https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?auto=format&fit=crop&w=600&q=80',
+    image: '/images/solar/solar-inverter-tech.jpg',
     icon: Droplet,
     title: 'Solar Panel Cleaning',
     desc: 'Professional dirt, dust, and pollen removal to restore obstructed sunlight absorption and boost conversion rates by up to 25%.',
@@ -72,7 +72,7 @@ const SERVICES_LIST = [
   },
   {
     text: 'System Inspection',
-    image: 'https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=600&q=80',
+    image: '/images/solar/ev-charging-solar.jpg',
     icon: ShieldAlert,
     title: 'Solar System Inspection',
     desc: 'Full integrity checks covering wire routing, inverter efficiency, structural racking, and safety switches.',
@@ -80,7 +80,7 @@ const SERVICES_LIST = [
   },
   {
     text: 'Battery Storage',
-    image: 'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=600&q=80',
+    image: '/images/solar/solar-sunset-array.jpg',
     icon: BatteryCharging,
     title: 'Battery Storage Solutions',
     desc: 'Store surplus solar power generated during peak sun hours for evening operation or blackout protection.',
@@ -88,7 +88,7 @@ const SERVICES_LIST = [
   },
   {
     text: 'Inverter Installation',
-    image: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=600&q=80',
+    image: '/images/solar/solar-commercial-farm.jpg',
     icon: Cpu,
     title: 'Solar Inverter Installation',
     desc: 'Install high-efficiency microinverters or central string inverters that convert DC solar power to household AC safely.',
@@ -96,7 +96,7 @@ const SERVICES_LIST = [
   },
   {
     text: 'Inverter Replacement',
-    image: 'https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=600&q=80',
+    image: '/images/solar/solar-sunset-array.jpg',
     icon: RefreshCw,
     title: 'Solar Inverter Replacement',
     desc: 'Upgrade aging or faulty string inverters to restore your system output and unlock advanced smart home features.',
@@ -104,7 +104,7 @@ const SERVICES_LIST = [
   },
   {
     text: 'EV Charging',
-    image: 'https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=600&q=80',
+    image: '/images/solar/battery-storage-unit.jpg',
     icon: Zap,
     title: 'EV Charger Installation',
     desc: 'Integrate a level 2 smart electric vehicle charger that runs directly off your surplus rooftop solar power.',
@@ -112,7 +112,7 @@ const SERVICES_LIST = [
   },
   {
     text: 'Energy Consultation',
-    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80',
+    image: '/images/solar/solar-tech-worker.jpg',
     icon: MessagesSquare,
     title: 'Solar Energy Consultation',
     desc: 'Personalized bill audit and site compatibility assessment to map out the perfect custom renewable pathway.',
@@ -120,7 +120,7 @@ const SERVICES_LIST = [
   },
   {
     text: 'System Design',
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80',
+    image: '/images/solar/solar-aerial-farm.jpg',
     icon: Layout,
     title: 'Solar System Design',
     desc: 'Precision CAD layout design mapping solar panel locations, string paths, inverter positioning, and conduit routes.',
@@ -128,7 +128,7 @@ const SERVICES_LIST = [
   },
   {
     text: 'Net Metering Assist',
-    image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80',
+    image: '/images/solar/solar-tech-worker.jpg',
     icon: Scale,
     title: 'Net Metering Assistance',
     desc: 'Complete handling of grid connection approvals and feed-in tariff enrollment so you get paid for excess solar export.',
@@ -136,7 +136,7 @@ const SERVICES_LIST = [
   },
   {
     text: 'Performance Monitor',
-    image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=80',
+    image: '/images/solar/solar-installation-crew.jpg',
     icon: LineChart,
     title: 'Solar Performance Monitoring',
     desc: 'Real-time dashboard tracking solar yield, domestic consumption, grid flows, and module health warnings on your phone.',
@@ -144,7 +144,7 @@ const SERVICES_LIST = [
   },
   {
     text: 'Upgrades & Expansion',
-    image: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=600&q=80',
+    image: '/images/solar/solar-tech-worker.jpg',
     icon: ArrowUpRight,
     title: 'Solar Upgrades & Expansion',
     desc: 'Increase your panel capacity or install additional strings to handle growing household power demands from new appliances.',
@@ -152,7 +152,7 @@ const SERVICES_LIST = [
   },
   {
     text: 'Ground-Mounted Solar',
-    image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80',
+    image: '/images/solar/solar-panel-detail.jpg',
     icon: Layers,
     title: 'Ground-Mounted Solar Systems',
     desc: 'Ideal for rural acreages or commercial land blocks where rooftop space is limited or shaded. Optimized directional orientation.',
@@ -160,7 +160,7 @@ const SERVICES_LIST = [
   },
   {
     text: 'Rooftop Solar Systems',
-    image: 'https://images.unsplash.com/photo-1559302504-64aae6ca6b6d?auto=format&fit=crop&w=600&q=80',
+    image: '/images/solar/commercial-solar-roof.jpg',
     icon: Home,
     title: 'Rooftop Solar Systems',
     desc: 'Standard sloped and flat roof installations utilizing secure, lightweight, corrosion-free racking brackets.',
@@ -168,7 +168,7 @@ const SERVICES_LIST = [
   },
   {
     text: 'Off-Grid Solutions',
-    image: 'https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?auto=format&fit=crop&w=600&q=80',
+    image: '/images/solar/solar-panel-detail.jpg',
     icon: Radio,
     title: 'Off-Grid Solar Solutions',
     desc: 'Autonomous solar packages featuring battery banks and backup generators designed for remote locations without grid access.',
@@ -176,7 +176,7 @@ const SERVICES_LIST = [
   },
   {
     text: 'Hybrid Solar Systems',
-    image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=600&q=80',
+    image: '/images/solar/solar-tech-worker.jpg',
     icon: Activity,
     title: 'Hybrid Solar Systems',
     desc: 'The best of both worlds: maintain your grid connection while managing intelligent battery storage to mitigate high-tariff periods.',
@@ -184,7 +184,7 @@ const SERVICES_LIST = [
   },
   {
     text: 'Solar Financing',
-    image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=600&q=80',
+    image: '/images/solar/commercial-solar-roof.jpg',
     icon: Coins,
     title: 'Solar Financing Assistance',
     desc: 'Access flexible, green financing plans and interest-free options designed to yield immediate monthly power savings.',
@@ -192,7 +192,7 @@ const SERVICES_LIST = [
   },
   {
     text: 'Warranty Support',
-    image: 'https://images.unsplash.com/photo-1498084393753-b411b2d26b34?auto=format&fit=crop&w=600&q=80',
+    image: '/images/solar/solar-tech-worker.jpg',
     icon: ShieldCheck,
     title: 'Solar Warranty Support',
     desc: 'Comprehensive local support covering performance warranties on solar modules, inverters, and our 10-year installation warranty.',
@@ -200,7 +200,7 @@ const SERVICES_LIST = [
   },
   {
     text: 'Solar Repair Services',
-    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80',
+    image: '/images/solar/solar-inverter-tech.jpg',
     icon: PenTool,
     title: 'Solar Repair Services',
     desc: 'Rapid fault isolation and replacement of broken modules, damaged MC4 connectors, or failed DC isolation switches.',
@@ -208,7 +208,7 @@ const SERVICES_LIST = [
   },
   {
     text: 'Efficiency Audits',
-    image: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?auto=format&fit=crop&w=600&q=80',
+    image: '/images/solar/solar-smart-home.jpg',
     icon: ClipboardCheck,
     title: 'Energy Efficiency Audits',
     desc: 'Analyze full building energy profiles to locate heat leakages, parasitic loads, and optimize heavy equipment cycles.',
@@ -216,7 +216,7 @@ const SERVICES_LIST = [
   },
   {
     text: 'Smart Management',
-    image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80',
+    image: '/images/solar/solar-sunset-array.jpg',
     icon: Brain,
     title: 'Smart Energy Management',
     desc: 'AI-driven load orchestration automatically routing solar power to high-consumption devices during peak production hours.',
@@ -224,7 +224,7 @@ const SERVICES_LIST = [
   },
   {
     text: 'Carbon Consulting',
-    image: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=600&q=80',
+    image: '/images/solar/solar-panel-rooftop.jpg',
     icon: Leaf,
     title: 'Carbon Footprint Reduction',
     desc: 'Accredit your business under carbon-neutral frameworks. Calculate emission offset credits and plan clean-energy transition models.',
@@ -293,7 +293,7 @@ export default function ServicesSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.15 }}
-                className="text-3xl md:text-4xl font-extrabold tracking-tight mb-2 bg-linear-to-r from-[#0a1f44] to-[#1D6FB8] bg-clip-text text-transparent"
+                className="text-3xl  md:text-5xl font-serif font-bold mb-2 bg-linear-to-r from-[#0a1f44] to-[#1D6FB8] bg-clip-text text-transparent"
               >
                 Comprehensive Solar Solutions
               </motion.h2>
@@ -303,7 +303,7 @@ export default function ServicesSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.25 }}
-                className="text-gray-500 text-xs md:text-sm max-w-2xl mx-auto"
+                className="text-sm md:text-base leading-relaxed text-gray-500 max-w-2xl mx-auto"
               >
                 Scroll down the page normally to rotate horizontally step-by-step through our 25 capability systems.
               </motion.p>
@@ -320,14 +320,7 @@ export default function ServicesSection() {
             transition={{ duration: 0.8 }}
             className="relative h-full w-full  sverflow-hidden"
           >
-            {/* Subtle HUD Layout */}
-            <div className="absolute top-4 left-6 pointer-events-none font-mono text-[9px] text-gray-400 tracking-wider z-20">
-              [ ROTATING PORTFOLIO / {SERVICES_LIST.length} SYSTEMS ]
-            </div>
-            <div className="absolute top-4 right-6 pointer-events-none font-mono text-[9px] text-[#F8C000] flex items-center gap-2 z-20">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#F8C000] animate-ping" />
-              <span>SCROLL-LINKED TRACK ACTIVE</span>
-            </div>
+           
 
             <CircularGallery
               items={SERVICES_LIST}
@@ -337,7 +330,7 @@ export default function ServicesSection() {
               scrollEase={0.05}
               scrollSpeed={2.2}
               fontUrl="https://fonts.googleapis.com/css2?family=Outfit:wght@600;800&display=swap"
-              font="bold 24px Outfit"
+              font="bold 24px "
               scrollProgress={scrollProgress}
             />
           </motion.div>
@@ -366,13 +359,13 @@ export default function ServicesSection() {
                     </span>
                     <div>
                       <span className="text-[10px] font-bold tracking-widest text-[#F8C000] uppercase">ACTIVE CAPABILITY</span>
-                      <h3 className="text-lg font-extrabold tracking-tight text-[#0a1f44]">{currentService.title}</h3>
+                      <h3 className="text-2xl md:text-3xl font-serif font-semibold text-[#0a1f44]">{currentService.title}</h3>
                     </div>
                   </div>
 
                   {/* Right part: description & features */}
                   <div className="flex-1 flex flex-col gap-2">
-                    <p className="text-gray-600 text-xs md:text-sm leading-relaxed text-center md:text-left">
+                    <p className="text-sm md:text-base leading-relaxed text-gray-600 text-center md:text-left">
                       {currentService.desc}
                     </p>
 

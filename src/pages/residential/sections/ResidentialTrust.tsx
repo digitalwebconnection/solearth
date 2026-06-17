@@ -1,6 +1,6 @@
 export default function ResidentialTrust() {
   return (
-    <section className="max-w-7xl mx-auto px-6 pb-20">
+    <section className=" ">
       <div className="bg-[#004093] text-white rounded-2xl overflow-hidden shadow-2xl border border-white/10 grid grid-cols-1 lg:grid-cols-12">
         
         {/* Text block */}
@@ -9,10 +9,10 @@ export default function ResidentialTrust() {
             <span className="text-[11px] text-[#FE9900] font-black uppercase tracking-widest block">
               Australia's Most Trusted Solar Retailer
             </span>
-            <h3 className="text-2xl md:text-3xl font-black font-serif">
+            <h3 className="text-2xl md:text-3xl font-serif font-semibold">
               Delivering Premium Energy Solutions Since 2018
             </h3>
-            <p className="text-xs md:text-sm text-slate-200 leading-relaxed font-medium">
+            <p className="text-sm md:text-base leading-relaxed text-slate-200 font-semibold">
               "Our mission is to help home and business owners take back control of their energy bills. By combining high-efficiency solar modules with intelligent battery management, we insulate our customers from soaring utility grid costs."
             </p>
           </div>
@@ -20,7 +20,7 @@ export default function ResidentialTrust() {
           <div className="pt-4 border-t border-white/10 flex items-center gap-4">
             <div className="w-10 h-10 rounded-full bg-white/10 overflow-hidden">
               <img 
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=100" 
+                src="/images/solar/solar-engineer-panel.jpg" 
                 alt="Customer advisor" 
                 className="w-full h-full object-cover"
               />
@@ -35,11 +35,11 @@ export default function ResidentialTrust() {
         {/* Video Mockup Frame */}
         <div className="lg:col-span-6 bg-slate-900 relative min-h-[300px] flex items-center justify-center group">
           <img 
-            src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?auto=format&fit=crop&q=80&w=800" 
+            src="/images/solar/solar-aerial-farm.jpg" 
             alt="Solearth installation video preview" 
             className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+          <div className="absolute inset-0 bg-linear-to-t from-slate-950 via-transparent to-transparent"></div>
           
           {/* Play Button */}
           <button className="relative z-10 w-16 h-16 rounded-full bg-[#FE9900] text-white flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300">

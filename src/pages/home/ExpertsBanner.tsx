@@ -30,7 +30,7 @@ export default function ExpertsBanner() {
               animateBy="words"
               direction="top"
               stepDuration={0.4}
-              className="text-4xl lg:text-5xl font-extrabold text-[#0a1f44] leading-tight mb-5"
+              className="text-4xl lg:text-5xl font-serif font-extrabold text-[#0a1f44] leading-tight mb-5"
             />
 
             <BlurText
@@ -51,7 +51,7 @@ export default function ExpertsBanner() {
               ].map((pill) => (
                 <span
                   key={pill.label}
-                  className="bg-[#f7f9fc] border border-gray-200 text-gray-600 text-sm font-semibold px-4 py-2 rounded-full inline-flex items-center gap-2"
+                  className="bg-[#f7f9fc] font-serif border border-gray-200 text-gray-600 text-sm font-semibold px-4 py-2 rounded-full inline-flex items-center gap-2"
                 >
                   <pill.icon className={`w-4 h-4 ${pill.color}`} />
                   {pill.label}
@@ -88,7 +88,7 @@ export default function ExpertsBanner() {
                   {s.value}
                 </div>
                 <div
-                  className={`font-bold text-sm mb-0.5 ${
+                  className={`font-bold font-serif text-sm mb-0.5 ${
                     i === 0 || i === 1 ? 'text-white' : 'text-[#0a1f44]'
                   }`}
                 >

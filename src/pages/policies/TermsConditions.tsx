@@ -4,7 +4,7 @@ export default function TermsConditions() {
   return (
     <div className="bg-slate-50 min-h-screen pb-20 font-serif">
       {/* Policy Hero */}
-      <div className="bg-gradient-to-br from-[#004093] to-[#1D6FB8] text-white pt-32 pb-20 px-6 text-center">
+      <div className="bg-linear-to-br from-[#004093] to-[#1D6FB8] text-white pt-32 pb-20 px-6 text-center">
         <div className="max-w-3xl mx-auto space-y-4">
           <div className="inline-flex items-center justify-center p-3 bg-white/10 rounded-full mb-2">
             <FileText className="w-8 h-8 text-[#FE9900]" />

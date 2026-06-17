@@ -30,7 +30,7 @@ const ProductDetailMain: React.FC = () => {
         <h2 className="text-3xl font-bold font-serif text-[#004093] mb-4">
           Product Not Found
         </h2>
-        <p className="text-slate-600 mb-8 max-w-md">
+        <p className="text-slate-800 mb-8 max-w-md">
           The product you are looking for does not exist or may have been moved.
         </p>
         <Link

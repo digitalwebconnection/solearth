@@ -141,7 +141,7 @@ const ScrollStack = ({
     // Temporarily reset transform styles to measure clean native layout offset heights
     const originalTransforms = cards.map(c => c.style.transform);
     const originalFilters = cards.map(c => c.style.filter);
-    
+
     cards.forEach(c => {
       c.style.transform = 'none';
       c.style.filter = 'none';
@@ -436,7 +436,7 @@ export default function ProjectsProcess() {
   return (
     <section className="py-10 bg-slate-50 relative overflow-hidden" id="engineering-standards">
       {/* Grid background */}
-      <div 
+      <div
         className="absolute inset-0 opacity-[0.08] pointer-events-none"
         style={{
           backgroundImage: 'radial-gradient(#004093 1px, transparent 1px)',
@@ -446,7 +446,7 @@ export default function ProjectsProcess() {
       <style dangerouslySetInnerHTML={{ __html: scrollStackStyles }} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-left">
-        
+
         {/* Header */}
         <div className="text-center max-w-4xl mx-auto space-y-4">
           <div className="flex items-center justify-center space-x-2.5">
@@ -454,10 +454,10 @@ export default function ProjectsProcess() {
             <span className="text-xs font-black text-[#004093] uppercase tracking-widest">Our Method</span>
             <span className="h-px w-8 bg-[#FE9900]" />
           </div>
-          <h2 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tight leading-tight">
+          <h2 className="text-3xl md:text-5xl font-serif font-bold text-slate-900 tracking-tight leading-tight">
             Our Installation Process
           </h2>
-          <p className="text-slate-900 text-xs sm:text-sm font-semibold max-w-3xl mx-auto">
+          <p className="text-sm md:text-base leading-relaxed text-slate-900 max-w-3xl mx-auto">
             From assessment to grid connection, scroll down to see how our engineering-first method stacks up.
           </p>
         </div>
@@ -492,12 +492,12 @@ export default function ProjectsProcess() {
                         <span className="text-[10px] font-black text-[#FE9900] uppercase tracking-wider block">
                           Step {step.id} — {step.tag}
                         </span>
-                        <h3 className="text-xl font-black text-slate-900 tracking-tight">
+                        <h3 className="text-2xl md:text-3xl font-serif font-semibold text-slate-900 tracking-tight">
                           {step.title}
                         </h3>
                       </div>
                     </div>
-                    <p className="text-slate-650 text-xs sm:text-sm leading-relaxed font-semibold">
+                    <p className="text-sm md:text-base leading-relaxed text-slate-800 font-semibold">
                       {step.desc}
                     </p>
                   </div>
@@ -509,7 +509,7 @@ export default function ProjectsProcess() {
                     </h4>
                     <ul className="space-y-2">
                       {step.deliverables.map((item, i) => (
-                        <li key={i} className="flex items-start gap-2.5 text-xs text-slate-600 font-semibold">
+                        <li key={i} className="flex items-start gap-2.5 text-xs text-slate-800 font-semibold">
                           <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                           <span>{item}</span>
                         </li>
@@ -522,7 +522,7 @@ export default function ProjectsProcess() {
                 <div className="md:col-span-5 flex">
                   <div className="bg-slate-50/50 border border-slate-400 rounded-xl p-6 md:p-8 flex flex-col justify-between w-full relative overflow-hidden">
                     <div className={`absolute top-0 right-0 left-0 h-1.5 ${step.bgColor}`} />
-                    
+
                     <div className="space-y-4 text-left">
                       <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest block">
                         {step.spotlight.title}

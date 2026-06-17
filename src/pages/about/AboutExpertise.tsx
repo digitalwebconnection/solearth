@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Check, X, ArrowRight } from 'lucide-react'
-import { Link } from 'react-router-dom'
 import SplitText from '../../components/SplitText'
+import { useQuoteModal } from '../../components/QuoteModal'
 
 export default function AboutExpertise() {
+  const { openQuoteModal } = useQuoteModal()
   const [selectedSolution, setSelectedSolution] = useState<number | null>(null)
 
   // Disable background body scroll when the modal is active
@@ -26,7 +27,7 @@ export default function AboutExpertise() {
       shortDesc: 'Transition your household to high-performance, future-ready solar energy. Reduce electricity bills and secure energy independence.',
       detailedDesc: 'Transition your household to high-performance, future-ready solar energy. Our residential systems are engineered specifically for the harsh Australian climate, utilizing Tier-1 solar panels, intelligent hybrid battery storage, and advanced smart-home monitoring tools. Enjoy reduced power bills from day one with complete peace of mind.',
       tagline: 'Empowering Australian homes with solar independence.',
-      img: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=800&q=80',
+      img: '/images/solar/solar-panel-rooftop.jpg',
       tag: 'Residential Solar',
       color: 'bg-emerald-500 border-emerald-100 text-emerald-600',
       features: [
@@ -43,7 +44,7 @@ export default function AboutExpertise() {
       shortDesc: 'Unlock massive operational savings and future-proof your business against volatile energy prices with bespoke commercial solar installations.',
       detailedDesc: 'Unlock massive operational savings and future-proof your business against volatile energy prices. We design and construct bespoke commercial solar installations for offices, retail hubs, agricultural sites, and logistics warehouses. Our engineering team handles the entire process—including energy audits, financial feasibility modeling, and grid-connection approvals.',
       tagline: 'Offsetting operational costs through sustainable commercial design.',
-      img: 'https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=800&q=80',
+      img: '/images/solar/solar-residential-house.jpg',
       tag: 'Commercial Solar',
       color: 'bg-amber-500 border-amber-100 text-amber-600',
       features: [
@@ -60,7 +61,7 @@ export default function AboutExpertise() {
       shortDesc: 'Powering heavy machinery, factories, and logistics fleets with utility-scale solar arrays. Complete EPC project management.',
       detailedDesc: 'Powering heavy machinery, factories, and logistics fleets with utility-scale solar arrays. Our industrial EPC team delivers robust high-voltage projects designed to meet massive energy demands. We integrate cutting-edge solar technologies with commercial battery systems to stabilize voltage, cut peak demand charges, and achieve corporate ESG sustainability targets.',
       tagline: 'Mega-watt scale solar engineering for heavy industrial assets.',
-      img: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80',
+      img: '/images/solar/solar-ground-mounted.jpg',
       tag: 'Industrial EPC',
       color: 'bg-sky-500 border-sky-100 text-sky-600',
       features: [
@@ -94,7 +95,7 @@ export default function AboutExpertise() {
           <SplitText
             text="Complete Solar Solutions"
             tag="h2"
-            className="text-4xl sm:text-5xl font-extrabold text-[#0a1f44] mb-6 tracking-tight leading-tight"
+            className="text-3xl md:text-5xl font-serif font-bold text-[#0a1f44] mb-6 tracking-tight leading-tight"
             delay={50}
             duration={0.8}
             ease="power3.out"
@@ -109,7 +110,7 @@ export default function AboutExpertise() {
           <SplitText
             text="Discover how we engineer, deploy, and maintain leading clean energy systems across Australia."
             tag="p"
-            className="text-gray-900 text-lg leading-relaxed max-w-6xl mx-auto"
+            className="text-sm md:text-base leading-relaxed text-gray-900 max-w-6xl mx-auto"
             delay={25}
             duration={0.8}
             ease="power2.out"
@@ -258,14 +259,16 @@ export default function AboutExpertise() {
                 </div>
 
                 {/* Footer Action Button */}
-                <Link
-                  to="/#contact"
-                  onClick={() => setSelectedSolution(null)}
-                  className="w-full py-4 px-6 rounded-xl text-center text-sm font-bold text-white bg-[#0a1f44] hover:bg-[#28A8E0] transition-colors duration-300 shadow-md flex items-center justify-center gap-2 shrink-0"
+                <button
+                  onClick={() => {
+                    setSelectedSolution(null)
+                    openQuoteModal(`Solution: ${solutions[selectedSolution].title}`)
+                  }}
+                  className="w-full py-4 px-6 rounded-xl text-center text-sm font-bold text-white bg-[#0a1f44] hover:bg-[#28A8E0] transition-colors duration-300 shadow-md flex items-center justify-center gap-2 shrink-0 cursor-pointer border-none"
                 >
                   <span>Request Free Consultation</span>
                   <ArrowRight className="w-4 h-4" />
-                </Link>
+                </button>
               </div>
             </motion.div>
           </div>

@@ -53,8 +53,8 @@ export default function ResidentialHero({
         style={{ backgroundImage: `url("${backgroundImage}")` }}
       ></div>
       {/* Dark premium gradient masking */}
-      <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent z-0"></div>
-      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent z-0"></div>
+      <div className="absolute inset-0 bg-linear-to-r from-slate-950 via-slate-950/80 to-transparent z-0"></div>
+      <div className="absolute inset-0 bg-linear-to-t from-slate-950/40 via-transparent to-transparent z-0"></div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
         {/* Left Side: EOFY banner / Promotion */}
@@ -74,14 +74,14 @@ export default function ResidentialHero({
           </div>
 
           {/* EOFY Banner Graphic Card */}
-          <div className="bg-gradient-to-br from-[#FE9900] to-[#E28000] rounded-2xl p-6 md:p-8 shadow-2xl relative overflow-hidden border border-white/10 group max-w-2xl">
+          <div className="bg-linear-to-br from-[#FE9900] to-[#E28000] rounded-2xl p-6 md:p-8 shadow-2xl relative overflow-hidden border border-white/10 group max-w-2xl">
             <div className="absolute -right-10 -bottom-10 w-44 h-44 bg-white/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500"></div>
             <div className="relative z-10 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
               <div className="space-y-2">
                 <span className="bg-white text-[#E28000] text-[10px] font-black uppercase tracking-widest px-2.5 py-1 rounded-full">
                   Limited Time Promotion
                 </span>
-                <h3 className="text-2xl md:text-3xl font-black font-serif text-white">
+                <h3 className="text-2xl md:text-3xl font-serif font-semibold text-white">
                   {heroBanner}
                 </h3>
                 <p className="text-xs md:text-sm text-white/90 font-medium">
@@ -120,12 +120,12 @@ export default function ResidentialHero({
 
         {/* Right Side: Lead Capture Form */}
         <div className="lg:col-span-5 bg-white/90 backdrop-blur-md rounded-2xl p-6 md:p-8 text-slate-800 shadow-2xl border border-white/20 relative">
-          <div className="absolute top-0 right-8 -translate-y-1/2 bg-[#FE9900] text-white text-[10px] font-black px-3.5 py-1.5 rounded-full uppercase tracking-wider shadow-lg">
+          <div className="absolute top-0 right-0  bg-[#FE9900] text-white text-[10px] font-black px-3.5 py-1.5 rounded-tr-2xl uppercase tracking-wider shadow-lg">
             Quick Quote
           </div>
 
           <div className="mb-6">
-            <h3 className="text-lg font-black text-[#004093] font-serif">
+            <h3 className="text-2xl md:text-3xl font-serif font-semibold text-[#004093]">
               Get A Free Solar Assessment
             </h3>
             <p className="text-xs text-slate-500 font-semibold mt-1">

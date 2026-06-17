@@ -22,12 +22,12 @@ export const WarrantySupport: React.FC<WarrantySupportProps> = ({
 
   return (
     <section className="relative mx-auto max-w-7xl overflow-hidden bg-white py-16 md:py-10 border-t border-slate-100">
-      
+
       {/* Background ambient lighting */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#004093]/3 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative z-10 space-y-16">
-        
+
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center space-y-4">
           <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#004093]/5 rounded-full border border-[#004093]/10 text-[10px] font-black uppercase tracking-wider text-[#004093]">
@@ -39,7 +39,7 @@ export const WarrantySupport: React.FC<WarrantySupportProps> = ({
             Warranty & Direct Support
           </h2>
 
-          <p className="text-slate-600 text-sm md:text-base leading-relaxed font-medium">
+          <p className="text-slate-800 text-sm md:text-base leading-relaxed font-medium">
             Advanced manufacturer coverage and dependable local assistance designed to ensure maximum confidence and performance.
           </p>
         </div>
@@ -48,7 +48,7 @@ export const WarrantySupport: React.FC<WarrantySupportProps> = ({
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-6 gap-6 md:gap-8 max-w-7xl mx-auto">
           {product.warranty.map((item, idx) => {
             const { highlight, detail } = parseWarranty(item);
-            
+
             return (
               <div
                 key={idx}
@@ -62,7 +62,7 @@ export const WarrantySupport: React.FC<WarrantySupportProps> = ({
                   <div className="text-4xl md:text-5.5xl font-black text-[#004093] group-hover:text-[#FE9900] transition-colors duration-300 tracking-tight leading-none">
                     {highlight}
                   </div>
-                  
+
                   {/* Subtle Separator */}
                   <div className="w-10 h-[2px] bg-slate-200 group-hover:bg-[#004093]/20 transition-colors duration-300" />
                 </div>
@@ -87,7 +87,7 @@ export const WarrantySupport: React.FC<WarrantySupportProps> = ({
         <div className="relative bg-slate-50/50 p-8 rounded-3xl border border-slate-200/40 overflow-hidden max-w-7xl mx-auto">
           {/* Accent vertical line */}
           <div className="absolute top-0 left-0 bottom-0 w-[5px] bg-[#FE9900]" />
-          
+
           <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div className="space-y-2 max-w-6xl">
               <span className="text-[10px] font-black text-[#004093] uppercase tracking-wider block">
@@ -97,7 +97,7 @@ export const WarrantySupport: React.FC<WarrantySupportProps> = ({
                 “{product.recommendation}”
               </p>
             </div>
-            
+
             <div className="w-12 h-12 rounded-2xl bg-white border border-slate-200 flex items-center justify-center text-[#004093] shadow-xs shrink-0">
               <ArrowUpRight size={20} />
             </div>

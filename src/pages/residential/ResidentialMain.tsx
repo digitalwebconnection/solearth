@@ -5,8 +5,6 @@ import ResidentialSpecs from './sections/ResidentialSpecs'
 import ResidentialTimeline from './sections/ResidentialTimeline'
 import ResidentialEducational from './sections/ResidentialEducational'
 import BrandPartnersSection from '../home/BrandPartnersSection'
-import TestimonialsSection from '../home/TestimonialsSection'
-import ResidentialTrust from './sections/ResidentialTrust'
 
 export default function ResidentialMain() {
   const { slug } = useParams<{ slug: string }>()
@@ -43,11 +41,6 @@ export default function ResidentialMain() {
 
       <BrandPartnersSection />
 
-      {/* Testimonials */}
-      <TestimonialsSection />
-
-      {/* Video / Retailer Trust Block */}
-      <ResidentialTrust />
     </div>
   )
 }

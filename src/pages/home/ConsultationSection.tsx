@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion';
 import { Phone, ArrowRight } from 'lucide-react';
 import supportAgent from '../../assets/support-agent-headset.png';
+import { useQuoteModal } from '../../components/QuoteModal';
 
 export default function ConsultationSection() {
+  const { openQuoteModal } = useQuoteModal();
   return (
     <section className="relative  bg-white overflow-hidden">
       <div className=" px-4 sm:px-6 lg:px-0 relative z-10">
@@ -24,7 +26,7 @@ export default function ConsultationSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4 }}
-                className="text-4xl sm:text-[2.75rem] font-extrabold text-white leading-tight tracking-tight"
+                className="text-3xl md:text-5xl font-serif font-bold text-white leading-tight tracking-tight"
               >
                 Work With a Team <br />
                 That Works for You
@@ -36,7 +38,7 @@ export default function ConsultationSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1, duration: 0.4 }}
-                className="text-slate-200/90 text-sm sm:text-base leading-relaxed"
+                className="text-sm md:text-base leading-relaxed text-slate-200/90"
               >
                 Whether you're going solar for the first time or upgrading your existing system, SolEarth is here to help — with no shortcuts, no outsourcing, and no fluff.
               </motion.p>
@@ -52,15 +54,15 @@ export default function ConsultationSection() {
             >
               
               {/* Book Consultation Button */}
-              <a
-                href="#contact"
-                className="inline-flex items-center bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all text-[#008080] font-black text-xs uppercase tracking-wider h-14 pl-6 hover:scale-[1.01]"
+              <button
+                onClick={() => openQuoteModal('Consultation Section')}
+                className="inline-flex items-center bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all text-[#008080] font-black text-xs uppercase tracking-wider h-14 pl-6 hover:scale-[1.01] cursor-pointer border-none p-0"
               >
                 <span className="pr-4">Book A Consultation</span>
                 <div className="h-full px-5 bg-[#008080] text-white flex items-center justify-center">
                   <ArrowRight className="w-4 h-4" />
                 </div>
-              </a>
+              </button>
 
               {/* 24/7 Phone callout */}
               <a

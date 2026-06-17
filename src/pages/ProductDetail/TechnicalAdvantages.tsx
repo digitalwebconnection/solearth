@@ -30,15 +30,15 @@ export const TechnicalAdvantages: React.FC<TechnicalAdvantagesProps> = ({
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    
+
     const container = containerRef.current;
     if (!container) return;
 
     const cards = container.querySelectorAll(".advantage-card");
     gsap.fromTo(
       cards,
-      { 
-        opacity: 0, 
+      {
+        opacity: 0,
         y: 30,
         scale: 0.98
       },
@@ -75,7 +75,7 @@ export const TechnicalAdvantages: React.FC<TechnicalAdvantagesProps> = ({
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-0">
-        
+
         {/* Heading */}
         <div className="max-w-7xl mx-auto text-center mb-8 space-y-4">
           <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#004093]/5 rounded-full border border-[#004093]/10 text-[10px] font-black uppercase tracking-wider text-[#004093]">
@@ -126,9 +126,9 @@ export const TechnicalAdvantages: React.FC<TechnicalAdvantagesProps> = ({
                     <h3 className="text-xl font-extrabold text-[#004093] tracking-tight group-hover:text-[#FE9900] transition-colors duration-300">
                       {title}
                     </h3>
-                    
+
                     {desc && (
-                      <p className="text-slate-600 text-xs md:text-sm leading-relaxed font-medium">
+                      <p className="text-slate-800 text-xs md:text-sm leading-relaxed font-medium">
                         {desc.trim()}
                       </p>
                     )}

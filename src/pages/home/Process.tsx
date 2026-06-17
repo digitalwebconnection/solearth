@@ -27,7 +27,7 @@ export default function Process() {
       icon: PhoneCall,
       title: 'Free Energy Audit',
       desc: 'We analyse your quarterly electricity bills and use satellite mapping to check roof shade.',
-      image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80',
+      image: '/images/solar/solar-tech-worker.jpg',
       bulletPoints: [
         'Detailed analysis of energy consumption history',
         '3D roof space assessment using satellite imaging',
@@ -41,7 +41,7 @@ export default function Process() {
       icon: FileEdit,
       title: 'Custom Engineering Design',
       desc: 'Our engineers structure a premium system configuration to optimize energy offset.',
-      image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=600&q=80',
+      image: '/images/solar/solar-engineer-panel.jpg',
       bulletPoints: [
         'Optimal panel layout for maximum solar absorption',
         'Premium inverter and battery sizing tailored to you',
@@ -55,7 +55,7 @@ export default function Process() {
       icon: HardHat,
       title: 'Professional Installation',
       desc: 'CEC-accredited local technicians install your systems with absolute structural security.',
-      image: 'https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=600&q=80',
+      image: '/images/solar/solar-residential-house.jpg',
       bulletPoints: [
         'CEC-accredited electrical technicians',
         'Premium quality racking and framing mounts',
@@ -69,7 +69,7 @@ export default function Process() {
       icon: Radio,
       title: 'Grid Connection & Support',
       desc: 'We complete government inspections, connect you to the grid, and configure real-time apps.',
-      image: 'https://images.unsplash.com/photo-1498084393753-b411b2d26b34?auto=format&fit=crop&w=600&q=80',
+      image: '/images/solar/solar-tech-worker.jpg',
       bulletPoints: [
         'Grid export authorization paperwork handling',
         'Real-time mobile app tracking setup (Wi-Fi/4G)',
@@ -199,7 +199,7 @@ export default function Process() {
             {/* Close Button */}
             <button
               onClick={() => setSelectedStep(null)}
-              className="absolute top-4 right-4 p-2 rounded-full text-slate-400 hover:text-slate-600 hover:bg-slate-50 transition-colors"
+              className="absolute top-4 right-4 p-2 rounded-full text-slate-400 hover:text-slate-800 hover:bg-slate-50 transition-colors"
             >
               <X className="h-5 w-5" />
             </button>
@@ -239,7 +239,7 @@ export default function Process() {
                 </h3>
               </div>
 
-              <p className="text-slate-600 text-sm leading-relaxed">
+              <p className="text-slate-800 text-sm leading-relaxed">
                 {selectedStep.desc}
               </p>
 
@@ -250,7 +250,7 @@ export default function Process() {
                 </h4>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                   {selectedStep.bulletPoints.map((point, idx) => (
-                    <li key={idx} className="flex items-start gap-2 text-xs font-semibold text-slate-600 leading-snug">
+                    <li key={idx} className="flex items-start gap-2 text-xs font-semibold text-slate-800 leading-snug">
                       <CheckCircle className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
                       <span>{point}</span>
                     </li>
@@ -289,7 +289,7 @@ export default function Process() {
             {/* Close Button */}
             <button
               onClick={() => setShowPopup(false)}
-              className="absolute top-4 right-4 p-2 rounded-full text-slate-400 hover:text-slate-600 hover:bg-slate-50 transition-colors"
+              className="absolute top-4 right-4 p-2 rounded-full text-slate-400 hover:text-slate-800 hover:bg-slate-50 transition-colors"
             >
               <X className="h-5 w-5" />
             </button>

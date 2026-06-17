@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import bgImage from '../../assets/HeroImages/solar-roof-street.jpg'
+import { useQuoteModal } from '../../components/QuoteModal'
 
 export default function ProjectsHero() {
+  const { openQuoteModal } = useQuoteModal()
   const handleScrollDown = () => {
     const element = document.getElementById('portfolio')
     if (element) {
@@ -81,12 +83,12 @@ export default function ProjectsHero() {
               Explore Gallery
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
-            <a
-              href="#project-quote"
-              className="bg-white/10 hover:bg-white/20 border-2 border-white/30 text-white font-bold px-10 py-3.5 rounded-full text-sm sm:text-base backdrop-blur-sm transition-all duration-300 flex items-center justify-center cursor-pointer"
+            <button
+              onClick={() => openQuoteModal('Projects Page Hero')}
+              className="bg-white/10 hover:bg-white/20 border-2 border-white/30 text-white font-bold px-10 py-3.5 rounded-full text-sm sm:text-base backdrop-blur-sm transition-all duration-300 flex items-center justify-center cursor-pointer border-none"
             >
               Get Free Assessment
-            </a>
+            </button>
           </motion.div>
         </div>
       </div>

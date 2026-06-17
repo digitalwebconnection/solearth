@@ -87,7 +87,7 @@ export default function TestimonialsSection() {
           <span className="inline-block text-xs font-black uppercase text-[#022D62]/70 tracking-widest mb-3">
             Client Voices
           </span>
-          <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight">
+          <h2 className="text-3xl md:text-5xl font-serif font-bold tracking-tight">
             <span className="text-black">Real stories.</span>{' '}
             <span className="text-[#022D62]">Real trust.</span>
           </h2>

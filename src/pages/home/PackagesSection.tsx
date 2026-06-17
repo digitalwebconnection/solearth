@@ -9,6 +9,7 @@ import {
   ArrowRight,
   TrendingUp
 } from 'lucide-react';
+import { useQuoteModal } from '../../components/QuoteModal';
 
 const packages = [
   {
@@ -88,6 +89,7 @@ const packages = [
 
 export default function PackagesSection() {
   const [billing, setBilling] = useState<'cash' | 'finance'>('cash');
+  const { openQuoteModal } = useQuoteModal();
 
   return (
     <section id="packages" className="py-14 bg-[#070b16] relative overflow-hidden">
@@ -145,8 +147,8 @@ export default function PackagesSection() {
             <span className="text-[#F8C000] text-xs font-bold tracking-[0.2em] uppercase">Tailored For You</span>
           </motion.div>
 
-          <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-4 tracking-tight">Solar Packages</h2>
-          <p className="text-gray-400 max-w-xl mx-auto text-sm md:text-base leading-relaxed">
+          <h2 className="text-3xl md:text-5xl font-serif font-bold text-white mb-4 tracking-tight">Solar Packages</h2>
+          <p className="text-sm md:text-base leading-relaxed text-gray-400 max-w-xl mx-auto">
             All prices include government STC rebates and full installation by CEC-accredited installers.
           </p>
 
@@ -285,13 +287,13 @@ export default function PackagesSection() {
                 </ul>
 
                 {/* Button */}
-                <a
-                  href="#contact"
-                  className={`w-full py-3 rounded-full text-center text-xs font-bold tracking-wider uppercase transition-all duration-300 flex items-center justify-center gap-2 ${pkg.btnStyle}`}
+                <button
+                  onClick={() => openQuoteModal('Package: ' + pkg.name)}
+                  className={`w-full py-3 rounded-full text-center text-xs font-bold tracking-wider uppercase transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer ${pkg.btnStyle}`}
                 >
                   <span>Configure System</span>
                   <ArrowRight className="w-3.5 h-3.5" />
-                </a>
+                </button>
               </div>
             </motion.div>
           ))}

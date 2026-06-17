@@ -18,13 +18,13 @@ export default function ResidentialFAQ() {
             <span className="text-[9px] font-black uppercase text-[#FE9900] tracking-widest block">
               Industry Standard
             </span>
-            <h3 className="text-xl md:text-2xl font-black font-serif text-[#004093] flex items-center gap-2.5">
+            <h3 className="text-2xl md:text-3xl font-serif font-semibold text-[#004093] flex items-center gap-2.5">
               <Award className="w-6 h-6 text-[#FE9900] shrink-0" />
               What is a Tier-1 Solar Panel System?
             </h3>
           </div>
 
-          <div className="space-y-4 text-xs md:text-sm text-slate-500 leading-relaxed font-semibold">
+          <div className="space-y-4 text-sm md:text-base leading-relaxed text-slate-500 font-semibold">
             <p>
               Tier-1 is a classification system created by Bloomberg New Energy Finance (BNEF). It signifies manufacturers that have provided own-brand, own-manufacture products to at least six different projects, financed non-recourse by six different commercial banks, in the past two years.
             </p>
@@ -43,13 +43,13 @@ export default function ResidentialFAQ() {
             <span className="text-[9px] font-black uppercase text-[#004093] tracking-widest block">
               SolEarth Guarantee
             </span>
-            <h3 className="text-xl md:text-2xl font-black font-serif text-[#004093] flex items-center gap-2.5">
+            <h3 className="text-2xl md:text-3xl font-serif font-semibold text-[#004093] flex items-center gap-2.5">
               <ShieldCheck className="w-6 h-6 text-[#FE9900] shrink-0" />
               Quality You Can Trust
             </h3>
           </div>
 
-          <p className="text-xs md:text-sm text-slate-500 leading-relaxed font-semibold">
+          <p className="text-sm md:text-base leading-relaxed text-slate-500 font-semibold">
             All solar components deployed by SolEarth Energy undergo strict validation under extreme Australian heat and humidity ratings. We do not source cheap B-grade stock or generic white-label inverters.
           </p>
 
@@ -90,10 +90,10 @@ export default function ResidentialFAQ() {
               <span className="text-[11px] text-[#FE9900] font-black uppercase tracking-widest block">
                 Australia's Most Trusted Solar Retailer
               </span>
-              <h3 className="text-2xl md:text-3xl font-black font-serif">
+              <h3 className="text-2xl md:text-3xl font-serif font-semibold">
                 Delivering Premium Energy Solutions Since 2018
               </h3>
-              <p className="text-xs md:text-sm text-slate-200 leading-relaxed font-medium">
+              <p className="text-sm md:text-base leading-relaxed text-slate-200 font-semibold">
                 "Our mission is to help home and business owners take back control of their energy bills. By combining high-efficiency solar modules with intelligent battery management, we insulate our customers from soaring utility grid costs."
               </p>
             </div>
@@ -101,7 +101,7 @@ export default function ResidentialFAQ() {
             <div className="pt-4 border-t border-white/10 flex items-center gap-4">
               <div className="w-10 h-10 rounded-full bg-white/10 overflow-hidden">
                 <img 
-                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=100" 
+                  src="/images/solar/solar-engineer-panel.jpg" 
                   alt="Customer advisor" 
                   className="w-full h-full object-cover"
                 />
@@ -116,11 +116,11 @@ export default function ResidentialFAQ() {
           {/* Video Mockup Frame */}
           <div className="lg:col-span-6 bg-slate-900 relative min-h-[300px] flex items-center justify-center group">
             <img 
-              src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?auto=format&fit=crop&q=80&w=800" 
+              src="/images/solar/solar-aerial-farm.jpg" 
               alt="Solearth installation video preview" 
               className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+            <div className="absolute inset-0 bg-linear-to-t from-slate-950 via-transparent to-transparent"></div>
             
             {/* Play Button */}
             <button className="relative z-10 w-16 h-16 rounded-full bg-[#FE9900] text-white flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300">

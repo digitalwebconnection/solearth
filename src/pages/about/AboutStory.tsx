@@ -27,7 +27,7 @@ export default function AboutStory() {
             >
               <div className="absolute inset-0 bg-[#28A8E0]/10 rounded-3xl transform rotate-2 scale-102" />
               <img
-                src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80"
+                src="/images/solar/solar-panel-rooftop.jpg"
                 alt="Solar Panels Installation"
                 className="relative z-10 rounded-3xl shadow-xl w-full h-[400px] object-cover"
               />
@@ -53,7 +53,7 @@ export default function AboutStory() {
                 className="w-full h-full rounded-2xl border-4 border-white shadow-2xl overflow-hidden"
               >
                 <img
-                  src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=600&q=80"
+                  src="/images/solar/solar-engineer-panel.jpg"
                   alt="Solar Technical Installation"
                   className="w-full h-full object-cover"
                 />
@@ -85,10 +85,10 @@ export default function AboutStory() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0a1f44] mb-6 leading-tight">
+            <h2 className="text-3xl md:text-5xl font-serif font-bold text-[#0a1f44] mb-6 leading-tight">
               Our Mission is to Bring Clean, Cost-Effective Energy to Every Australian Home
             </h2>
-            <p className="text-gray-600 mb-6 leading-relaxed">
+            <p className="text-sm md:text-base leading-relaxed text-gray-600 mb-6">
               Founded with a vision of accelerating Australia's transition to decentralized renewable energy, SolEarth Energy has grown to become one of the country's most trusted solar installers.
             </p>
 

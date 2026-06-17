@@ -33,7 +33,7 @@ export default function MarqueeBelt() {
               <Icon className="w-4 h-4 text-[#F8C000] shrink-0" />
 
               {/* Text */}
-              <span className="text-white/90 text-sm font-medium">{item.text}</span>
+              <span className="text-white/90 font-serif text-sm font-medium">{item.text}</span>
 
               {/* Link pill */}
               <a

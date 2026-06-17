@@ -3,6 +3,7 @@ import { gsap } from 'gsap'
 import logo from "../assets/Frame 1 (3).png"
 import { Link, useLocation } from 'react-router-dom'
 import { Sun, Zap, Battery, Award, Check, ChevronRight, Home, Building2, Wrench } from 'lucide-react'
+import { useQuoteModal } from './QuoteModal'
 
 const NAV_LINKS = [
   { label: 'Home', href: '/' },
@@ -176,6 +177,7 @@ function ServicesMegaMenu({
   onMouseLeave?: () => void
 }) {
   const [activeCategory, setActiveCategory] = useState<"Residential Solar" | "Commercial Solar" | "Solar Services">("Residential Solar");
+  const { openQuoteModal } = useQuoteModal()
 
   const getInitialBadge = (name: string) => {
     if (name.includes("6.6kW")) return "6.6";
@@ -227,8 +229,8 @@ function ServicesMegaMenu({
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
       className={`absolute top-full left-1/2 -translate-x-1/2 w-full max-w-4xl mt-3 bg-white/99 backdrop-blur-2xl rounded-lg shadow-[0_30px_80px_rgba(10,31,68,0.22),0_15px_40px_rgba(10,31,68,0.12)] border border-slate-200/50 overflow-hidden z-50 transition-all duration-300 transform origin-top ${isOpen
-          ? 'opacity-100 scale-y-100 pointer-events-auto'
-          : 'opacity-0 scale-y-95 pointer-events-none'
+        ? 'opacity-100 scale-y-100 pointer-events-auto'
+        : 'opacity-0 scale-y-95 pointer-events-none'
         }`}
     >
       <div className="grid grid-cols-12 min-h-[420px]">
@@ -248,8 +250,8 @@ function ServicesMegaMenu({
                     key={tab.id}
                     onMouseEnter={() => setActiveCategory(tab.id)}
                     className={`w-full text-left p-3.5 rounded-lg flex items-center gap-4 transition-all duration-200 ${isActive
-                        ? "bg-white shadow-lg shadow-black/5 border border-slate-200 " + tab.activeBg
-                        : "hover:bg-slate-100/50 border border-transparent"
+                      ? "bg-white shadow-lg shadow-black/5 border border-slate-200 " + tab.activeBg
+                      : "hover:bg-slate-100/50 border border-transparent"
                       }`}
                   >
                     <div className={`p-2.5 rounded-xl shadow-lg shadow-black/5 ${tab.bgClass} ${tab.colorClass} shrink-0`}>
@@ -278,14 +280,16 @@ function ServicesMegaMenu({
             <p className="text-[10.5px] leading-relaxed text-slate-500 font-medium">
               Expert energy solutions and lifetime maintenance by CEC-accredited engineers.
             </p>
-            <a
-              href="/#contact"
-              onClick={onClose}
-              className="inline-flex items-center gap-2 text-xs font-black text-[#FE9900] hover:text-[#004093] transition group/btn"
+            <button
+              onClick={() => {
+                onClose()
+                openQuoteModal('Services Mega Menu assessment')
+              }}
+              className="inline-flex items-center gap-2 text-xs font-black text-[#FE9900] hover:text-[#004093] transition group/btn cursor-pointer bg-transparent border-none p-0"
             >
               Get Free Assessment
               <span className="transform group-hover/btn:translate-x-1 transition-transform">→</span>
-            </a>
+            </button>
           </div>
         </div>
 
@@ -297,7 +301,7 @@ function ServicesMegaMenu({
               <span className="text-[10px] text-slate-400 font-black uppercase tracking-wider">
                 Services & Capacity
               </span>
-              <span className="px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 text-[9px] font-black">
+              <span className="px-2 py-0.5 rounded-full bg-slate-100 text-slate-800 text-[9px] font-black">
                 {SERVICES_MAP[activeCategory].length} Options
               </span>
             </div>
@@ -339,13 +343,15 @@ function ServicesMegaMenu({
             <span className="flex items-center gap-1">
               <Check className="w-3.5 h-3.5 text-emerald-500" /> CEC Certified Installers
             </span>
-            <a
-              href="/#contact"
-              onClick={onClose}
-              className="text-[#004093] hover:text-[#FE9900] font-black uppercase tracking-wider flex items-center gap-1 transition-colors"
+            <button
+              onClick={() => {
+                onClose()
+                openQuoteModal('Services Mega Menu assessment')
+              }}
+              className="text-[#004093] hover:text-[#FE9900] font-black uppercase tracking-wider flex items-center gap-1 transition-colors cursor-pointer bg-transparent border-none p-0"
             >
               Book Free Assessment →
-            </a>
+            </button>
           </div>
         </div>
 
@@ -399,6 +405,7 @@ function ProductsMegaMenu({
   onMouseLeave?: () => void
 }) {
   const [activeCategory, setActiveCategory] = useState<"Solar Panels" | "Solar Inverters" | "Solar Batteries">("Solar Panels");
+  const { openQuoteModal } = useQuoteModal()
 
   const getInitialBadge = (name: string) => {
     const cleaned = name
@@ -478,8 +485,8 @@ function ProductsMegaMenu({
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
       className={`absolute top-full left-1/2 -translate-x-1/2 w-full max-w-4xl mt-3 bg-white/99 backdrop-blur-2xl rounded-lg shadow-[0_30px_80px_rgba(10,31,68,0.22),0_15px_40px_rgba(10,31,68,0.12)] border border-slate-200/50 overflow-hidden z-50 transition-all duration-300 transform origin-top ${isOpen
-          ? 'opacity-100 scale-y-100 pointer-events-auto'
-          : 'opacity-0 scale-y-95 pointer-events-none'
+        ? 'opacity-100 scale-y-100 pointer-events-auto'
+        : 'opacity-0 scale-y-95 pointer-events-none'
         }`}
     >
       <div className="grid grid-cols-12 min-h-[420px]">
@@ -499,8 +506,8 @@ function ProductsMegaMenu({
                     key={tab.id}
                     onMouseEnter={() => setActiveCategory(tab.id)}
                     className={`w-full text-left p-3.5 rounded-lg flex items-center gap-4 transition-all duration-200 ${isActive
-                        ? `bg-white shadow-lg shadow-black/60 border border-slate-300 ${tab.activeBg}`
-                        : "hover:bg-slate-100/50 border border-transparent"
+                      ? `bg-white shadow-lg shadow-black/60 border border-slate-300 ${tab.activeBg}`
+                      : "hover:bg-slate-100/50 border border-transparent"
                       }`}
                   >
                     <div className={`p-2.5 rounded-xl shadow-lg shadow-black/30 ${tab.bgClass} ${tab.colorClass} shrink-0`}>
@@ -529,14 +536,16 @@ function ProductsMegaMenu({
             <p className="text-[10.5px] leading-relaxed text-slate-900 font-medium">
               SAA-accredited Tier-1 products engineered for severe Australian summer conditions.
             </p>
-            <a
-              href="/#contact"
-              onClick={onClose}
-              className="inline-flex items-center gap-2 text-xs font-black text-[#FE9900] hover:text-[#004093] transition group/btn"
+            <button
+              onClick={() => {
+                onClose()
+                openQuoteModal('Products Mega Menu assessment')
+              }}
+              className="inline-flex items-center gap-2 text-xs font-black text-[#FE9900] hover:text-[#004093] transition group/btn cursor-pointer bg-transparent border-none p-0"
             >
               Get Free Assessment
               <span className="transform group-hover/btn:translate-x-1 transition-transform">→</span>
-            </a>
+            </button>
           </div>
         </div>
 
@@ -590,13 +599,15 @@ function ProductsMegaMenu({
             <span className="flex items-center gap-1">
               <Check className="w-3.5 h-3.5 text-emerald-500" /> CEC Certified
             </span>
-            <a
-              href="/#contact"
-              onClick={onClose}
-              className="text-[#004093] hover:text-[#FE9900] font-black uppercase tracking-wider flex items-center gap-1 transition-colors"
+            <button
+              onClick={() => {
+                onClose()
+                openQuoteModal('Products Mega Menu assessment')
+              }}
+              className="text-[#004093] hover:text-[#FE9900] font-black uppercase tracking-wider flex items-center gap-1 transition-colors cursor-pointer bg-transparent border-none p-0"
             >
               Book Free Assessment →
-            </a>
+            </button>
           </div>
         </div>
 
@@ -611,6 +622,7 @@ export default function Navbar() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null)
   const [mobileOpen, setMobileOpen] = useState(false)
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null)
+  const { openQuoteModal } = useQuoteModal()
 
   const navRef = useRef<HTMLDivElement>(null)
   const hoverTimeoutRef = useRef<any>(null)
@@ -806,12 +818,10 @@ export default function Navbar() {
                 )}
               </div>
             ))}
-          </nav>
-
-          {/* CTA */}
-          <Link
-            to="/#contact"
-            className="hidden lg:flex items-center gap-2 bg-[#f5a623] hover:bg-[#e59c15] text-white font-bold px-8 py-3 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
+                    {/* CTA */}
+          <button
+            onClick={() => openQuoteModal('Navbar CTA')}
+            className="hidden lg:flex items-center gap-2 bg-[#f5a623] hover:bg-[#e59c15] text-white font-bold px-8 py-3 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl cursor-pointer"
           >
             Get A Quote
 
@@ -828,7 +838,10 @@ export default function Navbar() {
                 d="M13 7l5 5m0 0l-5 5m5-5H6"
               />
             </svg>
-          </Link>
+          </button>
+          </nav>
+
+  
 
           {/* Mobile Menu Button */}
           <button
@@ -877,7 +890,7 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         {mobileOpen && (
-          <div className="lg:hidden border-t border-gray-100 p-5 bg-white">
+          <div className="lg:hidden border-t border-gray-100 p-5 bg-white max-h-[calc(100vh-100px)] overflow-y-auto rounded-b-2xl shadow-xl">
             {NAV_LINKS.map((link) => (
               <div key={link.label}>
                 {link.children ? (
@@ -980,13 +993,15 @@ export default function Navbar() {
               </div>
             ))}
 
-            <Link
-              to="/#contact"
-              className="mt-4 flex items-center justify-center bg-[#f5a623] text-white font-bold py-3 rounded-full"
-              onClick={() => setMobileOpen(false)}
+            <button
+              className="mt-4 w-full flex items-center justify-center bg-[#f5a623] text-white font-bold py-3 rounded-full cursor-pointer"
+              onClick={() => {
+                setMobileOpen(false)
+                openQuoteModal('Mobile Navbar CTA')
+              }}
             >
               Get A Quote →
-            </Link>
+            </button>
           </div>
         )}
       </div>

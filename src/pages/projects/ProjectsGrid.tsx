@@ -198,10 +198,10 @@ export default function ProjectsGrid() {
             <span className="text-xs font-bold text-[#1B74BB] uppercase tracking-widest">Completed Works</span>
             <span className="h-0.5 w-8 bg-[#F8C000] rounded-full" />
           </div>
-          <h2 className="text-3xl md:text-5xl font-black text-slate-900 tracking-tight leading-none">
+          <h2 className="text-3xl md:text-5xl font-serif font-bold text-slate-900 tracking-tight leading-none">
             Recent Projects Gallery
           </h2>
-          <p className="text-slate-900 text-sm md:text-base leading-relaxed font-semibold">
+          <p className="text-sm md:text-base leading-relaxed text-slate-900 font-semibold">
             Select a category to filter our completed solar energy systems, and click on any card to view extensive engineering design and performance data.
           </p>
         </div>
@@ -213,8 +213,8 @@ export default function ProjectsGrid() {
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
               className={`px-5 py-2.5 rounded-full text-xs font-bold tracking-wider uppercase transition-all duration-200 cursor-pointer ${activeTab === tab.id
-                  ? 'bg-[#1B74BB] text-white shadow-lg shadow-blue-500/20'
-                  : 'bg-slate-50 hover:bg-slate-100 text-slate-600 hover:text-slate-900 border border-slate-500/50'
+                ? 'bg-[#1B74BB] text-white shadow-lg shadow-blue-500/20'
+                : 'bg-slate-50 hover:bg-slate-100 text-slate-800 hover:text-slate-900 border border-slate-500/50'
                 }`}
             >
               {tab.label}
@@ -247,7 +247,7 @@ export default function ProjectsGrid() {
 
                 {/* Card Content */}
                 <div className="p-6">
-                  <h3 className="text-lg font-black text-slate-900 leading-snug group-hover:text-[#1B74BB] transition-colors line-clamp-2">
+                  <h3 className="text-2xl md:text-3xl font-serif font-semibold text-slate-900 leading-snug group-hover:text-[#1B74BB] transition-colors line-clamp-2">
                     {project.title}
                   </h3>
                 </div>
@@ -311,7 +311,7 @@ export default function ProjectsGrid() {
                 <span className="bg-[#F8C000] text-slate-950 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full w-fit block">
                   {selectedProject.categoryLabel}
                 </span>
-                <h3 className="text-xl sm:text-2xl font-black tracking-tight leading-tight">
+                <h3 className="text-2xl md:text-3xl font-serif font-semibold tracking-tight leading-tight">
                   {selectedProject.title}
                 </h3>
                 <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-slate-300 text-xs font-semibold">
@@ -357,7 +357,7 @@ export default function ProjectsGrid() {
                     <Sparkles className="w-4 h-4 text-[#F8C000] fill-[#F8C000]" />
                     Project Overview
                   </h4>
-                  <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-semibold">
+                  <p className="text-slate-800 text-xs sm:text-sm leading-relaxed font-semibold">
                     {selectedProject.description}
                   </p>
                 </div>
@@ -366,13 +366,13 @@ export default function ProjectsGrid() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-slate-100">
                   <div className="space-y-1">
                     <h5 className="text-[10px] font-black uppercase tracking-widest text-red-500">The Challenge</h5>
-                    <p className="text-slate-600 text-xs leading-relaxed font-medium bg-red-50/50 p-3 rounded-lg border border-red-100/50">
+                    <p className="text-slate-800 text-xs leading-relaxed font-medium bg-red-50/50 p-3 rounded-lg border border-red-100/50">
                       {selectedProject.challenge}
                     </p>
                   </div>
                   <div className="space-y-1">
                     <h5 className="text-[10px] font-black uppercase tracking-widest text-emerald-600">The Solution</h5>
-                    <p className="text-slate-600 text-xs leading-relaxed font-medium bg-emerald-50/50 p-3 rounded-lg border border-emerald-100/50">
+                    <p className="text-slate-800 text-xs leading-relaxed font-medium bg-emerald-50/50 p-3 rounded-lg border border-emerald-100/50">
                       {selectedProject.solution}
                     </p>
                   </div>

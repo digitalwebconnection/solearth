@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Award, FileText, Sun, Zap, Battery, Car } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import CardSwap, { Card } from './CardSwap';
+import { useQuoteModal } from '../../components/QuoteModal';
 
 interface ProductTab {
   id: string;
@@ -17,6 +18,7 @@ interface ProductTab {
 }
 
 export default function Products() {
+  const { openQuoteModal } = useQuoteModal();
   const [activeIndex, setActiveIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
@@ -30,7 +32,7 @@ export default function Products() {
       accent: '#f5a623',
       title: 'N-Type TOPCon High-Efficiency Solar Panels',
       subtitle: 'Generate more power per square metre with next-generation TOPCon cells — engineered for Australian rooftops with intense sun exposure and limited space.',
-      image: 'https://images.unsplash.com/photo-1559302504-64aae6ca6b6d?auto=format&fit=crop&w=800&q=80',
+      image: '/images/solar/commercial-solar-roof.jpg',
       specs: [
         { label: 'Cell Technology', value: 'N-Type TOPCon' },
         { label: 'Max Power Output', value: '440W – 475W' },
@@ -60,7 +62,7 @@ export default function Products() {
       accent: '#38bdf8',
       title: 'Hybrid Solar Inverters — Single & Three Phase',
       subtitle: 'The intelligent brain of your solar system. Manages solar generation, battery charging, grid export and home consumption seamlessly in one compact unit.',
-      image: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=800&q=80',
+      image: '/images/solar/solar-commercial-farm.jpg',
       specs: [
         { label: 'Inverter Type', value: 'Hybrid (Solar + Battery + Grid)' },
         { label: 'Max Efficiency', value: 'Up to 98.6%' },
@@ -89,7 +91,7 @@ export default function Products() {
       accent: '#4ade80',
       title: 'LFP Home Battery Storage — Power Day & Night',
       subtitle: 'Store excess solar energy during daylight and power your entire home through the night. Cobalt-free LFP chemistry for safe, long-lasting residential backup.',
-      image: 'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=800&q=80',
+      image: '/images/solar/solar-sunset-array.jpg',
       specs: [
         { label: 'Battery Chemistry', value: 'LiFePO4 — Cobalt Free' },
         { label: 'Usable Capacity', value: '5 kWh – 30 kWh (Stackable)' },
@@ -118,7 +120,7 @@ export default function Products() {
       accent: '#a78bfa',
       title: 'Smart Solar-Integrated EV Charging Stations',
       subtitle: 'Charge your EV using 100% free rooftop solar energy. Our smart chargers automatically prioritise surplus solar — so your car charges before energy goes to the grid.',
-      image: 'https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=800&q=80',
+      image: '/images/solar/battery-storage-unit.jpg',
       specs: [
         { label: 'Charging Power', value: '7.4 kW – 22 kW AC' },
         { label: 'Connector Type', value: 'Type 2 Tethered (Universal)' },
@@ -213,7 +215,7 @@ export default function Products() {
             <button
               key={tab.id}
               onClick={() => goTo(i)}
-              className={`relative flex items-center gap-2 px-10 py-2 text-sm font-bold rounded-full transition-all duration-300 overflow-hidden ${activeIndex === i
+              className={`relative flex items-center font-serif gap-2 px-10 py-2 text-sm font-bold rounded-full transition-all duration-300 overflow-hidden ${activeIndex === i
                 ? 'text-white shadow-xl'
                 : 'bg-gray-100 text-gray-900 hover:bg-gray-200 border border-gray-200'
                 }`}
@@ -359,20 +361,20 @@ export default function Products() {
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-3">
-              <a
-                href="#contact"
-                className="inline-flex items-center justify-center px-10 py-2 text-sm font-extrabold rounded-full text-[#0a1f44] transition-all duration-200 shadow-xl hover:-translate-y-0.5"
+              <button
+                onClick={() => openQuoteModal(`Product Pricing: ${currentTab.label}`)}
+                className="inline-flex items-center justify-center px-10 py-2 text-sm font-extrabold rounded-full text-[#0a1f44] transition-all duration-200 shadow-xl hover:-translate-y-0.5 cursor-pointer border-none"
                 style={{ background: '#f5a623', boxShadow: '0 8px 24px #f5a62355' }}
               >
                 Request Pricing →
-              </a>
-              <a
-                href="#contact"
-                className="inline-flex items-center justify-center gap-2 px-10 py-2 text-sm font-bold rounded-full text-gray-700 bg-gray-100 hover:bg-gray-200 border border-gray-200 transition-all duration-200"
+              </button>
+              <button
+                onClick={() => openQuoteModal(`Product Brochure: ${currentTab.label}`)}
+                className="inline-flex items-center justify-center gap-2 px-10 py-2 text-sm font-bold rounded-full text-gray-700 bg-gray-100 hover:bg-gray-200 border border-gray-200 transition-all duration-200 cursor-pointer"
               >
                 <FileText className="h-4 w-4 text-gray-400" />
                 Download Brochure
-              </a>
+              </button>
             </div>
           </div>
 

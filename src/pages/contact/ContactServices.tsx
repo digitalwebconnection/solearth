@@ -79,7 +79,7 @@ const variantColors: Record<
   devi: {
     back: "text-slate-400 dark:text-slate-500",
     cover: "text-slate-350 dark:text-slate-400",
-    deco: "text-slate-600 dark:text-slate-200",
+    deco: "text-slate-800 dark:text-slate-200",
   },
   rudras: {
     back: "text-blue-700 dark:text-blue-800",
@@ -152,7 +152,7 @@ const DeviFolder: React.FC<{
           />
         ))}
       </div>
-      <div className="relative aspect-[20/16] w-20" style={{ perspective: "800px" }}>
+      <div className="relative aspect-20/16 w-20" style={{ perspective: "800px" }}>
         <div className={cn("absolute inset-0", colors.back)}><FolderBackIcon /></div>
         <div className={cn("relative", colors.cover)}><FolderCoverIcon /></div>
       </div>
@@ -185,7 +185,7 @@ const RudrasFolder: React.FC<{
           />
         ))}
       </div>
-      <div className="relative aspect-[20/16] w-20" style={{ perspective: "800px" }}>
+      <div className="relative aspect-20/16 w-20" style={{ perspective: "800px" }}>
         <div className={cn("absolute inset-0", colors.back)}><FolderBackIcon /></div>
         <div className="absolute bottom-0.5 left-0.5 right-0.5 h-3/4 bg-white rounded-md shadow-xs" />
         <motion.div
@@ -238,7 +238,7 @@ const ArdraFolder: React.FC<{
           />
         ))}
       </div>
-      <motion.div className="relative w-20 aspect-[20/16]" animate={isHovered ? { scale: 0.88 } : { scale: 1 }}>
+      <motion.div className="relative w-20 aspect-20/16" animate={isHovered ? { scale: 0.88 } : { scale: 1 }}>
         <div className={cn("absolute inset-0", colors.back)}><FolderBackIcon /></div>
         <div className={cn("relative", colors.cover)}>
           <FolderCoverIcon />
@@ -258,7 +258,7 @@ const ShaktiFolder: React.FC<{
 }> = ({ images, isHovered, colors }) => {
   return (
     <motion.div className="relative" animate={isHovered ? { y: 8 } : { y: 0 }} transition={{ duration: 0.3 }}>
-      <div className="relative w-20 aspect-[20/16]">
+      <div className="relative w-20 aspect-20/16">
         <div className={cn("absolute inset-0", colors.back)}><FolderBackIcon /></div>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12">
           {images.map((img, i) => (
@@ -303,7 +303,7 @@ const KuberaFolder: React.FC<{
   )
   return (
     <div className="relative">
-      <div className="relative w-20 aspect-[20/16]" style={{ perspective: "800px" }}>
+      <div className="relative w-20 aspect-20/16" style={{ perspective: "800px" }}>
         <div className={cn("absolute inset-0", colors.back)}><FolderBackIcon /></div>
         <div className="absolute bottom-0.5 left-0.5 right-0.5 h-3/4 bg-white rounded-md shadow-xs" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 pointer-events-none">
@@ -317,10 +317,10 @@ const KuberaFolder: React.FC<{
               animate={
                 isHovered
                   ? {
-                      opacity: [1, 0],
-                      y: [0, floatingMotions[i]?.y ?? -120],
-                      x: floatingMotions[i]?.x ?? 0,
-                    }
+                    opacity: [1, 0],
+                    y: [0, floatingMotions[i]?.y ?? -120],
+                    x: floatingMotions[i]?.x ?? 0,
+                  }
                   : { opacity: 0 }
               }
               transition={{
@@ -374,7 +374,7 @@ const HariFolder: React.FC<{
         ))}
       </div>
       <motion.div
-        className="relative w-20 aspect-[20/16]"
+        className="relative w-20 aspect-20/16"
         style={{ perspective: "800px", transformOrigin: "50% 100%" }}
         animate={isHovered ? { y: -8, scaleX: 0.94, scaleY: 0.94 } : { y: 0, scaleX: 1, scaleY: 1 }}
       >
@@ -414,7 +414,7 @@ const RaviFolder: React.FC<{
   const orderedImages = React.useMemo(() => reorder(images), [images])
   return (
     <div className="relative">
-      <div className="relative w-20 aspect-[20/16]" style={{ perspective: "800px" }}>
+      <div className="relative w-20 aspect-20/16" style={{ perspective: "800px" }}>
         <div className={cn("absolute inset-0", colors.back)}><FolderBackIcon /></div>
         <div className="absolute bottom-0.5 left-0.5 right-0.5 h-3/4 bg-white rounded-md shadow-xs" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-12 pointer-events-none">
@@ -511,9 +511,9 @@ const serviceItems = [
     badgeColor: 'bg-amber-500/10 text-amber-600',
     variant: 'ravi' as FolderVariant,
     images: [
-      'https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=150&q=80',
-      'https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=150&q=80',
-      'https://images.unsplash.com/photo-1613665813446-82a78c468a1d?auto=format&fit=crop&w=150&q=80'
+      '/images/solar/solar-panel-rooftop.jpg',
+      '/images/solar/solar-residential-house.jpg',
+      '/images/solar/solar-hero-wide.jpg'
     ],
     subjectValue: 'Residential Solar',
     inclusions: [
@@ -529,9 +529,9 @@ const serviceItems = [
     badgeColor: 'bg-sky-500/10 text-sky-600',
     variant: 'kubera' as FolderVariant,
     images: [
-      'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=150&q=80',
-      'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=150&q=80',
-      'https://images.unsplash.com/photo-1554469384-e58fac16e2b0?auto=format&fit=crop&w=150&q=80'
+      '/images/solar/solar-aerial-farm.jpg',
+      '/images/solar/solar-ground-mounted.jpg',
+      '/images/solar/solar-panel-detail.jpg'
     ],
     subjectValue: 'Commercial Solar',
     inclusions: [
@@ -547,9 +547,9 @@ const serviceItems = [
     badgeColor: 'bg-emerald-500/10 text-emerald-600',
     variant: 'shakti' as FolderVariant,
     images: [
-      'https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?auto=format&fit=crop&w=150&q=80',
-      'https://images.unsplash.com/photo-1548613053-220bfb805469?auto=format&fit=crop&w=150&q=80',
-      'https://images.unsplash.com/photo-1590393840742-b062ca160533?auto=format&fit=crop&w=150&q=80'
+      '/images/solar/solar-inverter-tech.jpg',
+      '/images/solar/commercial-solar-roof.jpg',
+      '/images/solar/solar-panel-closeup.jpg'
     ],
     subjectValue: 'Battery Storage',
     inclusions: [
@@ -565,9 +565,9 @@ const serviceItems = [
     badgeColor: 'bg-purple-500/10 text-purple-600',
     variant: 'hari' as FolderVariant,
     images: [
-      'https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=150&q=80',
-      'https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=150&q=80',
-      'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=150&q=80'
+      '/images/solar/ev-charging-solar.jpg',
+      '/images/solar/battery-storage-unit.jpg',
+      '/images/solar/solar-smart-home.jpg'
     ],
     subjectValue: 'System Upgrade',
     inclusions: [
@@ -583,9 +583,9 @@ const serviceItems = [
     badgeColor: 'bg-rose-500/10 text-rose-600',
     variant: 'ardra' as FolderVariant,
     images: [
-      'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=150&q=80',
-      'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=150&q=80',
-      'https://images.unsplash.com/photo-1605647540924-852290f6b0d5?auto=format&fit=crop&w=150&q=80'
+      '/images/solar/solar-commercial-farm.jpg',
+      '/images/solar/solar-tech-worker.jpg',
+      '/images/solar/solar-panel-closeup.jpg'
     ],
     subjectValue: 'System Upgrade',
     inclusions: [
@@ -601,9 +601,9 @@ const serviceItems = [
     badgeColor: 'bg-blue-500/10 text-blue-600',
     variant: 'rudras' as FolderVariant,
     images: [
-      'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=150&q=80',
-      'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=150&q=80',
-      'https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=150&q=80'
+      '/images/solar/solar-installation-crew.jpg',
+      '/images/solar/solar-engineer-panel.jpg',
+      '/images/solar/solar-tech-worker.jpg'
     ],
     subjectValue: 'Maintenance',
     inclusions: [
@@ -626,7 +626,7 @@ export default function ContactServices({ selectedSubject, onSelectService }: Co
   const handleCardClick = (index: number, subjectValue: string) => {
     const isCurrentlyExpanded = expandedIndex === index
     setExpandedIndex(isCurrentlyExpanded ? null : index)
-    
+
     if (onSelectService) {
       onSelectService(subjectValue)
     }
@@ -645,7 +645,7 @@ export default function ContactServices({ selectedSubject, onSelectService }: Co
   return (
     <section className="py-16 bg-white relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Title */}
         <div className="text-center mb-16 space-y-4">
           <div className="flex items-center justify-center space-x-2.5">
@@ -653,10 +653,10 @@ export default function ContactServices({ selectedSubject, onSelectService }: Co
             <span className="text-xs font-black text-[#004093] uppercase tracking-widest">Our Offerings</span>
             <span className="h-0.5 w-8 bg-[#FE9900] rounded-full" />
           </div>
-          <h2 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tight leading-tight">
+          <h2 className="text-3xl md:text-5xl font-serif font-bold text-slate-900 tracking-tight leading-tight">
             Which Solutions Do You Need?
           </h2>
-          <p className="text-slate-800 max-w-2xl mx-auto text-xs sm:text-sm font-semibold">
+          <p className="text-sm md:text-base leading-relaxed text-slate-800 max-w-2xl mx-auto font-semibold">
             Hover to peek inside our system folders; click to expand details and auto-select that option in the inquiry form below.
           </p>
         </div>
@@ -681,7 +681,7 @@ export default function ContactServices({ selectedSubject, onSelectService }: Co
                 className={cn(
                   "bg-white rounded-lg border p-8 text-left transition-all duration-300 shadow-xs cursor-pointer flex flex-col justify-between group overflow-hidden relative",
                   isExpanded || isSelected
-                    ? "border-[#004093] bg-[#004093]/[0.01] ring-2 ring-[#004093]/10 shadow-md scale-[1.01]"
+                    ? "border-[#004093] bg-[#004093]/1 ring-2 ring-[#004093]/10 shadow-md scale-[1.01]"
                     : "border-slate-300 hover:border-[#004093]/40 hover:shadow-md"
                 )}
               >
@@ -714,12 +714,12 @@ export default function ContactServices({ selectedSubject, onSelectService }: Co
                   </div>
 
                   <h3 className={cn(
-                    "font-extrabold text-lg mb-2 transition-colors duration-200",
+                    "font-serif font-semibold text-2xl md:text-3xl mb-2 transition-colors duration-200",
                     isExpanded || isSelected ? "text-[#004093]" : "text-slate-900 group-hover:text-[#004093]"
                   )}>
                     {item.title}
                   </h3>
-                  <p className="text-slate-550 text-xs sm:text-sm leading-relaxed font-semibold">
+                  <p className="text-sm md:text-base leading-relaxed text-slate-550 font-semibold">
                     {item.desc}
                   </p>
                 </div>
@@ -740,13 +740,13 @@ export default function ContactServices({ selectedSubject, onSelectService }: Co
                       </h4>
                       <ul className="space-y-2.5">
                         {item.inclusions.map((inc, i) => (
-                          <li key={i} className="flex items-start gap-2 text-xs text-slate-600 font-semibold leading-relaxed">
+                          <li key={i} className="flex items-start gap-2 text-xs text-slate-800 font-semibold leading-relaxed">
                             <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                             <span>{inc}</span>
                           </li>
                         ))}
                       </ul>
-                      
+
                       <div className="pt-2 text-[10px] font-bold text-slate-400 italic">
                         * Clicking selected this solution. Fill the form below to proceed.
                       </div>

@@ -48,7 +48,7 @@ export const InstallationBestFor: React.FC<InstallationBestForProps> = ({
 
   return (
     <section ref={containerRef} className="relative bg-white py-8 md:py-0 px-6 md:px-0 border-t border-slate-100">
-      
+
       {/* Background Graphic elements */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-[400px] h-[400px] bg-[#004093]/3 rounded-full blur-3xl" />
@@ -57,12 +57,12 @@ export const InstallationBestFor: React.FC<InstallationBestForProps> = ({
 
       <div className="relative z-10 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-          
+
           {/* COLUMN 1: VISUAL BRAND BADGE CARD */}
           <div className="grid-column lg:col-span-4 relative overflow-hidden rounded-lg bg-linear-to-br from-[#004093] to-[#001b40] text-white p-8 md:p-10 shadow-[0_20px_50px_rgba(0,64,147,0.15)] flex flex-col justify-between min-h-[380px] group">
             {/* Technical grid paper backdrop */}
             <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-size-[32px_32px] pointer-events-none" />
-            
+
             {/* Ambient orange glow */}
             <div className="absolute -top-24 -right-24 w-48 h-48 bg-[#FE9900]/15 rounded-full blur-2xl pointer-events-none group-hover:scale-110 transition-transform duration-700" />
 
@@ -72,14 +72,14 @@ export const InstallationBestFor: React.FC<InstallationBestForProps> = ({
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                   CEC Certified
                 </span>
-                
+
                 <Sparkles size={14} className="text-[#FE9900] animate-spin" style={{ animationDuration: "8s" }} />
               </div>
 
               <h3 className="text-2xl md:text-3.5xl font-black tracking-tight leading-tight">
                 Accredited <br />Equipment Standards
               </h3>
-              
+
               <p className="text-white/80 text-xs md:text-sm leading-relaxed font-medium">
                 Tested to comply with local weather variations and SAA electrical connection protocols for residential deployment.
               </p>
@@ -111,7 +111,7 @@ export const InstallationBestFor: React.FC<InstallationBestForProps> = ({
 
               <div className="space-y-3">
                 {product.installation.map((item, idx) => (
-                  <div 
+                  <div
                     key={idx}
                     className="p-5 bg-slate-50/50 hover:bg-white border border-slate-500/60 hover:border-[#FE9900]/20 rounded-lg shadow-lg shadow-black/40 transition duration-200 flex items-start gap-4 group"
                   >
@@ -119,7 +119,7 @@ export const InstallationBestFor: React.FC<InstallationBestForProps> = ({
                       <Check size={10} className="stroke-3" />
                     </div>
 
-                    <p className="text-slate-600 text-xs md:text-sm font-semibold leading-relaxed font-sans">
+                    <p className="text-slate-800 text-xs md:text-sm font-semibold leading-relaxed font-sans">
                       {item}
                     </p>
                   </div>
@@ -143,7 +143,7 @@ export const InstallationBestFor: React.FC<InstallationBestForProps> = ({
 
               <div className="space-y-6">
                 {product.bestFor.map((item, idx) => (
-                  <div 
+                  <div
                     key={idx}
                     className="p-5 bg-slate-50/50 hover:bg-white border border-slate-400/60 hover:border-[#004093]/20 rounded-lg shadow-lg shadow-black/40 transition duration-200 flex items-start gap-4 group"
                   >
@@ -151,7 +151,7 @@ export const InstallationBestFor: React.FC<InstallationBestForProps> = ({
                       0{idx + 1}
                     </div>
 
-                    <p className="text-slate-600 text-xs md:text-sm font-semibold leading-relaxed font-sans">
+                    <p className="text-slate-800 text-xs md:text-sm font-semibold leading-relaxed font-sans">
                       {item}
                     </p>
                   </div>

@@ -46,7 +46,7 @@ export default function ContactFormSection({ selectedSubject, setSelectedSubject
   return (
     <section id="contact" className="py-24 bg-slate-50 relative overflow-hidden">
       {/* Background patterns */}
-      <div 
+      <div
         className="absolute inset-0 opacity-[0.2] pointer-events-none"
         style={{
           backgroundImage: 'radial-gradient(#004093 1px, transparent 1px)',
@@ -64,10 +64,10 @@ export default function ContactFormSection({ selectedSubject, setSelectedSubject
                 <span className="w-2 h-2 bg-[#FE9900] rounded-full animate-pulse" />
                 Connect With Us
               </div>
-              <h2 className="text-4xl font-black text-slate-900 tracking-tight leading-tight mb-4">
+              <h2 className="text-3xl md:text-5xl font-serif font-bold text-slate-900 tracking-tight leading-tight mb-4">
                 How Can We Help You Today?
               </h2>
-              <p className="text-slate-600 text-sm md:text-base leading-relaxed font-semibold">
+              <p className="text-sm md:text-base leading-relaxed text-slate-800 font-semibold">
                 Reach out to schedule a site inspection, get a free solar consultation, request support, or ask about solar battery eligibility. Our engineers are ready to help.
               </p>
             </div>
@@ -244,7 +244,7 @@ export default function ContactFormSection({ selectedSubject, setSelectedSubject
                     <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mb-6 shadow-sm border border-emerald-200">
                       <CheckCircle2 className="w-8 h-8 text-emerald-600" />
                     </div>
-                    <h3 className="text-2xl font-black text-slate-900 mb-3">Message Received!</h3>
+                    <h3 className="text-2xl md:text-3xl font-serif font-semibold text-slate-900 mb-3">Message Received!</h3>
                     <p className="text-slate-550 max-w-md mb-8 text-sm leading-relaxed font-semibold">
                       Thank you, <span className="font-semibold text-slate-800">{formData.firstName}</span>. Your inquiry regarding <span className="font-semibold text-slate-800">{formData.subject}</span> has been received. We'll get back to you shortly.
                     </p>

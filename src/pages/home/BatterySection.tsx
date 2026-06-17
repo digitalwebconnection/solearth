@@ -97,8 +97,8 @@ export default function BatterySection() {
                 <span className="h-0.5 w-8 bg-[#F8C000] rounded-full" />
                 <span className="text-xs font-bold text-[#1B74BB] uppercase tracking-widest">Energy Independence</span>
               </div>
-              <h2 className="text-xl md:text-3xl font-black leading-tight text-slate-900 tracking-tight">
-                Power Your Home  Day & Night
+              <h2 className="text-3xl md:text-5xl font-serif font-bold leading-tight text-slate-900 tracking-tight">
+                Power Your Home Day & Night
               </h2>
 
             </div>
@@ -106,7 +106,7 @@ export default function BatterySection() {
             {/* Interactive Compare Simulator */}
             <div className="space-y-6 bg-white border border-slate-400 rounded-lg p-6 shadow-lg shadow-black">
               <div className="flex items-center justify-between flex-wrap gap-4 pb-4 border-b border-slate-100">
-                <h3 className="text-xs font-extrabold text-slate-800 uppercase tracking-wider">Compare System Impact</h3>
+                <h3 className="text-2xl md:text-3xl font-serif font-semibold text-slate-800 tracking-tight">Compare System Impact</h3>
 
                 {/* Switcher Control */}
                 <div className="flex bg-slate-100 p-1 rounded-full border border-slate-200">

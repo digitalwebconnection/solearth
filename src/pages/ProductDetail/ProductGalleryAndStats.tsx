@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Zap, Shield, Award, Sparkles, Download, CheckCircle, ArrowRight } from "lucide-react";
 import type { ProductData } from "../../data/products";
+import { useQuoteModal } from "../../components/QuoteModal";
 
 interface ProductGalleryAndStatsProps {
   product: ProductData;
@@ -9,6 +10,7 @@ interface ProductGalleryAndStatsProps {
 export const ProductGalleryAndStats: React.FC<ProductGalleryAndStatsProps> = ({
   product,
 }) => {
+  const { openQuoteModal } = useQuoteModal();
   const images = product.productImages || [];
   const [activeImage, setActiveImage] = useState(images[0] || "");
 
@@ -76,7 +78,7 @@ export const ProductGalleryAndStats: React.FC<ProductGalleryAndStatsProps> = ({
   return (
     <div className="bg-white mx-auto max-w-7xl px-6 md:px-0 py-10">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
-        
+
         {/* LEFT COLUMN: Technical Credentials Sidebar (col-span-3) */}
         <div className="lg:col-span-3 bg-slate-50/70 border border-slate-100/85 rounded-[32px] p-6 flex flex-col justify-between gap-6 self-stretch">
           <div className="space-y-5">
@@ -88,11 +90,11 @@ export const ProductGalleryAndStats: React.FC<ProductGalleryAndStatsProps> = ({
                 Hardware Overview
               </h4>
             </div>
-            
+
             <div className="space-y-3">
               {leftOverviewStats.map((item, idx) => (
-                <div 
-                  key={idx} 
+                <div
+                  key={idx}
                   className="flex items-center gap-3 p-3 bg-white border border-slate-200/60 rounded-xl shadow-md transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 hover:border-slate-300"
                 >
                   <div className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 ${item.color}`}>
@@ -110,7 +112,7 @@ export const ProductGalleryAndStats: React.FC<ProductGalleryAndStatsProps> = ({
               ))}
             </div>
           </div>
-          
+
           <div className="pt-4 border-t border-slate-200/60 space-y-2.5">
             <div className="flex items-center gap-2 text-[10px] text-slate-500 font-bold uppercase tracking-wider">
               <CheckCircle size={14} className="text-emerald-500 shrink-0" />
@@ -125,7 +127,7 @@ export const ProductGalleryAndStats: React.FC<ProductGalleryAndStatsProps> = ({
 
         {/* CENTER COLUMN: Product Showcase Canvas & Vertical Thumbnails (col-span-5) */}
         <div className="lg:col-span-5 flex flex-col sm:flex-row gap-4 items-stretch">
-          
+
           {/* Thumbnails (Horizontal on small screens, Vertical on desktop) */}
           {images.length > 1 && (
             <div className="flex sm:flex-col gap-3 overflow-x-auto sm:overflow-x-visible pb-2 sm:pb-0 shrink-0 justify-start">
@@ -133,11 +135,10 @@ export const ProductGalleryAndStats: React.FC<ProductGalleryAndStatsProps> = ({
                 <button
                   key={idx}
                   onClick={() => setActiveImage(img)}
-                  className={`w-16 h-20 rounded-2xl overflow-hidden border-2 transition-all duration-300 p-2 bg-slate-50/50 shrink-0 ${
-                    activeImage === img 
-                      ? "border-[#004093] scale-95 shadow-md bg-white" 
+                  className={`w-16 h-20 rounded-2xl overflow-hidden border-2 transition-all duration-300 p-2 bg-slate-50/50 shrink-0 ${activeImage === img
+                      ? "border-[#004093] scale-95 shadow-md bg-white"
                       : "border-slate-100 hover:border-slate-300/80"
-                  }`}
+                    }`}
                 >
                   <img src={img} alt="thumbnail" className="w-full h-full object-contain" />
                 </button>
@@ -156,7 +157,7 @@ export const ProductGalleryAndStats: React.FC<ProductGalleryAndStatsProps> = ({
             <div className="absolute top-4 left-4 bg-[#004093] text-white text-[9px] font-black uppercase tracking-wider px-3.5 py-1.5 rounded-full shadow-sm">
               {product.category}
             </div>
-            
+
             <div className="absolute top-4 right-4 bg-emerald-500/10 text-emerald-600 border border-emerald-500/20 text-[8px] font-black uppercase tracking-wider px-2.5 py-1 rounded-md shadow-xs">
               CEC Certified
             </div>
@@ -166,7 +167,7 @@ export const ProductGalleryAndStats: React.FC<ProductGalleryAndStatsProps> = ({
 
         {/* RIGHT COLUMN: Brand Details, Description & CTA (col-span-4) */}
         <div className="lg:col-span-4 flex flex-col justify-between gap-6 self-stretch">
-          
+
           <div className="space-y-4">
             {/* Brand logo / header */}
             <div className="flex items-center gap-3">
@@ -189,7 +190,7 @@ export const ProductGalleryAndStats: React.FC<ProductGalleryAndStatsProps> = ({
                   </span>
                 </div>
               )}
-              
+
               <div className="flex items-center gap-1.5 px-2.5 py-1 bg-[#004093]/5 rounded-full border border-[#004093]/10">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
                 <span className="text-[9px] font-black text-[#004093] uppercase tracking-wider">
@@ -209,7 +210,7 @@ export const ProductGalleryAndStats: React.FC<ProductGalleryAndStatsProps> = ({
             </div>
 
             {/* Intro text */}
-            <div className="space-y-3 text-slate-600 text-xs md:text-sm leading-relaxed font-medium">
+            <div className="space-y-3 text-slate-800 text-xs md:text-sm leading-relaxed font-medium">
               {product.intro.split('\n\n').map((paragraph, index) => (
                 <p key={index}>
                   {paragraph.trim()}
@@ -222,8 +223,8 @@ export const ProductGalleryAndStats: React.FC<ProductGalleryAndStatsProps> = ({
             {/* 2-Card Metrics */}
             <div className="grid grid-cols-2 gap-3">
               {rightKeyStats.map((stat, idx) => (
-                <div 
-                  key={idx} 
+                <div
+                  key={idx}
                   className="bg-slate-50/40 border border-slate-100/60 rounded-2xl p-3 flex items-center gap-3 transition-all duration-300 hover:bg-white hover:shadow-md hover:border-slate-200"
                 >
                   <div className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 ${stat.color}`}>
@@ -239,17 +240,13 @@ export const ProductGalleryAndStats: React.FC<ProductGalleryAndStatsProps> = ({
 
             {/* CTAs Stack */}
             <div className="space-y-2.5">
-              <a
-                href="#quote-section"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.getElementById("quote-section")?.scrollIntoView({ behavior: "smooth" });
-                }}
-                className="w-full inline-flex items-center justify-center gap-2 bg-linear-to-r from-[#FE9900] to-[#ffb13b] hover:from-[#e08600] hover:to-[#fe9900] text-white px-6 py-4 rounded-xl font-black transition-all duration-300 shadow-[0_8px_25px_rgba(254,153,0,0.2)] hover:shadow-[0_12px_35px_rgba(254,153,0,0.35)] text-center hover:scale-[1.02] active:scale-98 uppercase tracking-widest text-xs cursor-pointer"
+              <button
+                onClick={() => openQuoteModal(`Product Page: ${product.brand} ${product.name}`)}
+                className="w-full inline-flex items-center justify-center gap-2 bg-linear-to-r from-[#FE9900] to-[#ffb13b] hover:from-[#e08600] hover:to-[#fe9900] text-white px-6 py-4 rounded-xl font-black transition-all duration-300 shadow-[0_8px_25px_rgba(254,153,0,0.2)] hover:shadow-[0_12px_35px_rgba(254,153,0,0.35)] text-center hover:scale-[1.02] active:scale-98 uppercase tracking-widest text-xs cursor-pointer border-none"
               >
                 Get Free Quote
                 <ArrowRight size={16} />
-              </a>
+              </button>
 
               <a
                 href={datasheetLink}

@@ -11,7 +11,7 @@ export default function AboutPillars() {
       icon: Sun,
       title: 'Premium Engineering',
       desc: 'We install high-performance Tier-1 panels and state-of-the-art inverters designed to maximize clean energy output, even in harsh Australian heat.',
-      img: 'https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=800&q=80',
+      img: '/images/solar/solar-residential-house.jpg',
       color: 'from-amber-500/20 to-amber-600/20 border-amber-500/30 text-amber-400'
     },
     {
@@ -19,7 +19,7 @@ export default function AboutPillars() {
       icon: Shield,
       title: 'Uncompromised Safety',
       desc: 'Safety is at our core. Every single technician is a fully certified, CEC-accredited installer working to strict safety guidelines and Australian electrical regulations.',
-      img: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80',
+      img: '/images/solar/solar-engineer-panel.jpg',
       color: 'from-sky-500/20 to-sky-600/20 border-sky-500/30 text-sky-400'
     },
     {
@@ -27,7 +27,7 @@ export default function AboutPillars() {
       icon: Users,
       title: 'Customer-First Approach',
       desc: 'We make transitioning to solar easy. Our domestic customer care and engineering teams guide you through every design, rebate filing, and maintenance phase.',
-      img: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80',
+      img: '/images/solar/solar-tech-worker.jpg',
       color: 'from-blue-500/20 to-blue-600/20 border-blue-500/30 text-blue-400'
     },
     {
@@ -35,7 +35,7 @@ export default function AboutPillars() {
       icon: Award,
       title: 'Industry Warranties',
       desc: 'Rest easy with warranties that protect your pocket. Enjoy a 25-year panel performance warranty and a 10-year workmanship warranty on our professional installations.',
-      img: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80',
+      img: '/images/solar/solar-smart-home.jpg',
       color: 'from-emerald-500/20 to-emerald-600/20 border-emerald-500/30 text-emerald-400'
     }
   ]
@@ -86,7 +86,7 @@ export default function AboutPillars() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-4 leading-tight"
+            className="text-3xl md:text-5xl font-serif font-bold text-white mb-4 leading-tight"
           >
             Our Pillars of Success
           </motion.h2>
@@ -95,7 +95,7 @@ export default function AboutPillars() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-slate-400 text-lg leading-relaxed"
+            className="text-sm md:text-base leading-relaxed text-slate-400"
           >
             We stand apart through our commitment to quality, engineering standards, and complete transparency.
           </motion.p>
@@ -151,7 +151,7 @@ export default function AboutPillars() {
                   </span>
 
                   {/* Title */}
-                  <h3 className="text-2xl font-black text-white mb-2 leading-tight">
+                  <h3 className="text-2xl md:text-3xl font-serif font-semibold text-white mb-2 leading-tight">
                     {pillar.title}
                   </h3>
 
@@ -214,7 +214,7 @@ export default function AboutPillars() {
                   <span className="block text-xs font-bold uppercase tracking-widest text-[#28A8E0] mb-1">
                     Pillar {pillar.id}
                   </span>
-                  <h3 className="text-xl font-bold text-white mb-2">
+                  <h3 className="text-2xl md:text-3xl font-serif font-semibold text-white mb-2">
                     {pillar.title}
                   </h3>
                   <p className="text-slate-300 text-sm leading-relaxed">
