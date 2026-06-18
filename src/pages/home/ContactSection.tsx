@@ -47,10 +47,10 @@ export default function ContactSection() {
   const labelCls = "block text-[10px] font-black uppercase tracking-widest text-white/50 mb-2"
 
   const particles = [
-    { x: '8%',  y: '15%', delay: 0,   size: 4 },
+    { x: '8%', y: '15%', delay: 0, size: 4 },
     { x: '18%', y: '70%', delay: 1.2, size: 3 },
     { x: '35%', y: '40%', delay: 0.6, size: 5 },
-    { x: '60%', y: '20%', delay: 2,   size: 3 },
+    { x: '60%', y: '20%', delay: 2, size: 3 },
     { x: '75%', y: '65%', delay: 0.3, size: 4 },
     { x: '88%', y: '35%', delay: 1.7, size: 3 },
     { x: '92%', y: '80%', delay: 0.9, size: 5 },
@@ -195,7 +195,7 @@ export default function ContactSection() {
                 </motion.div>
                 <div>
                   <div className="font-extrabold text-white text-sm mb-1">{b.title}</div>
-                  <div className="text-xs text-slate-400 leading-relaxed">{b.desc}</div>
+                  <div className="text-xs text-white leading-relaxed">{b.desc}</div>
                 </div>
               </motion.div>
             ))}
@@ -296,7 +296,7 @@ export default function ContactSection() {
                     </svg>
                   </motion.div>
                   <h3 className="text-2xl font-black text-white mb-2">Quote Sent! 🎉</h3>
-                  <p className="text-slate-400 text-sm">Our team will reach out within 24 hours.</p>
+                  <p className="text-white text-sm">Our team will reach out within 24 hours.</p>
                 </motion.div>
               ) : (
                 <>
@@ -307,15 +307,17 @@ export default function ContactSection() {
                     className="mb-8"
                   >
                     <h3 className="text-2xl font-black text-white">Get Free Quote</h3>
-                    <p className="text-slate-400 text-sm mt-1">We'll respond within 24 hours.</p>
+                    <p className="text-white text-sm mt-1">We'll respond within 24 hours.</p>
                   </motion.div>
 
                   <form onSubmit={handleSubmit} className="space-y-4">
                     {[
-                      { grid: true, fields: [
-                        { label: 'Full Name', type: 'text', placeholder: 'John Smith', key: 'name' },
-                        { label: 'Phone', type: 'tel', placeholder: '04xx xxx xxx', key: 'phone' },
-                      ]},
+                      {
+                        grid: true, fields: [
+                          { label: 'Full Name', type: 'text', placeholder: 'John Smith', key: 'name' },
+                          { label: 'Phone', type: 'tel', placeholder: '04xx xxx xxx', key: 'phone' },
+                        ]
+                      },
                     ].map((row, ri) => (
                       <div key={ri} className={row.grid ? 'grid grid-cols-2 gap-4' : ''}>
                         {row.fields.map((f, fi) => (

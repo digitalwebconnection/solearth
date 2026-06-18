@@ -41,7 +41,7 @@ const BRANDS = [
 
 export default function BrandPartnersSection() {
   return (
-    <section className="bg-white py-20 overflow-hidden">
+    <section className="bg-white py-10 md:py-20 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* ── TOP TITLE BLOCK ─────────────────────────────────── */}
@@ -55,7 +55,7 @@ export default function BrandPartnersSection() {
           <p className="text-xs font-black uppercase tracking-[0.35em] text-[#1B74BB] mb-4">
             Trusted Technology Partners
           </p>
-          <h2 className="text-4xl sm:text-5xl font-extrabold text-[#022D62] leading-tight">
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-[#022D62] leading-tight">
             Powered By{' '}
             <span className="text-[#1B74BB]">Leading Solar Brands</span>
           </h2>
@@ -69,13 +69,13 @@ export default function BrandPartnersSection() {
             <div className="h-px w-16 bg-linear-to-r from-transparent to-[#1B74BB]" />
             <div className="h-2 w-2 rounded-full bg-[#1B74BB]" />
             <div className="h-px w-32 bg-[#1B74BB]/30" />
-            <div className="h-2 w-2 rounded-full bg-[#F8C000]" />
-            <div className="h-px w-16 bg-linear-to-l from-transparent to-[#F8C000]" />
+            <div className="h-2 w-2 rounded-full bg-[#FCC200]" />
+            <div className="h-px w-16 bg-linear-to-l from-transparent to-[#FCC200]" />
           </div>
         </motion.div>
 
         {/* ── BOTTOM LOGOS BLOCK ──────────────────────────────── */}
-        <div className="space-y-10">
+        <div className="space-y-4 md:space-y-10">
           {BRANDS.map((group, gi) => (
             <motion.div
               key={group.category}
@@ -129,7 +129,7 @@ export default function BrandPartnersSection() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.4 }}
-          className="flex flex-col sm:flex-row items-center justify-between gap-4 mt-14 pt-8 border-t border-slate-100"
+          className="flex flex-col sm:flex-row items-center justify-between gap-4 mt-6 md:mt-14 pt-8 border-t border-slate-100"
         >
           <p className="text-xs text-slate-800 font-medium text-center sm:text-left">
             All brands are CEC accredited &amp; certified for Australian residential and commercial installations.

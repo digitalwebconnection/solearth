@@ -7,7 +7,7 @@ export default function ConsultationSection() {
   const { openQuoteModal } = useQuoteModal();
   return (
     <section className="relative  bg-white overflow-hidden">
-      <div className=" px-4 sm:px-6 lg:px-0 relative z-10">
+      <div className=" px-0 sm:px-6 lg:px-0 relative z-10">
         
         {/* Banner container with light gray background matching standard mock */}
         <div className="relative  bg-[#f4f7fa] overflow-hidden flex flex-col lg:flex-row min-h-[440px] shadow-xs">
@@ -56,10 +56,10 @@ export default function ConsultationSection() {
               {/* Book Consultation Button */}
               <button
                 onClick={() => openQuoteModal('Consultation Section')}
-                className="inline-flex items-center bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all text-[#008080] font-black text-xs uppercase tracking-wider h-14 pl-6 hover:scale-[1.01] cursor-pointer border-none p-0"
+                className="inline-flex items-center bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all text-[#000000] font-black text-xs uppercase tracking-wider h-14 pl-6 hover:scale-[1.01] cursor-pointer border-none p-0"
               >
                 <span className="pr-4">Book A Consultation</span>
-                <div className="h-full px-5 bg-[#008080] text-white flex items-center justify-center">
+                <div className="h-full px-5 bg-[#FAC307] text-black flex items-center justify-center">
                   <ArrowRight className="w-4 h-4" />
                 </div>
               </button>

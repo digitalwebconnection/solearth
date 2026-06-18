@@ -64,7 +64,7 @@ export default function SolarCalculator() {
   const strokeDashoffset = circumference - (reductionPercent / 100) * circumference;
 
   return (
-    <section id="calculator" aria-label="Interactive Solar Savings Calculator" className="py-24 bg-slate-50 relative overflow-hidden">
+    <section id="calculator" aria-label="Interactive Solar Savings Calculator" className="md:py-24 py-10 bg-slate-50 relative overflow-hidden">
 
       {/* Inline styles for energy flow stroke-dashoffset animation */}
       <style dangerouslySetInnerHTML={{
@@ -80,21 +80,21 @@ export default function SolarCalculator() {
 
       {/* Decorative ambient background glows */}
       <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-[#28A8E4]/5 rounded-full blur-3xl pointer-events-none -translate-y-1/2 glowing-bg-circle" />
-      <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-[#F8C000]/5 rounded-full blur-3xl pointer-events-none glowing-bg-circle" />
+      <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-[#FCC200]/5 rounded-full blur-3xl pointer-events-none glowing-bg-circle" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Header section */}
         <div className="text-center max-w-3xl mx-auto mb-20 space-y-4">
           <div className="flex items-center justify-center space-x-2.5">
-            <span className="h-0.5 w-8 bg-[#F8C000] rounded-full" />
+            <span className="h-0.5 w-8 bg-[#FCC200] rounded-full" />
             <span className="text-xs font-bold text-[#1B74BB] uppercase tracking-widest">Interactive Yield Model</span>
-            <span className="h-0.5 w-8 bg-[#F8C000] rounded-full" />
+            <span className="h-0.5 w-8 bg-[#FCC200] rounded-full" />
           </div>
           <h2 className="text-3xl md:text-5xl font-serif font-bold leading-tight text-slate-900 tracking-tight">
             Calculate Your Solar ROI
           </h2>
-          <p className="text-sm md:text-base leading-relaxed text-slate-500">
+          <p className="text-sm md:text-base leading-relaxed text-slate-900">
             Enter your exact energy billing details to model system yield, savings speedometers, and solar investment viability in your region.
           </p>
         </div>
@@ -119,15 +119,15 @@ export default function SolarCalculator() {
                     key={s.code}
                     onClick={() => setSelectedState(s.code)}
                     className={`px-4 py-2 rounded-xl text-xs font-extrabold transition-all cursor-pointer border ${selectedState === s.code
-                        ? 'bg-[#1B74BB] border-transparent text-white shadow-md scale-105'
-                        : 'bg-white border-slate-200 text-slate-800 hover:border-slate-300'
+                      ? 'bg-[#1B74BB] border-transparent text-white shadow-md scale-105'
+                      : 'bg-white border-slate-200 text-slate-800 hover:border-slate-300'
                       }`}
                   >
                     {s.code}
                   </button>
                 ))}
               </div>
-              <span className="text-[10px] text-slate-400 font-semibold block">
+              <span className="text-[10px] text-slate-900 font-semibold block">
                 Calculations adjusted for {currentState.name} rates ({Math.round(currentState.rate * 100)}¢/kWh tariff & {Math.round(currentState.fit * 100)}¢/kWh feed-in)
               </span>
             </div>
@@ -137,12 +137,12 @@ export default function SolarCalculator() {
               <div className="flex justify-between items-center">
                 <div>
                   <label className="text-xs font-extrabold text-slate-800 uppercase tracking-wider block">Average Monthly Bill</label>
-                  <span className="text-xs text-slate-400 font-semibold block mt-0.5">Type or slide your billing amount</span>
+                  <span className="text-xs text-slate-900 font-semibold block mt-0.5">Type or slide your billing amount</span>
                 </div>
 
                 {/* Numeric Input Field */}
                 <div className="relative flex items-center">
-                  <span className="absolute left-3 text-slate-400 font-bold text-lg">$</span>
+                  <span className="absolute left-3 text-slate-900 font-bold text-lg">$</span>
                   <input
                     type="number"
                     min="50"
@@ -172,7 +172,7 @@ export default function SolarCalculator() {
                     background: `linear-gradient(to right, #1B74BB 0%, #1B74BB ${((monthlyBill || 350) - 100) / 1100 * 100}%, #e2e8f0 ${((monthlyBill || 350) - 100) / 1100 * 100}%, #e2e8f0 100%)`
                   }}
                 />
-                <div className="flex justify-between text-[10px] text-slate-400 font-extrabold pt-2">
+                <div className="flex justify-between text-[10px] text-slate-900 font-extrabold pt-2">
                   <span>$100</span>
                   <span>$600</span>
                   <span>$1,200+</span>
@@ -185,7 +185,7 @@ export default function SolarCalculator() {
               <div className="flex justify-between items-center">
                 <div>
                   <label className="text-xs font-extrabold text-slate-800 uppercase tracking-wider block">Home Battery capacity</label>
-                  <span className="text-xs text-slate-400 font-semibold block mt-0.5">Increases night energy coverage</span>
+                  <span className="text-xs text-slate-900 font-semibold block mt-0.5">Increases night energy coverage</span>
                 </div>
 
                 {/* Numeric Input for Battery */}
@@ -201,7 +201,7 @@ export default function SolarCalculator() {
                     }}
                     className="w-24 px-3 py-2 bg-white border border-slate-300 focus:border-[#1B74BB] focus:ring-1 focus:ring-[#1B74BB] rounded-xl text-lg font-black text-slate-900 outline-none text-right shadow-xs"
                   />
-                  <span className="ml-2 text-xs font-extrabold text-slate-500">kWh</span>
+                  <span className="ml-2 text-xs font-extrabold text-slate-900">kWh</span>
                 </div>
               </div>
 
@@ -219,7 +219,7 @@ export default function SolarCalculator() {
                     background: `linear-gradient(to right, #28A8E4 0%, #28A8E4 ${batteryCapacity / 20 * 100}%, #e2e8f0 ${batteryCapacity / 20 * 100}%, #e2e8f0 100%)`
                   }}
                 />
-                <div className="flex justify-between text-[10px] text-slate-400 font-extrabold pt-2">
+                <div className="flex justify-between text-[10px] text-slate-900 font-extrabold pt-2">
                   <span>0 kWh (Solar Only)</span>
                   <span>10 kWh</span>
                   <span>20 kWh</span>
@@ -231,7 +231,7 @@ export default function SolarCalculator() {
             <div className="space-y-4 text-left">
               <div>
                 <label className="text-xs font-extrabold text-slate-800 uppercase tracking-wider block">Sunlight exposure</label>
-                <span className="text-xs text-slate-400 font-semibold block mt-0.5">Average solar peak sun hours</span>
+                <span className="text-xs text-slate-900 font-semibold block mt-0.5">Average solar peak sun hours</span>
               </div>
               <div className="grid grid-cols-3 gap-4">
                 {[
@@ -246,13 +246,13 @@ export default function SolarCalculator() {
                       key={option.hours}
                       onClick={() => setSunHours(option.hours)}
                       className={`flex flex-col items-center justify-center p-4 rounded-2xl border transition-all cursor-pointer text-center ${isSelected
-                          ? 'border-[#1B74BB] bg-[#1B74BB]/5 text-[#1B74BB] shadow-sm scale-[1.02]'
-                          : 'border-slate-200 bg-white text-slate-800 hover:border-slate-350'
+                        ? 'border-[#1B74BB] bg-[#1B74BB]/5 text-[#1B74BB] shadow-sm scale-[1.02]'
+                        : 'border-slate-200 bg-white text-slate-800 hover:border-slate-350'
                         }`}
                     >
-                      <IconComponent className={`w-6 h-6 mb-2 ${isSelected ? 'text-[#1B74BB]' : 'text-slate-400'}`} />
+                      <IconComponent className={`w-6 h-6 mb-2 ${isSelected ? 'text-[#1B74BB]' : 'text-slate-900'}`} />
                       <span className="text-xs font-extrabold block">{option.label}</span>
-                      <span className="text-[10px] font-semibold text-slate-400 block mt-0.5">{option.desc}</span>
+                      <span className="text-[10px] font-semibold text-slate-900 block mt-0.5">{option.desc}</span>
                     </button>
                   );
                 })}
@@ -268,8 +268,8 @@ export default function SolarCalculator() {
 
             {/* Top Left: Radial Gauge with Orbit Ring */}
             <div className="flex flex-col items-center sm:items-start text-center sm:text-left space-y-3">
-              <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest flex items-center gap-1.5">
-                <Percent className="w-3.5 h-3.5 text-slate-400" /> Bill Reduction Index
+              <span className="text-[10px] font-black text-slate-900 uppercase tracking-widest flex items-center gap-1.5">
+                <Percent className="w-3.5 h-3.5 text-slate-900" /> Bill Reduction Index
               </span>
               <div className="relative flex items-center justify-center">
                 {/* Orbit path ring */}
@@ -316,15 +316,15 @@ export default function SolarCalculator() {
                     />
                     <span className="text-sm font-black">%</span>
                   </div>
-                  <span className="text-[8px] font-extrabold text-slate-400 uppercase tracking-wider">Offset</span>
+                  <span className="text-[8px] font-extrabold text-slate-900 uppercase tracking-wider">Offset</span>
                 </div>
               </div>
             </div>
 
             {/* Top Right: Estimated Annual Savings */}
             <div className="space-y-3 text-left">
-              <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest flex items-center gap-1.5">
-                <DollarSign className="w-3.5 h-3.5 text-slate-400" /> Projected Savings
+              <span className="text-[10px] font-black text-slate-900 uppercase tracking-widest flex items-center gap-1.5">
+                <DollarSign className="w-3.5 h-3.5 text-slate-900" /> Projected Savings
               </span>
               <div className="pt-1">
                 <div className="flex items-baseline font-black text-emerald-650 tracking-tight leading-none">
@@ -342,15 +342,15 @@ export default function SolarCalculator() {
                   Estimated Annual Offset
                 </p>
               </div>
-              <p className="text-slate-500 text-xs leading-relaxed">
+              <p className="text-slate-900 text-xs leading-relaxed">
                 Aggregates daytime solar consumption and night-time battery drawing values.
               </p>
             </div>
 
             {/* Payback period */}
             <div className="space-y-2 text-left pt-6 border-t border-slate-200 sm:col-span-1">
-              <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest flex items-center gap-1.5">
-                <Clock className="w-3.5 h-3.5 text-slate-400" /> Payback Period
+              <span className="text-[10px] font-black text-slate-900 uppercase tracking-widest flex items-center gap-1.5">
+                <Clock className="w-3.5 h-3.5 text-slate-900" /> Payback Period
               </span>
               <div className="pt-1">
                 <div className="flex items-baseline font-black text-slate-900 tracking-tight">
@@ -362,17 +362,17 @@ export default function SolarCalculator() {
                     horizontalPadding={0}
                     gap={1.5}
                   />
-                  <span className="text-sm font-extrabold text-slate-400 ml-1.5">Years</span>
+                  <span className="text-sm font-extrabold text-slate-900 ml-1.5">Years</span>
                 </div>
               </div>
-              <p className="text-slate-500 text-xs leading-relaxed">
+              <p className="text-slate-900 text-xs leading-relaxed">
                 Initial installation recoup timeline based on local STC certificates and state tariffs.
               </p>
             </div>
 
             {/* Environmental Impact with staggered tree springs */}
             <div className="space-y-2 text-left pt-6 border-t border-slate-200 sm:col-span-1">
-              <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest flex items-center gap-1.5">
+              <span className="text-[10px] font-black text-slate-900 uppercase tracking-widest flex items-center gap-1.5">
                 <TreePine className="w-3.5 h-3.5 text-emerald-600" /> Environmental Impact
               </span>
               <div className="pt-1">
@@ -385,7 +385,7 @@ export default function SolarCalculator() {
                     horizontalPadding={0}
                     gap={1.5}
                   />
-                  <span className="text-xs font-extrabold text-slate-400 ml-1.5">Trees / yr</span>
+                  <span className="text-xs font-extrabold text-slate-900 ml-1.5">Trees / yr</span>
                 </div>
               </div>
 
@@ -414,13 +414,13 @@ export default function SolarCalculator() {
             </div>
 
             {/* Recommendation block */}
-            <div className="sm:col-span-2 pt-8 border-t border-slate-200 flex items-center justify-between gap-4 flex-wrap">
+            <div className="sm:col-span-2 pt-8 border-t justify-center border-slate-200 flex items-center md:justify-between gap-4 flex-wrap">
               <div className="flex items-center gap-3">
                 <div className="h-10 w-10 rounded-xl bg-[#1B74BB]/10 text-[#1B74BB] flex items-center justify-center shadow-xs">
                   <Sparkles className="w-5 h-5 text-[#1B74BB]" />
                 </div>
                 <div className="text-left">
-                  <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Recommended System</span>
+                  <span className="text-[10px] font-bold text-slate-900 uppercase tracking-wider block">Recommended System</span>
                   <span className="text-sm font-black text-slate-800">
                     {recommendedSystemSizeKw} kW Panels {batteryCapacity > 0 ? `+ ${batteryCapacity} kWh Battery` : ''}
                   </span>

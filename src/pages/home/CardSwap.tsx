@@ -3,11 +3,11 @@ import React, {
   cloneElement,
   forwardRef,
   isValidElement,
-  useEffect,
   useMemo,
   useRef,
 } from 'react';
 import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
 import './CardSwap.css';
 
 interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -55,7 +55,13 @@ const placeNow = (
   el: HTMLElement,
   slot: ReturnType<typeof makeSlot>,
   skew: number
-) =>
+) => {
+  if (!document.body.contains(el)) {
+    el.style.transform = `translate3d(${slot.x}px, ${slot.y}px, ${slot.z}px) translate(-50%, -50%) skewY(${skew}deg)`;
+    el.style.transformOrigin = 'center center';
+    el.style.zIndex = String(slot.zIndex);
+    return;
+  }
   gsap.set(el, {
     x: slot.x,
     y: slot.y,
@@ -67,6 +73,7 @@ const placeNow = (
     zIndex: slot.zIndex,
     force3D: true,
   });
+};
 
 const CardSwap = ({
   activeIndex,
@@ -107,7 +114,7 @@ const CardSwap = ({
   const tlRef = useRef<gsap.core.Timeline | null>(null);
 
   // Initialize cards position on mount
-  useEffect(() => {
+  useGSAP(() => {
     const total = refs.length;
     // Set initial order based on activeIndex
     const initialOrder = Array.from({ length: total }, (_, i) => (activeIndex + i) % total);
@@ -120,11 +127,10 @@ const CardSwap = ({
       }
     });
     initialized.current = true;
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [cardDistance, verticalDistance, skewAmount]);
+  }, { dependencies: [cardDistance, verticalDistance, skewAmount] });
 
   // Handle activeIndex changes
-  useEffect(() => {
+  useGSAP(() => {
     if (!initialized.current) return;
     const total = refs.length;
     const prevFront = order.current[0];
@@ -200,8 +206,13 @@ const CardSwap = ({
     tl.call(() => {
       order.current = newOrder;
     });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [activeIndex, cardDistance, verticalDistance, skewAmount]);
+
+    return () => {
+      if (tlRef.current) {
+        tlRef.current.kill();
+      }
+    };
+  }, { dependencies: [activeIndex, cardDistance, verticalDistance, skewAmount] });
 
   const rendered = childArr.map((child, i) =>
     isValidElement(child)

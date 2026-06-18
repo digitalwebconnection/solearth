@@ -40,9 +40,9 @@ export const ProductBottomShowcase: React.FC<ProductBottomShowcaseProps> = ({ pr
 
         {/* LEFT COLUMN: Solar Panel Showcase Details */}
         <div className="lg:col-span-6 flex flex-col justify-center">
-          <div className="inline-flex items-center gap-2 bg-[#FE9900]/15 border border-[#FE9900]/30 rounded-full px-4 py-1.5 w-fit mb-6">
-            <Zap size={14} className="text-[#FE9900] animate-pulse" />
-            <span className="text-[11px] font-black uppercase tracking-widest text-[#FE9900]">
+          <div className="inline-flex items-center gap-2 bg-[#FCC200]/15 border border-[#FCC200]/30 rounded-full px-4 py-1.5 w-fit mb-6">
+            <Zap size={14} className="text-[#FCC200] animate-pulse" />
+            <span className="text-[11px] font-black uppercase tracking-widest text-[#FCC200]">
               Tier 1 Solar Integration
             </span>
           </div>
@@ -51,7 +51,7 @@ export const ProductBottomShowcase: React.FC<ProductBottomShowcaseProps> = ({ pr
             Maximize Energy Yields With {product.brand}
           </h3>
 
-          <p className="text-slate-400 text-sm md:text-base mb-8 leading-relaxed font-medium">
+          <p className="text-slate-900 text-sm md:text-base mb-8 leading-relaxed font-medium">
             Ready to upgrade your property? Solearth Energy configures custom systems utilizing {product.brand} solar technology to optimize power generation and lower utility bills.
           </p>
 
@@ -65,14 +65,14 @@ export const ProductBottomShowcase: React.FC<ProductBottomShowcaseProps> = ({ pr
             </div>
 
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-full bg-[#004093]/30 flex items-center justify-center text-blue-400">
+              <div className="w-8 h-8 rounded-full bg-[#1B74BB]/30 flex items-center justify-center text-blue-400">
                 <ShieldCheck size={18} />
               </div>
               <span className="text-sm font-bold text-slate-200">Up to 25-Year Full Performance Warranty</span>
             </div>
 
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-full bg-[#FE9900]/10 flex items-center justify-center text-[#FE9900]">
+              <div className="w-8 h-8 rounded-full bg-[#FCC200]/10 flex items-center justify-center text-[#FCC200]">
                 <Award size={18} />
               </div>
               <span className="text-sm font-bold text-slate-200">100% Backed by Local Australian Support</span>
@@ -92,7 +92,7 @@ export const ProductBottomShowcase: React.FC<ProductBottomShowcaseProps> = ({ pr
               <h4 className="text-sm font-bold text-white mb-1">
                 Monocrystalline Panel Showcase
               </h4>
-              <p className="text-xs text-slate-400 font-semibold leading-relaxed">
+              <p className="text-xs text-slate-900 font-semibold leading-relaxed">
                 Refined anti-reflective coatings and zero-gap cell structures maximize irradiance conversion.
               </p>
             </div>
@@ -103,10 +103,10 @@ export const ProductBottomShowcase: React.FC<ProductBottomShowcaseProps> = ({ pr
         <div className="lg:col-span-6">
           <div className="backdrop-blur-md bg-white/5 border border-white/10 p-6 md:p-8 rounded-3xl shadow-2xl relative">
             <h4 className="text-lg font-bold mb-1 flex items-center gap-2 text-white">
-              <MessageSquare size={20} className="text-[#FE9900]" />
+              <MessageSquare size={20} className="text-[#FCC200]" />
               Book Callback Request
             </h4>
-            <p className="text-xs text-slate-400 font-bold mb-6">
+            <p className="text-xs text-slate-900 font-bold mb-6">
               Our accredited engineers will review your energy load profile and call you back.
             </p>
 
@@ -120,7 +120,7 @@ export const ProductBottomShowcase: React.FC<ProductBottomShowcaseProps> = ({ pr
                   name="name"
                   placeholder="Your Full Name"
                   required
-                  className="w-full px-4 py-3 text-xs font-semibold rounded-xl bg-slate-900/60 border border-white/10 text-white placeholder-slate-500 focus:outline-hidden focus:border-[#FE9900] focus:ring-1 focus:ring-[#FE9900] transition"
+                  className="w-full px-4 py-3 text-xs font-semibold rounded-xl bg-slate-900/60 border border-white/10 text-white placeholder-slate-500 focus:outline-hidden focus:border-[#FCC200] focus:ring-1 focus:ring-[#FCC200] transition"
                 />
               </div>
 
@@ -130,7 +130,7 @@ export const ProductBottomShowcase: React.FC<ProductBottomShowcaseProps> = ({ pr
                   name="phone"
                   placeholder="Best Contact Number"
                   required
-                  className="w-full px-4 py-3 text-xs font-semibold rounded-xl bg-slate-900/60 border border-white/10 text-white placeholder-slate-500 focus:outline-hidden focus:border-[#FE9900] focus:ring-1 focus:ring-[#FE9900] transition"
+                  className="w-full px-4 py-3 text-xs font-semibold rounded-xl bg-slate-900/60 border border-white/10 text-white placeholder-slate-500 focus:outline-hidden focus:border-[#FCC200] focus:ring-1 focus:ring-[#FCC200] transition"
                 />
               </div>
 
@@ -138,7 +138,7 @@ export const ProductBottomShowcase: React.FC<ProductBottomShowcaseProps> = ({ pr
                 <select
                   name="category"
                   required
-                  className="w-full px-4 py-3 text-xs font-semibold rounded-xl bg-slate-900/60 border border-white/10 text-slate-400 focus:outline-hidden focus:border-[#FE9900] focus:ring-1 focus:ring-[#FE9900] transition"
+                  className="w-full px-4 py-3 text-xs font-semibold rounded-xl bg-slate-900/60 border border-white/10 text-slate-900 focus:outline-hidden focus:border-[#FCC200] focus:ring-1 focus:ring-[#FCC200] transition"
                 >
                   <option value="" disabled className="bg-slate-950">Select solar category...</option>
                   <option value="Solar Panels" className="bg-slate-950 text-white">Solar Panels</option>
@@ -154,7 +154,7 @@ export const ProductBottomShowcase: React.FC<ProductBottomShowcaseProps> = ({ pr
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-[#FE9900] hover:bg-[#e08600] text-white py-3.5 rounded-xl text-xs font-black tracking-wider uppercase transition-all duration-300 shadow-lg shadow-[#FE9900]/20 hover:scale-[1.01] disabled:opacity-70 disabled:cursor-not-allowed"
+                className="w-full bg-[#FCC200] hover:bg-[#e08600] text-white py-3.5 rounded-xl text-xs font-black tracking-wider uppercase transition-all duration-300 shadow-lg shadow-[#FCC200]/20 hover:scale-[1.01] disabled:opacity-70 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? "Sending..." : "Send Request"}
               </button>
@@ -166,30 +166,30 @@ export const ProductBottomShowcase: React.FC<ProductBottomShowcaseProps> = ({ pr
                 href="tel:1300672194"
                 className="flex items-center gap-3 p-3 bg-white/5 border border-white/5 rounded-xl hover:bg-white/10 transition group"
               >
-                <div className="w-8 h-8 rounded-lg bg-[#FE9900]/10 flex items-center justify-center text-[#FE9900]">
+                <div className="w-8 h-8 rounded-lg bg-[#FCC200]/10 flex items-center justify-center text-[#FCC200]">
                   <Phone size={14} />
                 </div>
                 <div>
-                  <p className="text-[10px] text-slate-400 font-bold uppercase">Call Hotline</p>
-                  <p className="text-xs font-black text-white group-hover:text-[#FE9900] transition">1300 672 194</p>
+                  <p className="text-[10px] text-slate-900 font-bold uppercase">Call Hotline</p>
+                  <p className="text-xs font-black text-white group-hover:text-[#FCC200] transition">1300 672 194</p>
                 </div>
               </a> */}
 
               <a
-                href="mailto:info@aussiesunsolar.com.au"
+                href="mailto:info@email.com.au"
                 className="flex items-center gap-3 p-3 bg-white/5 border border-white/5 rounded-xl hover:bg-white/10 transition group"
               >
-                <div className="w-8 h-8 rounded-lg bg-[#004093]/30 flex items-center justify-center text-blue-400">
+                <div className="w-8 h-8 rounded-lg bg-[#1B74BB]/30 flex items-center justify-center text-blue-400">
                   <Mail size={14} />
                 </div>
                 <div>
-                  <p className="text-[10px] text-slate-400 font-bold uppercase">Send Email</p>
-                  <p className="text-xs font-black text-white group-hover:text-blue-400 transition break-all">info@aussie...</p>
+                  <p className="text-[10px] text-slate-900 font-bold uppercase">Send Email</p>
+                  <p className="text-xs font-black text-white group-hover:text-blue-400 transition break-all">info@email...</p>
                 </div>
               </a>
             </div>
 
-            <div className="mt-4 text-center text-[10px] text-slate-500 font-semibold">
+            <div className="mt-4 text-center text-[10px] text-slate-900 font-semibold">
               🔐 Your information is secure and managed locally.
             </div>
           </div>

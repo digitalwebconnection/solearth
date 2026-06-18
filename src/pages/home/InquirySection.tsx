@@ -80,7 +80,7 @@ export default function InquirySection() {
   };
 
   return (
-    <section id="inquiry" className="py-24 bg-linear-to-b from-[#fafbfc] to-white relative overflow-hidden">
+    <section id="inquiry" className="py-10 md:py-24 bg-linear-to-b from-[#fafbfc] to-white relative overflow-hidden">
       {/* Subtle Dotted Grid Background */}
       <div 
         className="absolute inset-0 opacity-[0.25] pointer-events-none"
@@ -118,13 +118,13 @@ export default function InquirySection() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Title */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-10">
           <motion.h2
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ type: 'spring', stiffness: 80, damping: 15 }}
-            className="text-4xl md:text-5xl font-extrabold text-[#0a1f44] tracking-tight relative inline-block text-center"
+            className="text-3xl md:text-5xl font-extrabold text-[#0a1f44] tracking-tight relative inline-block text-center"
           >
             What are you looking for?
             {/* Animated Bottom Line */}
@@ -144,7 +144,7 @@ export default function InquirySection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="flex flex-wrap justify-center font-serif gap-3 md:gap-4 mb-16"
+          className="flex flex-wrap justify-center font-serif gap-3 md:gap-4 mb-10"
         >
           {OPTION_TABS.map((tab) => {
             const isActive = selectedTab === tab.id;
@@ -158,7 +158,7 @@ export default function InquirySection() {
                 className={`px-5 py-3 rounded-xl text-xs md:text-sm font-bold border transition-all duration-300 relative overflow-hidden cursor-pointer flex items-center gap-2.5 ${
                   isActive
                     ? 'bg-[#1B74BB] text-white border-[#1B74BB] shadow-lg shadow-[#1B74BB]/20'
-                    : 'bg-white text-gray-700 border-gray-200 hover:border-[#28A8E4] hover:text-[#1B74BB] hover:shadow-md'
+                    : 'bg-white text-gray-700 border-gray-400 hover:border-[#28A8E4] hover:text-[#1B74BB] hover:shadow-md'
                 }`}
               >
                 {isActive && (

@@ -80,7 +80,7 @@ export default function CommercialSpecs({
   const data: SystemDetail = details[tab.key as keyof typeof details]
 
   return (
-    <section className="relative bg-white py-20 overflow-hidden" ref={ref}>
+    <section className="relative bg-white py-12 md:py-20 overflow-hidden" ref={ref}>
       {/* Progress bar keyframe animation */}
       <style>{`
         @keyframes tabProgress {
@@ -92,10 +92,10 @@ export default function CommercialSpecs({
         }
       `}</style>
       {/* Subtle background pattern */}
-      <div className="absolute inset-0 opacity-[0.025] bg-[linear-gradient(to_right,#004093_1px,transparent_1px),linear-gradient(to_bottom,#004093_1px,transparent_1px)] bg-size-[4rem_4rem]" />
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-[#004093]/4 blur-[100px] pointer-events-none" />
+      <div className="absolute inset-0 opacity-[0.025] bg-[linear-gradient(to_right,#1B74BB_1px,transparent_1px),linear-gradient(to_bottom,#1B74BB_1px,transparent_1px)] bg-size-[4rem_4rem]" />
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-[#1B74BB]/4 blur-[100px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto  text-center px-6 relative z-10 space-y-14">
+      <div className="max-w-7xl mx-auto text-center px-4 sm:px-6 relative z-10 space-y-10 md:space-y-14">
 
         {/* ── Header ── */}
         <motion.div
@@ -105,13 +105,13 @@ export default function CommercialSpecs({
           className=" "
         >
           <div className=" space-y-4">
-            <span className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-[#FE9900]/12 border border-[#FE9900]/30 rounded-full text-[11px] font-black uppercase tracking-widest text-[#FE9900]">
+            <span className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-[#FCC200]/12 border border-[#FCC200]/30 rounded-full text-[11px] font-black uppercase tracking-widest text-black">
               Commercial System Components
             </span>
-            <h2 className="text-3xl max-w-3xl mx-auto md:text-5xl font-serif font-bold text-[#004093] leading-tight">
+            <h2 className="text-xl sm:text-3xl max-w-3xl mx-auto md:text-5xl font-serif font-bold text-[#1B74BB] leading-tight">
               {introTitle}
             </h2>
-            <p className="text-sm md:text-base leading-relaxed text-slate-800 max-w-5xl mx-auto font-semibold">
+            <p className="text-xs sm:text-sm md:text-base leading-relaxed text-slate-800 max-w-5xl mx-auto font-semibold">
               {introDesc}
             </p>
           </div>
@@ -134,21 +134,21 @@ export default function CommercialSpecs({
               <button
                 key={t.key}
                 onClick={() => handleTabClick(idx)}
-                className={`group relative rounded-2xl border-2 p-4 text-left transition-all duration-300 overflow-hidden ${isActive
-                    ? `bg-linear-to-br ${t.gradient} border-transparent shadow-xl ${t.glow} text-white`
-                    : 'bg-slate-50 border-slate-200/80 hover:border-slate-300 text-slate-700 hover:bg-white hover:shadow-md'
+                className={`group relative rounded-xl sm:rounded-2xl border-2 p-3 sm:p-4 text-left transition-all duration-300 overflow-hidden cursor-pointer ${isActive
+                  ? `bg-linear-to-br ${t.gradient} border-transparent shadow-xl ${t.glow} text-white`
+                  : 'bg-slate-50 border-slate-400/80 hover:border-slate-300 text-slate-700 hover:bg-white hover:shadow-md'
                   }`}
               >
                 {isActive && (
                   <div className="absolute inset-0 opacity-20 bg-[linear-gradient(135deg,rgba(255,255,255,0.3)_0%,transparent_60%)]" />
                 )}
-                <div className={`w-9 h-9 rounded-xl flex items-center justify-center mb-3 transition-all ${isActive ? 'bg-white/25' : t.bg}`}>
-                  <Icon className={`w-5 h-5 transition-colors ${isActive ? 'text-white' : t.textColor}`} />
+                <div className={`w-8 h-8 sm:w-9 sm:h-9 rounded-lg sm:rounded-xl flex items-center justify-center mb-3 transition-all ${isActive ? 'bg-white/25' : t.bg}`}>
+                  <Icon className={`w-4 h-4 sm:w-5 sm:h-5 transition-colors ${isActive ? 'text-white' : t.textColor}`} />
                 </div>
-                <span className={`block text-xs font-black uppercase tracking-wider ${isActive ? 'text-white/80' : 'text-slate-400'}`}>
+                <span className={`block text-[10px] sm:text-xs font-black uppercase tracking-wider ${isActive ? 'text-white/80' : 'text-slate-900'}`}>
                   {t.short}
                 </span>
-                <span className={`block text-sm font-black mt-0.5 ${isActive ? 'text-white' : 'text-slate-700'}`}>
+                <span className={`block text-xs sm:text-sm font-black mt-0.5 ${isActive ? 'text-white' : 'text-slate-700'}`}>
                   {t.label}
                 </span>
 
@@ -180,7 +180,7 @@ export default function CommercialSpecs({
             className="grid grid-cols-1 lg:grid-cols-12 gap-6"
           >
             {/* Left: Visual Panel */}
-            <div className="lg:col-span-5 relative rounded-lg shadow-black overflow-hidden shadow-2xl group min-h-[340px]">
+            <div className="lg:col-span-5 relative rounded-2xl overflow-hidden shadow-2xl group min-h-[280px] sm:min-h-[340px]">
               <img
                 src={tab.image}
                 alt={tab.label}
@@ -190,35 +190,35 @@ export default function CommercialSpecs({
               <div className="absolute inset-0 bg-linear-to-t from-slate-950/80 via-transparent to-transparent" />
 
               {/* Floating spec badge */}
-              <div className="absolute top-5 left-5 bg-white/10 backdrop-blur-md border border-white/25 rounded-xl px-4 py-3">
-                <span className="block text-[10px] font-black uppercase tracking-widest text-white/70">Specification</span>
-                <span className="block text-sm font-black text-white mt-0.5">{data.spec}</span>
+              <div className="absolute top-4 left-4 bg-white/10 backdrop-blur-md border border-white/25 rounded-xl px-3 sm:px-4 py-2 sm:py-3">
+                <span className="block text-[9px] sm:text-[10px] font-black uppercase tracking-widest text-white/70">Specification</span>
+                <span className="block text-xs sm:text-sm font-black text-white mt-0.5">{data.spec}</span>
               </div>
 
               {/* Bottom overlay content */}
-              <div className="absolute bottom-5 left-5 right-5">
+              <div className="absolute bottom-5 left-5 right-5 text-left">
                 <div className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-linear-to-r ${tab.gradient} mb-3`}>
                   <tab.Icon className="w-3.5 h-3.5 text-white" />
                   <span className="text-[10px] font-black uppercase tracking-wider text-white">{tab.short}</span>
                 </div>
-                <h3 className="text-2xl md:text-3xl font-serif font-semibold text-white leading-tight">{data.title}</h3>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-serif font-semibold text-white leading-tight">{data.title}</h3>
               </div>
             </div>
 
             {/* Right: Details Panel */}
-            <div className="lg:col-span-7 flex flex-col gap-5">
+            <div className="lg:col-span-7 flex flex-col gap-6 text-left">
               {/* Description card */}
               <div className=" space-y-4">
                 <div className="flex items-start gap-4">
-                  <div className={`w-12 h-12  bg-linear-to-br ${tab.gradient} flex items-center justify-center shadow-lg shrink-0`}>
+                  <div className={`w-12 h-12 rounded-xl bg-linear-to-br ${tab.gradient} flex items-center justify-center shadow-lg shrink-0`}>
                     <tab.Icon className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h4 className="text-2xl md:text-3xl font-serif font-semibold text-[#004093]">{data.title}</h4>
-                    <span className="text-[11px] font-black uppercase tracking-widest text-slate-400">{data.spec}</span>
+                    <h4 className="text-xl sm:text-2xl md:text-3xl font-serif font-semibold text-[#1B74BB]">{data.title}</h4>
+                    <span className="text-[11px] font-black uppercase tracking-widest text-slate-900">{data.spec}</span>
                   </div>
                 </div>
-                <p className="text-sm md:text-base leading-relaxed text-slate-800 font-semibold border-t border-slate-600/60 pt-4">
+                <p className="text-xs sm:text-sm md:text-base leading-relaxed text-slate-800 font-semibold border-t border-slate-200 pt-4">
                   {data.desc}
                 </p>
               </div>
@@ -231,7 +231,7 @@ export default function CommercialSpecs({
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: i * 0.08, duration: 0.35 }}
-                    className={`relative rounded-lg border-2 ${tab.borderActive} p-4 bg-white shadow-sm overflow-hidden group hover:shadow-md transition-all duration-300`}
+                    className={`relative rounded-xl border-2 ${tab.borderActive} p-4 bg-white shadow-sm overflow-hidden group hover:shadow-md transition-all duration-300`}
                   >
                     <div className={`absolute top-0 right-0 w-16 h-16 rounded-full bg-linear-to-br ${tab.gradient} opacity-5 -translate-y-4 translate-x-4`} />
                     <CheckCircle2 className="w-5 h-5 mb-2" style={{ color: tab.accent }} />
@@ -241,13 +241,13 @@ export default function CommercialSpecs({
               </div>
 
               {/* Trust Pillars */}
-              <div className="grid grid-cols-3 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 {TRUST_PILLARS.map((pillar) => {
                   const PillarIcon = pillar.icon
                   return (
-                    <div key={pillar.label} className="bg-[#004093] text-white rounded-lg px-4 py-3.5 flex flex-col gap-1.5">
-                      <PillarIcon className="w-4 h-4 text-[#FE9900]" />
-                      <span className="text-[10px] font-black uppercase tracking-wider text-slate-300">{pillar.label}</span>
+                    <div key={pillar.label} className="bg-[#1B74BB] text-white rounded-xl px-4 py-3.5 flex flex-col gap-1.5 shadow-sm hover:shadow-md transition-all duration-300">
+                      <PillarIcon className="w-4 h-4 text-[#FCC200]" />
+                      <span className="text-[10px] font-black uppercase tracking-wider text-slate-200">{pillar.label}</span>
                       <span className="text-xs font-black">{pillar.value}</span>
                     </div>
                   )
@@ -262,33 +262,33 @@ export default function CommercialSpecs({
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="relative bg-linear-to-r from-[#FE9900] via-[#f5a623] to-[#E28000] rounded-lg p-7 md:p-8 overflow-hidden"
+          className="relative bg-linear-to-r from-[#FCC200] via-[#f5a623] to-[#E28000] rounded-2xl p-5 sm:p-7 md:p-8 overflow-hidden text-left"
         >
           {/* Decorative circles */}
           <div className="absolute -top-8 -right-8 w-40 h-40 rounded-full bg-white/10 pointer-events-none" />
           <div className="absolute -bottom-10 -left-10 w-52 h-52 rounded-full bg-black/8 pointer-events-none" />
 
-          <div className="relative flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="space-y-2 text-center md:text-left">
-              <h3 className="text-xl md:text-2xl font-black text-black font-serif">
+          <div className="relative flex flex-col lg:flex-row items-center justify-between gap-6">
+            <div className="space-y-2 text-center lg:text-left">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-black text-black font-serif">
                 Ready for a Commercial Feasibility Study?
               </h3>
-              <p className="text-sm text-black/70 font-semibold leading-relaxed max-w-xl">
+              <p className="text-xs sm:text-sm text-black/70 font-semibold leading-relaxed max-w-xl">
                 Our CEC-accredited commercial engineers will assess your load profile, roof structure, and grid connection — at no upfront cost.
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-3 shrink-0">
+            <div className="flex flex-col sm:flex-row gap-3 shrink-0 w-full sm:w-auto">
               <a
                 href="tel:1300672194"
-                className="group inline-flex items-center justify-center gap-2 bg-black text-white hover:bg-[#004093] font-black text-xs uppercase tracking-wider px-7 py-3.5 rounded-xl shadow-lg transition-all duration-300"
+                className="group inline-flex items-center justify-center gap-2 bg-black text-white hover:bg-[#1B74BB] font-black text-xs uppercase tracking-wider px-7 py-3.5 rounded-xl shadow-lg transition-all duration-300"
               >
                 <Phone className="w-4 h-4" />
                 Call 1300 672 194
               </a>
               <button
                 onClick={() => openQuoteModal('Commercial Specs Feasibility')}
-                className="group inline-flex items-center justify-center gap-2 bg-white text-black hover:bg-[#004093] hover:text-white font-black text-xs uppercase tracking-wider px-7 py-3.5 rounded-xl shadow-lg transition-all duration-300 cursor-pointer border-none"
+                className="group inline-flex items-center justify-center gap-2 bg-white text-black hover:bg-[#1B74BB] hover:text-white font-black text-xs uppercase tracking-wider px-7 py-3.5 rounded-xl shadow-lg transition-all duration-300 cursor-pointer border-none"
               >
                 Get a Free Proposal
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

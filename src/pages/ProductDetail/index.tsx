@@ -27,7 +27,7 @@ const ProductDetailMain: React.FC = () => {
   if (!product) {
     return (
       <div className="min-h-screen bg-slate-50 flex flex-col items-center justify-center py-20 px-6 text-center">
-        <h2 className="text-3xl font-bold font-serif text-[#004093] mb-4">
+        <h2 className="text-3xl font-bold font-serif text-[#1B74BB] mb-4">
           Product Not Found
         </h2>
         <p className="text-slate-800 mb-8 max-w-md">
@@ -35,7 +35,7 @@ const ProductDetailMain: React.FC = () => {
         </p>
         <Link
           to="/"
-          className="bg-[#FE9900] hover:bg-[#e08600] text-white px-8 py-3.5 rounded-full font-black tracking-wide uppercase shadow-lg shadow-[#FE9900]/25 transition"
+          className="bg-[#FCC200] hover:bg-[#e08600] text-white px-8 py-3.5 rounded-full font-black tracking-wide uppercase shadow-lg shadow-[#FCC200]/25 transition"
         >
           Go Back Home
         </Link>

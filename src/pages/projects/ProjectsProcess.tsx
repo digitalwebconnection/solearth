@@ -361,8 +361,8 @@ export default function ProjectsProcess() {
       tag: 'Initial Evaluation',
       desc: 'We analyze your quarterly electricity bills and use advanced satellite mapping to inspect your roof geometry, orientation, and shading parameters.',
       icon: PhoneCall,
-      color: 'text-[#FE9900]',
-      bgColor: 'bg-[#FE9900]',
+      color: 'text-[#FCC200]',
+      bgColor: 'bg-[#FCC200]',
       deliverables: [
         'Quarterly consumption pattern analysis',
         'Satellite roof shading & pitch report',
@@ -380,8 +380,8 @@ export default function ProjectsProcess() {
       tag: 'System Architecture',
       desc: 'Our CEC-accredited engineers structure a premium system configuration, mapping panel placements to optimize seasonal energy harvest.',
       icon: FileEdit,
-      color: 'text-sky-500',
-      bgColor: 'bg-sky-500',
+      color: 'text-[#2AA9E4]',
+      bgColor: 'bg-[#2AA9E4]',
       deliverables: [
         '3D CAD roof panel placement layout',
         'Annual solar yield & generation forecast',
@@ -418,8 +418,8 @@ export default function ProjectsProcess() {
       tag: 'Activation & Handover',
       desc: 'We manage compliance inspections, fast-track grid metering approvals, and set up your real-time performance tracking application.',
       icon: Radio,
-      color: 'text-[#004093]',
-      bgColor: 'bg-[#004093]',
+      color: 'text-[#1B74BB]',
+      bgColor: 'bg-[#1B74BB]',
       deliverables: [
         'Grid meter reprogramming request',
         'Compliance certificate submission',
@@ -439,7 +439,7 @@ export default function ProjectsProcess() {
       <div
         className="absolute inset-0 opacity-[0.08] pointer-events-none"
         style={{
-          backgroundImage: 'radial-gradient(#004093 1px, transparent 1px)',
+          backgroundImage: 'radial-gradient(#1B74BB 1px, transparent 1px)',
           backgroundSize: '24px 24px',
         }}
       />
@@ -450,9 +450,9 @@ export default function ProjectsProcess() {
         {/* Header */}
         <div className="text-center max-w-4xl mx-auto space-y-4">
           <div className="flex items-center justify-center space-x-2.5">
-            <span className="h-px w-8 bg-[#FE9900]" />
-            <span className="text-xs font-black text-[#004093] uppercase tracking-widest">Our Method</span>
-            <span className="h-px w-8 bg-[#FE9900]" />
+            <span className="h-px w-8 bg-[#FCC200]" />
+            <span className="text-xs font-black text-[#1B74BB] uppercase tracking-widest">Our Method</span>
+            <span className="h-px w-8 bg-[#FCC200]" />
           </div>
           <h2 className="text-3xl md:text-5xl font-serif font-bold text-slate-900 tracking-tight leading-tight">
             Our Installation Process
@@ -489,7 +489,7 @@ export default function ProjectsProcess() {
                         <Icon className="w-5 h-5 stroke-2" />
                       </div>
                       <div>
-                        <span className="text-[10px] font-black text-[#FE9900] uppercase tracking-wider block">
+                        <span className="text-[10px] font-black text-[#FCC200] uppercase tracking-wider block">
                           Step {step.id} — {step.tag}
                         </span>
                         <h3 className="text-2xl md:text-3xl font-serif font-semibold text-slate-900 tracking-tight">
@@ -524,7 +524,7 @@ export default function ProjectsProcess() {
                     <div className={`absolute top-0 right-0 left-0 h-1.5 ${step.bgColor}`} />
 
                     <div className="space-y-4 text-left">
-                      <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest block">
+                      <span className="text-[10px] font-black text-slate-900 uppercase tracking-widest block">
                         {step.spotlight.title}
                       </span>
                       <p className="text-xs text-slate-550 leading-relaxed font-semibold">
@@ -532,7 +532,7 @@ export default function ProjectsProcess() {
                       </p>
                     </div>
 
-                    <div className="pt-6 border-t border-slate-100 flex items-center justify-between text-xs font-black uppercase tracking-wider text-[#004093]">
+                    <div className="pt-6 border-t border-slate-100 flex items-center justify-between text-xs font-black uppercase tracking-wider text-[#1B74BB]">
                       <span>{step.spotlight.highlight}</span>
                       <ArrowRight className="w-4 h-4" />
                     </div>

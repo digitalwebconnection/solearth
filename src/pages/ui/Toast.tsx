@@ -32,7 +32,7 @@ export const ToastProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   return (
     <ToastContext.Provider value={{ success, error, info }}>
       {children}
-      <div className="fixed bottom-5 right-5 z-9999 flex flex-col gap-2 max-w-sm w-full pointer-events-none">
+      <div className="fixed top-24 left-1/2 -translate-x-1/2 w-[calc(100%-32px)] max-w-md md:left-auto md:right-6 md:translate-x-0 md:w-full md:max-w-sm z-[9999] flex flex-col gap-2 pointer-events-none">
         {toasts.map((toast) => (
           <div
             key={toast.id}
@@ -41,7 +41,7 @@ export const ToastProvider: React.FC<{ children: React.ReactNode }> = ({ childre
                 ? 'bg-emerald-600 border-l-4 border-emerald-800'
                 : toast.type === 'error'
                 ? 'bg-rose-600 border-l-4 border-rose-800'
-                : 'bg-[#004093] border-l-4 border-[#002b66]'
+                : 'bg-[#1B74BB] border-l-4 border-[#002b66]'
             }`}
           >
             <span>{toast.message}</span>

@@ -188,33 +188,33 @@ export default function ProjectsGrid() {
   ]
 
   return (
-    <section className="py-10 bg-white" id="portfolio">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-12 md:py-20 bg-white" id="portfolio">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-0">
 
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12 space-y-4">
+        <div className="text-center max-w-3xl mx-auto mb-10 md:mb-12 space-y-4">
           <div className="flex items-center justify-center space-x-2.5">
-            <span className="h-0.5 w-8 bg-[#F8C000] rounded-full" />
+            <span className="h-0.5 w-8 bg-[#FCC200] rounded-full" />
             <span className="text-xs font-bold text-[#1B74BB] uppercase tracking-widest">Completed Works</span>
-            <span className="h-0.5 w-8 bg-[#F8C000] rounded-full" />
+            <span className="h-0.5 w-8 bg-[#FCC200] rounded-full" />
           </div>
-          <h2 className="text-3xl md:text-5xl font-serif font-bold text-slate-900 tracking-tight leading-none">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-black text-slate-900 tracking-tight leading-tight">
             Recent Projects Gallery
           </h2>
-          <p className="text-sm md:text-base leading-relaxed text-slate-900 font-semibold">
+          <p className="text-xs sm:text-sm md:text-base leading-relaxed text-slate-900 font-semibold">
             Select a category to filter our completed solar energy systems, and click on any card to view extensive engineering design and performance data.
           </p>
         </div>
 
         {/* Filter Tabs */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-12 border-b border-slate-400 pb-6">
+        <div className="flex flex-wrap items-center justify-center gap-2 mb-10 md:mb-12 border-b border-slate-250 pb-6">
           {tabs.map((tab) => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`px-5 py-2.5 rounded-full text-xs font-bold tracking-wider uppercase transition-all duration-200 cursor-pointer ${activeTab === tab.id
+              className={`px-4 sm:px-5 py-2.5 rounded-full text-xs font-black tracking-wider uppercase transition-all duration-200 cursor-pointer ${activeTab === tab.id
                 ? 'bg-[#1B74BB] text-white shadow-lg shadow-blue-500/20'
-                : 'bg-slate-50 hover:bg-slate-100 text-slate-800 hover:text-slate-900 border border-slate-500/50'
+                : 'bg-slate-50 hover:bg-slate-100 text-slate-800 hover:text-slate-900 border border-slate-400'
                 }`}
             >
               {tab.label}
@@ -223,11 +223,11 @@ export default function ProjectsGrid() {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {filteredProjects.map((project) => (
             <div
               key={project.id}
-              className="group bg-white rounded-lg border border-slate-400 hover:border-[#1B74BB]/30 shadow-lg shadow-black/60 hover:shadow-2xl overflow-hidden flex flex-col justify-between hover:-translate-y-1 transition-all duration-350"
+              className="group bg-white rounded-2xl border border-slate-400 hover:border-[#1B74BB]/30 shadow-xl shadow-slate-400 hover:shadow-2xl overflow-hidden flex flex-col justify-between hover:-translate-y-1 transition-all duration-350"
             >
               <div>
                 {/* Image Wrap */}
@@ -240,24 +240,24 @@ export default function ProjectsGrid() {
                   <div className="absolute inset-0 bg-linear-to-t from-slate-950/80 via-transparent to-transparent" />
 
                   {/* Category Tag */}
-                  <span className="absolute top-4 left-4 bg-white/95 backdrop-blur-md text-[#004093] text-[10px] font-black uppercase tracking-wider px-3 py-1 rounded-full shadow-sm">
+                  <span className="absolute top-4 left-4 bg-white/95 backdrop-blur-md text-[#1B74BB] text-[10px] font-black uppercase tracking-wider px-3 py-1 rounded-full shadow-sm">
                     {project.categoryLabel}
                   </span>
                 </div>
 
                 {/* Card Content */}
-                <div className="p-6">
-                  <h3 className="text-2xl md:text-3xl font-serif font-semibold text-slate-900 leading-snug group-hover:text-[#1B74BB] transition-colors line-clamp-2">
+                <div className="p-5 sm:p-6 text-left">
+                  <h3 className="text-base sm:text-lg font-black text-slate-900 leading-snug group-hover:text-[#1B74BB] transition-colors line-clamp-2">
                     {project.title}
                   </h3>
                 </div>
               </div>
 
               {/* Read More button */}
-              <div className="px-6 pb-6">
+              <div className="px-5 pb-5 sm:px-6 sm:pb-6">
                 <button
                   onClick={() => setSelectedProject(project)}
-                  className="w-full py-2.5 bg-slate-50 hover:bg-[#1B74BB] hover:text-white text-slate-700 font-extrabold text-xs uppercase tracking-wider rounded-xl border border-slate-200/80 transition-all cursor-pointer text-center block"
+                  className="w-full py-2.5 bg-slate-50 hover:bg-[#1B74BB] hover:text-white text-slate-700 font-extrabold text-xs uppercase tracking-wider rounded-xl border border-slate-200 transition-all cursor-pointer text-center block"
                 >
                   Read More
                 </button>
@@ -269,9 +269,9 @@ export default function ProjectsGrid() {
         {/* Empty State */}
         {filteredProjects.length === 0 && (
           <div className="text-center py-20 bg-slate-50 rounded-2xl border border-dashed border-slate-200">
-            <Info className="w-12 h-12 text-slate-300 mx-auto mb-4" />
+            <Info className="w-12 h-12 text-slate-900 mx-auto mb-4" />
             <h3 className="text-lg font-bold text-slate-700">No projects found</h3>
-            <p className="text-xs text-slate-400 font-semibold mt-1">We are updating this category soon.</p>
+            <p className="text-xs text-slate-900 font-semibold mt-1">We are updating this category soon.</p>
           </div>
         )}
 
@@ -284,22 +284,24 @@ export default function ProjectsGrid() {
           <div
             className="absolute inset-0 bg-slate-950/75 backdrop-blur-md transition-opacity"
             onClick={() => setSelectedProject(null)}
-          />          {/* Modal Container */}
-          <div className="relative bg-white rounded-lg shadow-2xl max-w-5xl w-full max-h-[85vh] grid grid-cols-1 md:grid-cols-12 border border-slate-200 overflow-hidden z-10 animate-in fade-in zoom-in-95 duration-200">
+          />
+
+          {/* Modal Container */}
+          <div className="relative bg-white rounded-2xl shadow-2xl max-w-5xl w-full max-h-[90vh] md:max-h-[85vh] flex flex-col md:grid md:grid-cols-12 border border-slate-250 overflow-hidden z-10 animate-in fade-in zoom-in-95 duration-200">
 
             {/* Top accent bar */}
-            <div className="absolute top-0 left-0 right-0 h-1.5 bg-linear-to-r from-[#1B74BB] via-[#F8C000] to-[#28A8E0] z-30" />
+            <div className="absolute top-0 left-0 right-0 h-1.5 bg-linear-to-r from-[#1B74BB] via-[#FCC200] to-[#2AA9E4] z-30" />
 
             {/* Close button on absolute top-right of container */}
             <button
               onClick={() => setSelectedProject(null)}
-              className="absolute top-4 right-4 z-30 p-2 rounded-full bg-slate-100/90 text-slate-650 hover:bg-slate-200 hover:text-slate-900 transition-all cursor-pointer shadow-sm animate-pulse"
+              className="absolute top-4 right-4 z-30 p-2 rounded-full bg-slate-100/90 text-slate-750 hover:bg-slate-200 hover:text-slate-900 transition-all cursor-pointer shadow-sm"
             >
               <X className="h-4.5 w-4.5" />
             </button>
 
             {/* Left Column: Image Banner */}
-            <div className="relative h-60 md:h-full md:col-span-5 bg-slate-950 flex flex-col justify-end">
+            <div className="relative h-48 sm:h-60 md:h-auto md:col-span-5 bg-slate-950 flex flex-col justify-end shrink-0">
               <img
                 src={selectedProject.image}
                 alt={selectedProject.title}
@@ -307,16 +309,16 @@ export default function ProjectsGrid() {
               />
               <div className="absolute inset-0 bg-linear-to-t from-slate-950 via-slate-950/20 to-transparent" />
 
-              <div className="relative p-6 text-white text-left space-y-2.5 z-10">
-                <span className="bg-[#F8C000] text-slate-950 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full w-fit block">
+              <div className="relative p-6 text-white text-left space-y-2 z-10">
+                <span className="bg-[#FCC200] text-slate-950 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full w-fit block">
                   {selectedProject.categoryLabel}
                 </span>
-                <h3 className="text-2xl md:text-3xl font-serif font-semibold tracking-tight leading-tight">
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-black tracking-tight leading-tight">
                   {selectedProject.title}
                 </h3>
-                <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-slate-300 text-xs font-semibold">
+                <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-white/80 text-xs font-semibold">
                   <span className="flex items-center gap-1">
-                    <MapPin className="w-3.5 h-3.5 text-[#28A8E0]" />
+                    <MapPin className="w-3.5 h-3.5 text-[#2AA9E4]" />
                     {selectedProject.location}
                   </span>
                   <span>• Commissioned: {selectedProject.commissionDate}</span>
@@ -325,26 +327,26 @@ export default function ProjectsGrid() {
             </div>
 
             {/* Right Column: Scrollable Body Details */}
-            <div className="md:col-span-7 flex flex-col max-h-[85vh] overflow-y-auto pt-8">
-              <div className="p-6 sm:p-8 space-y-6 text-left">
+            <div className="md:col-span-7 flex flex-col overflow-y-auto max-h-[50vh] md:max-h-[85vh] pt-4 md:pt-8">
+              <div className="p-5 sm:p-8 space-y-6 text-left">
 
                 {/* Specs Grid */}
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 bg-slate-50 p-4 rounded-xl border border-slate-100">
                   <div className="space-y-0.5">
-                    <span className="block text-[9px] font-black uppercase tracking-wider text-slate-400">System Size</span>
-                    <span className="text-xs sm:text-sm font-extrabold text-[#004093]">{selectedProject.size}</span>
+                    <span className="block text-[9px] font-black uppercase tracking-wider text-slate-900">System Size</span>
+                    <span className="text-xs sm:text-sm font-extrabold text-[#1B74BB]">{selectedProject.size}</span>
                   </div>
                   <div className="space-y-0.5">
-                    <span className="block text-[9px] font-black uppercase tracking-wider text-slate-400">Daily Gen</span>
-                    <span className="text-xs sm:text-sm font-extrabold text-[#004093]">{selectedProject.dailyYield}</span>
+                    <span className="block text-[9px] font-black uppercase tracking-wider text-slate-900">Daily Gen</span>
+                    <span className="text-xs sm:text-sm font-extrabold text-[#1B74BB]">{selectedProject.dailyYield}</span>
                   </div>
                   <div className="space-y-0.5">
-                    <span className="block text-[9px] font-black uppercase tracking-wider text-slate-400 font-serif">Annual Savings</span>
-                    <span className="text-xs sm:text-sm font-extrabold text-emerald-600 font-serif">{selectedProject.annualSavings}</span>
+                    <span className="block text-[9px] font-black uppercase tracking-wider text-slate-900">Annual Savings</span>
+                    <span className="text-xs sm:text-sm font-extrabold text-emerald-600">{selectedProject.annualSavings}</span>
                   </div>
                   <div className="space-y-0.5">
-                    <span className="block text-[9px] font-black uppercase tracking-wider text-slate-400">Compliance</span>
-                    <span className="text-[10px] sm:text-xs font-extrabold text-[#004093] flex items-center gap-1">
+                    <span className="block text-[9px] font-black uppercase tracking-wider text-slate-900">Compliance</span>
+                    <span className="text-[10px] sm:text-xs font-extrabold text-[#1B74BB] flex items-center gap-1">
                       <ShieldCheck className="w-4 h-4 text-emerald-500" />
                       CEC Accredited
                     </span>
@@ -354,7 +356,7 @@ export default function ProjectsGrid() {
                 {/* Description */}
                 <div className="space-y-2">
                   <h4 className="text-xs font-black uppercase tracking-wider text-slate-800 flex items-center gap-1.5">
-                    <Sparkles className="w-4 h-4 text-[#F8C000] fill-[#F8C000]" />
+                    <Sparkles className="w-4 h-4 text-[#FCC200] fill-[#FCC200]" />
                     Project Overview
                   </h4>
                   <p className="text-slate-800 text-xs sm:text-sm leading-relaxed font-semibold">
@@ -383,15 +385,15 @@ export default function ProjectsGrid() {
                   <h4 className="text-xs font-black uppercase tracking-wider text-slate-800">Installed Equipment Specs</h4>
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                     <div className="p-2.5 bg-slate-50 rounded-lg border border-slate-100">
-                      <span className="block text-[8px] font-black text-slate-400 uppercase tracking-wider">Solar Panels</span>
+                      <span className="block text-[8px] font-black text-slate-900 uppercase tracking-wider">Solar Panels</span>
                       <span className="text-[10px] font-bold text-slate-700 mt-0.5 block">{selectedProject.panels}</span>
                     </div>
                     <div className="p-2.5 bg-slate-50 rounded-lg border border-slate-100">
-                      <span className="block text-[8px] font-black text-slate-400 uppercase tracking-wider">Inverter</span>
+                      <span className="block text-[8px] font-black text-slate-900 uppercase tracking-wider">Inverter</span>
                       <span className="text-[10px] font-bold text-slate-700 mt-0.5 block">{selectedProject.inverter}</span>
                     </div>
                     <div className="p-2.5 bg-slate-50 rounded-lg border border-slate-100">
-                      <span className="block text-[8px] font-black text-slate-400 uppercase tracking-wider">Battery</span>
+                      <span className="block text-[8px] font-black text-slate-900 uppercase tracking-wider">Battery</span>
                       <span className="text-[10px] font-bold text-slate-700 mt-0.5 block">
                         {selectedProject.battery || 'No Battery Configured'}
                       </span>
@@ -400,14 +402,14 @@ export default function ProjectsGrid() {
                 </div>
 
                 {/* Testimonial */}
-                <div className="bg-[#004093]/5 p-4 sm:p-5 rounded-2xl border border-[#004093]/10 relative">
-                  <span className="absolute -top-3 left-4 text-3xl text-[#F8C000] font-serif">“</span>
+                <div className="bg-[#1B74BB]/5 p-4 sm:p-5 rounded-2xl border border-[#1B74BB]/10 relative">
+                  <span className="absolute -top-3 left-4 text-3xl text-[#FCC200] font-serif">“</span>
                   <p className="italic text-slate-700 text-xs sm:text-sm leading-relaxed font-semibold relative z-10 pl-2">
                     {selectedProject.testimonial.quote}
                   </p>
                   <div className="mt-3 pt-2.5 border-t border-slate-200/50 flex items-center justify-between text-xs font-bold text-slate-800">
                     <span>{selectedProject.testimonial.author}</span>
-                    <span className="text-slate-400 font-extrabold uppercase tracking-wider text-[9px]">
+                    <span className="text-slate-900 font-extrabold uppercase tracking-wider text-[9px]">
                       {selectedProject.testimonial.role}
                     </span>
                   </div>
@@ -417,7 +419,7 @@ export default function ProjectsGrid() {
                 <div className="flex justify-end pt-2">
                   <button
                     onClick={() => setSelectedProject(null)}
-                    className="px-5 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-750 font-extrabold text-xs uppercase tracking-wider rounded-xl transition-all cursor-pointer"
+                    className="px-5 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-750 font-extrabold text-xs uppercase tracking-wider rounded-xl transition-all cursor-pointer border-none"
                   >
                     Close Details
                   </button>
@@ -431,5 +433,5 @@ export default function ProjectsGrid() {
       )}
 
     </section>
-  )
+  );
 }

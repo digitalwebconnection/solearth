@@ -77,14 +77,14 @@ const variantColors: Record<
   }
 > = {
   devi: {
-    back: "text-slate-400 dark:text-slate-500",
-    cover: "text-slate-350 dark:text-slate-400",
+    back: "text-slate-900 dark:text-slate-900",
+    cover: "text-slate-350 dark:text-slate-900",
     deco: "text-slate-800 dark:text-slate-200",
   },
   rudras: {
     back: "text-blue-700 dark:text-blue-800",
     cover: "text-blue-500 dark:text-blue-600",
-    deco: "text-[#FE9900]",
+    deco: "text-[#FCC200]",
   },
   ardra: {
     back: "text-rose-700 dark:text-rose-800",
@@ -94,7 +94,7 @@ const variantColors: Record<
   shakti: {
     back: "text-indigo-800",
     cover: "text-indigo-600",
-    deco: "text-[#FE9900]",
+    deco: "text-[#FCC200]",
   },
   kubera: {
     back: "text-sky-800",
@@ -102,14 +102,14 @@ const variantColors: Record<
     deco: "text-sky-100",
   },
   hari: {
-    back: "text-[#004093]",
-    cover: "text-sky-500",
+    back: "text-[#1B74BB]",
+    cover: "text-[#2AA9E4]",
     deco: "text-yellow-400",
   },
   ravi: {
     back: "text-amber-600",
     cover: "text-amber-500",
-    deco: "text-[#004093]",
+    deco: "text-[#1B74BB]",
   },
 }
 
@@ -525,8 +525,8 @@ const serviceItems = [
   {
     title: 'Commercial Solar',
     desc: 'Scaleable solar systems designed to offset high corporate power tariffs and lower operating costs.',
-    color: 'text-sky-500',
-    badgeColor: 'bg-sky-500/10 text-sky-600',
+    color: 'text-[#2AA9E4]',
+    badgeColor: 'bg-[#2AA9E4]/10 text-sky-600',
     variant: 'kubera' as FolderVariant,
     images: [
       '/images/solar/solar-aerial-farm.jpg',
@@ -643,26 +643,26 @@ export default function ContactServices({ selectedSubject, onSelectService }: Co
   }
 
   return (
-    <section className="py-16 bg-white relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-12 md:py-20 bg-white relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-0">
 
         {/* Title */}
-        <div className="text-center mb-16 space-y-4">
+        <div className="text-center mb-10 md:mb-16 space-y-4">
           <div className="flex items-center justify-center space-x-2.5">
-            <span className="h-0.5 w-8 bg-[#FE9900] rounded-full" />
-            <span className="text-xs font-black text-[#004093] uppercase tracking-widest">Our Offerings</span>
-            <span className="h-0.5 w-8 bg-[#FE9900] rounded-full" />
+            <span className="h-0.5 w-8 bg-[#FCC200] rounded-full" />
+            <span className="text-xs font-black text-[#1B74BB] uppercase tracking-widest">Our Offerings</span>
+            <span className="h-0.5 w-8 bg-[#FCC200] rounded-full" />
           </div>
-          <h2 className="text-3xl md:text-5xl font-serif font-bold text-slate-900 tracking-tight leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-black text-slate-900 tracking-tight leading-tight">
             Which Solutions Do You Need?
           </h2>
-          <p className="text-sm md:text-base leading-relaxed text-slate-800 max-w-2xl mx-auto font-semibold">
+          <p className="text-xs sm:text-sm md:text-base leading-relaxed text-slate-800 max-w-2xl mx-auto font-semibold">
             Hover to peek inside our system folders; click to expand details and auto-select that option in the inquiry form below.
           </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 items-start">
           {serviceItems.map((item, index) => {
             const isHovered = hoveredIndex === index
             const isSelected = selectedSubject === item.subjectValue
@@ -679,10 +679,10 @@ export default function ContactServices({ selectedSubject, onSelectService }: Co
                 onMouseLeave={() => setHoveredIndex(null)}
                 onClick={() => handleCardClick(index, item.subjectValue)}
                 className={cn(
-                  "bg-white rounded-lg border p-8 text-left transition-all duration-300 shadow-xs cursor-pointer flex flex-col justify-between group overflow-hidden relative",
+                  "bg-white rounded-xl border p-5 sm:p-8 text-left transition-all duration-300 shadow-lg shadow-black cursor-pointer flex flex-col justify-between group overflow-hidden relative",
                   isExpanded || isSelected
-                    ? "border-[#004093] bg-[#004093]/1 ring-2 ring-[#004093]/10 shadow-md scale-[1.01]"
-                    : "border-slate-300 hover:border-[#004093]/40 hover:shadow-md"
+                    ? "border-[#1B74BB] bg-[#1B74BB]/1 ring-2 ring-[#1B74BB]/10 shadow-md scale-[1.01]"
+                    : "border-slate-400 hover:border-[#1B74BB]/40  hover:shadow-md"
                 )}
               >
                 <div>
@@ -690,7 +690,7 @@ export default function ContactServices({ selectedSubject, onSelectService }: Co
                   <div
                     className={cn(
                       "absolute top-0 left-0 right-0 h-1 transition-opacity duration-300",
-                      isExpanded || isSelected ? "opacity-100 bg-[#004093]" : "opacity-0 bg-[#FE9900] group-hover:opacity-100"
+                      isExpanded || isSelected ? "opacity-100 bg-[#1B74BB]" : "opacity-0 bg-[#FCC200] group-hover:opacity-100"
                     )}
                   />
 
@@ -706,20 +706,20 @@ export default function ContactServices({ selectedSubject, onSelectService }: Co
                     <span className={cn(
                       "text-[9px] font-black uppercase px-2.5 py-1 rounded-md tracking-wider transition-colors",
                       isExpanded || isSelected
-                        ? "bg-[#004093] text-white"
-                        : "bg-slate-100 text-slate-500 group-hover:bg-[#FE9900]/10 group-hover:text-[#FE9900]"
+                        ? "bg-[#1B74BB] text-white"
+                        : "bg-slate-100 text-slate-900 group-hover:bg-[#FCC200]/10 group-hover:text-[#FCC200]"
                     )}>
                       {item.variant}
                     </span>
                   </div>
 
                   <h3 className={cn(
-                    "font-serif font-semibold text-2xl md:text-3xl mb-2 transition-colors duration-200",
-                    isExpanded || isSelected ? "text-[#004093]" : "text-slate-900 group-hover:text-[#004093]"
+                    "font-black text-xl sm:text-2xl mb-2 transition-colors duration-200",
+                    isExpanded || isSelected ? "text-[#1B74BB]" : "text-slate-900 group-hover:text-[#1B74BB]"
                   )}>
                     {item.title}
                   </h3>
-                  <p className="text-sm md:text-base leading-relaxed text-slate-550 font-semibold">
+                  <p className="text-xs sm:text-sm leading-relaxed text-slate-700 font-semibold">
                     {item.desc}
                   </p>
                 </div>
@@ -747,7 +747,7 @@ export default function ContactServices({ selectedSubject, onSelectService }: Co
                         ))}
                       </ul>
 
-                      <div className="pt-2 text-[10px] font-bold text-slate-400 italic">
+                      <div className="pt-2 text-[10px] font-bold text-slate-900 italic">
                         * Clicking selected this solution. Fill the form below to proceed.
                       </div>
                     </motion.div>
@@ -755,11 +755,11 @@ export default function ContactServices({ selectedSubject, onSelectService }: Co
                 </AnimatePresence>
 
                 {/* Bottom Arrow Indicator */}
-                <div className="flex items-center gap-1.5 text-[#004093] text-xs font-black uppercase tracking-wider mt-6 group-hover:text-[#FE9900] transition-colors">
+                <div className="flex items-center gap-1.5 text-[#1B74BB] text-xs font-black uppercase tracking-wider mt-6 group-hover:text-[#FCC200] transition-colors">
                   <span>{isExpanded ? "Selected (Fill Form)" : "Expand Details"}</span>
                   <ArrowRight className={cn(
                     "w-4 h-4 transition-transform",
-                    isExpanded ? "rotate-90 text-[#FE9900]" : "group-hover:translate-x-1"
+                    isExpanded ? "rotate-90 text-[#FCC200]" : "group-hover:translate-x-1"
                   )} />
                 </div>
               </motion.div>
@@ -769,5 +769,5 @@ export default function ContactServices({ selectedSubject, onSelectService }: Co
 
       </div>
     </section>
-  )
+  );
 }

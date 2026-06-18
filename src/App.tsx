@@ -74,14 +74,21 @@ function App() {
   // showContent controls whether the site content is mounted (always true after first render).
   // This way the site content loads silently underneath the fixed-position preloader,
   // eliminating the white flash that occurred when content mounted AFTER the preloader unmounted.
-  const [showPreloader, setShowPreloader] = useState(true)
-  const [showContent, setShowContent] = useState(false)
+  const [showPreloader, setShowPreloader] = useState(() => {
+    const hasVisited = localStorage.getItem('has_visited_solearth')
+    return !hasVisited
+  })
+  const [showContent, setShowContent] = useState(() => {
+    const hasVisited = localStorage.getItem('has_visited_solearth')
+    return !!hasVisited
+  })
 
   const handlePreloaderComplete = () => {
     // Reveal the site content the moment the preloader starts fading
     setShowContent(true)
     // Remove the preloader from the DOM after its CSS fade-out finishes (700ms transition + buffer)
     setTimeout(() => setShowPreloader(false), 800)
+    localStorage.setItem('has_visited_solearth', 'true')
   }
 
   useEffect(() => {

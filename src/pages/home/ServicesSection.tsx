@@ -260,10 +260,9 @@ export default function ServicesSection() {
   );
 
   const currentService = SERVICES_LIST[activeIndex] || SERVICES_LIST[0];
-  const IconComponent = currentService.icon;
 
   return (
-    <section ref={containerRef} id="services" className="relative h-[600vh] bg-white">
+    <section ref={containerRef} id="services" className="relative h-[800vh] bg-white">
       <div className="sticky top-0 h-screen w-full flex flex-col justify-between py-10 overflow-hidden text-[#0a1f44]">
         {/* Background Soft Gradients */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-linear-to-tr from-blue-50/60 to-amber-50/60 rounded-full blur-[120px] pointer-events-none z-0" />
@@ -284,8 +283,8 @@ export default function ServicesSection() {
                 transition={{ duration: 0.6 }}
                 className="inline-flex items-center gap-3 mb-3"
               >
-                <span className="h-px w-8 bg-[#F8C000]" />
-                <span className="text-[#F8C000] text-xs font-bold tracking-[0.2em] uppercase">Our Capabilities</span>
+                <span className="h-px w-8 bg-[#FCC200]" />
+                <span className="text-black  text-xs font-bold tracking-[0.2em] uppercase">Our Capabilities</span>
               </motion.div>
 
               <motion.h2
@@ -293,7 +292,7 @@ export default function ServicesSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.15 }}
-                className="text-3xl  md:text-5xl font-serif font-bold mb-2 bg-linear-to-r from-[#0a1f44] to-[#1D6FB8] bg-clip-text text-transparent"
+                className="text-3xl  md:text-5xl font-serif font-bold mb-2 bg-linear-to-r from-[#0a1f44] to-[#1B74BB] bg-clip-text text-transparent"
               >
                 Comprehensive Solar Solutions
               </motion.h2>
@@ -303,7 +302,7 @@ export default function ServicesSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.25 }}
-                className="text-sm md:text-base leading-relaxed text-gray-500 max-w-2xl mx-auto"
+                className="text-sm md:text-base leading-relaxed text-gray-800 max-w-2xl mx-auto"
               >
                 Scroll down the page normally to rotate horizontally step-by-step through our 25 capability systems.
               </motion.p>
@@ -312,7 +311,7 @@ export default function ServicesSection() {
         </div>
 
         {/* Middle Gallery */}
-        <div className="relative z-10 px-4 sm:px-6 lg:px-8 w-full flex-1 flex items-center justify-center min-h-[360px] max-h-[420px]">
+        <div className="relative z-10 px-4 sm:px-6 lg:px-8 w-full flex-1 flex items-center justify-center min-h-[260px] md:max-h-[420px]">
           <motion.div
             initial={{ opacity: 0, scale: 0.97 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -341,7 +340,7 @@ export default function ServicesSection() {
           <div className="w-full max-w-4xl mx-auto z-20">
             <div className="relative min-h-[140px] p-5 rounded-2xl border border-gray-300 bg-white/80 backdrop-blur-xl shadow-lg shadow-black overflow-hidden transition-all duration-300">
               {/* Highlight accent background gradient */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-linear-to-br from-[#F8C000]/5 to-[#1D6FB8]/5 rounded-full blur-2xl pointer-events-none" />
+              <div className="absolute top-0 right-0 w-32 h-32 bg-linear-to-br from-[#FCC200]/5 to-[#1B74BB]/5 rounded-full blur-2xl pointer-events-none" />
 
               <AnimatePresence mode="wait">
                 <motion.div
@@ -354,26 +353,24 @@ export default function ServicesSection() {
                 >
                   {/* Left part: icon & title */}
                   <div className="flex items-center gap-3 min-w-[260px] md:border-r border-gray-100 pr-4">
-                    <span className="text-3xl filter drop-shadow-md select-none text-[#F8C000]">
-                      <IconComponent className="w-8 h-8 stroke-[1.75]" />
-                    </span>
+                 
                     <div>
-                      <span className="text-[10px] font-bold tracking-widest text-[#F8C000] uppercase">ACTIVE CAPABILITY</span>
-                      <h3 className="text-2xl md:text-3xl font-serif font-semibold text-[#0a1f44]">{currentService.title}</h3>
+          
+                      <h3 className="text-xl md:text-3xl text-center  font-serif font-semibold text-[#0a1f44]">{currentService.title}</h3>
                     </div>
                   </div>
 
                   {/* Right part: description & features */}
                   <div className="flex-1 flex flex-col gap-2">
-                    <p className="text-sm md:text-base leading-relaxed text-gray-600 text-center md:text-left">
+                    <p className="text-sm md:text-base leading-relaxed text-gray-900 text-center md:text-left">
                       {currentService.desc}
                     </p>
 
                     <div className="flex flex-wrap justify-center md:justify-start gap-x-4 gap-y-1 mt-1 pt-2 border-t border-gray-100">
                       {currentService.features.map((feat, i) => (
                         <div key={i} className="flex items-center gap-2">
-                          <span className="w-1 h-1 rounded-full bg-[#F8C000]" />
-                          <span className="text-[11px] font-medium text-gray-500">{feat}</span>
+                          <span className="w-1 h-1 rounded-full bg-[#FCC200]" />
+                          <span className="text-[11px] font-medium text-gray-800">{feat}</span>
                         </div>
                       ))}
                     </div>

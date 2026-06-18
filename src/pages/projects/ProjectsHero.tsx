@@ -13,7 +13,7 @@ export default function ProjectsHero() {
   }
 
   return (
-    <section className="relative min-h-[82vh] flex items-center justify-center overflow-hidden bg-[#0a1f44]/10 text-white pt-18 pb-10">
+    <section className="relative min-h-[82vh] flex items-center justify-center overflow-hidden bg-[#0a1f44]/10 text-white pt-24 pb-16 md:pt-32 md:pb-24">
       {/* Background Image with Ken Burns zoom entry effect */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <motion.img
@@ -35,16 +35,16 @@ export default function ProjectsHero() {
 
 
       {/* Hero Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10 md:mt-0 relative z-20 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6 md:mt-0 relative z-20 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         {/* Left Column: Headline and CTAs */}
         <div className="lg:col-span-9 text-left flex flex-col justify-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 bg-[#F8C000]/20 border border-[#F8C000]/45 text-[#F8C000] text-xs font-bold tracking-widest uppercase px-4 py-2 rounded-full mb-6 w-fit"
+            className="inline-flex items-center gap-2 bg-[#FCC200]/20 border border-[#FCC200]/45 text-black text-[10px] sm:text-xs font-bold tracking-widest uppercase px-4 py-2 rounded-full mb-6 w-fit"
           >
-            <span className="w-2 h-2 bg-[#F8C000] rounded-full animate-pulse" />
+            <span className="w-2 h-2 bg-[#FCC200] rounded-full animate-pulse" />
             Project Showcase
           </motion.div>
 
@@ -52,12 +52,12 @@ export default function ProjectsHero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 tracking-tight text-white"
+            className="text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 tracking-tight text-white"
           >
             Our Solar & Battery{' '}
-            <span className="text-[#F8C000] relative inline-block">
+            <span className="text-[#FCC200] relative inline-block">
               Installation Portfolio
-              <span className="absolute bottom-1 left-0 w-full h-[4px] bg-[#F8C000] rounded-full opacity-60" />
+              <span className="absolute bottom-1 left-0 w-full h-[4px] bg-[#FCC200] rounded-full opacity-60" />
             </span>
           </motion.h1>
 
@@ -65,7 +65,7 @@ export default function ProjectsHero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-base sm:text-lg text-slate-150 mb-8 leading-relaxed max-w-4xl font-medium"
+            className="text-sm sm:text-base md:text-lg text-slate-150 mb-8 leading-relaxed max-w-4xl font-medium"
           >
             Explore our records of premium-tier residential installations, heavy-duty commercial solar arrays, and high-capacity hybrid battery backup systems engineered across Australia.
           </motion.p>
@@ -78,14 +78,14 @@ export default function ProjectsHero() {
           >
             <button
               onClick={handleScrollDown}
-              className="group bg-[#F8C000] hover:bg-[#e0ad00] text-black font-bold px-10 py-3.5 rounded-full text-sm sm:text-base transition-all duration-300 shadow-xl hover:shadow-[#F8C000]/25 hover:-translate-y-0.5 flex items-center gap-2 cursor-pointer"
+              className="group bg-[#FCC200] hover:bg-[#e6af00] text-black font-bold px-6 sm:px-10 py-3.5 rounded-full text-xs sm:text-base transition-all duration-300 shadow-xl hover:shadow-[#FCC200]/25 hover:-translate-y-0.5 flex items-center gap-2 cursor-pointer border-none"
             >
               Explore Gallery
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
             </button>
             <button
               onClick={() => openQuoteModal('Projects Page Hero')}
-              className="bg-white/10 hover:bg-white/20 border-2 border-white/30 text-white font-bold px-10 py-3.5 rounded-full text-sm sm:text-base backdrop-blur-sm transition-all duration-300 flex items-center justify-center cursor-pointer border-none"
+              className="bg-white/10 hover:bg-white/20 border border-white/30 text-white font-bold px-6 sm:px-10 py-3.5 rounded-full text-xs sm:text-base backdrop-blur-sm transition-all duration-300 flex items-center justify-center cursor-pointer"
             >
               Get Free Assessment
             </button>
@@ -109,5 +109,5 @@ export default function ProjectsHero() {
         </svg>
       </div>
     </section>
-  )
+  );
 }

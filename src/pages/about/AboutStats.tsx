@@ -10,9 +10,9 @@ export default function AboutStats() {
   ]
 
   return (
-    <section className="bg-slate-50 py-10">
+    <section className="bg-slate-50 py-4 md:py-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-0">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-20">
+        <div className="grid grid-cols-2 lg:grid-cols-4 md:gap-20 gap-4">
           {stats.map((stat, i) => (
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -28,9 +28,9 @@ export default function AboutStats() {
                   to={stat.value} 
                   duration={2} 
                 />
-                <span className="text-[#28A8E0] font-black">{stat.suffix}</span>
+                <span className="text-[#2AA9E4] font-black">{stat.suffix}</span>
               </div>
-              <div className="text-sm text-gray-500 font-semibold uppercase tracking-wider">
+              <div className="text-sm text-gray-900 font-semibold uppercase tracking-wider">
                 {stat.label}
               </div>
             </motion.div>

@@ -10,7 +10,7 @@ export default function ContactHero() {
   }
 
   return (
-    <section className="relative min-h-[72vh] flex items-center justify-center overflow-hidden  text-white pt-18 pb-10">
+    <section className="relative min-h-[72vh] flex items-center justify-center overflow-hidden text-white pt-24 pb-16 md:pt-32 md:pb-24">
       {/* Background Image with Ken Burns zoom entry effect */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <motion.img
@@ -19,31 +19,31 @@ export default function ContactHero() {
           initial={{ scale: 1.1, opacity: 0 }}
           animate={{ scale: 1.02, opacity: 0.85 }}
           transition={{ duration: 1.8, ease: 'easeOut' }}
-          className="absolute inset-0 w-full h-full object-fill"
+          className="absolute inset-0 w-full h-full object-cover"
         />
       </div>
 
       {/* Dark overlay gradients for maximum legibility */}
-      <div className="absolute inset-0 z-10  md:bg-linear-to-r md:from-[#0a1f44]/85 md:via-[#0a1f44]/65 md:to-[#0a1f44]/30" />
+      <div className="absolute inset-0 z-10 bg-[#0a1f44]/60 md:bg-linear-to-r md:from-[#0a1f44]/85 md:via-[#0a1f44]/65 md:to-[#0a1f44]/30" />
 
       {/* Grid Pattern Overlay */}
       <div className="absolute inset-0 z-10 opacity-10 bg-[linear-gradient(to_right,#ffffff10_1px,transparent_1px),linear-gradient(to_bottom,#ffffff10_1px,transparent_1px)] bg-size-[4rem_4rem]" />
 
       {/* Glowing Ambient Effects */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-[#28A8E0]/15 blur-3xl pointer-events-none z-10" />
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-[#F8C000]/10 blur-3xl pointer-events-none z-10" />
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-[#2AA9E4]/15 blur-3xl pointer-events-none z-10" />
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-[#FCC200]/10 blur-3xl pointer-events-none z-10" />
 
       {/* Hero Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-10 md:my-0 relative z-20 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6 md:mt-0 relative z-20 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center text-left">
         {/* Left Column: Headline and CTAs */}
-        <div className="lg:col-span-9 text-left flex flex-col justify-center">
+        <div className="lg:col-span-9 flex flex-col justify-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 bg-[#F8C000]/20 border border-[#F8C000]/45 text-[#F8C000] text-xs font-bold tracking-widest uppercase px-4 py-2 rounded-full mb-6 w-fit"
+            className="inline-flex items-center gap-2 bg-[#FCC200]/20 border border-[#FCC200]/45 text-black text-[10px] sm:text-xs font-bold tracking-widest uppercase px-4 py-2 rounded-full mb-6 w-fit"
           >
-            <span className="w-2 h-2 bg-[#F8C000] rounded-full animate-pulse" />
+            <span className="w-2 h-2 bg-[#FCC200] rounded-full animate-pulse" />
             Get In Touch
           </motion.div>
 
@@ -51,12 +51,12 @@ export default function ContactHero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 tracking-tight text-white"
+            className="text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 tracking-tight text-white"
           >
             Let's Start Your{' '}
-            <span className="text-[#F8C000] relative inline-block">
+            <span className="text-[#FCC200] relative inline-block">
               Solar Journey
-              <span className="absolute bottom-1 left-0 w-full h-[4px] bg-[#F8C000] rounded-full opacity-60" />
+              <span className="absolute bottom-1 left-0 w-full h-[4px] bg-[#FCC200] rounded-full opacity-60" />
             </span>
           </motion.h1>
 
@@ -64,7 +64,7 @@ export default function ContactHero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-base sm:text-lg text-slate-150 mb-8 leading-relaxed max-w-4xl font-medium"
+            className="text-sm sm:text-base md:text-lg text-slate-150 mb-8 leading-relaxed max-w-4xl font-medium"
           >
             Have questions about solar system pricing, federal rebates, switchboard capacity, or Tesla Powerwalls? Reach out to our Clean Energy Council accredited engineering experts today.
           </motion.p>
@@ -77,16 +77,16 @@ export default function ContactHero() {
           >
             <button
               onClick={handleScrollDown}
-              className="group bg-[#F8C000] hover:bg-[#e0ad00] text-black font-bold px-10 py-3.5 rounded-full text-sm sm:text-base transition-all duration-300 shadow-xl hover:shadow-[#F8C000]/25 hover:-translate-y-0.5 flex items-center gap-2 cursor-pointer"
+              className="group bg-[#FCC200] hover:bg-[#e6af00] text-black font-bold px-6 sm:px-10 py-3.5 rounded-full text-xs sm:text-base transition-all duration-300 shadow-xl hover:shadow-[#FCC200]/25 hover:-translate-y-0.5 flex items-center gap-2 cursor-pointer border-none"
             >
               Get Free Quote
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
             </button>
             <a
-              href="tel:1300672194"
-              className="bg-white/10 hover:bg-white/20 border-2 border-white/30 text-white font-bold px-10 py-3.5 rounded-full text-sm sm:text-base backdrop-blur-sm transition-all duration-300 flex items-center justify-center cursor-pointer"
+              href="tel:0435359431"
+              className="bg-white/10 hover:bg-white/20 border border-white/30 text-white font-bold px-6 sm:px-10 py-3.5 rounded-full text-xs sm:text-base backdrop-blur-sm transition-all duration-300 flex items-center justify-center cursor-pointer text-center"
             >
-              Call 1300 672 194
+              Call 0435 359 431
             </a>
           </motion.div>
         </div>

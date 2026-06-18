@@ -198,10 +198,10 @@ export default function Products() {
         <div className="text-center max-w-3xl mx-auto mb-10">
           <div className="inline-flex items-center gap-3 mb-4">
             <span className="h-px w-8 bg-[#f5a623]" />
-            <span className="text-[#f5a623] text-xs font-bold tracking-[0.2em] uppercase">Premium Hardware</span>
+            <span className="text-black text-xs font-bold tracking-[0.2em] uppercase">Premium Hardware</span>
             <span className="h-px w-8 bg-[#f5a623]" />
           </div>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-[#0a1f44] leading-tight mb-4">
+          <h2 className="text-3xl md:text-5xl font-extrabold text-[#0a1f44] leading-tight mb-4">
             Engineered For{' '}
             <span style={{ color: '#f5a623' }}>Performance</span>{' '}
             &amp; Durability
@@ -217,7 +217,7 @@ export default function Products() {
               onClick={() => goTo(i)}
               className={`relative flex items-center font-serif gap-2 px-10 py-2 text-sm font-bold rounded-full transition-all duration-300 overflow-hidden ${activeIndex === i
                 ? 'text-white shadow-xl'
-                : 'bg-gray-100 text-gray-900 hover:bg-gray-200 border border-gray-200'
+                : 'bg-gray-100 text-gray-900 hover:bg-gray-200 border border-gray-400'
                 }`}
               style={activeIndex === i ? { background: `linear-gradient(135deg, #1a6fc4, ${tab.accent})`, boxShadow: `0 8px 30px ${tab.accent}55` } : {}}
             >
@@ -235,7 +235,7 @@ export default function Products() {
         </div>
 
         {/* Content grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-6 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-2 lg:gap-6 items-center">
 
           {/* LEFT – CardSwap */}
           <div className="lg:col-span-5 relative flex items-center justify-center min-h-[440px]">
@@ -325,13 +325,13 @@ export default function Products() {
               {currentTab.specs.map((spec, i) => (
                 <div
                   key={i}
-                  className={`flex items-center justify-between px-5 py-3.5 ${i < currentTab.specs.length - 1 ? 'border-b border-gray-300' : ''
+                  className={`flex items-center justify-between px-5 py-3.5 ${i < currentTab.specs.length - 1 ? 'border-b border-gray-400' : ''
                     }`}
                 >
                   <span className="text-gray-900 text-sm font-medium">{spec.label}</span>
                   <span
                     className="text-sm font-extrabold px-3 py-1 rounded-lg"
-                    style={{ background: '#f5a62318', color: '#f5a623' }}
+                    style={{ background: '#f5a62318', color: '#000000' }}
                   >
                     {spec.value}
                   </span>
@@ -350,7 +350,7 @@ export default function Products() {
                     <Link
                       key={brand.slug}
                       to={`/product/${brand.slug}`}
-                      className="px-4 py-1.5 bg-gray-50 border border-gray-200 hover:border-[#f5a623] hover:text-[#f5a623] text-xs font-bold text-gray-700 rounded-full transition duration-300"
+                      className="px-4 py-1.5 bg-gray-50 border border-gray-400 hover:border-[#f5a623] hover:text-[#f5a623] text-xs font-bold text-gray-900 rounded-full transition duration-300"
                     >
                       {brand.name}
                     </Link>
@@ -370,7 +370,7 @@ export default function Products() {
               </button>
               <button
                 onClick={() => openQuoteModal(`Product Brochure: ${currentTab.label}`)}
-                className="inline-flex items-center justify-center gap-2 px-10 py-2 text-sm font-bold rounded-full text-gray-700 bg-gray-100 hover:bg-gray-200 border border-gray-200 transition-all duration-200 cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 px-10 py-2 text-sm font-bold rounded-full text-gray-900 bg-gray-100 hover:bg-gray-200 border border-gray-400 transition-all duration-200 cursor-pointer"
               >
                 <FileText className="h-4 w-4 text-gray-400" />
                 Download Brochure

@@ -43,7 +43,7 @@ export default function CommercialHero({
   }
 
   return (
-    <div className="relative text-white pt-28 pb-10 overflow-hidden bg-[#071329] min-h-[90vh] flex items-center">
+    <div className="relative text-white pt-28 sm:pt-32 pb-12 sm:pb-20 overflow-hidden bg-[#071329] min-h-[90vh] flex items-center">
       {/* Background Graphic overlay with Ken Burns entry zoom */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <motion.img
@@ -56,20 +56,18 @@ export default function CommercialHero({
         />
         
         {/* Glowing Ambient Aura Effects */}
-        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full bg-[#004093]/25 blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-1/3 right-1/4 w-[400px] h-[400px] rounded-full bg-[#FE9900]/12 blur-[100px] pointer-events-none" />
-
-        
+        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full bg-[#1B74BB]/25 blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-1/3 right-1/4 w-[400px] h-[400px] rounded-full bg-[#FCC200]/12 blur-[100px] pointer-events-none" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center w-full">
         {/* Left Side: Commercial Bullet Details */}
-        <div className="lg:col-span-7 space-y-4">
+        <div className="lg:col-span-7 space-y-5">
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-[#FE9900]/20 border border-[#FE9900]/40 rounded-full text-xs font-black uppercase tracking-wider text-[#FE9900]"
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-[#FCC200]/20 border border-[#FCC200]/40 rounded-full text-xs font-black uppercase tracking-wider text-[#FCC200]"
           >
             <Building2 className="w-3.5 h-3.5 animate-pulse" />
             <span>Commercial Energy Solutions</span>
@@ -79,7 +77,7 @@ export default function CommercialHero({
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-black font-serif leading-tight drop-shadow-lg"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black font-serif leading-tight drop-shadow-lg text-white"
           >
             {heroTitle}
           </motion.h1>
@@ -88,7 +86,7 @@ export default function CommercialHero({
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-base md:text-lg text-slate-200 font-semibold leading-relaxed max-w-2xl"
+            className="text-sm sm:text-base md:text-lg text-slate-200 font-semibold leading-relaxed max-w-2xl"
           >
             {tagline}
           </motion.p>
@@ -102,18 +100,18 @@ export default function CommercialHero({
           >
             <motion.div
               whileHover={{ y: -4, transition: { duration: 0.2 } }}
-              className="bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/20 rounded-2xl p-4 transition-colors"
+              className="bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/20 rounded-2xl p-4 sm:p-5 transition-colors"
             >
-              <span className="block text-[10px] text-[#FE9900] font-black uppercase tracking-wider">Annual ROI Estimate</span>
+              <span className="block text-[10px] text-[#FCC200] font-black uppercase tracking-wider">Annual ROI Estimate</span>
               <span className="text-xl md:text-2xl font-black block mt-1">{savings.replace("Save up to ", "").split(" /")[0]}</span>
               <span className="text-[10px] text-slate-350 font-bold block mt-0.5">Offset operational expenses</span>
             </motion.div>
 
             <motion.div
               whileHover={{ y: -4, transition: { duration: 0.2 } }}
-              className="bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/20 rounded-2xl p-4 transition-colors"
+              className="bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/20 rounded-2xl p-4 sm:p-5 transition-colors"
             >
-              <span className="block text-[10px] text-[#FE9900] font-black uppercase tracking-wider">System Category</span>
+              <span className="block text-[10px] text-[#FCC200] font-black uppercase tracking-wider">System Category</span>
               <span className="text-xl md:text-2xl font-black block mt-1">Tier 1 Commercial</span>
               <span className="text-[10px] text-slate-350 font-bold block mt-0.5">Clean Energy Council approved</span>
             </motion.div>
@@ -139,7 +137,7 @@ export default function CommercialHero({
                 transition={{ delay: 0.6 + idx * 0.1, duration: 0.4 }}
                 className="flex items-center gap-2.5"
               >
-                <CheckCircle2 className="w-5 h-5 text-[#FE9900] shrink-0" />
+                <CheckCircle2 className="w-4.5 h-4.5 text-[#FCC200] shrink-0" />
                 <span>{bullet}</span>
               </motion.div>
             ))}
@@ -151,18 +149,18 @@ export default function CommercialHero({
           initial={{ opacity: 0, x: 40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="lg:col-span-5 bg-white/10 backdrop-blur-md rounded-2xl p-6 md:p-8 text-white shadow-2xl border border-white/20 relative overflow-hidden"
+          className="lg:col-span-5 bg-white/10 backdrop-blur-md rounded-2xl p-5 sm:p-8 text-white shadow-2xl border border-white/20 relative overflow-hidden"
         >
           {/* Internal gradients inside card */}
-          <div className="absolute -top-12 -right-12 w-36 h-36 rounded-full bg-[#FE9900]/15 blur-2xl pointer-events-none" />
-          <div className="absolute -bottom-12 -left-12 w-36 h-36 rounded-full bg-[#004093]/35 blur-2xl pointer-events-none" />
+          <div className="absolute -top-12 -right-12 w-36 h-36 rounded-full bg-[#FCC200]/15 blur-2xl pointer-events-none" />
+          <div className="absolute -bottom-12 -left-12 w-36 h-36 rounded-full bg-[#1B74BB]/35 blur-2xl pointer-events-none" />
 
-          <div className="absolute top-0 right-0 bg-[#FE9900] text-black text-[10px] font-black px-3.5 py-1.5 rounded-tr-lg uppercase tracking-wider shadow-lg">
+          <div className="absolute top-0 right-0 bg-[#FCC200] text-black text-[10px] font-black px-3.5 py-1.5 rounded-tr-lg uppercase tracking-wider shadow-lg">
             Commercial Proposal
           </div>
 
           <div className="mb-6 relative z-10">
-            <h3 className="text-2xl md:text-3xl font-serif font-semibold text-white tracking-wide">
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-serif font-semibold text-white tracking-wide">
               Request Appraisal
             </h3>
             <p className="text-xs text-slate-350 font-semibold mt-1">
@@ -171,10 +169,23 @@ export default function CommercialHero({
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-4 relative z-10">
-           
+            <div>
+              <label className="block text-[11px] font-black text-[#FCC200] uppercase tracking-wider mb-1.5">
+                Business Name
+              </label>
+              <input
+                type="text"
+                required
+                placeholder="e.g. Acme Corporation Pty Ltd"
+                value={formData.businessName}
+                onChange={(e) => setFormData({ ...formData, businessName: e.target.value })}
+                className="w-full px-4 py-2.5 rounded-xl border border-white/20 bg-white/5 focus:bg-white/10 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#FCC200]/50 focus:border-[#FCC200] transition-all duration-300 text-sm font-semibold"
+              />
+            </div>
+
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-[11px] font-black text-[#FE9900] uppercase tracking-wider mb-1.5">
+                <label className="block text-[11px] font-black text-[#FCC200] uppercase tracking-wider mb-1.5">
                   Contact Person
                 </label>
                 <input
@@ -183,12 +194,12 @@ export default function CommercialHero({
                   placeholder="e.g. Sarah Connor"
                   value={formData.contactPerson}
                   onChange={(e) => setFormData({ ...formData, contactPerson: e.target.value })}
-                  className="w-full px-4 py-2.5 rounded-xl border border-white/20 bg-white/5 focus:bg-white/10 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#FE9900]/50 focus:border-[#FE9900] transition-all duration-300 text-sm font-semibold"
+                  className="w-full px-4 py-2.5 rounded-xl border border-white/20 bg-white/5 focus:bg-white/10 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#FCC200]/50 focus:border-[#FCC200] transition-all duration-300 text-sm font-semibold"
                 />
               </div>
 
               <div>
-                <label className="block text-[11px] font-black text-[#FE9900] uppercase tracking-wider mb-1.5">
+                <label className="block text-[11px] font-black text-[#FCC200] uppercase tracking-wider mb-1.5">
                   Phone Number
                 </label>
                 <input
@@ -197,13 +208,13 @@ export default function CommercialHero({
                   placeholder="e.g. 0400 000 000"
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  className="w-full px-4 py-2.5 rounded-xl border border-white/20 bg-white/5 focus:bg-white/10 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#FE9900]/50 focus:border-[#FE9900] transition-all duration-300 text-sm font-semibold"
+                  className="w-full px-4 py-2.5 rounded-xl border border-white/20 bg-white/5 focus:bg-white/10 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#FCC200]/50 focus:border-[#FCC200] transition-all duration-300 text-sm font-semibold"
                 />
               </div>
             </div>
 
             <div>
-              <label className="block text-[11px] font-black text-[#FE9900] uppercase tracking-wider mb-1.5">
+              <label className="block text-[11px] font-black text-[#FCC200] uppercase tracking-wider mb-1.5">
                 Email Address
               </label>
               <input
@@ -212,12 +223,12 @@ export default function CommercialHero({
                 placeholder="e.g. finance@business.com.au"
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="w-full px-4 py-2.5 rounded-xl border border-white/20 bg-white/5 focus:bg-white/10 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#FE9900]/50 focus:border-[#FE9900] transition-all duration-300 text-sm font-semibold"
+                className="w-full px-4 py-2.5 rounded-xl border border-white/20 bg-white/5 focus:bg-white/10 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#FCC200]/50 focus:border-[#FCC200] transition-all duration-300 text-sm font-semibold"
               />
             </div>
 
             <div>
-              <label className="block text-[11px] font-black text-[#FE9900] uppercase tracking-wider mb-1.5">
+              <label className="block text-[11px] font-black text-[#FCC200] uppercase tracking-wider mb-1.5">
                 Installation Address
               </label>
               <input
@@ -226,18 +237,18 @@ export default function CommercialHero({
                 placeholder="e.g. 45 Clarence Street, Sydney"
                 value={formData.address}
                 onChange={(e) => setFormData({ ...formData, address: e.target.value })}
-                className="w-full px-4 py-2.5 rounded-xl border border-white/20 bg-white/5 focus:bg-white/10 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#FE9900]/50 focus:border-[#FE9900] transition-all duration-300 text-sm font-semibold"
+                className="w-full px-4 py-2.5 rounded-xl border border-white/20 bg-white/5 focus:bg-white/10 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#FCC200]/50 focus:border-[#FCC200] transition-all duration-300 text-sm font-semibold"
               />
             </div>
 
             <div>
-              <label className="block text-[11px] font-black text-[#FE9900] uppercase tracking-wider mb-1.5">
+              <label className="block text-[11px] font-black text-[#FCC200] uppercase tracking-wider mb-1.5">
                 Quarterly Electricity Spend
               </label>
               <select
                 value={formData.bill}
                 onChange={(e) => setFormData({ ...formData, bill: e.target.value })}
-                className="w-full px-4 py-2.5 rounded-xl border border-white/20 bg-white/5 focus:bg-white/10 text-white focus:outline-none focus:ring-2 focus:ring-[#FE9900]/50 focus:border-[#FE9900] transition-all duration-300 text-sm font-semibold [&>option]:text-slate-800"
+                className="w-full px-4 py-2.5 rounded-xl border border-white/20 bg-white/5 focus:bg-white/10 text-white focus:outline-none focus:ring-2 focus:ring-[#FCC200]/50 focus:border-[#FCC200] transition-all duration-300 text-sm font-semibold [&>option]:text-slate-800"
               >
                 <option value="Under $1,500">Under $1,500</option>
                 <option value="$1,500 - $3,000">$1,500 - $3,000</option>
@@ -251,7 +262,7 @@ export default function CommercialHero({
               disabled={loading}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="w-full bg-[#FE9900] hover:bg-[#ffaa22] disabled:bg-slate-500 text-black font-black py-3 rounded-xl shadow-lg transition-colors duration-300 flex items-center justify-center gap-2 text-sm uppercase tracking-wider mt-4"
+              className="w-full bg-[#FCC200] hover:bg-[#ffaa22] disabled:bg-slate-500 text-black font-black py-3 rounded-xl shadow-lg transition-colors duration-300 flex items-center justify-center gap-2 text-sm uppercase tracking-wider mt-4 cursor-pointer"
             >
               {loading ? (
                 <span>Generating Proposal...</span>

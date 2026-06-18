@@ -12,14 +12,9 @@ const QUICK_LINKS = [
 
 const OFFICES = [
   {
-    state: 'NSW Office',
-    address: 'Suite 3.01, 45 Clarence Street',
-    address2: 'Sydney, NSW 2000',
-  },
-  {
-    state: 'Queensland Office',
-    address: '17 Western Avenue',
-    address2: 'Chermside, QLD 4032',
+    state: 'Head Office — Norwest',
+    address: 'Suite 20/1 Maitland Pl',
+    address2: 'Norwest NSW 2153',
   },
 ];
 
@@ -41,7 +36,7 @@ export default function Footer() {
                 onError={(e) => { e.currentTarget.style.display = 'none' }}
               />
             </div>
-            <p className="text-slate-500 text-xs md:text-sm font-semibold leading-relaxed">
+            <p className="text-slate-900 text-xs md:text-sm font-semibold leading-relaxed">
               Australia's trusted partner in renewable energy. We deliver high-efficiency solar panel integration and premium battery backup systems across NSW & QLD.
             </p>
 
@@ -49,8 +44,8 @@ export default function Footer() {
 
           {/* Column 2: Quick Links */}
           <div className="flex flex-col lg:border-r lg:border-slate-100 lg:pl-4 lg:pr-8">
-            <h4 className="text-[#004093] font-black text-xs uppercase tracking-widest mb-6 flex items-center gap-2">
-              <span className="w-1.5 h-3 bg-[#FE9900] rounded-sm"></span>
+            <h4 className="text-[#1B74BB] font-black text-xs uppercase tracking-widest mb-6 flex items-center gap-2">
+              <span className="w-1.5 h-3 bg-[#FCC200] rounded-sm"></span>
               Explore Menu
             </h4>
             <ul className="flex flex-col gap-3">
@@ -58,9 +53,9 @@ export default function Footer() {
                 <li key={link.label}>
                   <Link
                     to={link.href}
-                    className="text-slate-500 text-xs md:text-sm font-semibold hover:text-[#004093] transition-colors duration-200 flex items-center gap-1 group"
+                    className="text-slate-900 text-xs md:text-sm font-semibold hover:text-[#1B74BB] transition-colors duration-200 flex items-center gap-1 group"
                   >
-                    <ChevronRight size={12} className="text-slate-400 group-hover:text-[#FE9900] transition-colors shrink-0" />
+                    <ChevronRight size={12} className="text-slate-900 group-hover:text-[#FCC200] transition-colors shrink-0" />
                     <span className="group-hover:translate-x-0.5 transition-transform duration-200">{link.label}</span>
                   </Link>
                 </li>
@@ -70,19 +65,19 @@ export default function Footer() {
 
           {/* Column 3: Contact Details */}
           <div className="flex flex-col lg:border-r lg:border-slate-100 lg:pl-4 lg:pr-8">
-            <h4 className="text-[#004093] font-black text-xs uppercase tracking-widest mb-6 flex items-center gap-2">
-              <span className="w-1.5 h-3 bg-[#FE9900] rounded-sm"></span>
+            <h4 className="text-[#1B74BB] font-black text-xs uppercase tracking-widest mb-6 flex items-center gap-2">
+              <span className="w-1.5 h-3 bg-[#FCC200] rounded-sm"></span>
               Contact Us
             </h4>
             <ul className="flex flex-col gap-4">
               <li className="flex gap-3 items-start">
-                <div className="w-5 h-5 text-[#FE9900] shrink-0 mt-0.5">
+                <div className="w-5 h-5 text-[#FCC200] shrink-0 mt-0.5">
                   <Phone size={15} />
                 </div>
                 <div>
-                  <h5 className="text-slate-400 text-[10px] font-black uppercase tracking-wider">Call Hotline</h5>
-                  <a href="tel:1300672194" className="text-slate-800 text-xs md:text-sm font-black hover:text-[#004093] transition">
-                    1300 672 194
+                  <h5 className="text-slate-900 text-[10px] font-black uppercase tracking-wider">Call Us</h5>
+                  <a href="tel:0435359431" className="text-slate-800 text-xs md:text-sm font-black hover:text-[#1B74BB] transition">
+                    0435 359 431
                   </a>
                 </div>
               </li>
@@ -92,19 +87,19 @@ export default function Footer() {
                   <Mail size={15} />
                 </div>
                 <div>
-                  <h5 className="text-slate-400 text-[10px] font-black uppercase tracking-wider">Send Email</h5>
-                  <a href="mailto:info@solearth.com.au" className="text-slate-800 text-xs md:text-sm font-black hover:text-[#004093] transition break-all">
+                  <h5 className="text-slate-900 text-[10px] font-black uppercase tracking-wider">Send Email</h5>
+                  <a href="mailto:info@solearth.com.au" className="text-slate-800 text-xs md:text-sm font-black hover:text-[#1B74BB] transition break-all">
                     info@solearth.com.au
                   </a>
                 </div>
               </li>
 
               <li className="flex gap-3 items-start">
-                <div className="w-5 h-5 text-slate-400 shrink-0 mt-0.5">
+                <div className="w-5 h-5 text-slate-900 shrink-0 mt-0.5">
                   <Clock size={15} />
                 </div>
                 <div>
-                  <h5 className="text-slate-400 text-[10px] font-black uppercase tracking-wider">Business Hours</h5>
+                  <h5 className="text-slate-900 text-[10px] font-black uppercase tracking-wider">Business Hours</h5>
                   <p className="text-slate-800 text-xs md:text-sm font-black">
                     Mon - Fri: 8am - 6pm
                   </p>
@@ -115,8 +110,8 @@ export default function Footer() {
 
           {/* Column 4: Local Offices */}
           <div className="flex flex-col lg:pl-4">
-            <h4 className="text-[#004093] font-black text-xs uppercase tracking-widest mb-6 flex items-center gap-2">
-              <span className="w-1.5 h-3 bg-[#FE9900] rounded-sm"></span>
+            <h4 className="text-[#1B74BB] font-black text-xs uppercase tracking-widest mb-6 flex items-center gap-2">
+              <span className="w-1.5 h-3 bg-[#FCC200] rounded-sm"></span>
               Local Offices
             </h4>
             <div className="flex flex-col gap-5">
@@ -127,8 +122,8 @@ export default function Footer() {
                   </div>
                   <div>
                     <h5 className="text-slate-800 font-extrabold text-xs mb-0.5 uppercase tracking-wider">{office.state}</h5>
-                    <p className="text-slate-500 text-xs leading-relaxed font-semibold">{office.address}</p>
-                    <p className="text-slate-500 text-xs leading-relaxed font-semibold">{office.address2}</p>
+                    <p className="text-slate-900 text-xs leading-relaxed font-semibold">{office.address}</p>
+                    <p className="text-slate-900 text-xs leading-relaxed font-semibold">{office.address2}</p>
                   </div>
                 </div>
               ))}
@@ -149,7 +144,7 @@ export default function Footer() {
             />
           </div>
 
-          <p className="text-xs font-bold text-slate-500 flex items-center gap-2">
+          <p className="text-xs font-bold text-slate-900 flex items-center gap-2">
             <span className="h-2 w-2 rounded-full bg-emerald-500 inline-block animate-pulse"></span>
             Clean Energy Council Approved Solar Seller
           </p>
@@ -160,11 +155,11 @@ export default function Footer() {
       <div className="border-t border-slate-200 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 py-5 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
           <div className="flex flex-wrap items-center justify-center md:justify-start gap-x-6 gap-y-2">
-            <Link to="/privacy-policy" className="text-slate-800 text-xs hover:text-[#004093] font-semibold transition-colors">Privacy Policy</Link>
-            <Link to="/terms-conditions" className="text-slate-800 text-xs hover:text-[#004093] font-semibold transition-colors">Terms & Conditions</Link>
-            <Link to="/complaints-policy" className="text-slate-800 text-xs hover:text-[#004093] font-semibold transition-colors">Complaints Policy</Link>
+            <Link to="/privacy-policy" className="text-slate-800 text-xs hover:text-[#1B74BB] font-semibold transition-colors">Privacy Policy</Link>
+            <Link to="/terms-conditions" className="text-slate-800 text-xs hover:text-[#1B74BB] font-semibold transition-colors">Terms & Conditions</Link>
+            <Link to="/complaints-policy" className="text-slate-800 text-xs hover:text-[#1B74BB] font-semibold transition-colors">Complaints Policy</Link>
           </div>
-          <p className="text-slate-400 text-xs font-semibold">
+          <p className="text-slate-900 text-xs font-semibold">
             ©2026 <strong className="text-slate-800">SOLEARTH ENERGY PTY LTD</strong> ABN 11 111 111 111
           </p>
         </div>
@@ -176,13 +171,13 @@ export default function Footer() {
           <p className="text-[10px] text-slate-800 leading-relaxed max-w-4xl font-semibold">
             <span className="text-slate-900 font-bold">Disclaimer:</span> This Solar Promotion is valid for standard metro grid-connected installations only. Pricing accounts for Small Scale Technology Certificates (STCs) assigned directly to SolEarth Energy or its partners. Custom layout factors (double-storey, tile/tin roofs, power phases, or switchboard upgrades) may incur charges. Price match guarantees apply to CEC certified quotes for identical hardware.
           </p>
-          <div className="flex flex-col items-center md:items-end gap-1.5 shrink-0 text-center md:text-right">
+          {/* <div className="flex flex-col items-center md:items-end gap-1.5 shrink-0 text-center md:text-right">
             <p className="text-[10px] text-slate-900 font-semibold italic">*Terms & conditions apply.</p>
-            <p className="text-[10px] text-slate-400 font-semibold">
+            <p className="text-[10px] text-slate-900 font-semibold">
               Developed by{' '}
-              <a href="#" className="text-[#004093] hover:underline font-bold">Digital Web Connection</a>
+              <a href="#" className="text-[#1B74BB] hover:underline font-bold">Digital Web Connection</a>
             </p>
-          </div>
+          </div> */}
         </div>
       </div>
 

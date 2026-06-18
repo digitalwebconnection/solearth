@@ -74,10 +74,10 @@ export default function WhatsAppChat({ isSiteReady = true }: WhatsAppChatProps) 
 
 
   return (
-    <div className="fixed bottom-6 right-6 z-9999 font-sans">
+    <div className="fixed bottom-6 right-6 z-[9999] font-sans">
       {/* ── Chat Window Box ── */}
       <div
-        className={`absolute bottom-20 right-0 w-80 sm:w-[350px] bg-[#0c1317] border border-emerald-500/20 rounded-2xl shadow-2xl flex flex-col transition-all duration-300 transform origin-bottom-right ${isOpen
+        className={`fixed bottom-24 right-4 left-4 sm:left-auto sm:right-6 sm:w-[350px] bg-[#0c1317] border border-emerald-500/20 rounded-2xl shadow-2xl flex flex-col transition-all duration-300 transform origin-bottom-right ${isOpen
             ? 'scale-100 opacity-100 translate-y-0  pointer-events-auto'
             : 'scale-75 opacity-0  translate-y-8 pointer-events-none'
           }`}

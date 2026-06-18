@@ -38,7 +38,7 @@ export default function HeroSection() {
   const slide = slides[current]
 
   return (
-    <section className="relative h-full md:h-[92vh] min-h-[600px] overflow-hidden">
+    <section className="relative h-full md:h-[88vh] min-h-[600px] overflow-hidden">
       {/* Background image */}
       {slides.map((s, i) => (
         <div
@@ -59,11 +59,11 @@ export default function HeroSection() {
 
       {/* Content */}
       <div className="relative z-10 h-full flex items-center my-25 md:my-0 ">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8  w-full">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-0  w-full">
           <div className="max-w-2xl">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-[#F8C000]/20 border border-[#F8C000]/40 text-[#F8C000] text-xs font-bold tracking-widest uppercase px-4 py-2 rounded-full mb-6">
-              <span className="w-2 h-2 bg-[#F8C000] rounded-full animate-pulse" />
+            <div className="inline-flex items-center gap-2 bg-[#FCC200]/20 border border-[#FCC200]/40 text-[#FCC200] text-xs font-bold tracking-widest uppercase px-4 py-2 rounded-full mb-2">
+              <span className="w-2 h-2 bg-[#FCC200] rounded-full animate-pulse" />
               Trusted By 12,000+ Australians
             </div>
 
@@ -89,13 +89,13 @@ export default function HeroSection() {
             <div className="flex flex-wrap gap-4">
               <a
                 href="#packages"
-                className="bg-[#F8C000] hover:bg-[#e0ad00] text-white font-bold px-8 py-4 rounded-full text-base transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-0.5"
+                className="bg-[#FCC200] hover:bg-[#e6af00] text-black font-bold px-10 py-2 rounded-full text-base transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-0.5"
               >
                 View Solar Packages →
               </a>
               <button
                 onClick={() => openQuoteModal('Homepage Hero')}
-                className="bg-white/10 hover:bg-white/20 border-2 border-white/40 text-white font-bold px-8 py-4 rounded-full text-base backdrop-blur-sm transition-all duration-300 cursor-pointer"
+                className="bg-white/10 hover:bg-white/20 border-2 border-white/20 text-white font-bold px-10 py-2 rounded-full text-base backdrop-blur-sm transition-all duration-300 cursor-pointer"
               >
                 Get Free Quote
               </button>
@@ -110,7 +110,7 @@ export default function HeroSection() {
                 { val: '4.9★', label: 'Google Rating' },
               ].map((b) => (
                 <div key={b.label} className="flex flex-col">
-                  <span className="text-2xl font-extrabold text-[#F8C000]">{b.val}</span>
+                  <span className="text-2xl font-extrabold text-[#FCC200]">{b.val}</span>
                   <span className="text-gray-300 text-xs font-medium">{b.label}</span>
                 </div>
               ))}
@@ -126,7 +126,7 @@ export default function HeroSection() {
             key={i}
             onClick={() => setCurrent(i)}
             className={`h-1.5 rounded-full transition-all duration-300 ${
-              i === current ? 'w-8 bg-[#F8C000]' : 'w-2 bg-white/40'
+              i === current ? 'w-8 bg-[#FCC200]' : 'w-2 bg-white/40'
             }`}
           />
         ))}

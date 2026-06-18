@@ -27,16 +27,16 @@ export const ProductGalleryAndStats: React.FC<ProductGalleryAndStatsProps> = ({
     const brand = product.brand || "";
     if (category.includes("Panel")) {
       return [
-        { name: "Brand Partner", value: brand, icon: <Award size={14} />, color: "text-[#FE9900] bg-[#FE9900]/10" },
-        { name: "Power Output", value: "Up to 475W", icon: <Zap size={14} />, color: "text-[#FE9900] bg-[#FE9900]/10" },
+        { name: "Brand Partner", value: brand, icon: <Award size={14} />, color: "text-[#FCC200] bg-[#FCC200]/10" },
+        { name: "Power Output", value: "Up to 475W", icon: <Zap size={14} />, color: "text-[#FCC200] bg-[#FCC200]/10" },
         { name: "Cell Configuration", value: "Monocrystalline", icon: <Sparkles size={14} />, color: "text-purple-500 bg-purple-500/10" },
-        { name: "Aesthetic Profile", value: "Black Frame / Silver", icon: <Shield size={14} />, color: "text-slate-500 bg-slate-500/10" },
+        { name: "Aesthetic Profile", value: "Black Frame / Silver", icon: <Shield size={14} />, color: "text-slate-900 bg-slate-500/10" },
         { name: "Performance Tier", value: "Tier 1 Bloomberg", icon: <CheckCircle size={14} />, color: "text-emerald-500 bg-emerald-500/10" }
       ];
     } else if (category.includes("Inverter")) {
       return [
-        { name: "Brand Partner", value: brand, icon: <Award size={14} />, color: "text-sky-500 bg-sky-500/10" },
-        { name: "Output Voltage", value: "230V / 400V", icon: <Zap size={14} />, color: "text-[#FE9900] bg-[#FE9900]/10" },
+        { name: "Brand Partner", value: brand, icon: <Award size={14} />, color: "text-[#2AA9E4] bg-[#2AA9E4]/10" },
+        { name: "Output Voltage", value: "230V / 400V", icon: <Zap size={14} />, color: "text-[#FCC200] bg-[#FCC200]/10" },
         { name: "Inverter Type", value: "Hybrid / Grid-Tied", icon: <Sparkles size={14} />, color: "text-indigo-500 bg-indigo-500/10" },
         { name: "MPPT Channels", value: "Dual MPPT input", icon: <Shield size={14} />, color: "text-rose-500 bg-rose-500/10" },
         { name: "Enclosure Class", value: "IP66 Protection", icon: <CheckCircle size={14} />, color: "text-emerald-500 bg-emerald-500/10" }
@@ -44,10 +44,10 @@ export const ProductGalleryAndStats: React.FC<ProductGalleryAndStatsProps> = ({
     } else {
       return [
         { name: "Brand Partner", value: brand, icon: <Award size={14} />, color: "text-teal-500 bg-teal-500/10" },
-        { name: "Cell Type", value: "LiFePO4 Lithium", icon: <Zap size={14} />, color: "text-[#FE9900] bg-[#FE9900]/10" },
+        { name: "Cell Type", value: "LiFePO4 Lithium", icon: <Zap size={14} />, color: "text-[#FCC200] bg-[#FCC200]/10" },
         { name: "Nominal Capacity", value: "5.0kWh - 15.0kWh", icon: <Sparkles size={14} />, color: "text-emerald-500 bg-emerald-500/10" },
         { name: "Scalability", value: "Stackable Modules", icon: <Shield size={14} />, color: "text-indigo-500 bg-indigo-500/10" },
-        { name: "Monitoring", value: "Wi-Fi Smart App", icon: <CheckCircle size={14} />, color: "text-sky-500 bg-sky-500/10" }
+        { name: "Monitoring", value: "Wi-Fi Smart App", icon: <CheckCircle size={14} />, color: "text-[#2AA9E4] bg-[#2AA9E4]/10" }
       ];
     }
   })();
@@ -57,12 +57,12 @@ export const ProductGalleryAndStats: React.FC<ProductGalleryAndStatsProps> = ({
     if (category.includes("Panel")) {
       return [
         { label: "Warranty", value: "25 Years", icon: <Shield size={16} />, color: "text-emerald-500 bg-emerald-500/10" },
-        { label: "Cell Tech", value: "N-Type TOPCon", icon: <Zap size={16} />, color: "text-[#FE9900] bg-[#FE9900]/10" }
+        { label: "Cell Tech", value: "N-Type TOPCon", icon: <Zap size={16} />, color: "text-[#FCC200] bg-[#FCC200]/10" }
       ];
     } else if (category.includes("Inverter")) {
       return [
         { label: "Warranty", value: "10 Years", icon: <Shield size={16} />, color: "text-emerald-500 bg-emerald-500/10" },
-        { label: "Max Efficiency", value: "98.4%", icon: <Zap size={16} />, color: "text-[#FE9900] bg-[#FE9900]/10" }
+        { label: "Max Efficiency", value: "98.4%", icon: <Zap size={16} />, color: "text-[#FCC200] bg-[#FCC200]/10" }
       ];
     } else {
       return [
@@ -76,17 +76,17 @@ export const ProductGalleryAndStats: React.FC<ProductGalleryAndStatsProps> = ({
   const datasheetLabel = product.pdfUrls?.[0]?.label || "Datasheet PDF";
 
   return (
-    <div className="bg-white mx-auto max-w-7xl px-6 md:px-0 py-10">
+    <div className="bg-white mx-auto max-w-7xl px-4 sm:px-6 md:px-0 py-10">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
 
-        {/* LEFT COLUMN: Technical Credentials Sidebar (col-span-3) */}
-        <div className="lg:col-span-3 bg-slate-50/70 border border-slate-100/85 rounded-[32px] p-6 flex flex-col justify-between gap-6 self-stretch">
+        {/* LEFT COLUMN: Technical Credentials Sidebar (col-span-3) - Order 3 on mobile */}
+        <div className="lg:col-span-3 order-3 lg:order-0 bg-slate-50/70 border border-slate-100/85 rounded-3xl p-5 sm:p-6 flex flex-col justify-between gap-6 self-stretch">
           <div className="space-y-5">
             <div>
               <span className="text-[10px] text-slate-800 font-black uppercase tracking-[0.2em] block mb-1">
                 Specifications
               </span>
-              <h4 className="text-sm font-black text-[#004093] uppercase tracking-wider border-b border-slate-200/50 pb-2">
+              <h4 className="text-sm font-black text-[#1B74BB] uppercase tracking-wider border-b border-slate-200/50 pb-2">
                 Hardware Overview
               </h4>
             </div>
@@ -101,7 +101,7 @@ export const ProductGalleryAndStats: React.FC<ProductGalleryAndStatsProps> = ({
                     {item.icon}
                   </div>
                   <div className="truncate">
-                    <span className="block text-[8px] text-slate-400 font-bold uppercase tracking-wider">
+                    <span className="block text-[8px] text-slate-900 font-bold uppercase tracking-wider">
                       {item.name}
                     </span>
                     <span className="block text-xs font-black text-slate-800 truncate">
@@ -114,30 +114,30 @@ export const ProductGalleryAndStats: React.FC<ProductGalleryAndStatsProps> = ({
           </div>
 
           <div className="pt-4 border-t border-slate-200/60 space-y-2.5">
-            <div className="flex items-center gap-2 text-[10px] text-slate-500 font-bold uppercase tracking-wider">
+            <div className="flex items-center gap-2 text-[10px] text-slate-900 font-bold uppercase tracking-wider">
               <CheckCircle size={14} className="text-emerald-500 shrink-0" />
               <span>CEC Listed Hardware</span>
             </div>
-            <div className="flex items-center gap-2 text-[10px] text-slate-500 font-bold uppercase tracking-wider">
+            <div className="flex items-center gap-2 text-[10px] text-slate-900 font-bold uppercase tracking-wider">
               <CheckCircle size={14} className="text-emerald-500 shrink-0" />
               <span>SAA Safety Compliant</span>
             </div>
           </div>
         </div>
 
-        {/* CENTER COLUMN: Product Showcase Canvas & Vertical Thumbnails (col-span-5) */}
-        <div className="lg:col-span-5 flex flex-col sm:flex-row gap-4 items-stretch">
+        {/* CENTER COLUMN: Product Showcase Canvas & Thumbnails (col-span-5) - Order 1 on mobile */}
+        <div className="lg:col-span-5 order-1 lg:order-0 flex flex-col-reverse sm:flex-row gap-4 items-stretch">
 
           {/* Thumbnails (Horizontal on small screens, Vertical on desktop) */}
           {images.length > 1 && (
-            <div className="flex sm:flex-col gap-3 overflow-x-auto sm:overflow-x-visible pb-2 sm:pb-0 shrink-0 justify-start">
+            <div className="flex sm:flex-col gap-3 overflow-x-auto sm:overflow-x-visible pb-2 sm:pb-0 shrink-0 justify-start scrollbar-none">
               {images.map((img, idx) => (
                 <button
                   key={idx}
                   onClick={() => setActiveImage(img)}
                   className={`w-16 h-20 rounded-2xl overflow-hidden border-2 transition-all duration-300 p-2 bg-slate-50/50 shrink-0 ${activeImage === img
-                      ? "border-[#004093] scale-95 shadow-md bg-white"
-                      : "border-slate-100 hover:border-slate-300/80"
+                    ? "border-[#1B74BB] scale-95 shadow-md bg-white"
+                    : "border-slate-100 hover:border-slate-300/80"
                     }`}
                 >
                   <img src={img} alt="thumbnail" className="w-full h-full object-contain" />
@@ -147,14 +147,14 @@ export const ProductGalleryAndStats: React.FC<ProductGalleryAndStatsProps> = ({
           )}
 
           {/* Main Showcase Canvas */}
-          <div className="flex-1 relative overflow-hidden bg-slate-50/30 border border-slate-100 rounded-[32px] flex items-center justify-center p-6 shadow-[0_20px_50px_rgba(10,31,68,0.05)] group">
+          <div className="flex-1 relative overflow-hidden bg-slate-50/30 border border-slate-100 rounded-3xl flex items-center justify-center p-4 sm:p-6 shadow-[0_20px_50px_rgba(10,31,68,0.05)] group">
             <img
               src={activeImage}
               alt={product.name}
-              className="object-contain max-w-full max-h-[380px] transition duration-700 group-hover:scale-108 group-hover:rotate-1"
+              className="object-contain max-w-full max-h-[280px] sm:max-h-[380px] transition duration-700 group-hover:scale-108 group-hover:rotate-1"
             />
             {/* Floating tags */}
-            <div className="absolute top-4 left-4 bg-[#004093] text-white text-[9px] font-black uppercase tracking-wider px-3.5 py-1.5 rounded-full shadow-sm">
+            <div className="absolute top-4 left-4 bg-[#1B74BB] text-white text-[9px] font-black uppercase tracking-wider px-3.5 py-1.5 rounded-full shadow-sm">
               {product.category}
             </div>
 
@@ -165,8 +165,8 @@ export const ProductGalleryAndStats: React.FC<ProductGalleryAndStatsProps> = ({
 
         </div>
 
-        {/* RIGHT COLUMN: Brand Details, Description & CTA (col-span-4) */}
-        <div className="lg:col-span-4 flex flex-col justify-between gap-6 self-stretch">
+        {/* RIGHT COLUMN: Brand Details, Description & CTA (col-span-4) - Order 2 on mobile */}
+        <div className="lg:col-span-4 order-2 lg:order-0 flex flex-col justify-between gap-6 self-stretch">
 
           <div className="space-y-4">
             {/* Brand logo / header */}
@@ -185,15 +185,15 @@ export const ProductGalleryAndStats: React.FC<ProductGalleryAndStatsProps> = ({
                     className="w-2 h-4 rounded-xs"
                     style={{ backgroundColor: product.brandColor }}
                   />
-                  <span className="text-base font-black tracking-tighter text-[#004093]">
+                  <span className="text-base font-black tracking-tighter text-[#1B74BB]">
                     {product.logoText}
                   </span>
                 </div>
               )}
 
-              <div className="flex items-center gap-1.5 px-2.5 py-1 bg-[#004093]/5 rounded-full border border-[#004093]/10">
+              <div className="flex items-center gap-1.5 px-2.5 py-1 bg-[#1B74BB]/5 rounded-full border border-[#1B74BB]/10">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                <span className="text-[9px] font-black text-[#004093] uppercase tracking-wider">
+                <span className="text-[9px] font-black text-[#1B74BB] uppercase tracking-wider">
                   Partner
                 </span>
               </div>
@@ -201,10 +201,10 @@ export const ProductGalleryAndStats: React.FC<ProductGalleryAndStatsProps> = ({
 
             {/* Title & subtitle */}
             <div className="space-y-1">
-              <h2 className="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight leading-tight">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight leading-tight">
                 {product.tagline}
               </h2>
-              <p className="text-[10px] font-black uppercase tracking-widest text-[#FE9900]">
+              <p className="text-[10px] font-black uppercase tracking-widest text-[#FCC200]">
                 {product.subtitle}
               </p>
             </div>
@@ -231,7 +231,7 @@ export const ProductGalleryAndStats: React.FC<ProductGalleryAndStatsProps> = ({
                     {stat.icon}
                   </div>
                   <div className="truncate">
-                    <p className="text-[9px] text-slate-400 font-bold uppercase tracking-wider">{stat.label}</p>
+                    <p className="text-[9px] text-slate-900 font-bold uppercase tracking-wider">{stat.label}</p>
                     <p className="text-xs font-black text-slate-800 truncate">{stat.value}</p>
                   </div>
                 </div>
@@ -242,7 +242,7 @@ export const ProductGalleryAndStats: React.FC<ProductGalleryAndStatsProps> = ({
             <div className="space-y-2.5">
               <button
                 onClick={() => openQuoteModal(`Product Page: ${product.brand} ${product.name}`)}
-                className="w-full inline-flex items-center justify-center gap-2 bg-linear-to-r from-[#FE9900] to-[#ffb13b] hover:from-[#e08600] hover:to-[#fe9900] text-white px-6 py-4 rounded-xl font-black transition-all duration-300 shadow-[0_8px_25px_rgba(254,153,0,0.2)] hover:shadow-[0_12px_35px_rgba(254,153,0,0.35)] text-center hover:scale-[1.02] active:scale-98 uppercase tracking-widest text-xs cursor-pointer border-none"
+                className="w-full inline-flex items-center justify-center gap-2 bg-linear-to-r from-[#FCC200] to-[#ffb13b] hover:from-[#e08600] hover:to-[#fe9900] text-black px-6 py-4 rounded-xl font-black transition-all duration-300 shadow-[0_8px_25px_rgba(254,153,0,0.2)] hover:shadow-[0_12px_35px_rgba(254,153,0,0.35)] text-center hover:scale-[1.02] active:scale-98 uppercase tracking-widest text-xs cursor-pointer border-none"
               >
                 Get Free Quote
                 <ArrowRight size={16} />
@@ -252,9 +252,9 @@ export const ProductGalleryAndStats: React.FC<ProductGalleryAndStatsProps> = ({
                 href={datasheetLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full inline-flex items-center justify-center gap-2 border border-slate-200 hover:border-[#004093] text-slate-700 hover:text-[#004093] hover:bg-[#004093]/5 px-6 py-3.5 rounded-xl font-extrabold transition-all duration-300 text-center text-xs cursor-pointer"
+                className="w-full inline-flex items-center justify-center gap-2 border border-slate-200 hover:border-[#1B74BB] text-slate-700 hover:text-[#1B74BB] hover:bg-[#1B74BB]/5 px-6 py-3.5 rounded-xl font-extrabold transition-all duration-300 text-center text-xs cursor-pointer"
               >
-                <Download size={16} className="text-slate-500" />
+                <Download size={16} className="text-slate-900" />
                 {datasheetLabel}
               </a>
             </div>

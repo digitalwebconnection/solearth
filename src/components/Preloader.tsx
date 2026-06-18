@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Zap} from 'lucide-react'
+import { Zap } from 'lucide-react'
 
 // Define static variables outside the component to keep the render function completely pure
 const STARS = [
@@ -330,7 +330,7 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
         <h1 className="text-3xl sm:text-4xl font-extrabold italic tracking-[0.25em] text-white">
           SOLEARTH
         </h1>
-        <p className="text-[9px] font-bold tracking-[0.5em] text-slate-500 uppercase mt-1">
+        <p className="text-[9px] font-bold tracking-[0.5em] text-white uppercase mt-1">
           SUSTAINABLE ENERGY SYSTEMS
         </p>
 
@@ -343,7 +343,7 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
         </div>
 
         {/* Text Loading diagnostics */}
-        <div className="mt-2 text-[9px] font-mono text-slate-400 tracking-widest min-w-[280px] h-4 uppercase">
+        <div className="mt-2 text-[9px] font-mono text-white tracking-widest min-w-[280px] h-4 uppercase">
           {statusText}
         </div>
       </div>

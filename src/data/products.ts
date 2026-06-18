@@ -1460,7 +1460,7 @@ export const productsData: Record<string, ProductData> = {
     ],
     recommendation: "Sungrow inverters are the gold standard for Australian solar installations, combining premium performance, long warranties, and outstanding app monitoring.",
     logoText: "SUNGROW",
-    brandColor: "#FE9900"
+    brandColor: "#FCC200"
     ,
     // Extra fields dynamically merged
     logoUrl: inverter2,
@@ -2390,7 +2390,7 @@ export const productsData: Record<string, ProductData> = {
     ],
     recommendation: "The Sungrow SBR battery is one of the best high-voltage residential batteries available, offering outstanding power output, modular stacking, and perfect Sungrow integration.",
     logoText: "SUNGROW",
-    brandColor: "#FE9900"
+    brandColor: "#FCC200"
     ,
     // Extra fields dynamically merged
     logoUrl: battery8,

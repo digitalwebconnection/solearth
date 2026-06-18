@@ -63,7 +63,7 @@ export default function AboutExpertise() {
       tagline: 'Mega-watt scale solar engineering for heavy industrial assets.',
       img: '/images/solar/solar-ground-mounted.jpg',
       tag: 'Industrial EPC',
-      color: 'bg-sky-500 border-sky-100 text-sky-600',
+      color: 'bg-[#2AA9E4] border-sky-100 text-sky-600',
       features: [
         'Mega-watt scale engineering with customized heavy structural mounting arrays',
         'High-voltage substation and commercial containerized battery integration',
@@ -75,10 +75,10 @@ export default function AboutExpertise() {
   ]
 
   return (
-    <section className="py-10 bg-white relative overflow-hidden">
+    <section className="py-12 md:py-20 bg-white relative overflow-hidden">
       {/* Decorative background glow elements */}
-      <div className="absolute top-1/4 right-0 w-160 h-160 rounded-full bg-[#28A8E0]/3 blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-1/4 left-0 w-160 h-160 rounded-full bg-[#F8C000]/3 blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/4 right-0 w-160 h-160 rounded-full bg-[#2AA9E4]/3 blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-1/4 left-0 w-160 h-160 rounded-full bg-[#FCC200]/3 blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-5xl mx-auto mb-10">
@@ -87,15 +87,15 @@ export default function AboutExpertise() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="inline-block text-[#28A8E0] text-xs font-bold tracking-widest uppercase px-5 py-2 bg-[#28A8E0]/10 border border-[#28A8E0]/20 rounded-full mb-4"
+            className="inline-block text-[#2AA9E4] text-xs font-bold tracking-widest uppercase px-5 py-2 bg-[#2AA9E4]/10 border border-[#2AA9E4]/20 rounded-full mb-4"
           >
             Solar Expertise
           </motion.div>
-          
+
           <SplitText
             text="Complete Solar Solutions"
             tag="h2"
-            className="text-3xl md:text-5xl font-serif font-bold text-[#0a1f44] mb-6 tracking-tight leading-tight"
+            className="text-2xl sm:text-3xl md:text-5xl font-serif font-bold text-[#0a1f44] mb-4 tracking-tight leading-tight"
             delay={50}
             duration={0.8}
             ease="power3.out"
@@ -110,7 +110,7 @@ export default function AboutExpertise() {
           <SplitText
             text="Discover how we engineer, deploy, and maintain leading clean energy systems across Australia."
             tag="p"
-            className="text-sm md:text-base leading-relaxed text-gray-900 max-w-6xl mx-auto"
+            className="text-xs sm:text-sm md:text-base leading-relaxed text-gray-950 max-w-2xl mx-auto"
             delay={25}
             duration={0.8}
             ease="power2.out"
@@ -124,7 +124,7 @@ export default function AboutExpertise() {
         </div>
 
         {/* 3-Column Card Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
           {solutions.map((solution, i) => (
             <motion.div
               initial={{ opacity: 0, y: 40 }}
@@ -132,17 +132,17 @@ export default function AboutExpertise() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
               key={solution.id}
-              className="bg-white border-2 border-slate-200 rounded-lg shadow-lg hover:shadow-xl shadow-black hover:-translate-y-2 hover:border-[#28A8E0]/30 transition-all duration-500 flex flex-col justify-between overflow-hidden group"
+              className="bg-white border-2 border-slate-200 rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-2 hover:border-[#2AA9E4]/30 transition-all duration-500 flex flex-col justify-between overflow-hidden group"
             >
               {/* Image Block */}
-              <div className="relative h-64 overflow-hidden shrink-0">
+              <div className="relative h-48 sm:h-56 lg:h-64 overflow-hidden shrink-0">
                 <img
                   src={solution.img}
                   alt={solution.title}
                   className="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-slate-950/30 to-transparent opacity-80" />
-                
+
                 {/* Category Pill Tag */}
                 <div className="absolute top-4 left-4 px-3 py-1 bg-white/95 backdrop-blur-xs border border-slate-100 rounded-full text-[10px] font-bold text-slate-800 tracking-wider flex items-center gap-1.5 uppercase shadow-sm">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
@@ -151,12 +151,12 @@ export default function AboutExpertise() {
               </div>
 
               {/* Text Block */}
-              <div className="p-8 flex-1 flex flex-col justify-between">
+              <div className="p-5 sm:p-8 flex-1 flex flex-col justify-between">
                 <div>
-                  <h3 className="text-2xl font-extrabold text-[#0a1f44] mb-4 group-hover:text-[#28A8E0] transition-colors duration-300">
+                  <h3 className="text-xl sm:text-2xl font-extrabold text-[#0a1f44] mb-3 group-hover:text-[#2AA9E4] transition-colors duration-300">
                     {solution.title}
                   </h3>
-                  <p className="text-gray-500 text-[14px] leading-relaxed mb-6">
+                  <p className="text-gray-500 text-[13px] sm:text-[14px] leading-relaxed mb-6">
                     {solution.shortDesc}
                   </p>
                 </div>
@@ -164,7 +164,7 @@ export default function AboutExpertise() {
                 {/* Read More Action Button */}
                 <button
                   onClick={() => setSelectedSolution(i)}
-                  className="inline-flex items-center gap-2 text-[#28A8E0] hover:text-[#1d6fb8] font-bold text-sm tracking-wider transition-colors duration-300 group/btn self-start cursor-pointer"
+                  className="inline-flex items-center gap-2 text-[#2AA9E4] hover:text-[#1d6fb8] font-bold text-xs sm:text-sm tracking-wider transition-colors duration-300 group/btn self-start cursor-pointer"
                 >
                   <span>Read More</span>
                   <ArrowRight className="w-4 h-4 transform group-hover/btn:translate-x-1 transition-transform" />
@@ -185,90 +185,94 @@ export default function AboutExpertise() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setSelectedSolution(null)}
-              className="absolute inset-0 bg-slate-950/80 backdrop-blur-md"
+              className="absolute inset-0 bg-slate-950/70 backdrop-blur-sm"
             />
 
             {/* Modal Dialog Card */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              initial={{ opacity: 0, scale: 0.95, y: 15 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.9, y: 20 }}
+              exit={{ opacity: 0, scale: 0.95, y: 15 }}
               transition={{ type: 'spring', duration: 0.5 }}
-              className="relative bg-white border border-slate-100 max-w-4xl w-full rounded-lg shadow-2xl overflow-hidden flex flex-col md:flex-row h-[85vh] max-h-[700px] md:h-[550px] z-10"
+              className="relative bg-white border border-slate-100 max-w-4xl w-full rounded-2xl shadow-2xl overflow-hidden flex flex-col md:flex-row h-[85vh] max-h-[620px] md:h-[550px] z-10"
             >
               {/* Floating Close Button in Top-Right */}
               <button
                 onClick={() => setSelectedSolution(null)}
-                className="absolute top-6 right-6 z-30 p-2.5 rounded-lg bg-white/95 backdrop-blur-md border border-slate-200 shadow-md hover:bg-slate-50 hover:text-red-500 hover:rotate-90 transition-all duration-300 cursor-pointer"
+                className="absolute top-4 right-4 z-30 p-2 rounded-lg bg-white/95 backdrop-blur-md border border-slate-200 shadow-md hover:bg-slate-50 hover:text-red-500 hover:rotate-90 transition-all duration-300 cursor-pointer"
               >
-                <X className="w-5 h-5" />
+                <X className="w-4.5 h-4.5" />
               </button>
 
               {/* Left Column: Image Area (Desktop) */}
-              <div className="md:w-5/12 h-48 md:h-full relative overflow-hidden shrink-0">
+              <div className="md:w-5/12 h-36 sm:h-48 md:h-full relative overflow-hidden shrink-0">
                 <img
                   src={solutions[selectedSolution].img}
                   alt={solutions[selectedSolution].title}
                   className="absolute inset-0 w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-slate-950/80 via-slate-950/20 to-transparent" />
-                
+
                 {/* Category Pill Tag inside Modal */}
-                <div className="absolute top-4 left-4 px-8 py-1 bg-white/95 border border-slate-100 rounded-full text-[10px] font-bold text-slate-800 tracking-wider flex items-center gap-1.5 uppercase shadow-sm">
+                <div className="absolute top-4 left-4 px-4 py-1 bg-white/95 border border-slate-100 rounded-full text-[10px] font-bold text-slate-800 tracking-wider flex items-center gap-1.5 uppercase shadow-sm">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
                   {solutions[selectedSolution].tag}
                 </div>
               </div>
 
               {/* Right Column: Detailed Text Content Area */}
-              <div className="md:w-7/12 p-8 md:p-10 overflow-y-auto flex flex-col justify-between h-full">
-                {/* Header Content */}
-                <div>
-                  <div className="mb-4">
-                    <span className="text-xs font-bold uppercase tracking-widest text-[#28A8E0]">
+              <div className="md:w-7/12 flex flex-col h-full overflow-hidden">
+                {/* Scrollable Body Content */}
+                <div className="flex-1 overflow-y-auto p-5 sm:p-8 space-y-5">
+                  <div>
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-[#2AA9E4]">
                       Solution Profile
                     </span>
                   </div>
 
-                  <h3 className="text-3xl font-extrabold text-[#0a1f44] mb-3 leading-tight pr-8">
+                  <h3 className="text-xl sm:text-2xl font-extrabold text-[#0a1f44] leading-tight pr-6">
                     {solutions[selectedSolution].title}
                   </h3>
 
-                  <p className="text-sm font-semibold text-slate-400 italic mb-5 leading-normal">
+                  <p className="text-xs sm:text-sm font-semibold text-slate-800 italic leading-normal border-l-2 border-[#2AA9E4] pl-3">
                     "{solutions[selectedSolution].tagline}"
                   </p>
 
-                  <p className="text-gray-500 text-sm leading-relaxed mb-6">
+                  <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
                     {solutions[selectedSolution].detailedDesc}
                   </p>
 
                   {/* Bullet Spec Highlights */}
-                  <h4 className="text-sm font-bold uppercase tracking-wider text-[#0a1f44] mb-4">
-                    Technical Deliverables
-                  </h4>
-                  <ul className="space-y-3.5 mb-8">
-                    {solutions[selectedSolution].features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start">
-                        <div className="shrink-0 w-5 h-5 rounded bg-[#0a1f44] text-white flex items-center justify-center mr-3 mt-0.5 shadow-sm">
-                          <Check className="w-3 h-3 stroke-[3.5]" />
-                        </div>
-                        <span className="text-slate-700 text-sm leading-normal">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  <div>
+                    <h4 className="text-xs font-bold uppercase tracking-wider text-[#0a1f44] mb-3">
+                      Technical Deliverables
+                    </h4>
+                    <ul className="space-y-3">
+                      {solutions[selectedSolution].features.map((feature, idx) => (
+                        <li key={idx} className="flex items-start">
+                          <div className="shrink-0 w-4.5 h-4.5 rounded bg-[#0a1f44] text-white flex items-center justify-center mr-2.5 mt-0.5 shadow-sm">
+                            <Check className="w-3.5 h-3.5 stroke-3" />
+                          </div>
+                          <span className="text-slate-700 text-xs sm:text-sm leading-normal">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
 
-                {/* Footer Action Button */}
-                <button
-                  onClick={() => {
-                    setSelectedSolution(null)
-                    openQuoteModal(`Solution: ${solutions[selectedSolution].title}`)
-                  }}
-                  className="w-full py-4 px-6 rounded-xl text-center text-sm font-bold text-white bg-[#0a1f44] hover:bg-[#28A8E0] transition-colors duration-300 shadow-md flex items-center justify-center gap-2 shrink-0 cursor-pointer border-none"
-                >
-                  <span>Request Free Consultation</span>
-                  <ArrowRight className="w-4 h-4" />
-                </button>
+                {/* Sticky/Fixed Footer Action Button Area */}
+                <div className="p-4 sm:p-6 bg-slate-50 border-t border-slate-100 shrink-0">
+                  <button
+                    onClick={() => {
+                      setSelectedSolution(null)
+                      openQuoteModal(`Solution: ${solutions[selectedSolution].title}`)
+                    }}
+                    className="w-full py-3.5 px-6 rounded-xl text-center text-xs sm:text-sm font-extrabold text-white bg-[#0a1f44] hover:bg-[#2AA9E4] transition-colors duration-300 shadow-md flex items-center justify-center gap-2 cursor-pointer border-none"
+                  >
+                    <span>Request Free Consultation</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </button>
+                </div>
               </div>
             </motion.div>
           </div>
@@ -277,3 +281,4 @@ export default function AboutExpertise() {
     </section>
   )
 }
+

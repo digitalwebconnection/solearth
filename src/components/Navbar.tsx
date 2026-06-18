@@ -97,16 +97,16 @@ function DropdownMenu({
             >
               {hasChildren ? (
                 <div
-                  className="w-full flex items-center justify-between px-5 py-3 text-xs font-bold text-slate-705 text-slate-700 hover:bg-[#004093]/5 hover:text-[#004093] transition-all duration-155 cursor-pointer border-b border-slate-50 last:border-b-0"
+                  className="w-full flex items-center justify-between px-5 py-3 text-xs font-bold text-slate-705 text-slate-700 hover:bg-[#1B74BB]/5 hover:text-[#1B74BB] transition-all duration-155 cursor-pointer border-b border-slate-50 last:border-b-0"
                 >
                   <span>{item.label}</span>
-                  <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
+                  <ChevronRight className="w-3.5 h-3.5 text-slate-900" />
                 </div>
               ) : (
                 <Link
                   to={item.href}
                   onClick={onClose}
-                  className="block px-5 py-3 text-xs font-bold text-slate-705 text-slate-700 hover:bg-[#004093]/5 hover:text-[#004093] transition-all duration-155 border-b border-slate-50 last:border-b-0"
+                  className="block px-5 py-3 text-xs font-bold text-slate-705 text-slate-700 hover:bg-[#1B74BB]/5 hover:text-[#1B74BB] transition-all duration-155 border-b border-slate-50 last:border-b-0"
                 >
                   {item.label}
                 </Link>
@@ -129,7 +129,7 @@ function DropdownMenu({
                           if (onClose) onClose();
                           setHoveredItem(null);
                         }}
-                        className="block px-5 py-2.5 text-[11px] font-bold text-slate-650 hover:bg-[#004093]/5 hover:text-[#004093] transition-all duration-150 border-b border-slate-50 last:border-b-0"
+                        className="block px-5 py-2.5 text-[11px] font-bold text-slate-650 hover:bg-[#1B74BB]/5 hover:text-[#1B74BB] transition-all duration-150 border-b border-slate-50 last:border-b-0"
                       >
                         {subItem.label}
                       </Link>
@@ -200,18 +200,18 @@ function ServicesMegaMenu({
       title: "Residential Solar",
       desc: "5 Package Options",
       icon: <Home className="w-5 h-5" />,
-      colorClass: "text-[#FE9900]",
-      bgClass: "bg-[#FE9900]/10",
-      activeBg: "border-l-4 border-l-[#FE9900]",
+      colorClass: "text-[#FCC200]",
+      bgClass: "bg-[#FCC200]/10",
+      activeBg: "border-l-4 border-l-[#FCC200]",
     },
     {
       id: "Commercial Solar" as const,
       title: "Commercial Solar",
       desc: "3 System Capacities",
       icon: <Building2 className="w-5 h-5" />,
-      colorClass: "text-sky-500",
-      bgClass: "bg-sky-500/10",
-      activeBg: "border-l-4 border-l-sky-500",
+      colorClass: "text-[#2AA9E4]",
+      bgClass: "bg-[#2AA9E4]/10",
+      activeBg: "border-l-4 border-l-[#2AA9E4]",
     },
     {
       id: "Solar Services" as const,
@@ -258,10 +258,10 @@ function ServicesMegaMenu({
                       {tab.icon}
                     </div>
                     <div>
-                      <h4 className="text-sm font-extrabold text-[#004093]">
+                      <h4 className="text-sm font-extrabold text-[#1B74BB]">
                         {tab.title}
                       </h4>
-                      <span className="text-[10px] font-bold text-slate-500">
+                      <span className="text-[10px] font-bold text-slate-900">
                         {tab.desc}
                       </span>
                     </div>
@@ -273,11 +273,11 @@ function ServicesMegaMenu({
 
           {/* Spotlight banner inside tab list */}
           <div className="mt-8 pt-6 border-t border-slate-200/60 space-y-4">
-            <div className="flex items-center gap-1.5 px-2.5 py-1 bg-[#004093]/5 rounded-full w-max text-[9px] font-black uppercase tracking-wider text-[#004093]">
-              <Award className="w-3 h-3 text-[#FE9900]" />
+            <div className="flex items-center gap-1.5 px-2.5 py-1 bg-[#1B74BB]/5 rounded-full w-max text-[9px] font-black uppercase tracking-wider text-[#1B74BB]">
+              <Award className="w-3 h-3 text-[#FCC200]" />
               <span>CEC Accredited</span>
             </div>
-            <p className="text-[10.5px] leading-relaxed text-slate-500 font-medium">
+            <p className="text-[10.5px] leading-relaxed text-slate-900 font-medium">
               Expert energy solutions and lifetime maintenance by CEC-accredited engineers.
             </p>
             <button
@@ -285,7 +285,7 @@ function ServicesMegaMenu({
                 onClose()
                 openQuoteModal('Services Mega Menu assessment')
               }}
-              className="inline-flex items-center gap-2 text-xs font-black text-[#FE9900] hover:text-[#004093] transition group/btn cursor-pointer bg-transparent border-none p-0"
+              className="inline-flex items-center gap-2 text-xs font-black text-[#FCC200] hover:text-[#1B74BB] transition group/btn cursor-pointer bg-transparent border-none p-0"
             >
               Get Free Assessment
               <span className="transform group-hover/btn:translate-x-1 transition-transform">→</span>
@@ -298,7 +298,7 @@ function ServicesMegaMenu({
           <div className="space-y-4">
             {/* Header info */}
             <div className="flex items-center justify-between border-b border-slate-100 pb-3">
-              <span className="text-[10px] text-slate-400 font-black uppercase tracking-wider">
+              <span className="text-[10px] text-slate-900 font-black uppercase tracking-wider">
                 Services & Capacity
               </span>
               <span className="px-2 py-0.5 rounded-full bg-slate-100 text-slate-800 text-[9px] font-black">
@@ -317,11 +317,11 @@ function ServicesMegaMenu({
                 >
                   <div className="flex items-center gap-3 truncate">
                     {/* Brand Badge */}
-                    <div className="w-8 h-8 rounded-xl bg-[#004093]/5 text-[#004093] text-xs font-black flex items-center justify-center shrink-0 group-hover:bg-[#FE9900]/15 group-hover:text-[#FE9900] transition-colors duration-200">
+                    <div className="w-8 h-8 rounded-xl bg-[#1B74BB]/5 text-[#1B74BB] text-xs font-black flex items-center justify-center shrink-0 group-hover:bg-[#FCC200]/15 group-hover:text-[#FCC200] transition-colors duration-200">
                       {getInitialBadge(item.name)}
                     </div>
                     <div className="truncate">
-                      <h5 className="text-xs font-bold text-slate-800 truncate group-hover:text-[#004093] transition-colors duration-200">
+                      <h5 className="text-xs font-bold text-slate-800 truncate group-hover:text-[#1B74BB] transition-colors duration-200">
                         {item.name}
                       </h5>
                       <span className="block text-[9px] text-slate-450 truncate">
@@ -329,7 +329,7 @@ function ServicesMegaMenu({
                       </span>
                     </div>
                   </div>
-                  <ChevronRight className="w-4 h-4 text-slate-300 opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all duration-200 shrink-0" />
+                  <ChevronRight className="w-4 h-4 text-slate-900 opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all duration-200 shrink-0" />
                 </Link>
               ))}
             </div>
@@ -348,7 +348,7 @@ function ServicesMegaMenu({
                 onClose()
                 openQuoteModal('Services Mega Menu assessment')
               }}
-              className="text-[#004093] hover:text-[#FE9900] font-black uppercase tracking-wider flex items-center gap-1 transition-colors cursor-pointer bg-transparent border-none p-0"
+              className="text-[#1B74BB] hover:text-[#FCC200] font-black uppercase tracking-wider flex items-center gap-1 transition-colors cursor-pointer bg-transparent border-none p-0"
             >
               Book Free Assessment →
             </button>
@@ -456,18 +456,18 @@ function ProductsMegaMenu({
       title: "Solar Panels",
       desc: "10 Premium Brands",
       icon: <Sun className="w-5 h-5" />,
-      colorClass: "text-[#FE9900]",
-      bgClass: "bg-[#FE9900]/10",
-      activeBg: "border-l-4 border-l-[#FE9900]",
+      colorClass: "text-[#FCC200]",
+      bgClass: "bg-[#FCC200]/10",
+      activeBg: "border-l-4 border-l-[#FCC200]",
     },
     {
       id: "Solar Inverters" as const,
       title: "Inverters",
       desc: "6 Smart brains",
       icon: <Zap className="w-5 h-5" />,
-      colorClass: "text-sky-500",
-      bgClass: "bg-sky-500/10",
-      activeBg: "border-l-4 border-l-sky-500",
+      colorClass: "text-[#2AA9E4]",
+      bgClass: "bg-[#2AA9E4]/10",
+      activeBg: "border-l-4 border-l-[#2AA9E4]",
     },
     {
       id: "Solar Batteries" as const,
@@ -514,7 +514,7 @@ function ProductsMegaMenu({
                       {tab.icon}
                     </div>
                     <div>
-                      <h4 className="text-sm font-extrabold text-[#004093]">
+                      <h4 className="text-sm font-extrabold text-[#1B74BB]">
                         {tab.title}
                       </h4>
                       <span className="text-[10px] font-bold text-slate-900">
@@ -529,8 +529,8 @@ function ProductsMegaMenu({
 
           {/* Spotlight banner inside tab list */}
           <div className="mt-8 pt-6 border-t border-slate-200/60 space-y-4">
-            <div className="flex items-center gap-1.5 px-2.5 py-1 bg-[#004093]/5 rounded-full w-max text-[9px] font-black uppercase tracking-wider text-[#004093]">
-              <Award className="w-3 h-3 text-[#FE9900]" />
+            <div className="flex items-center gap-1.5 px-2.5 py-1 bg-[#1B74BB]/5 rounded-full w-max text-[9px] font-black uppercase tracking-wider text-[#1B74BB]">
+              <Award className="w-3 h-3 text-[#FCC200]" />
               <span>CEC Retailer</span>
             </div>
             <p className="text-[10.5px] leading-relaxed text-slate-900 font-medium">
@@ -541,7 +541,7 @@ function ProductsMegaMenu({
                 onClose()
                 openQuoteModal('Products Mega Menu assessment')
               }}
-              className="inline-flex items-center gap-2 text-xs font-black text-[#FE9900] hover:text-[#004093] transition group/btn cursor-pointer bg-transparent border-none p-0"
+              className="inline-flex items-center gap-2 text-xs font-black text-[#FCC200] hover:text-[#1B74BB] transition group/btn cursor-pointer bg-transparent border-none p-0"
             >
               Get Free Assessment
               <span className="transform group-hover/btn:translate-x-1 transition-transform">→</span>
@@ -573,19 +573,19 @@ function ProductsMegaMenu({
                 >
                   <div className="flex items-center gap-3 truncate">
                     {/* Brand Badge */}
-                    <div className="w-8 h-8 rounded-xl bg-[#004093]/5 text-[#004093] text-xs font-black flex items-center justify-center shrink-0 group-hover:bg-[#FE9900]/15 group-hover:text-[#FE9900] transition-colors duration-200">
+                    <div className="w-8 h-8 rounded-xl bg-[#1B74BB]/5 text-[#1B74BB] text-xs font-black flex items-center justify-center shrink-0 group-hover:bg-[#FCC200]/15 group-hover:text-[#FCC200] transition-colors duration-200">
                       {getInitialBadge(item.name)}
                     </div>
                     <div className="truncate">
-                      <h5 className="text-xs font-bold text-slate-800 truncate group-hover:text-[#004093] transition-colors duration-200">
+                      <h5 className="text-xs font-bold text-slate-800 truncate group-hover:text-[#1B74BB] transition-colors duration-200">
                         {item.name}
                       </h5>
-                      <span className="block text-[9px] text-slate-400 font-semibold truncate">
+                      <span className="block text-[9px] text-slate-900 font-semibold truncate">
                         {getBrandSubtitle(item.name)}
                       </span>
                     </div>
                   </div>
-                  <ChevronRight className="w-4 h-4 text-slate-300 opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all duration-200 shrink-0" />
+                  <ChevronRight className="w-4 h-4 text-slate-900 opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all duration-200 shrink-0" />
                 </Link>
               ))}
             </div>
@@ -604,7 +604,7 @@ function ProductsMegaMenu({
                 onClose()
                 openQuoteModal('Products Mega Menu assessment')
               }}
-              className="text-[#004093] hover:text-[#FE9900] font-black uppercase tracking-wider flex items-center gap-1 transition-colors cursor-pointer bg-transparent border-none p-0"
+              className="text-[#1B74BB] hover:text-[#FCC200] font-black uppercase tracking-wider flex items-center gap-1 transition-colors cursor-pointer bg-transparent border-none p-0"
             >
               Book Free Assessment →
             </button>
@@ -622,6 +622,7 @@ export default function Navbar() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null)
   const [mobileOpen, setMobileOpen] = useState(false)
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null)
+  const [mobileSubExpanded, setMobileSubExpanded] = useState<string | null>(null)
   const { openQuoteModal } = useQuoteModal()
 
   const navRef = useRef<HTMLDivElement>(null)
@@ -685,6 +686,30 @@ export default function Navbar() {
     return () =>
       document.removeEventListener('mousedown', handleClickOutside)
   }, [])
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [mobileOpen])
+
+  // Reset expanded subcategories when drawer closes or switches
+  useEffect(() => {
+    if (!mobileOpen) {
+      setMobileExpanded(null)
+      setMobileSubExpanded(null)
+    }
+  }, [mobileOpen])
+
+  useEffect(() => {
+    setMobileSubExpanded(null)
+  }, [mobileExpanded])
 
   const handleMouseEnter = (e: React.MouseEvent<HTMLElement>) => {
     const btn = e.currentTarget
@@ -754,15 +779,15 @@ export default function Navbar() {
                       )
                     }}
                     className={`flex items-center gap-1 px-3 py-2 text-[15px] font-semibold transition-all duration-200 overflow-hidden ${activeLink === link.label
-                      ? 'text-[#F8C000]'
-                      : 'text-[#1D6FB8] hover:text-[#28A8E0]'
+                      ? 'text-[#FCC200]'
+                      : 'text-[#1B74BB] hover:text-[#2AA9E4]'
                       }`}
                   >
                     <span className="relative inline-block overflow-hidden h-[22px] leading-[22px]">
                       <span className="pill-label block">
                         {link.label}
                       </span>
-                      <span className="pill-label-hover absolute left-0 top-0 block text-[#28A8E0] translate-y-[22px] opacity-0">
+                      <span className="pill-label-hover absolute left-0 top-0 block text-[#2AA9E4] translate-y-[22px] opacity-0">
                         {link.label}
                       </span>
                     </span>
@@ -790,15 +815,15 @@ export default function Navbar() {
                       setOpenDropdown(null)
                     }}
                     className={`flex items-center gap-1 px-3 py-2 text-[15px] font-semibold transition-all duration-200 overflow-hidden ${activeLink === link.label
-                      ? 'text-[#F8C000]'
-                      : 'text-[#1D6FB8] hover:text-[#28A8E0]'
+                      ? 'text-[#FCC200]'
+                      : 'text-[#1B74BB] hover:text-[#2AA9E4]'
                       }`}
                   >
                     <span className="relative inline-block overflow-hidden h-[22px] leading-[22px]">
                       <span className="pill-label block">
                         {link.label}
                       </span>
-                      <span className="pill-label-hover absolute left-0 top-0 block text-[#28A8E0] translate-y-[22px] opacity-0">
+                      <span className="pill-label-hover absolute left-0 top-0 block text-[#2AA9E4] translate-y-[22px] opacity-0">
                         {link.label}
                       </span>
                     </span>
@@ -806,7 +831,7 @@ export default function Navbar() {
                 )}
 
                 {activeLink === link.label && (
-                  <div className="h-[3px] bg-[#F8C000] rounded-full mx-auto w-8" />
+                  <div className="h-[3px] bg-[#FCC200] rounded-full mx-auto w-8" />
                 )}
 
                 {link.children && link.label !== 'Products' && link.label !== 'Services' && (
@@ -818,30 +843,30 @@ export default function Navbar() {
                 )}
               </div>
             ))}
-                    {/* CTA */}
-          <button
-            onClick={() => openQuoteModal('Navbar CTA')}
-            className="hidden lg:flex items-center gap-2 bg-[#f5a623] hover:bg-[#e59c15] text-white font-bold px-8 py-3 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl cursor-pointer"
-          >
-            Get A Quote
-
-            <svg
-              className="w-4 h-4"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2.5}
+            {/* CTA */}
+            <button
+              onClick={() => openQuoteModal('Navbar CTA')}
+              className="hidden lg:flex items-center gap-2 bg-[#f5a623] hover:bg-[#e59c15] text-white font-bold px-8 py-3 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl cursor-pointer"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M13 7l5 5m0 0l-5 5m5-5H6"
-              />
-            </svg>
-          </button>
+              Get A Quote
+
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2.5}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M13 7l5 5m0 0l-5 5m5-5H6"
+                />
+              </svg>
+            </button>
           </nav>
 
-  
+
 
           {/* Mobile Menu Button */}
           <button
@@ -890,37 +915,44 @@ export default function Navbar() {
 
         {/* Mobile Full Screen Menu Overlay */}
         <div
-          className={`fixed inset-0 z-100 lg:hidden transition-all duration-300 ease-in-out ${
-            mobileOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
-          }`}
+          className={`fixed inset-0 z-50 lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${mobileOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+            }`}
         >
           {/* Blur backdrop overlay */}
           <div
             className="absolute inset-0 bg-slate-900/60 backdrop-blur-md transition-opacity duration-300"
-            onClick={() => setMobileOpen(false)}
+            onClick={() => {
+              setMobileOpen(false);
+              document.body.style.overflow = 'unset';
+            }}
           />
 
           {/* Drawer contents */}
           <div
-            className={`absolute top-0 right-0 bottom-0 w-[88%] max-w-[420px] bg-white flex flex-col justify-between transition-transform duration-300 ease-out shadow-2xl ${
-              mobileOpen ? 'translate-x-0' : 'translate-x-full'
-            }`}
+            className={`absolute top-0 right-0 bottom-0 h-full w-[88%] max-w-[420px] bg-white flex flex-col justify-between transition-transform duration-300 ease-out shadow-2xl ${mobileOpen ? 'translate-x-0' : 'translate-x-full'
+              }`}
           >
             {/* Header */}
-            <div className="flex items-center justify-between px-6 py-5 border-b border-slate-100">
-              <Link to="/" onClick={() => setMobileOpen(false)} className="flex items-center shrink-0">
+            <div className="flex items-center justify-between px-6 py-5 border-b border-slate-100 shrink-0">
+              <Link to="/" onClick={() => {
+                setMobileOpen(false);
+                document.body.style.overflow = 'unset';
+              }} className="flex items-center shrink-0">
                 <img src={logo} alt="Solearth Energy" className="h-10 w-auto object-contain" />
               </Link>
               <button
-                onClick={() => setMobileOpen(false)}
-                className="p-2 text-slate-500 hover:text-slate-800 hover:bg-slate-100 rounded-full transition-all duration-200 cursor-pointer"
+                onClick={() => {
+                  setMobileOpen(false);
+                  document.body.style.overflow = 'unset';
+                }}
+                className="p-2 text-slate-900 hover:text-slate-800 hover:bg-slate-100 rounded-full transition-all duration-200 cursor-pointer"
               >
                 <X className="w-5 h-5" />
               </button>
             </div>
 
             {/* Scrollable Navigation Body */}
-            <div className="flex-1 overflow-y-auto px-6 py-6 space-y-4">
+            <div className="flex-1 overflow-y-auto px-6 py-6 space-y-4 scrollbar-thin">
               <div className="space-y-1.5">
                 {NAV_LINKS.map((link) => {
                   const hasChildren = !!link.children;
@@ -931,89 +963,108 @@ export default function Navbar() {
                       {hasChildren ? (
                         <>
                           <button
-                            className="w-full flex items-center justify-between py-3.5 text-left font-serif text-[17px] font-bold text-[#004093] hover:text-[#FE9900] transition-colors"
+                            className="w-full flex items-center justify-between py-3.5 text-left font-serif text-[17px] font-bold text-[#1B74BB] hover:text-[#FCC200] transition-colors"
                             onClick={() => setMobileExpanded(isExpanded ? null : link.label)}
                           >
                             <span>{link.label}</span>
                             <ChevronDown
-                              className={`w-4 h-4 text-[#004093] transition-transform duration-300 ${
-                                isExpanded ? 'rotate-180 text-[#FE9900]' : ''
-                              }`}
+                              className={`w-4 h-4 text-[#1B74BB] transition-transform duration-300 ${isExpanded ? 'rotate-180 text-[#FCC200]' : ''
+                                }`}
                             />
                           </button>
 
                           {/* Smooth expanded submenu list */}
                           <div
-                            className={`pl-3 border-l-2 border-slate-100 overflow-hidden transition-all duration-300 ease-in-out ${
-                              isExpanded ? 'max-h-[800px] opacity-100 mt-1 pb-3' : 'max-h-0 opacity-0 pointer-events-none'
-                            }`}
+                            className={`pl-3 border-l-2 border-slate-100 overflow-hidden transition-all duration-300 ease-in-out ${isExpanded ? 'max-h-[1000px] opacity-100 mt-1 pb-3' : 'max-h-0 opacity-0 pointer-events-none'
+                              }`}
                           >
                             {link.label === 'Products' ? (
-                              <div className="space-y-4 pt-1">
-                                {Object.entries(PRODUCTS_MAP).map(([category, items]) => (
-                                  <div key={category} className="space-y-2">
-                                    <span className="block text-[10px] font-black uppercase tracking-wider text-[#004093] opacity-60">
-                                      {category}
-                                    </span>
-                                    <div className="grid grid-cols-1 gap-1.5">
-                                      {items.map((item) => (
+                              <div className="space-y-3 pt-1">
+                                {Object.entries(PRODUCTS_MAP).map(([category, items]) => {
+                                  const isSubExpanded = mobileSubExpanded === category;
+                                  return (
+                                    <div key={category} className="space-y-1">
+                                      <button
+                                        onClick={() => setMobileSubExpanded(isSubExpanded ? null : category)}
+                                        className="w-full flex items-center justify-between py-2 text-left text-[13px] font-black uppercase tracking-wider text-[#1B74BB] hover:text-[#FCC200] transition-colors"
+                                      >
+                                        <span>{category}</span>
+                                        <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${isSubExpanded ? 'rotate-180 text-[#FCC200]' : ''}`} />
+                                      </button>
+                                      
+                                      <div className={`grid grid-cols-1 gap-1.5 pl-2 border-l border-slate-100 overflow-hidden transition-all duration-300 ${isSubExpanded ? 'max-h-[350px] opacity-100 py-1' : 'max-h-0 opacity-0 pointer-events-none'}`}>
+                                        {items.map((item) => (
+                                          <Link
+                                            key={item.slug}
+                                            to={`/product/${item.slug}`}
+                                            className="flex items-center justify-between p-2 rounded-lg bg-slate-50 hover:bg-slate-100 text-xs font-bold text-slate-700 hover:text-[#FCC200] transition-colors"
+                                            onClick={() => {
+                                              setMobileOpen(false);
+                                              setMobileExpanded(null);
+                                              setMobileSubExpanded(null);
+                                              document.body.style.overflow = 'unset';
+                                            }}
+                                          >
+                                            <span>{item.name}</span>
+                                            <ChevronRight className="w-3.5 h-3.5 opacity-60" />
+                                          </Link>
+                                        ))}
+                                      </div>
+                                    </div>
+                                  );
+                                })}
+                              </div>
+                            ) : (
+                              <div className="space-y-3 pt-1">
+                                {link.children.map((child: any) => {
+                                  const isSubExpanded = mobileSubExpanded === child.label;
+                                  return (
+                                    <div key={child.label} className="space-y-1">
+                                      {child.children ? (
+                                        <>
+                                          <button
+                                            onClick={() => setMobileSubExpanded(isSubExpanded ? null : child.label)}
+                                            className="w-full flex items-center justify-between py-2 text-left text-[13px] font-black uppercase tracking-wider text-[#1B74BB] hover:text-[#FCC200] transition-colors"
+                                          >
+                                            <span>{child.label}</span>
+                                            <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${isSubExpanded ? 'rotate-180 text-[#FCC200]' : ''}`} />
+                                          </button>
+                                          <div className={`grid grid-cols-1 gap-1.5 pl-2 border-l border-slate-100 overflow-hidden transition-all duration-300 ${isSubExpanded ? 'max-h-[350px] opacity-100 py-1' : 'max-h-0 opacity-0 pointer-events-none'}`}>
+                                            {child.children.map((subChild: any) => (
+                                              <Link
+                                                key={subChild.label}
+                                                to={subChild.href}
+                                                className="flex items-center justify-between p-2 rounded-lg bg-slate-50 hover:bg-slate-100 text-xs font-bold text-slate-700 hover:text-[#FCC200] transition-colors"
+                                                onClick={() => {
+                                                  setMobileOpen(false);
+                                                  setMobileExpanded(null);
+                                                  setMobileSubExpanded(null);
+                                                  document.body.style.overflow = 'unset';
+                                                }}
+                                              >
+                                                <span>{subChild.label}</span>
+                                                <ChevronRight className="w-3.5 h-3.5 opacity-60" />
+                                              </Link>
+                                            ))}
+                                          </div>
+                                        </>
+                                      ) : (
                                         <Link
-                                          key={item.slug}
-                                          to={`/product/${item.slug}`}
-                                          className="flex items-center justify-between p-2 rounded-lg bg-slate-50 hover:bg-slate-100 text-xs font-bold text-slate-700 hover:text-[#FE9900] transition-colors"
+                                          to={child.href}
+                                          className="block py-2 text-[14px] font-bold text-slate-700 hover:text-[#FCC200] transition-colors"
                                           onClick={() => {
                                             setMobileOpen(false);
                                             setMobileExpanded(null);
+                                            setMobileSubExpanded(null);
+                                            document.body.style.overflow = 'unset';
                                           }}
                                         >
-                                          <span>{item.name}</span>
-                                          <ChevronRight className="w-3.5 h-3.5 opacity-60" />
-                                        </Link>
-                                      ))}
-                                    </div>
-                                  </div>
-                                ))}
-                              </div>
-                            ) : (
-                              <div className="space-y-4 pt-1">
-                                {link.children.map((child: any) => (
-                                  <div key={child.label} className="space-y-2">
-                                    {child.children ? (
-                                      <>
-                                        <span className="block text-[10px] font-black uppercase tracking-wider text-[#004093] opacity-60">
                                           {child.label}
-                                        </span>
-                                        <div className="grid grid-cols-1 gap-1.5">
-                                          {child.children.map((subChild: any) => (
-                                            <Link
-                                              key={subChild.label}
-                                              to={subChild.href}
-                                              className="flex items-center justify-between p-2 rounded-lg bg-slate-50 hover:bg-slate-100 text-xs font-bold text-slate-700 hover:text-[#FE9900] transition-colors"
-                                              onClick={() => {
-                                                setMobileOpen(false);
-                                                setMobileExpanded(null);
-                                              }}
-                                            >
-                                              <span>{subChild.label}</span>
-                                              <ChevronRight className="w-3.5 h-3.5 opacity-60" />
-                                            </Link>
-                                          ))}
-                                        </div>
-                                      </>
-                                    ) : (
-                                      <Link
-                                        to={child.href}
-                                        className="block py-1.5 text-[14px] font-bold text-slate-700 hover:text-[#FE9900] transition-colors"
-                                        onClick={() => {
-                                          setMobileOpen(false);
-                                          setMobileExpanded(null);
-                                        }}
-                                      >
-                                        {child.label}
-                                      </Link>
-                                    )}
-                                  </div>
-                                ))}
+                                        </Link>
+                                      )}
+                                    </div>
+                                  );
+                                })}
                               </div>
                             )}
                           </div>
@@ -1021,10 +1072,11 @@ export default function Navbar() {
                       ) : (
                         <Link
                           to={link.href}
-                          className="block py-3.5 text-left font-serif text-[17px] font-bold text-[#004093] hover:text-[#FE9900] transition-colors"
+                          className="block py-3.5 text-left font-serif text-[17px] font-bold text-[#1B74BB] hover:text-[#FCC200] transition-colors"
                           onClick={() => {
                             setMobileOpen(false);
                             setMobileExpanded(null);
+                            document.body.style.overflow = 'unset';
                           }}
                         >
                           {link.label}
@@ -1037,9 +1089,9 @@ export default function Navbar() {
 
               {/* Promo Badge / Info Area in Menu body */}
               <div className="mt-8 p-4 bg-amber-50/70 border border-amber-200/50 rounded-2xl flex items-start gap-3">
-                <Sparkles className="w-5 h-5 text-[#FE9900] shrink-0 mt-0.5" />
+                <Sparkles className="w-5 h-5 text-[#FCC200] shrink-0 mt-0.5" />
                 <div>
-                  <h5 className="text-[11px] font-black uppercase tracking-widest text-[#004093]">Government Rebate</h5>
+                  <h5 className="text-[11px] font-black uppercase tracking-widest text-[#1B74BB]">Government Rebate</h5>
                   <p className="text-[10px] leading-relaxed text-slate-600 font-semibold mt-0.5">
                     NSW & QLD solar incentives available! Check your eligible system configuration rebates.
                   </p>
@@ -1048,30 +1100,31 @@ export default function Navbar() {
             </div>
 
             {/* Quick Contact & Action Footer */}
-            <div className="p-6 border-t border-slate-100 bg-slate-50 space-y-4">
+            <div className="p-6 border-t border-slate-100 bg-slate-50 space-y-4 shrink-0">
               <div className="grid grid-cols-2 gap-3">
                 <a
-                  href="tel:1300672194"
-                  className="flex flex-col items-center justify-center p-3 rounded-xl bg-white border border-slate-200 hover:border-[#004093] hover:shadow-md transition group text-center"
+                  href="tel:0435359431"
+                  className="flex flex-col items-center justify-center p-3 rounded-xl bg-white border border-slate-200 hover:border-[#1B74BB] hover:shadow-md transition group text-center"
                 >
-                  <Phone className="w-4.5 h-4.5 text-[#FE9900] mb-1 group-hover:scale-110 transition-transform" />
-                  <span className="text-[9px] font-black uppercase text-slate-400 tracking-wider">Call Now</span>
-                  <span className="text-[11px] font-bold text-slate-800">1300 672 194</span>
+                  <Phone className="w-4.5 h-4.5 text-[#FCC200] mb-1 group-hover:scale-110 transition-transform" />
+                  <span className="text-[9px] font-black uppercase text-slate-900 tracking-wider">Call Now</span>
+                  <span className="text-[11px] font-bold text-slate-800">0435 359 431</span>
                 </a>
                 <a
                   href="mailto:info@solearth.com.au"
-                  className="flex flex-col items-center justify-center p-3 rounded-xl bg-white border border-slate-200 hover:border-[#004093] hover:shadow-md transition group text-center"
+                  className="flex flex-col items-center justify-center p-3 rounded-xl bg-white border border-slate-200 hover:border-[#1B74BB] hover:shadow-md transition group text-center"
                 >
                   <Mail className="w-4.5 h-4.5 text-blue-500 mb-1 group-hover:scale-110 transition-transform" />
-                  <span className="text-[9px] font-black uppercase text-slate-400 tracking-wider">Email Us</span>
+                  <span className="text-[9px] font-black uppercase text-slate-900 tracking-wider">Email Us</span>
                   <span className="text-[11px] font-bold text-slate-800 truncate max-w-full">info@solearth...</span>
                 </a>
               </div>
 
               <button
-                className="w-full flex items-center justify-center gap-2 bg-[#FE9900] hover:bg-[#e08900] text-white font-bold py-3.5 rounded-full shadow-lg shadow-[#FE9900]/15 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 cursor-pointer text-sm"
+                className="w-full flex items-center justify-center gap-2 bg-[#FCC200] hover:bg-[#e08900] text-white font-bold py-3.5 rounded-full shadow-lg shadow-[#FCC200]/15 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 cursor-pointer text-sm"
                 onClick={() => {
                   setMobileOpen(false);
+                  document.body.style.overflow = 'unset';
                   openQuoteModal('Mobile Navbar Side Drawer');
                 }}
               >

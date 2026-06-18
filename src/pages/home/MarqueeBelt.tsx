@@ -14,7 +14,7 @@ const marqueeItems = [...items, ...items]
 
 export default function MarqueeBelt() {
   return (
-    <div className="relative bg-linear-to-r from-[#0a1f44] via-[#1a3a6b] to-[#0a1f44] overflow-hidden py-3.5 border-y border-[#F8C000]/20">
+    <div className="relative bg-linear-to-r from-[#0a1f44] via-[#1a3a6b] to-[#0a1f44] overflow-hidden py-3.5 border-y border-[#FCC200]/20">
 
       {/* Fade edges */}
       <div className="absolute left-0 top-0 bottom-0 w-20 bg-linear-to-r from-[#0a1f44] to-transparent z-10 pointer-events-none" />
@@ -30,21 +30,21 @@ export default function MarqueeBelt() {
               className="flex items-center gap-2.5 px-6 whitespace-nowrap"
             >
               {/* Icon */}
-              <Icon className="w-4 h-4 text-[#F8C000] shrink-0" />
+              <Icon className="w-4 h-4 text-[#FCC200] shrink-0" />
 
               {/* Text */}
-              <span className="text-white/90 font-serif text-sm font-medium">{item.text}</span>
+              <span className="text-white font-serif text-sm font-medium">{item.text}</span>
 
               {/* Link pill */}
               <a
                 href="#"
-                className="text-[10px] font-bold tracking-widest uppercase bg-[#F8C000] text-white px-3 py-1 rounded-full hover:bg-[#e0ad00] transition-colors duration-200 ml-1"
+                className="text-[10px] font-bold tracking-widest uppercase bg-[#FCC200] text-white px-3 py-1 rounded-full hover:bg-[#e6af00] transition-colors duration-200 ml-1"
               >
                 {item.link} →
               </a>
 
               {/* Divider dot */}
-              <span className="w-1.5 h-1.5 rounded-full bg-[#F8C000]/40 ml-4 shrink-0" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#FCC200]/40 ml-4 shrink-0" />
             </div>
           )
         })}

@@ -32,7 +32,7 @@ export default function BatterySection() {
 
       {/* Decorative gradients */}
       <div className="absolute top-1/2 left-0 w-80 h-80 bg-[#28A8E4]/5 rounded-full blur-3xl pointer-events-none -translate-y-1/2" />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#F8C000]/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#FCC200]/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-0 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
@@ -77,7 +77,7 @@ export default function BatterySection() {
                     >
                       <div className="absolute top-full left-1/2 -translate-x-1/2 w-3 h-3 bg-slate-900 border-r border-b border-slate-800 rotate-45 -mt-1.5" />
                       <p className="font-extrabold text-[11px] tracking-wide uppercase text-[#28A8E4]">{spot.label}</p>
-                      <p className="text-[10px] text-slate-300 leading-normal mt-0.5">{spot.desc}</p>
+                      <p className="text-[10px] text-slate-900 leading-normal mt-0.5">{spot.desc}</p>
                     </div>
                   </div>
                 );
@@ -94,7 +94,7 @@ export default function BatterySection() {
           <div className="lg:col-span-6 space-y-8 text-left">
             <div className="space-y-4">
               <div className="flex items-center space-x-2">
-                <span className="h-0.5 w-8 bg-[#F8C000] rounded-full" />
+                <span className="h-0.5 w-8 bg-[#FCC200] rounded-full" />
                 <span className="text-xs font-bold text-[#1B74BB] uppercase tracking-widest">Energy Independence</span>
               </div>
               <h2 className="text-3xl md:text-5xl font-serif font-bold leading-tight text-slate-900 tracking-tight">
@@ -114,7 +114,7 @@ export default function BatterySection() {
                     onClick={() => setActiveMode('grid')}
                     className={`px-4 py-1.5 rounded-full text-[10px] font-extrabold transition-all cursor-pointer uppercase tracking-wider ${activeMode === 'grid'
                       ? 'bg-[#1B74BB] text-white shadow-sm'
-                      : 'text-slate-500 hover:text-slate-800'
+                      : 'text-slate-900 hover:text-slate-800'
                       }`}
                   >
                     Solar Only
@@ -123,7 +123,7 @@ export default function BatterySection() {
                     onClick={() => setActiveMode('battery')}
                     className={`px-4 py-1.5 rounded-full text-[10px] font-extrabold transition-all cursor-pointer uppercase tracking-wider ${activeMode === 'battery'
                       ? 'bg-[#1B74BB] text-white shadow-sm'
-                      : 'text-slate-500 hover:text-slate-800'
+                      : 'text-slate-900 hover:text-slate-800'
                       }`}
                   >
                     Solar + Battery
@@ -133,7 +133,7 @@ export default function BatterySection() {
 
               {/* Animated Power Flow Diagram */}
               <div className="py-2 bg-slate-50/70 border border-slate-100 rounded-2xl flex items-center justify-center overflow-hidden">
-                <svg viewBox="0 0 400 140" className="w-full max-w-sm h-32 text-slate-400 relative z-10">
+                <svg viewBox="0 0 400 140" className="w-full max-w-sm h-32 text-slate-900 relative z-10">
                   <defs>
                     <linearGradient id="activeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
                       <stop offset="0%" stopColor="#28A8E4" />
@@ -187,7 +187,7 @@ export default function BatterySection() {
                   <g>
                     <circle cx="52" cy="30" r="18" fill="white" className="stroke-slate-200 shadow-sm" strokeWidth="1" />
                     <foreignObject x="40" y="18" width="24" height="24">
-                      <Sun className={`w-6 h-6 ${activeMode === 'battery' ? 'text-amber-500' : 'text-slate-400'}`} />
+                      <Sun className={`w-6 h-6 ${activeMode === 'battery' ? 'text-amber-500' : 'text-slate-900'}`} />
                     </foreignObject>
                     <text x="52" y="5" textAnchor="middle" className="text-[9px] font-black fill-slate-500 uppercase">Solar Panels</text>
                   </g>
@@ -205,7 +205,7 @@ export default function BatterySection() {
                   <g>
                     <circle cx="342" cy="30" r="18" fill="white" className="stroke-slate-200 shadow-sm" strokeWidth="1" />
                     <foreignObject x="330" y="18" width="24" height="24">
-                      <Cpu className={`w-6 h-6 ${activeMode === 'grid' ? 'text-rose-500' : 'text-slate-400'}`} />
+                      <Cpu className={`w-6 h-6 ${activeMode === 'grid' ? 'text-rose-500' : 'text-slate-900'}`} />
                     </foreignObject>
                     <text x="342" y="5" textAnchor="middle" className="text-[9px] font-black fill-slate-500 uppercase">Utility Grid</text>
                   </g>
@@ -227,8 +227,8 @@ export default function BatterySection() {
                 {/* Metric 1: Cost */}
                 <div className="space-y-2">
                   <div className="flex justify-between text-xs font-bold">
-                    <span className="text-slate-500 uppercase tracking-wider flex items-center gap-1.5">
-                      <DollarSign className="w-4 h-4 text-slate-400" /> Daily Power Bill
+                    <span className="text-slate-900 uppercase tracking-wider flex items-center gap-1.5">
+                      <DollarSign className="w-4 h-4 text-slate-900" /> Daily Power Bill
                     </span>
                     <motion.span
                       key={activeMode}
@@ -255,8 +255,8 @@ export default function BatterySection() {
                 {/* Metric 2: Grid Reliance */}
                 <div className="space-y-2">
                   <div className="flex justify-between text-xs font-bold">
-                    <span className="text-slate-500 uppercase tracking-wider flex items-center gap-1.5">
-                      <Zap className="w-4 h-4 text-slate-400" /> Grid Reliance
+                    <span className="text-slate-900 uppercase tracking-wider flex items-center gap-1.5">
+                      <Zap className="w-4 h-4 text-slate-900" /> Grid Reliance
                     </span>
                     <motion.span
                       key={activeMode}
@@ -283,14 +283,14 @@ export default function BatterySection() {
                 {/* Metric 3: Backup Security */}
                 <div className="space-y-2">
                   <div className="flex justify-between text-xs font-bold">
-                    <span className="text-slate-500 uppercase tracking-wider flex items-center gap-1.5">
-                      <ShieldCheck className="w-4 h-4 text-slate-400" /> Blackout Protection
+                    <span className="text-slate-900 uppercase tracking-wider flex items-center gap-1.5">
+                      <ShieldCheck className="w-4 h-4 text-slate-900" /> Blackout Protection
                     </span>
                     <motion.span
                       key={activeMode}
                       initial={{ opacity: 0, y: -4 }}
                       animate={{ opacity: 1, y: 0 }}
-                      className={activeMode === 'battery' ? 'text-emerald-600 font-extrabold' : 'text-slate-400 font-extrabold'}
+                      className={activeMode === 'battery' ? 'text-emerald-600 font-extrabold' : 'text-slate-900 font-extrabold'}
                     >
                       {activeMode === 'battery' ? '100% Instant Backup' : '0% (No Solar Backup)'}
                     </motion.span>

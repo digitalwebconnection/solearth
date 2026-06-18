@@ -143,8 +143,8 @@ export default function PackagesSection() {
             viewport={{ once: true }}
             className="inline-flex items-center gap-3 mb-3"
           >
-            <span className="h-px w-8 bg-[#F8C000]" />
-            <span className="text-[#F8C000] text-xs font-bold tracking-[0.2em] uppercase">Tailored For You</span>
+            <span className="h-px w-8 bg-[#FCC200]" />
+            <span className="text-[#FCC200] text-xs font-bold tracking-[0.2em] uppercase">Tailored For You</span>
           </motion.div>
 
           <h2 className="text-3xl md:text-5xl font-serif font-bold text-white mb-4 tracking-tight">Solar Packages</h2>
@@ -160,7 +160,7 @@ export default function PackagesSection() {
                 onClick={() => setBilling(t)}
                 className={`px-6 py-2 rounded-full text-xs font-bold tracking-wider uppercase transition-all duration-300 ${
                   billing === t 
-                    ? 'bg-[#28A8E0] text-white shadow-lg shadow-[#28A8E0]/20' 
+                    ? 'bg-[#2AA9E4] text-white shadow-lg shadow-[#2AA9E4]/20' 
                     : 'text-gray-400 hover:text-white'
                 }`}
               >
@@ -199,7 +199,7 @@ export default function PackagesSection() {
                     <span
                       key={star}
                       className={`text-sm select-none ${
-                        star <= pkg.rating ? 'text-[#F8C000]' : 'text-white/20'
+                        star <= pkg.rating ? 'text-[#FCC200]' : 'text-white/20'
                       }`}
                     >
                       ★
@@ -210,7 +210,7 @@ export default function PackagesSection() {
                 {/* Size/Capacity */}
                 <div className="flex items-baseline justify-center text-black/90 font-black tracking-tight select-none">
                   <span className="text-5xl font-black">{pkg.size}</span>
-                  <span className="text-[#F8C000] text-3xl font-black ml-0.5">.</span>
+                  <span className="text-[#FCC200] text-3xl font-black ml-0.5">.</span>
                 </div>
 
                 <span className="text-[10px] font-bold text-white/80 uppercase tracking-widest mt-1">
@@ -242,10 +242,10 @@ export default function PackagesSection() {
                     </span>
                   </div>
                   <div className="border-l border-gray-850 border-gray-800/60">
-                    <span className="text-[9px] text-[#F8C000] uppercase tracking-widest block mb-1">
+                    <span className="text-[9px] text-[#FCC200] uppercase tracking-widest block mb-1">
                       Est. Savings
                     </span>
-                    <span className="text-sm font-extrabold text-[#F8C000] flex items-center justify-center gap-1">
+                    <span className="text-sm font-extrabold text-[#FCC200] flex items-center justify-center gap-1">
                       <TrendingUp className="w-3.5 h-3.5" />
                       {pkg.savings}
                     </span>
@@ -255,7 +255,7 @@ export default function PackagesSection() {
                 {/* Technical Specs Stats Row */}
                 <div className="grid grid-cols-3 gap-2 py-3 border-y border-gray-850 border-gray-800/50 mb-6 text-center text-gray-300">
                   <div className="flex flex-col items-center justify-center gap-1">
-                    <Zap className="w-4 h-4 text-[#F8C000]" />
+                    <Zap className="w-4 h-4 text-[#FCC200]" />
                     <span className="text-[10px] font-semibold tracking-tight">{pkg.inverter}</span>
                   </div>
                   <div className="flex flex-col items-center justify-center gap-1 border-x border-gray-800/45">

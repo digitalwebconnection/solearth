@@ -10,7 +10,7 @@ const stats = [
 
 export default function ExpertsBanner() {
   return (
-    <section className="bg-white py-16 border-b border-gray-100">
+    <section className="bg-white py-10 border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-0">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
@@ -18,8 +18,8 @@ export default function ExpertsBanner() {
           <div className="relative">
             {/* Accent bar */}
             <div className="flex items-center gap-3 mb-4">
-              <div className="h-1 w-10 bg-[#F8C000] rounded-full" />
-              <span className="text-[#F8C000] font-bold text-sm tracking-widest uppercase">
+              <div className="h-1 w-10 bg-[#FCC200] rounded-full" />
+              <span className="text-[#000000] font-bold text-sm tracking-widest uppercase">
                 SolEarth Energy
               </span>
             </div>
@@ -30,7 +30,7 @@ export default function ExpertsBanner() {
               animateBy="words"
               direction="top"
               stepDuration={0.4}
-              className="text-4xl lg:text-5xl font-serif font-extrabold text-[#0a1f44] leading-tight mb-5"
+              className="text-3xl lg:text-5xl font-serif font-extrabold text-[#0a1f44] leading-tight mb-5"
             />
 
             <BlurText
@@ -39,7 +39,7 @@ export default function ExpertsBanner() {
               animateBy="words"
               direction="bottom"
               stepDuration={0.3}
-              className="text-gray-500 text-base leading-relaxed max-w-lg mb-8"
+              className="text-gray-800 text-base leading-relaxed max-w-lg mb-8"
             />
 
             {/* Feature pills */}
@@ -51,7 +51,7 @@ export default function ExpertsBanner() {
               ].map((pill) => (
                 <span
                   key={pill.label}
-                  className="bg-[#f7f9fc] font-serif border border-gray-200 text-gray-600 text-sm font-semibold px-4 py-2 rounded-full inline-flex items-center gap-2"
+                  className="bg-[#f7f9fc] font-serif border border-gray-400 text-gray-800 text-sm font-semibold px-4 py-2 rounded-full inline-flex items-center gap-2"
                 >
                   <pill.icon className={`w-4 h-4 ${pill.color}`} />
                   {pill.label}
@@ -69,20 +69,20 @@ export default function ExpertsBanner() {
                   i === 0
                     ? 'bg-linear-to-br from-[#0a1f44] shadow-black/60 shadow-lg to-[#1a3a6b] text-white'
                     : i === 1
-                    ? 'bg-linear-to-br from-[#F8C000] to-[#e0ad00] text-white'
+                    ? 'bg-linear-to-br from-[#FCC200] to-[#e6af00] text-white'
                     : 'bg-[#f7f9fc] border border-gray-400 text-[#0a1f44]'
                 }`}
               >
                 {/* Decorative circle */}
                 <div
                   className={`absolute -top-4 -right-4 w-20 h-20 rounded-full opacity-30 ${
-                    i === 0 || i === 1 ? 'bg-white' : 'bg-[#28A8E0]'
+                    i === 0 || i === 1 ? 'bg-white' : 'bg-[#2AA9E4]'
                   }`}
                 />
 
                 <div
                   className={`text-4xl font-extrabold mb-1 ${
-                    i === 2 || i === 3 ? 'text-[#1D6FB8]' : ''
+                    i === 2 || i === 3 ? 'text-[#1B74BB]' : ''
                   }`}
                 >
                   {s.value}

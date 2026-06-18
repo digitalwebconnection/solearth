@@ -5,7 +5,7 @@ import supportPerson from '../../assets/downloaded-images/support-person.jpg';
 
 export const ContactCTA: React.FC = () => {
   return (
-    <section className="relative overflow-hidden bg-[#004093] text-white py-16" id="quote-section">
+    <section className="relative overflow-hidden bg-[#1B74BB] text-white py-16" id="quote-section">
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-size-[60px_60px]" />
       </div>
@@ -14,7 +14,7 @@ export const ContactCTA: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           {/* Left Texts */}
           <div className="lg:col-span-7">
-            <span className="text-xs font-black uppercase tracking-[0.3em] text-[#FE9900]">
+            <span className="text-xs font-black uppercase tracking-[0.3em] text-[#FCC200]">
               Unlock Premium Clean Energy
             </span>
             <h2 className="text-3xl md:text-5xl font-serif font-bold mt-3 leading-tight">
@@ -27,7 +27,7 @@ export const ContactCTA: React.FC = () => {
             <div className="flex flex-wrap gap-6 mt-8">
               {/* Contact phone */}
               {/* <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-full bg-[#FE9900] flex items-center justify-center text-white shadow-lg">
+                <div className="w-12 h-12 rounded-full bg-[#FCC200] flex items-center justify-center text-white shadow-lg">
                   <Phone size={20} fill="currentColor" />
                 </div>
                 <div>
@@ -38,7 +38,7 @@ export const ContactCTA: React.FC = () => {
 
               <Link
                 to="/contact"
-                className="bg-white hover:bg-slate-100 text-[#004093] px-8 py-3.5 rounded-full font-black flex items-center gap-2.5 transition duration-300 shadow-xl hover:scale-105"
+                className="bg-white hover:bg-slate-100 text-[#1B74BB] px-8 py-3.5 rounded-full font-black flex items-center gap-2.5 transition duration-300 shadow-xl hover:scale-105"
               >
                 Request A Consultation
                 <ArrowRight size={18} />

@@ -239,7 +239,7 @@ export const COMMERCIAL_PAGES_DATA: Record<string, CommercialData> = {
     ],
     comparisonColumns: [
       { name: 'Power Purchase Agreement (PPA)', iconKey: 'CircleDollarSign', desc: 'Pay only for solar energy generated, with no capital outlay.', color: '#FB923C', bg: 'bg-orange-500/5', accent: '#FB923C' },
-      { name: 'Solar Lease / Rent-to-Own', iconKey: 'Landmark', desc: 'Finance over 5-7 years. Savings offset monthly repayments.', color: '#38BDF8', bg: 'bg-sky-500/5', accent: '#38BDF8' },
+      { name: 'Solar Lease / Rent-to-Own', iconKey: 'Landmark', desc: 'Finance over 5-7 years. Savings offset monthly repayments.', color: '#38BDF8', bg: 'bg-[#2AA9E4]/5', accent: '#38BDF8' },
       { name: 'Outright Purchase (CAPEX)', iconKey: 'Receipt', desc: 'Purchase the system upfront to maximize lifetime return.', color: '#34D399', bg: 'bg-emerald-500/5', accent: '#34D399' }
     ],
     comparisonRows: [
@@ -384,7 +384,7 @@ export const COMMERCIAL_PAGES_DATA: Record<string, CommercialData> = {
     ],
     comparisonColumns: [
       { name: 'Power Purchase Agreement (PPA)', iconKey: 'CircleDollarSign', desc: 'Pay only for solar energy generated, with no capital outlay.', color: '#FB923C', bg: 'bg-orange-500/5', accent: '#FB923C' },
-      { name: 'Solar Lease / Rent-to-Own', iconKey: 'Landmark', desc: 'Finance over 5-7 years. Savings offset monthly repayments.', color: '#38BDF8', bg: 'bg-sky-500/5', accent: '#38BDF8' },
+      { name: 'Solar Lease / Rent-to-Own', iconKey: 'Landmark', desc: 'Finance over 5-7 years. Savings offset monthly repayments.', color: '#38BDF8', bg: 'bg-[#2AA9E4]/5', accent: '#38BDF8' },
       { name: 'Outright Purchase (CAPEX)', iconKey: 'Receipt', desc: 'Purchase the system upfront to maximize lifetime return.', color: '#34D399', bg: 'bg-emerald-500/5', accent: '#34D399' }
     ],
     comparisonRows: [
@@ -529,7 +529,7 @@ export const COMMERCIAL_PAGES_DATA: Record<string, CommercialData> = {
     ],
     comparisonColumns: [
       { name: 'Power Purchase Agreement (PPA)', iconKey: 'CircleDollarSign', desc: 'Pay only for solar energy generated, with no capital outlay.', color: '#FB923C', bg: 'bg-orange-500/5', accent: '#FB923C' },
-      { name: 'Solar Lease / Rent-to-Own', iconKey: 'Landmark', desc: 'Finance over 5-7 years. Savings offset monthly repayments.', color: '#38BDF8', bg: 'bg-sky-500/5', accent: '#38BDF8' },
+      { name: 'Solar Lease / Rent-to-Own', iconKey: 'Landmark', desc: 'Finance over 5-7 years. Savings offset monthly repayments.', color: '#38BDF8', bg: 'bg-[#2AA9E4]/5', accent: '#38BDF8' },
       { name: 'Outright Purchase (CAPEX)', iconKey: 'Receipt', desc: 'Purchase the system upfront to maximize lifetime return.', color: '#34D399', bg: 'bg-emerald-500/5', accent: '#34D399' }
     ],
     comparisonRows: [

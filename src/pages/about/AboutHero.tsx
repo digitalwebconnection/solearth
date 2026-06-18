@@ -32,8 +32,8 @@ export default function AboutHero() {
       <div className="absolute inset-0 z-10 opacity-10 bg-[linear-gradient(to_right,#ffffff10_1px,transparent_1px),linear-gradient(to_bottom,#ffffff10_1px,transparent_1px)] bg-size-[4rem_4rem]" />
 
       {/* Glowing Ambient Effects */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-[#28A8E0]/15 blur-3xl pointer-events-none z-10" />
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-[#F8C000]/10 blur-3xl pointer-events-none z-10" />
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-[#2AA9E4]/15 blur-3xl pointer-events-none z-10" />
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-[#FCC200]/10 blur-3xl pointer-events-none z-10" />
 
       {/* Hero Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10 md:mt-0 relative z-20 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -43,9 +43,9 @@ export default function AboutHero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 bg-[#F8C000]/20 border border-[#F8C000]/45 text-[#F8C000] text-xs font-bold tracking-widest uppercase px-4 py-2 rounded-full mb-6 w-fit"
+            className="inline-flex items-center gap-2 bg-[#FCC200]/20 border border-[#FCC200]/45 text-[#FCC200] text-xs font-bold tracking-widest uppercase px-4 py-2 rounded-full mb-6 w-fit"
           >
-            <span className="w-2 h-2 bg-[#F8C000] rounded-full animate-pulse" />
+            <span className="w-2 h-2 bg-[#FCC200] rounded-full animate-pulse" />
             Our Vision & Journey
           </motion.div>
 
@@ -56,9 +56,9 @@ export default function AboutHero() {
             className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 tracking-tight text-white"
           >
             Empowering Australia with{' '}
-            <span className="text-[#F8C000] relative inline-block">
+            <span className="text-[#FCC200] relative inline-block">
               Smart Clean Energy
-              <span className="absolute bottom-1 left-0 w-full h-[4px] bg-[#F8C000] rounded-full opacity-60" />
+              <span className="absolute bottom-1 left-0 w-full h-[4px] bg-[#FCC200] rounded-full opacity-60" />
             </span>
           </motion.h1>
 
@@ -79,7 +79,7 @@ export default function AboutHero() {
           >
             <button
               onClick={handleScrollDown}
-              className="group bg-[#F8C000] hover:bg-[#e0ad00] text-black font-bold px-10 py-2 rounded-full text-base transition-all duration-300 shadow-xl hover:shadow-[#F8C000]/25 hover:-translate-y-0.5 flex items-center gap-2 cursor-pointer"
+              className="group bg-[#FCC200] hover:bg-[#e6af00] text-black font-bold px-10 py-2 rounded-full text-base transition-all duration-300 shadow-xl hover:shadow-[#FCC200]/25 hover:-translate-y-0.5 flex items-center gap-2 cursor-pointer"
             >
               Read Our Story
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
