@@ -662,7 +662,7 @@ export default function ContactServices({ selectedSubject, onSelectService }: Co
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {serviceItems.map((item, index) => {
             const isHovered = hoveredIndex === index
             const isSelected = selectedSubject === item.subjectValue
@@ -679,7 +679,7 @@ export default function ContactServices({ selectedSubject, onSelectService }: Co
                 onMouseLeave={() => setHoveredIndex(null)}
                 onClick={() => handleCardClick(index, item.subjectValue)}
                 className={cn(
-                  "bg-white rounded-xl border p-5 sm:p-8 text-left transition-all duration-300 shadow-lg shadow-black cursor-pointer flex flex-col justify-between group overflow-hidden relative",
+                  "bg-white rounded-xl border p-5 sm:p-8 text-left transition-all duration-300 shadow-lg shadow-black cursor-pointer flex flex-col justify-between group overflow-hidden relative h-full",
                   isExpanded || isSelected
                     ? "border-[#1B74BB] bg-[#1B74BB]/1 ring-2 ring-[#1B74BB]/10 shadow-md scale-[1.01]"
                     : "border-slate-400 hover:border-[#1B74BB]/40  hover:shadow-md"

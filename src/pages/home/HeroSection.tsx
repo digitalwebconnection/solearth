@@ -69,18 +69,16 @@ export default function HeroSection() {
 
             {/* Headline */}
             <h1
-              className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6 transition-all duration-500 ${
-                animating ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'
-              }`}
+              className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6 transition-all duration-500 ${animating ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'
+                }`}
               style={{ whiteSpace: 'pre-line' }}
             >
               {slide.headline}
             </h1>
 
             <p
-              className={`text-sm sm:text-base md:text-lg text-gray-200 mb-8 leading-relaxed transition-all duration-500 delay-100 ${
-                animating ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'
-              }`}
+              className={`text-sm sm:text-base md:text-lg text-gray-200 mb-8 leading-relaxed transition-all duration-500 delay-100 ${animating ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'
+                }`}
             >
               {slide.sub}
             </p>
@@ -102,7 +100,7 @@ export default function HeroSection() {
             </div>
 
             {/* Trust badges */}
-            <div className="flex flex-wrap gap-6 mt-10">
+            <div className="flex flex-wrap gap-5 md:gap-10 mt-10">
               {[
                 { val: '12K+', label: 'Installations' },
                 { val: '10yr', label: 'Warranty' },
@@ -125,9 +123,8 @@ export default function HeroSection() {
           <button
             key={i}
             onClick={() => setCurrent(i)}
-            className={`h-1.5 rounded-full transition-all duration-300 ${
-              i === current ? 'w-8 bg-[#FCC200]' : 'w-2 bg-white/40'
-            }`}
+            className={`h-1.5 rounded-full transition-all duration-300 ${i === current ? 'w-8 bg-[#FCC200]' : 'w-2 bg-white/40'
+              }`}
           />
         ))}
       </div>
