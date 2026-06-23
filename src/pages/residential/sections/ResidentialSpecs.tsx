@@ -15,7 +15,6 @@ interface ResidentialSpecsProps {
 }
 
 export default function ResidentialSpecs({
-  savings,
   introTitle,
   introDesc,
   details,
@@ -70,38 +69,24 @@ export default function ResidentialSpecs({
   const featuredSolarPanelImage = details.panels.image || "/images/solar/solar-panel-rooftop.jpg"
 
   return (
-    <section className="py-12 md:py-20 bg-slate-50 text-slate-800 relative overflow-hidden">
+    <section className="py-12 md:py-10 bg-slate-50 text-slate-800 relative overflow-hidden">
       {/* Soft background light spots */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2  bg-[#1B74BB]/5  pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 space-y-8 md:space-y-10">
 
         {/* Header Block */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-end">
-          <div className="lg:col-span-8 space-y-3 sm:space-y-4">
+        <div className="text-center">
+          <div className="">
 
-            <h2 className="text-2xl sm:text-3xl md:text-5xl font-serif font-bold text-[#1B74BB] leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-serif font-bold text-[#1B74BB] leading-tight max-w-5xl mx-auto">
               {introTitle}
             </h2>
-            <p className="text-xs sm:text-sm md:text-base leading-relaxed text-slate-900 max-w-3xl">
+            <p className="text-xs sm:text-sm md:text-base leading-relaxed text-slate-900 max-w-7xl mx-auto">
               {introDesc}
             </p>
           </div>
 
-          {/* Savings & Yield Highlight */}
-          <div className="lg:col-span-4 flex lg:justify-end">
-            <div className="bg-[#1B74BB] text-white px-5 py-5 rounded-lg flex items-center justify-between shadow-xl shadow-[#1B74BB]/10 w-full lg:max-w-xs border border-white/10">
-              <div className="space-y-0.5">
-                <span className="block text-[9px] font-black uppercase tracking-widest text-[#FCC200]">
-                  Target Yield
-                </span>
-                <span className="block text-xs font-bold text-slate-100">Annual Return Offset</span>
-              </div>
-              <span className="text-xl font-black text-white">
-                {savings}
-              </span>
-            </div>
-          </div>
         </div>
 
         {/* 1. Wide Cinematic Panoramic Image */}
@@ -140,14 +125,14 @@ export default function ResidentialSpecs({
         </motion.div>
 
         {/* 2. Technical details - Bottom 4-Column Grid with hover-color effects */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
           {components.map((item, idx) => (
             <motion.div
               key={item.key}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className={`bg-white rounded-2xl p-5 sm:p-6 border ${item.borderClass} shadow-lg hover:shadow-xl transition-all duration-500 relative overflow-hidden group flex flex-col justify-between min-h-[340px] ${item.glowClass}`}
+              className={`bg-white rounded-lg p-3 sm:p-4 border ${item.borderClass} shadow-lg hover:shadow-xl shadow-black transition-all duration-500 relative overflow-hidden group flex flex-col justify-between min-h-[340px] ${item.glowClass}`}
             >
               {/* Color Box Animation on hover (slides up from bottom behind content) */}
               <div className={`absolute bottom-0 left-0 right-0 h-1 bg-linear-to-r ${item.colorClass} group-hover:h-full transition-all duration-500 ease-out z-0 opacity-0 group-hover:opacity-100`}></div>
@@ -168,7 +153,7 @@ export default function ResidentialSpecs({
                   <span className="text-[9px] font-black uppercase tracking-wider text-[#FCC200] group-hover:text-amber-200 transition-colors">
                     {item.label}
                   </span>
-                  <h4 className="text-xl sm:text-2xl font-serif font-semibold text-[#1B74BB] group-hover:text-white transition-colors">
+                  <h4 className="text-lg sm:text-xl font-serif font-semibold text-[#1B74BB] group-hover:text-white transition-colors">
                     {item.data.title}
                   </h4>
                   <p className="text-xs sm:text-sm leading-relaxed text-slate-800 group-hover:text-slate-100 transition-colors font-semibold">

@@ -56,7 +56,7 @@ export default function ProjectsHero() {
           >
             Our Solar & Battery{' '}
             <span className="text-[#FCC200] relative inline-block">
-              Installation Portfolio
+              Installation Portfolio Australia
               <span className="absolute bottom-1 left-0 w-full h-[4px] bg-[#FCC200] rounded-full opacity-60" />
             </span>
           </motion.h1>
@@ -67,8 +67,7 @@ export default function ProjectsHero() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-sm sm:text-base md:text-lg text-slate-150 mb-8 leading-relaxed max-w-4xl font-medium"
           >
-            Explore our records of premium-tier residential installations, heavy-duty commercial solar arrays, and high-capacity hybrid battery backup systems engineered across Australia.
-          </motion.p>
+            Explore our Solar Installation Portfolio Australia, featuring residential, commercial, and battery storage projects delivered across Australia for smarter, sustainable energy solutions.   </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}

@@ -63,7 +63,7 @@ export const TechnicalAdvantages: React.FC<TechnicalAdvantagesProps> = ({
   );
 
   return (
-    <section ref={containerRef} className="relative overflow-hidden bg-white py-12 md:py-20">
+    <section ref={containerRef} className="relative overflow-hidden bg-white py-6 md:py-10">
       {/* Background Design */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <div className="absolute top-20 right-0 w-[450px] h-[450px] bg-[#1B74BB]/5 rounded-full blur-3xl" />
@@ -79,19 +79,18 @@ export const TechnicalAdvantages: React.FC<TechnicalAdvantagesProps> = ({
             Premium Design Advantages
           </span>
 
-          <h2 className="text-2xl sm:text-3xl md:text-5xl font-black text-[#1B74BB] leading-tight tracking-tight">
-            {product.betterTitle}
+          <h2 className="text-2xl sm:text-3xl md:text-5xl max-w-3xl mx-auto font-black text-[#1B74BB] leading-tight tracking-tight">
+            {product.advantagesSection.title}
           </h2>
 
-          <p className="text-slate-900 text-xs sm:text-sm md:text-base leading-relaxed font-medium">
-            Engineered with advanced solar technology for maximum durability,
-            higher efficiency, and long-term performance reliability.
+          <p className="text-slate-900 text-xs sm:text-sm max-w-6xl mx-auto md:text-base leading-relaxed font-medium">
+            {product.advantagesSection.dec} 
           </p>
         </div>
 
         {/* Premium Bento-Style Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {product.betterList.map((adv, index) => {
+          {product.advantagesSection.advantages.map((adv, index) => {
             const parts = adv.split(":");
             const title = parts[0];
             const desc = parts.slice(1).join(":");

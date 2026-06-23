@@ -103,10 +103,10 @@ export default function Process() {
             <span className="h-0.5 w-8 bg-[#FCC200] rounded-full animate-pulse" />
           </div>
           <h2 className="text-3xl md:text-5xl font-black leading-tight text-slate-900 tracking-tight">
-            Your Seamless Journey <br /> To Solar Energy
+            Your Seamless Journey <br />  to Clean Solar Energy
           </h2>
           <p className="text-black text-sm sm:text-base leading-relaxed">
-            We handle everything from initial energy assessment and custom engineering design to professional installation and grid connection.
+            From energy assessment and custom design to installation and grid connection, we deliver a seamless solar experience.
           </p>
         </div>
 

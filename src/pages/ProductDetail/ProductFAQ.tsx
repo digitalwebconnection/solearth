@@ -7,8 +7,7 @@ interface ProductFAQProps {
   product: ProductData;
 }
 
-export const ProductFAQ: React.FC<ProductFAQProps> = ({ product }) => {
-  const { openQuoteModal } = useQuoteModal();
+export const getProductFAQs = (product: ProductData) => {
   const panelFAQs = [
     {
       q: `What is the efficiency of ${product.brand} Solar Panels?`,
@@ -66,12 +65,24 @@ export const ProductFAQ: React.FC<ProductFAQProps> = ({ product }) => {
     },
   ];
 
-  const faqs =
-    product.category === "Solar Panels"
+  const dynamicFAQs =
+    product.faqSection?.items?.map((item) => ({
+      q: item.question,
+      a: item.answer,
+    })) || [];
+
+  return dynamicFAQs.length > 0
+    ? dynamicFAQs
+    : product.category === "Solar Panels"
       ? panelFAQs
       : product.category === "Solar Inverters"
         ? inverterFAQs
         : batteryFAQs;
+};
+
+export const ProductFAQ: React.FC<ProductFAQProps> = ({ product }) => {
+  const { openQuoteModal } = useQuoteModal();
+  const faqs = getProductFAQs(product);
 
   const [openIdx, setOpenIdx] = useState<number | null>(0);
 
@@ -82,12 +93,10 @@ export const ProductFAQ: React.FC<ProductFAQProps> = ({ product }) => {
   return (
     <section className="relative overflow-hidden bg-white py-0 md:py-20 border-t border-slate-100">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-0 relative">
-
         {/* Ambient background glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#FCC200]/3 rounded-full blur-3xl pointer-events-none" />
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start relative z-10">
-
           {/* LEFT COLUMN: STICKY HEADER & HELP WIDGET */}
           <div className="lg:col-span-4 lg:sticky lg:top-28 space-y-6 text-left">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#1B74BB]/5 rounded-full border border-[#1B74BB]/10 text-[10px] font-black uppercase tracking-wider text-[#1B74BB]">
@@ -100,7 +109,8 @@ export const ProductFAQ: React.FC<ProductFAQProps> = ({ product }) => {
             </h2>
 
             <p className="text-slate-800 text-xs sm:text-sm md:text-base leading-relaxed font-medium">
-              Everything you need to know about installation, warranty, performance, compatibility, and product support.
+              Everything you need to know about installation, warranty,
+              performance, compatibility, and product support.
             </p>
 
             <div className="p-5 sm:p-6 rounded-[24px] bg-slate-50/50 border border-slate-200/50 space-y-4">
@@ -108,10 +118,15 @@ export const ProductFAQ: React.FC<ProductFAQProps> = ({ product }) => {
                 Still have questions?
               </h4>
               <p className="text-slate-900 text-xs font-semibold leading-relaxed">
-                Speak directly with our Sydney-based engineers to get a customized solar assessment for your property.
+                Speak directly with our Sydney-based engineers to get a
+                customized solar assessment for your property.
               </p>
               <button
-                onClick={() => openQuoteModal(`FAQ Support: ${product.brand} ${product.category}`)}
+                onClick={() =>
+                  openQuoteModal(
+                    `FAQ Support: ${product.brand} ${product.category}`,
+                  )
+                }
                 className="inline-flex items-center justify-center bg-[#FCC200] hover:bg-[#e08600] text-black py-3.5 px-6 rounded-xl text-xs font-black uppercase tracking-wider transition-colors duration-200 w-full text-center shadow-xs cursor-pointer border-none"
               >
                 Contact Support
@@ -130,25 +145,37 @@ export const ProductFAQ: React.FC<ProductFAQProps> = ({ product }) => {
                     onClick={() => toggleFAQ(idx)}
                     className="w-full flex items-center justify-between gap-6 py-4 text-left cursor-pointer group"
                   >
-                    <span className={`text-base md:text-lg font-black transition-colors duration-200 leading-snug ${isOpen ? "text-[#FCC200]" : "text-[#1B74BB] group-hover:text-[#FCC200]"
-                      }`}>
+                    <span
+                      className={`text-base md:text-lg font-black transition-colors duration-200 leading-snug ${
+                        isOpen
+                          ? "text-[#FCC200]"
+                          : "text-[#1B74BB] group-hover:text-[#FCC200]"
+                      }`}
+                    >
                       {faq.q}
                     </span>
 
-                    <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 ${isOpen
-                      ? "bg-[#1B74BB] text-white rotate-180"
-                      : "bg-slate-50 text-slate-900 group-hover:bg-[#1B74BB] group-hover:text-white"
-                      }`}>
-                      <ChevronDown size={14} className="transition-transform duration-300" />
+                    <div
+                      className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 ${
+                        isOpen
+                          ? "bg-[#1B74BB] text-white rotate-180"
+                          : "bg-slate-50 text-slate-900 group-hover:bg-[#1B74BB] group-hover:text-white"
+                      }`}
+                    >
+                      <ChevronDown
+                        size={14}
+                        className="transition-transform duration-300"
+                      />
                     </div>
                   </button>
 
                   {/* Expandable Panel */}
                   <div
-                    className={`grid transition-all duration-300 ease-in-out overflow-hidden ${isOpen
-                      ? "grid-rows-[1fr] opacity-100 mt-2"
-                      : "grid-rows-[0fr] opacity-0"
-                      }`}
+                    className={`grid transition-all duration-300 ease-in-out overflow-hidden ${
+                      isOpen
+                        ? "grid-rows-[1fr] opacity-100 mt-2"
+                        : "grid-rows-[0fr] opacity-0"
+                    }`}
                   >
                     <div className="overflow-hidden">
                       <div className="pb-4 pr-10 space-y-4">
@@ -167,7 +194,6 @@ export const ProductFAQ: React.FC<ProductFAQProps> = ({ product }) => {
               );
             })}
           </div>
-
         </div>
       </div>
     </section>

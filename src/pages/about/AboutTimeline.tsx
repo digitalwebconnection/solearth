@@ -86,7 +86,7 @@ export default function AboutTimeline() {
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-10">
+        <div className="text-center max-w-4xl mx-auto mb-10">
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -101,9 +101,9 @@ export default function AboutTimeline() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-3xl md:text-5xl font-serif font-bold text-[#0a1f44] mb-4"
+            className="text-3xl md:text-5xl font-serif max-w-3xl mx-auto font-bold text-[#0a1f44] mb-4"
           >
-            Our Journey So Far
+           Our Journey to Becoming a Trusted Solar Leader 
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -112,7 +112,7 @@ export default function AboutTimeline() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-sm md:text-base leading-relaxed text-gray-900"
           >
-            A look back at how we built one of Australia\'s leading solar installation networks.
+Explore the milestones that have made SolEarth one of Australia's trusted solar installation specialists. 
           </motion.p>
         </div>
 

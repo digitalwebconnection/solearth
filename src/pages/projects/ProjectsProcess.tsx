@@ -454,12 +454,11 @@ export default function ProjectsProcess() {
             <span className="text-xs font-black text-[#1B74BB] uppercase tracking-widest">Our Method</span>
             <span className="h-px w-8 bg-[#FCC200]" />
           </div>
-          <h2 className="text-3xl md:text-5xl font-serif font-bold text-slate-900 tracking-tight leading-tight">
-            Our Installation Process
+          <h2 className="text-3xl md:text-5xl font-serif font-bold max-w-3xl mx-auto text-slate-900 tracking-tight leading-tight">
+            Our Solar Panel Installation Process 
           </h2>
-          <p className="text-sm md:text-base leading-relaxed text-slate-900 max-w-3xl mx-auto">
-            From assessment to grid connection, scroll down to see how our engineering-first method stacks up.
-          </p>
+          <p className="text-sm md:text-base leading-relaxed text-slate-900 max-w-6xl mx-auto">
+          Follow our Solar Panel Installation Process, from assessment to grid connection, delivering reliable solar solutions across Australia.   </p>
         </div>
 
         {/* Scroll Stack Container */}

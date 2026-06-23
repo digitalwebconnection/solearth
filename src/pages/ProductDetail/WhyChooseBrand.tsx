@@ -22,6 +22,44 @@ export const WhyChooseBrand: React.FC<WhyChooseBrandProps> = ({
   const [activeTab, setActiveTab] = useState(0);
   const consoleRef = useRef<HTMLDivElement>(null);
 
+  const escapeRegExp = (str: string) => {
+    return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  };
+
+  const renderHighlightedTitle = (text: string) => {
+    if (text.includes('{') && text.includes('}')) {
+      const parts = text.split(/(\{.*?\})/g);
+      return parts.map((part, index) => {
+        if (part.startsWith('{') && part.endsWith('}')) {
+          return (
+            <span key={index} className="text-[#FCC200]">
+              {part.slice(1, -1)}
+            </span>
+          );
+        }
+        return part;
+      });
+    }
+
+    const brandName = product.brand.replace(/\?+$/, '').trim();
+    if (brandName && text.toLowerCase().includes(brandName.toLowerCase())) {
+      const regex = new RegExp(`(${escapeRegExp(brandName)})`, 'gi');
+      const parts = text.split(regex);
+      return parts.map((part, index) => {
+        if (part.toLowerCase() === brandName.toLowerCase()) {
+          return (
+            <span key={index} className="text-[#FCC200]">
+              {part}
+            </span>
+          );
+        }
+        return part;
+      });
+    }
+
+    return text;
+  };
+
   const icons = [
     <CheckCircle2 key="check" size={32} className="text-[#FCC200]" />,
     <ShieldCheck key="shield" size={32} className="text-[#FCC200]" />,
@@ -33,10 +71,10 @@ export const WhyChooseBrand: React.FC<WhyChooseBrandProps> = ({
   // Auto change tab every 4s
   useEffect(() => {
     const timer = setTimeout(() => {
-      setActiveTab((prev) => (prev + 1) % product.whyChoose.length);
+      setActiveTab((prev) => (prev + 1) % product.whyChooseSection.cards.length);
     }, 4000);
     return () => clearTimeout(timer);
-  }, [activeTab, product.whyChoose.length]);
+  }, [activeTab, product.whyChooseSection.cards.length]);
 
   // GSAP animation on tab change
   useGSAP(
@@ -87,18 +125,34 @@ export const WhyChooseBrand: React.FC<WhyChooseBrandProps> = ({
             Interactive Guide
           </span>
 
-          <h2 className="text-2xl sm:text-3xl md:text-5xl font-black tracking-tight text-[#1B74BB] leading-tight">
-            Why Choose
-            <span className="text-[#FCC200]">
-              {" "}
-              {product.brand}
-            </span>
-            <br />
-            Explore the Core Advantages
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-black max-w-3xl mx-auto tracking-tight text-[#1B74BB] leading-tight">
+            {product.whyChooseSection.title ? (
+              renderHighlightedTitle(product.whyChooseSection.title)
+            ) : (
+              <>
+                Why Choose
+                <span className="text-[#FCC200]">
+                  {" "}
+                  {product.brand}
+                </span>
+                <br />
+                Explore the Core Advantages
+              </>
+            )}
           </h2>
 
           <p className="text-slate-900 text-xs sm:text-sm md:text-base leading-relaxed font-medium">
-            Hover or tap on the features below to inspect the engineering, safety compliance, and performance highlights of {product.brand}.
+            {product.whyChooseSection.description ? (
+              product.whyChooseSection.description
+            ) : (
+              `Learn why ${product.brand} ${
+                product.category === "Solar Panels"
+                  ? "solar panels"
+                  : product.category === "Solar Inverters"
+                  ? "solar inverters"
+                  : "solar battery systems"
+              } are trusted across Australia for their efficiency, durability, and industry-leading performance.`
+            )}
           </p>
         </div>
       </div>
@@ -108,7 +162,7 @@ export const WhyChooseBrand: React.FC<WhyChooseBrandProps> = ({
 
         {/* LEFT SELECTOR: Tab List (col-span-5) */}
         <div className="lg:col-span-5 flex flex-col gap-3">
-          {product.whyChoose.map((point, idx) => {
+          {product.whyChooseSection.cards.map((point, idx) => {
             const isActive = activeTab === idx;
             return (
               <button
@@ -171,7 +225,7 @@ export const WhyChooseBrand: React.FC<WhyChooseBrandProps> = ({
               </span>
 
               <span className="text-xs font-bold text-white/50 uppercase tracking-widest">
-                {product.brand} Solar
+                {product.brand} 
               </span>
             </div>
 
@@ -184,11 +238,11 @@ export const WhyChooseBrand: React.FC<WhyChooseBrandProps> = ({
 
               <div className="space-y-2 sm:space-y-3">
                 <h3 className="animate-target text-xl sm:text-2xl md:text-3xl font-extrabold leading-tight text-white tracking-tight">
-                  {product.whyChoose[activeTab].title}
+                  {product.whyChooseSection.cards[activeTab]?.title}
                 </h3>
 
                 <p className="animate-target text-white/80 text-xs sm:text-sm md:text-base leading-relaxed font-medium max-w-xl text-left">
-                  {product.whyChoose[activeTab].desc}
+                  {product.whyChooseSection.cards[activeTab]?.description}
                 </p>
               </div>
             </div>

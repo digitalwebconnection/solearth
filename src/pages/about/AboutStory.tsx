@@ -87,11 +87,10 @@ export default function AboutStory() {
             className="space-y-6 text-left"
           >
             <h2 className="text-2xl sm:text-3xl md:text-5xl font-serif font-bold text-[#0a1f44] leading-tight">
-              Our Mission is to Bring Clean, Cost-Effective Energy to Every Australian Home
+              Bringing Clean, Affordable Energy to Every Australian Home 
             </h2>
             <p className="text-sm md:text-base leading-relaxed text-gray-650">
-              Founded with a vision of accelerating Australia's transition to decentralized renewable energy, SolEarth Energy has grown to become one of the country's most trusted solar installers.
-            </p>
+          SolEarth Energy provides custom solar and battery solutions, expert installation and ongoing support to help Australian homeowners reduce energy costs and transition to a cleaner, more sustainable future.   </p>
 
             {/* List of benefits */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2">

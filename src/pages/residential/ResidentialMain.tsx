@@ -32,10 +32,10 @@ export default function ResidentialMain() {
         introDesc={pageData.introDesc}
         details={pageData.details}
       />
-      <ResidentialTimeline timeline={pageData.timeline} />
+      <ResidentialTimeline timeline={pageData.timeline} header={pageData.timelineHeader} />
 
       {/* Educational Columns */}
-      <ResidentialEducational />
+      <ResidentialEducational educational={pageData.educational} />
 
       {/* Brand Partners */}
 

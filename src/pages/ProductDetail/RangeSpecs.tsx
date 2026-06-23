@@ -120,7 +120,7 @@ export const RangeSpecs: React.FC<RangeSpecsProps> = ({ product }) => {
   );
 
 return (
-  <section ref={containerRef} className="relative mx-auto max-w-6xl px-4 sm:px-6 md:px-0 py-0 md:py-20">
+  <section ref={containerRef} className="relative mx-auto max-w-6xl px-4 sm:px-6 md:px-0 py-0 md:py-10">
     {/* BACKGROUND DECORATIONS */}
     <div className="absolute top-1/4 right-0 w-[300px] h-[300px] bg-[#FCC200]/3 rounded-full blur-3xl pointer-events-none" />
     <div className="absolute bottom-1/4 left-0 w-[300px] h-[300px] bg-[#1B74BB]/3 rounded-full blur-3xl pointer-events-none" />
@@ -132,12 +132,12 @@ return (
         Technical Attributes
       </span>
       
-      <h2 className="text-2xl sm:text-3xl md:text-5xl font-black text-slate-900 leading-tight tracking-tight">
-        {product.rangeTitle}
+      <h2 className="text-2xl sm:text-3xl md:text-5xl max-w-4xl mx-auto font-black text-slate-900 leading-tight tracking-tight">
+        {product.technologySection.title}
       </h2>
 
-      <p className="text-slate-900 text-xs sm:text-sm md:text-base leading-relaxed font-medium max-w-2xl mx-auto">
-        {product.rangeIntro}
+      <p className="text-slate-900 text-xs sm:text-sm md:text-base leading-relaxed font-medium max-w-6xl mx-auto">
+        {product.technologySection.description}
       </p>
     </div>
 
@@ -151,7 +151,7 @@ return (
       <div className="timeline-line origin-top md:hidden absolute left-[14px] top-2 bottom-2 w-[2px] bg-linear-to-b from-[#1B74BB] via-[#FCC200] to-slate-200" />
 
       <div className="space-y-10 md:space-y-0 relative">
-        {product.rangeSpecs.map((spec, index) => {
+        {product.technologySection.specs.map((spec, index) => {
           const Icon = icons[index % icons.length];
           const isLeft = index % 2 === 0;
 

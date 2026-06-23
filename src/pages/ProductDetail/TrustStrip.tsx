@@ -2,8 +2,13 @@ import React, { useRef } from "react";
 import { Award, Zap, ShieldCheck, CheckCircle2, Leaf } from "lucide-react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
+import type { ProductData } from "../../data/products";
 
-export const TrustStrip: React.FC = () => {
+interface TrustStripProps {
+  product: ProductData;
+}
+
+export const TrustStrip: React.FC<TrustStripProps> = ({ product }) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   const badges = [
@@ -77,7 +82,7 @@ export const TrustStrip: React.FC = () => {
             Quality Assurance
           </p>
           <h3 className="text-xl sm:text-2xl md:text-3xl font-black text-[#1B74BB] mt-2 tracking-tight">
-            Australian Standards & Compliance Guarantee
+            {product.complianceSection.title}
           </h3>
           <div className="w-12 h-1 bg-[#FCC200] mx-auto mt-4 rounded-full" />
         </div>

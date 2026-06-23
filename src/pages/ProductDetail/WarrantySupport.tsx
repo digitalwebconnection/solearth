@@ -29,24 +29,24 @@ export const WarrantySupport: React.FC<WarrantySupportProps> = ({
       <div className="relative z-10 space-y-12 md:space-y-16">
 
         {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center space-y-4">
+        <div className="max-w-6xl mx-auto text-center space-y-4">
           <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#1B74BB]/5 rounded-full border border-[#1B74BB]/10 text-[10px] font-black uppercase tracking-wider text-[#1B74BB]">
             <Sparkles size={10} className="text-[#1B74BB]" />
             Solearth Guarantee
           </span>
 
-          <h2 className="text-2xl sm:text-3xl md:text-5xl font-black text-[#1B74BB] leading-tight tracking-tight">
-            Warranty & Direct Support
+          <h2 className="text-2xl sm:text-3xl max-w-4xl mx-auto md:text-5xl font-black text-[#1B74BB] leading-tight tracking-tight">
+            {product.warrantySection.title}
           </h2>
 
           <p className="text-slate-800 text-xs sm:text-sm md:text-base leading-relaxed font-medium">
-            Advanced manufacturer coverage and dependable local assistance designed to ensure maximum confidence and performance.
+            {product.warrantySection.dec}
           </p>
         </div>
 
         {/* Metric Callout Card Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto text-left">
-          {product.warranty.map((item, idx) => {
+          {product.warrantySection.points.map((item, idx) => {
             const { highlight, detail } = parseWarranty(item);
 
             return (
@@ -94,7 +94,7 @@ export const WarrantySupport: React.FC<WarrantySupportProps> = ({
                 EXPERT RECOMMENDATION
               </span>
               <p className="text-slate-800 text-sm sm:text-base md:text-lg italic font-bold leading-relaxed">
-                “{product.recommendation}”
+                “{product.recommendationSection.description}”
               </p>
             </div>
 

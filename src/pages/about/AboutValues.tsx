@@ -56,7 +56,7 @@ export default function AboutValues() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-3xl md:text-5xl font-serif font-bold text-[#0a1f44] mb-4"
           >
-            Our Core Principles
+            Guided by Values, Driven by Excellence
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -65,7 +65,7 @@ export default function AboutValues() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-sm md:text-base leading-relaxed text-gray-900"
           >
-            The values that drive our team to deliver top-tier solar services every day.
+            Our core values guide every project, ensuring quality, transparency and exceptional solar solutions. 
           </motion.p>
         </div>
 

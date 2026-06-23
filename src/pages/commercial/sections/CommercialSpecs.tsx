@@ -108,10 +108,10 @@ export default function CommercialSpecs({
             <span className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-[#FCC200]/12 border border-[#FCC200]/30 rounded-full text-[11px] font-black uppercase tracking-widest text-black">
               Commercial System Components
             </span>
-            <h2 className="text-xl sm:text-3xl max-w-3xl mx-auto md:text-5xl font-serif font-bold text-[#1B74BB] leading-tight">
+            <h2 className="text-xl sm:text-3xl max-w-5xl mx-auto md:text-5xl font-serif font-bold text-[#1B74BB] leading-tight">
               {introTitle}
             </h2>
-            <p className="text-xs sm:text-sm md:text-base leading-relaxed text-slate-800 max-w-5xl mx-auto font-semibold">
+            <p className="text-xs sm:text-sm md:text-base leading-relaxed text-slate-800 max-w-7xl mx-auto font-semibold">
               {introDesc}
             </p>
           </div>

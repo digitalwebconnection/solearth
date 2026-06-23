@@ -77,7 +77,7 @@ export default function CommercialHero({
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black font-serif leading-tight drop-shadow-lg text-white"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black font-serif leading-tight drop-shadow-lg text-white"
           >
             {heroTitle}
           </motion.h1>

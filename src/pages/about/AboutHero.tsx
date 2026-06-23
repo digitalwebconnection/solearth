@@ -38,7 +38,7 @@ export default function AboutHero() {
       {/* Hero Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10 md:mt-0 relative z-20 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         {/* Left Column: Mission Wording & CTAs */}
-        <div className="lg:col-span-9 text-left flex flex-col justify-center">
+        <div className="lg:col-span-12 text-left flex flex-col justify-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -55,9 +55,9 @@ export default function AboutHero() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 tracking-tight text-white"
           >
-            Empowering Australia with{' '}
+            Empowering Australia with Smart{' '}
             <span className="text-[#FCC200] relative inline-block">
-              Smart Clean Energy
+              Sustainable Energy Solutions
               <span className="absolute bottom-1 left-0 w-full h-[4px] bg-[#FCC200] rounded-full opacity-60" />
             </span>
           </motion.h1>
@@ -68,7 +68,7 @@ export default function AboutHero() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg sm:text-xl text-slate-150 mb-8 leading-relaxed max-w-5xl font-medium"
           >
-            SolEarth Energy is dedicated to providing premium-tier solar and battery storage solutions across Australia. We help households and commercial properties transition to self-reliant, sustainable solar energy.
+            SolEarth Energy delivers premium solar and battery storage solutions that help homes and businesses across Australia reduce energy costs and transition to a smarter, more sustainable future.
           </motion.p>
 
           <motion.div
@@ -93,10 +93,10 @@ export default function AboutHero() {
           </motion.div>
         </div>
 
-      
+
       </div>
 
-     
+
 
       {/* Bottom Wave to Transition to Next Section */}
       <div className="absolute -bottom-1 left-0 right-0 z-10 w-full overflow-hidden leading-none">

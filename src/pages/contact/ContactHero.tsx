@@ -53,9 +53,9 @@ export default function ContactHero() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 tracking-tight text-white"
           >
-            Let's Start Your{' '}
+            Expert Guidance for Your{' '}
             <span className="text-[#FCC200] relative inline-block">
-              Solar Journey
+              Solar Journey Australia 
               <span className="absolute bottom-1 left-0 w-full h-[4px] bg-[#FCC200] rounded-full opacity-60" />
             </span>
           </motion.h1>
@@ -66,8 +66,7 @@ export default function ContactHero() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-sm sm:text-base md:text-lg text-slate-150 mb-8 leading-relaxed max-w-4xl font-medium"
           >
-            Have questions about solar system pricing, federal rebates, switchboard capacity, or Tesla Powerwalls? Reach out to our Clean Energy Council accredited engineering experts today.
-          </motion.p>
+         Start your Solar Journey Australia with expert guidance on solar systems, battery storage, rebates, and Tesla Powerwalls for homes and businesses nationwide.   </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}

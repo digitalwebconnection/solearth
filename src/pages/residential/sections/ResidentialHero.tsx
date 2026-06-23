@@ -65,7 +65,7 @@ export default function ResidentialHero({
           </div>
 
           <div className="space-y-3 sm:space-y-4">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black font-serif leading-tight tracking-tight drop-shadow-md">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-black font-serif leading-tight tracking-tight drop-shadow-md">
               {title}
             </h1>
             <p className="text-sm sm:text-base md:text-lg text-slate-100 font-medium leading-relaxed max-w-2xl drop-shadow-sm">

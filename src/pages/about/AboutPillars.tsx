@@ -71,7 +71,7 @@ export default function AboutPillars() {
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-10 md:mb-20">
+        <div className="text-center max-w-4xl mx-auto mb-10 md:mb-20">
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -88,7 +88,7 @@ export default function AboutPillars() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-3xl md:text-5xl font-serif font-bold text-white mb-4 leading-tight"
           >
-            Our Pillars of Success
+ Trusted Standards. Proven Results. 
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -97,8 +97,7 @@ export default function AboutPillars() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-sm md:text-base leading-relaxed text-white"
           >
-            We stand apart through our commitment to quality, engineering standards, and complete transparency.
-          </motion.p>
+          Our success is built on quality workmanship, engineering excellence and complete transparency. </motion.p>
         </div>
 
         {/* Desktop View: Horizontal Expandable Flex Accordion */}

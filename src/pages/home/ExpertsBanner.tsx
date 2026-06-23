@@ -25,7 +25,7 @@ export default function ExpertsBanner() {
             </div>
 
             <BlurText
-              text="Built by Experts. Chosen by Thousands."
+              text="Built by Experts, Trusted Across Australia "
               delay={120}
               animateBy="words"
               direction="top"
@@ -34,7 +34,7 @@ export default function ExpertsBanner() {
             />
 
             <BlurText
-              text="Powering homes and businesses across NSW, QLD & SA with trusted solar, battery, EV and electrical solutions — engineered for performance, delivered with precision."
+              text="Trusted by thousands across NSW, QLD and SA, Solearth Energy delivers expert solar, battery, EV charger and electrical solutions designed to maximize energy savings and long-term performance. "
               delay={60}
               animateBy="words"
               direction="bottom"

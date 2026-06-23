@@ -23,53 +23,56 @@ export default function AboutExpertise() {
   const solutions = [
     {
       id: 1,
-      title: 'Sustainable Residential Energy',
-      shortDesc: 'Transition your household to high-performance, future-ready solar energy. Reduce electricity bills and secure energy independence.',
-      detailedDesc: 'Transition your household to high-performance, future-ready solar energy. Our residential systems are engineered specifically for the harsh Australian climate, utilizing Tier-1 solar panels, intelligent hybrid battery storage, and advanced smart-home monitoring tools. Enjoy reduced power bills from day one with complete peace of mind.',
+      title: 'Smart Residential Solar Solutions for Energy Independence',
+      shortDesc: 'Power your home with premium Residential Solar Installation in Australia designed to reduce electricity bills and maximize long-term energy savings.',
+      detailedDesc: ' Power your home with premium Residential Solar Installation in Australia designed to reduce electricity bills and maximize long-term energy savings. Our CEC-certified solar experts install high-performance solar systems tailored for Australian homes, delivering reliable renewable energy, battery storage integration, and smart energy monitoring.',
       tagline: 'Empowering Australian homes with solar independence.',
       img: '/images/solar/solar-panel-rooftop.jpg',
       tag: 'Residential Solar',
       color: 'bg-emerald-500 border-emerald-100 text-emerald-600',
       features: [
-        'Tier-1 high-efficiency panels (min. 21.8% efficiency rating)',
-        'Next-generation hybrid battery storage (Tesla & Sigenergy partners)',
-        'Smart mobile application tracking for real-time generation metrics',
-        'Comprehensive government rebate handling and CEC certified installations',
-        '25-year manufacturer performance warranty & 10-year workmanship warranty'
+        'Tier-1 Solar Panels with up to 21.8% efficiency for maximum power generation',
+        'Advanced Solar Battery Storage Solutions compatible with Tesla and Sigenergy systems',
+        'Smart Solar Monitoring App for real-time energy production and consumption tracking',
+        'Complete Government Solar Rebate Assistance and CEC-Certified Installation',
+        '25-Year Solar Panel Performance Warranty and 10-Year Workmanship Guarantee',
+        'Customized Solar Energy Solutions for Australian households'
       ]
     },
     {
       id: 2,
-      title: 'Commercial Solar Architecture',
-      shortDesc: 'Unlock massive operational savings and future-proof your business against volatile energy prices with bespoke commercial solar installations.',
-      detailedDesc: 'Unlock massive operational savings and future-proof your business against volatile energy prices. We design and construct bespoke commercial solar installations for offices, retail hubs, agricultural sites, and logistics warehouses. Our engineering team handles the entire process—including energy audits, financial feasibility modeling, and grid-connection approvals.',
+      title: 'Commercial Solar Installation Solutions',
+      shortDesc: 'Reduce operating costs and future-proof your business with industry-leading Commercial Solar Installation in Australia.',
+      detailedDesc: 'Reduce operating costs and future-proof your business with industry-leading Commercial Solar Installation in Australia. We design and install high-performance solar energy systems for offices, warehouses, manufacturing facilities, retail centres, farms, and industrial properties. Our CEC-accredited team delivers tailored commercial solar solutions that help businesses lower electricity expenses, improve sustainability, and maximize long-term ROI.',
       tagline: 'Offsetting operational costs through sustainable commercial design.',
       img: '/images/solar/solar-residential-house.jpg',
       tag: 'Commercial Solar',
       color: 'bg-amber-500 border-amber-100 text-amber-600',
       features: [
-        'Commercial grade microinverter systems for maximum panel-level performance',
-        'Advanced commercial power purchase agreements (PPA) and financing options',
-        'Zero-export control, net metering, and complex grid integration engineering',
-        'Detailed ROI analyses, commercial tax depreciation projections, and solar savings reports',
-        'Full post-installation preventative maintenance and system health monitoring'
+        'High-efficiency commercial solar panels and advanced inverter technology for maximum energy output',
+        'Commercial solar battery storage solutions to reduce peak demand charges and increase energy independence',
+        'Flexible solar financing, Power Purchase Agreements (PPA), and tailored business energy solutions',
+        'Grid integration, net metering, and export management for optimized energy performance',
+        'Detailed solar ROI analysis, energy savings forecasts, and business case reporting',
+        'Ongoing system monitoring, preventive maintenance, and performance optimization'
       ]
     },
     {
       id: 3,
-      title: 'Industrial Renewable Infrastructure',
+      title: 'Industrial Solar Engineering & Construction',
       shortDesc: 'Powering heavy machinery, factories, and logistics fleets with utility-scale solar arrays. Complete EPC project management.',
-      detailedDesc: 'Powering heavy machinery, factories, and logistics fleets with utility-scale solar arrays. Our industrial EPC team delivers robust high-voltage projects designed to meet massive energy demands. We integrate cutting-edge solar technologies with commercial battery systems to stabilize voltage, cut peak demand charges, and achieve corporate ESG sustainability targets.',
+      detailedDesc: 'Power large-scale industrial operations with advanced Industrial Solar EPC Solutions in Australia. Our turnkey Engineering, Procurement, and Construction (EPC) services help factories, manufacturing plants, warehouses, mining facilities, and logistics hubs reduce energy costs, improve operational efficiency, and achieve sustainability goals. We deliver end-to-end industrial solar projects designed for maximum performance, reliability, and long-term ROI.',
       tagline: 'Mega-watt scale solar engineering for heavy industrial assets.',
       img: '/images/solar/solar-ground-mounted.jpg',
       tag: 'Industrial EPC',
       color: 'bg-[#2AA9E4] border-sky-100 text-sky-600',
       features: [
-        'Mega-watt scale engineering with customized heavy structural mounting arrays',
-        'High-voltage substation and commercial containerized battery integration',
-        'Peak-shaving algorithms to lower high-demand grid utility charges',
-        'Full turnkey EPC project management, design modeling, and civil works',
-        'SCADA remote system monitoring and ongoing preventative testing'
+        'Utility-scale solar engineering and custom industrial system design solutions',
+        'High-voltage infrastructure, substation integration, and grid connectivity expertise',
+        'Commercial Battery Energy Storage Systems (BESS) for peak demand reduction and energy resilience',
+        'Turnkey EPC project management including procurement, construction, and commissioning',
+        'Advanced energy monitoring, SCADA integration, and performance optimization services',
+        'Comprehensive feasibility studies, ROI analysis, and energy savings forecasting'
       ]
     }
   ]
@@ -81,19 +84,22 @@ export default function AboutExpertise() {
       <div className="absolute bottom-1/4 left-0 w-160 h-160 rounded-full bg-[#FCC200]/3 blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center max-w-5xl mx-auto mb-10">
+        <div className="flex justify-center mb-4">
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="inline-block text-[#2AA9E4] text-xs font-bold tracking-widest uppercase px-5 py-2 bg-[#2AA9E4]/10 border border-[#2AA9E4]/20 rounded-full mb-4"
+            className="inline-block text-[#2AA9E4] text-xs font-bold tracking-widest uppercase px-5 py-2 bg-[#2AA9E4]/10 border border-[#2AA9E4]/20 rounded-full"
           >
             Solar Expertise
           </motion.div>
+        </div>
+
+        <div className="text-center max-w-3xl mx-auto mb-10">
 
           <SplitText
-            text="Complete Solar Solutions"
+            text="End-to-End Solar Solutions Built for Performance "
             tag="h2"
             className="text-2xl sm:text-3xl md:text-5xl font-serif font-bold text-[#0a1f44] mb-4 tracking-tight leading-tight"
             delay={50}
@@ -108,7 +114,7 @@ export default function AboutExpertise() {
           />
 
           <SplitText
-            text="Discover how we engineer, deploy, and maintain leading clean energy systems across Australia."
+            text="Expertly engineered solar solutions delivering reliable clean energy across Australia. "
             tag="p"
             className="text-xs sm:text-sm md:text-base leading-relaxed text-gray-950 max-w-2xl mx-auto"
             delay={25}
@@ -132,7 +138,7 @@ export default function AboutExpertise() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
               key={solution.id}
-              className="bg-white border-2 border-slate-200 rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-2 hover:border-[#2AA9E4]/30 transition-all duration-500 flex flex-col justify-between overflow-hidden group"
+              className="bg-white border-2 border-slate-300 rounded-lg shadow-lg  shadow-black   hover:shadow-xl hover:-translate-y-2 hover:border-[#2AA9E4]/30 transition-all duration-500 flex flex-col justify-between overflow-hidden group"
             >
               {/* Image Block */}
               <div className="relative h-48 sm:h-56 lg:h-64 overflow-hidden shrink-0">
@@ -153,10 +159,10 @@ export default function AboutExpertise() {
               {/* Text Block */}
               <div className="p-5 sm:p-8 flex-1 flex flex-col justify-between">
                 <div>
-                  <h3 className="text-xl sm:text-2xl font-extrabold text-[#0a1f44] mb-3 group-hover:text-[#2AA9E4] transition-colors duration-300">
+                  <h3 className="text-xl sm:text-2xl font-extrabold text-[#0a1f44] mb-3 group-hover:text-[#2AA9E4] transition-colors duration-300 lg:min-h-[90px] flex items-start">
                     {solution.title}
                   </h3>
-                  <p className="text-gray-500 text-[13px] sm:text-[14px] leading-relaxed mb-6">
+                  <p className="text-gray-800 text-[13px] sm:text-[14px] leading-relaxed mb-6 lg:min-h-[115px]">
                     {solution.shortDesc}
                   </p>
                 </div>

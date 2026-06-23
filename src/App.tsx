@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
+import { HelmetProvider } from 'react-helmet-async'
 import Lenis from 'lenis'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
@@ -74,21 +75,15 @@ function App() {
   // showContent controls whether the site content is mounted (always true after first render).
   // This way the site content loads silently underneath the fixed-position preloader,
   // eliminating the white flash that occurred when content mounted AFTER the preloader unmounted.
-  const [showPreloader, setShowPreloader] = useState(() => {
-    const hasVisited = localStorage.getItem('has_visited_solearth')
-    return !hasVisited
-  })
-  const [showContent, setShowContent] = useState(() => {
-    const hasVisited = localStorage.getItem('has_visited_solearth')
-    return !!hasVisited
-  })
+  // Always show the preloader when the application first loads or is refreshed
+  const [showPreloader, setShowPreloader] = useState(true)
+  const [showContent, setShowContent] = useState(false)
 
   const handlePreloaderComplete = () => {
     // Reveal the site content the moment the preloader starts fading
     setShowContent(true)
     // Remove the preloader from the DOM after its CSS fade-out finishes (700ms transition + buffer)
     setTimeout(() => setShowPreloader(false), 800)
-    localStorage.setItem('has_visited_solearth', 'true')
   }
 
   useEffect(() => {
@@ -116,25 +111,27 @@ function App() {
   }, [])
 
   return (
-    <BrowserRouter>
-      <ScrollToTop />
-      <ToastProvider>
-        <QuoteModalProvider>
-          {/* App content renders underneath the preloader from the very start */}
-          {showContent && (
-            <>
-              <AppContent />
-              <CookieConsent />
-              <WhatsAppChat />
-            </>
-          )}
-          {/* Preloader is fixed-position, covering all content until its fade-out ends */}
-          {showPreloader && (
-            <Preloader onComplete={handlePreloaderComplete} />
-          )}
-        </QuoteModalProvider>
-      </ToastProvider>
-    </BrowserRouter>
+    <HelmetProvider>
+      <BrowserRouter>
+        <ScrollToTop />
+        <ToastProvider>
+          <QuoteModalProvider>
+            {/* App content renders underneath the preloader from the very start */}
+            {showContent && (
+              <>
+                <AppContent />
+                <CookieConsent />
+                <WhatsAppChat />
+              </>
+            )}
+            {/* Preloader is fixed-position, covering all content until its fade-out ends */}
+            {showPreloader && (
+              <Preloader onComplete={handlePreloaderComplete} />
+            )}
+          </QuoteModalProvider>
+        </ToastProvider>
+      </BrowserRouter>
+    </HelmetProvider>
   )
 }
 

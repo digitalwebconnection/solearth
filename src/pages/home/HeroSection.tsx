@@ -4,18 +4,18 @@ import { useQuoteModal } from '../../components/QuoteModal'
 const slides = [
   {
     img: '/images/solar/solar-panel-rooftop.jpg',
-    headline: 'Australia\'s #1 Solar\nInstallation Experts',
-    sub: 'Switch to clean energy today and save up to $2,500 on your power bills annually.',
+    headline: 'Solar Installation in Australia for a Brighter Future ',
+    sub: 'Save up to $2,500 a year with expert solar installation in Australia from Australia\'s trusted solar specialists.',
   },
   {
     img: '/images/solar/solar-workers-roof.jpg',
-    headline: 'Premium Solar Panels\nAt Unbeatable Prices',
-    sub: 'High-efficiency solar systems starting from just $3,499. Government rebates available.',
+    headline: 'Premium Solar Panels & Solar Power Systems in Australia',
+    sub: 'High-efficiency solar solutions designed to reduce electricity bills, maximize energy savings, and increase energy independence.',
   },
   {
     img: '/images/solar/solar-sunset-array.jpg',
-    headline: 'Power Your Future\nWith Clean Energy',
-    sub: 'Join 12,000+ Australian homeowners already saving with SolEarth Energy.',
+    headline: 'Australia\'s Trusted Solar Power Solutions',
+    sub: 'Premium solar panels, battery storage, and expert installation for long-term energy savings.',
   },
 ]
 
@@ -60,7 +60,7 @@ export default function HeroSection() {
       {/* Content */}
       <div className="relative z-10 h-full flex items-center my-25 md:my-0 ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-0  w-full">
-          <div className="max-w-2xl">
+          <div className="max-w-4xl">
             {/* Badge */}
             <div className="inline-flex items-center gap-2 bg-[#FCC200]/20 border border-[#FCC200]/40 text-[#FCC200] text-xs font-bold tracking-widest uppercase px-4 py-2 rounded-full mb-2">
               <span className="w-2 h-2 bg-[#FCC200] rounded-full animate-pulse" />
@@ -69,7 +69,7 @@ export default function HeroSection() {
 
             {/* Headline */}
             <h1
-              className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6 transition-all duration-500 ${animating ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'
+              className={`text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-extrabold text-white leading-tight mb-6 transition-all duration-500 ${animating ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'
                 }`}
               style={{ whiteSpace: 'pre-line' }}
             >

@@ -67,9 +67,7 @@ export default function ContactFormSection({ selectedSubject, setSelectedSubject
               <h2 className="text-2xl sm:text-3xl md:text-5xl font-black text-slate-900 tracking-tight leading-tight mb-4">
                 How Can We Help You Today?
               </h2>
-              <p className="text-xs sm:text-sm md:text-base leading-relaxed text-slate-800 font-semibold">
-                Reach out to schedule a site inspection, get a free solar consultation, request support, or ask about solar battery eligibility. Our engineers are ready to help.
-              </p>
+          
             </div>
 
             {/* Info Cards Grid */}

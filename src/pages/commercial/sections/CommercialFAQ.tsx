@@ -24,14 +24,14 @@ export default function CommercialFAQ({ trustSection }: CommercialFAQProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 space-y-10">
 
         {/* ── Section Title ── */}
-        <div className="text-center max-w-2xl mx-auto space-y-3">
+        <div className="text-center  space-y-3">
           <span className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-[#1B74BB]/8 border border-[#1B74BB]/15 rounded-full text-[11px] font-black uppercase tracking-widest text-[#1B74BB]">
             {trustSection.tagline}
           </span>
-          <h2 className="text-2xl sm:text-3xl md:text-5xl font-serif font-bold text-[#1B74BB] leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl max-w-3xl mx-auto font-serif font-bold text-[#1B74BB] leading-tight">
             {trustSection.title}
           </h2>
-          <p className="text-xs sm:text-sm md:text-base leading-relaxed text-slate-550 font-semibold">
+          <p className="text-xs sm:text-sm md:text-base max-w-6xl mx-auto leading-relaxed text-slate-550 font-semibold">
             {trustSection.desc}
           </p>
         </div>
@@ -43,18 +43,21 @@ export default function CommercialFAQ({ trustSection }: CommercialFAQProps) {
             return (
               <div
                 key={idx}
-                className="space-y-4 p-5 sm:p-6 bg-slate-50 rounded-2xl shadow-xl shadow-slate-400 border border-slate-240 hover:border-[#1B74BB]/30 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
+                className="p-5 sm:p-6 bg-slate-50 rounded-2xl shadow-xl shadow-slate-400/30 border border-slate-200 hover:border-[#1B74BB]/30 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
               >
-                <div className="w-10 h-10 rounded-xl bg-[#1B74BB]/8 flex items-center justify-center">
-                  {Icon && <Icon className="w-5 h-5 text-[#FCC200]" />}
+                <div className="space-y-4">
+                  <div className="w-10 h-10 rounded-xl bg-[#1B74BB]/8 flex items-center justify-center">
+                    {Icon && <Icon className="w-5 h-5 text-[#FCC200]" />}
+                  </div>
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-serif font-semibold text-[#1B74BB] min-h-[48px] sm:min-h-[56px] lg:min-h-[64px] flex items-center">
+                    {card.title}
+                  </h3>
+                  <p className="text-xs sm:text-sm md:text-base leading-relaxed text-slate-800 font-semibold lg:min-h-[120px]">
+                    {card.desc}
+                  </p>
                 </div>
-                <h3 className="text-lg sm:text-xl md:text-2xl font-serif font-semibold text-[#1B74BB]">
-                  {card.title}
-                </h3>
-                <p className="text-xs sm:text-sm md:text-base leading-relaxed text-slate-800 font-semibold">
-                  {card.desc}
-                </p>
-                <ul className="space-y-2 pt-2 text-xs font-semibold text-slate-700">
+                
+                <ul className="space-y-2 pt-4 mt-4 border-t border-slate-400/50 text-xs font-semibold text-slate-700 shrink-0">
                   {card.points.map((pt, pIdx) => (
                     <li key={pIdx} className="flex items-center gap-2">
                       <CheckCircle2 className="w-3.5 h-3.5 text-[#1B74BB] shrink-0" />

@@ -1,15 +1,16 @@
 import { useState, useEffect } from 'react'
-import type { TimelineStep } from '../../../data/residentialData'
+import type { TimelineStep, TimelineHeader } from '../../../data/residentialData'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FileSearch, FileCheck, CheckCircle2, ClipboardCheck, ArrowRight, Clock, ShieldAlert } from 'lucide-react'
 
 interface ResidentialTimelineProps {
   timeline: TimelineStep[]
+  header: TimelineHeader
 }
 
 type StepNum = '01' | '02' | '03' | '04'
 
-export default function ResidentialTimeline({ timeline }: ResidentialTimelineProps) {
+export default function ResidentialTimeline({ timeline, header }: ResidentialTimelineProps) {
   const [activeStep, setActiveStep] = useState<StepNum>('01')
 
   // Auto-advance timeline steps every 6 seconds
@@ -53,15 +54,15 @@ export default function ResidentialTimeline({ timeline }: ResidentialTimelinePro
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
 
         {/* Section Header */}
-        <div className="max-w-6xl mx-auto text-center mb-10 md:mb-16 space-y-3 sm:space-y-4">
+        <div className="max-w-7xl mx-auto text-center mb-10 md:mb-16 space-y-3 sm:space-y-4">
           <span className="text-[10px] sm:text-[11px] text-[#FCC200] font-black uppercase tracking-widest block">
-            Installation Journey
+            {header.badge}
           </span>
-          <h2 className="text-2xl sm:text-3xl md:text-5xl font-serif font-bold text-[#1B74BB] leading-tight">
-            How We Get You Solar Ready
+          <h2 className="text-2xl sm:text-3xl md:text-5xl max-w-4xl mx-auto font-serif font-bold text-[#1B74BB] leading-tight">
+            {header.title}
           </h2>
-          <p className="text-xs sm:text-sm md:text-base leading-relaxed text-slate-900 font-semibold max-w-2xl mx-auto">
-            We handle all engineering, grid coordination, rebate documentation, and installation. Follow our seamless 4-step deployment process.
+          <p className="text-xs sm:text-sm md:text-base leading-relaxed text-slate-900 font-semibold max-w-6xl mx-auto">
+            {header.desc}
           </p>
         </div>
 

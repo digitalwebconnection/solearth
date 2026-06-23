@@ -35,8 +35,8 @@ export const DatasheetSpecs: React.FC<DatasheetSpecsProps> = ({ product }) => {
     { label: "Cooling Type", value: "Natural Passive Cooling" },
   ];
 
-  const specs = product.datasheetSpecs && product.datasheetSpecs.length > 0
-    ? product.datasheetSpecs
+  const specs = product.productSection.datasheetSpecs && product.productSection.datasheetSpecs.length > 0
+    ? product.productSection.datasheetSpecs
     : fallbackSpecs;
 
   const fallbackModels = [
@@ -44,11 +44,11 @@ export const DatasheetSpecs: React.FC<DatasheetSpecsProps> = ({ product }) => {
     { name: `${product.brand} Premium Option 2`, watts: "6kW / 440W", efficiency: "22.3%", type: "Premium" },
   ];
 
-  const modelsList = product.models && product.models.length > 0
-    ? product.models
+  const modelsList = product.productSection.models && product.productSection.models.length > 0
+    ? product.productSection.models
     : fallbackModels;
 
-  const hasPdfs = product.pdfUrls && product.pdfUrls.length > 0;
+  const hasPdfs = product.productSection.pdfUrls && product.productSection.pdfUrls.length > 0;
 
   return (
     <div className="bg-white mx-auto max-w-7xl py-0 md:py-20 px-4 sm:px-6 md:px-0" id="datasheet-section">
@@ -60,12 +60,12 @@ export const DatasheetSpecs: React.FC<DatasheetSpecsProps> = ({ product }) => {
           Specifications Hub
         </span>
 
-        <h3 className="text-2xl sm:text-3xl md:text-5xl font-black text-[#1B74BB] leading-tight tracking-tight">
-          Technical Datasheet &  <br />Specifications
+        <h3 className="text-2xl sm:text-3xl md:text-5xl max-w-3xl mx-auto font-black text-[#1B74BB] leading-tight tracking-tight">
+          {product.datasheetSection?.title || "Technical Datasheet & Specifications"}
         </h3>
 
         <p className="text-slate-900 text-xs sm:text-sm md:text-base leading-relaxed font-medium max-w-7xl mx-auto">
-          Explore complete parameters, download PDF documentation guides, or inspect variant system outputs.
+          {product.datasheetSection?.description || "Explore complete parameters, download PDF documentation guides, or inspect variant system outputs."}
         </p>
       </div>
 
@@ -180,7 +180,7 @@ export const DatasheetSpecs: React.FC<DatasheetSpecsProps> = ({ product }) => {
 
               {/* PDF Document List */}
               <div className="flex flex-col gap-4">
-                {product.pdfUrls?.map((item, idx) => (
+                {product.productSection.pdfUrls?.map((item, idx) => (
                   <div
                     key={idx}
                     className="flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 sm:p-6 bg-white border border-slate-200 shadow-xl shadow-slate-100 hover:border-[#1B74BB]/20 rounded-2xl transition duration-300 gap-4 group "

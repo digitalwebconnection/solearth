@@ -30,8 +30,8 @@ export default function Products() {
       label: 'Solar Panels',
       icon: Sun,
       accent: '#f5a623',
-      title: 'N-Type TOPCon High-Efficiency Solar Panels',
-      subtitle: 'Generate more power per square metre with next-generation TOPCon cells — engineered for Australian rooftops with intense sun exposure and limited space.',
+      title: 'High-Efficiency N-Type TOPCon Solar Panels for Maximum Energy Output ',
+      subtitle: 'Generate more power with advanced N-Type TOPCon solar panels engineered for maximum efficiency and long-term savings. ',
       image: '/images/solar/commercial-solar-roof.jpg',
       specs: [
         { label: 'Cell Technology', value: 'N-Type TOPCon' },
@@ -60,8 +60,8 @@ export default function Products() {
       label: 'Hybrid Inverters',
       icon: Zap,
       accent: '#38bdf8',
-      title: 'Hybrid Solar Inverters — Single & Three Phase',
-      subtitle: 'The intelligent brain of your solar system. Manages solar generation, battery charging, grid export and home consumption seamlessly in one compact unit.',
+      title: 'Smart Hybrid Solar Inverters for Performance & Energy Savings ',
+      subtitle: 'Intelligent hybrid solar inverters designed to optimize solar generation, battery storage and grid usage for maximum efficiency and long-term energy savings.',
       image: '/images/solar/solar-commercial-farm.jpg',
       specs: [
         { label: 'Inverter Type', value: 'Hybrid (Solar + Battery + Grid)' },
@@ -89,8 +89,8 @@ export default function Products() {
       label: 'Solar Batteries',
       icon: Battery,
       accent: '#4ade80',
-      title: 'LFP Home Battery Storage — Power Day & Night',
-      subtitle: 'Store excess solar energy during daylight and power your entire home through the night. Cobalt-free LFP chemistry for safe, long-lasting residential backup.',
+      title: 'Smart Home Battery Storage for Reliable Day & Night Power ',
+      subtitle: 'LFP home battery systems store excess solar energy, reduce grid dependence and provide reliable backup power for homes across Australia. ',
       image: '/images/solar/solar-sunset-array.jpg',
       specs: [
         { label: 'Battery Chemistry', value: 'LiFePO4 — Cobalt Free' },
@@ -118,8 +118,8 @@ export default function Products() {
       label: 'EV Chargers',
       icon: Car,
       accent: '#a78bfa',
-      title: 'Smart Solar-Integrated EV Charging Stations',
-      subtitle: 'Charge your EV using 100% free rooftop solar energy. Our smart chargers automatically prioritise surplus solar — so your car charges before energy goes to the grid.',
+      title: 'Smart Solar-Powered EV Charging Built for Efficiency & Long-Term Savings ',
+      subtitle: 'Smart solar-integrated EV charging stations help homes and businesses charge electric vehicles efficiently using clean energy while reducing electricity costs. ',
       image: '/images/solar/battery-storage-unit.jpg',
       specs: [
         { label: 'Charging Power', value: '7.4 kW – 22 kW AC' },
@@ -204,7 +204,7 @@ export default function Products() {
           <h2 className="text-3xl md:text-5xl font-extrabold text-[#0a1f44] leading-tight mb-4">
             Engineered For{' '}
             <span style={{ color: '#f5a623' }}>Performance</span>{' '}
-            &amp; Durability
+            &amp;   Built to Last 
           </h2>
 
         </div>

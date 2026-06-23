@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { productsData } from "../../data/products";
 import { ProductHero } from "./ProductHero";
 import { TrustStrip } from "./TrustStrip";
@@ -11,7 +12,7 @@ import { DatasheetSpecs } from "./DatasheetSpecs";
 import { InstallationBestFor } from "./InstallationBestFor";
 import { WhyAussieDifference } from "./WhyAussieDifference";
 import { WarrantySupport } from "./WarrantySupport";
-import { ProductFAQ } from "./ProductFAQ";
+import { ProductFAQ, getProductFAQs } from "./ProductFAQ";
 
 const ProductDetailMain: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -43,12 +44,38 @@ const ProductDetailMain: React.FC = () => {
     );
   }
 
+  const faqs = getProductFAQs(product);
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.a,
+      },
+    })),
+  };
+
   return (
     <>
+      <Helmet>
+        <title>{product.seo.metaTitle}</title>
+        <meta name="description" content={product.seo.metaDescription} />
+        <meta
+          name="keywords"
+          content={[
+            product.seo.focusKeyword,
+            ...product.seo.secondaryKeywords,
+          ].join(", ")}
+        />
+        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
+      </Helmet>
       <ProductHero product={product} />
-      <TrustStrip />
+      <TrustStrip product={product} />
 
-      <div className="space-y-16 py-12">
+      <div className="space-y-6 py-12">
         <ProductGalleryAndStats product={product} />
 
         <WhyChooseBrand product={product} />
@@ -61,12 +88,11 @@ const ProductDetailMain: React.FC = () => {
 
         <InstallationBestFor product={product} />
 
-        <WhyAussieDifference />
+        <WhyAussieDifference product={product} />
 
         <WarrantySupport product={product} />
 
         <ProductFAQ product={product} />
-
       </div>
     </>
   );

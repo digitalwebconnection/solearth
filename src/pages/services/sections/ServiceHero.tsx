@@ -48,19 +48,19 @@ export default function ServiceHero({ title, heroSubtitle, heroImage }: ServiceH
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-bold text-slate-200 border-t border-white/5 pt-6">
             <div className="flex items-start gap-2.5">
               <CheckCircle2 className="w-4.5 h-4.5 text-[#FCC200] shrink-0 mt-0.5" />
-              <span>CEC compliant designs & approvals</span>
+              <span> CEC Accredited Solar Installers & Approved Designs</span>
             </div>
             <div className="flex items-start gap-2.5">
               <CheckCircle2 className="w-4.5 h-4.5 text-[#FCC200] shrink-0 mt-0.5" />
-              <span>Safety & regulatory certificates filed</span>
+              <span>Australian Standards Compliant Installation</span>
             </div>
             <div className="flex items-start gap-2.5">
               <CheckCircle2 className="w-4.5 h-4.5 text-[#FCC200] shrink-0 mt-0.5" />
-              <span>High wind-rated framing rails</span>
+              <span>High Wind-Rated Mounting & Safety Systems</span>
             </div>
             <div className="flex items-start gap-2.5">
               <CheckCircle2 className="w-4.5 h-4.5 text-[#FCC200] shrink-0 mt-0.5" />
-              <span>Lifespan & daily yield optimization</span>
+              <span>Performance-Focused System Design & Energy Yield Optimization</span>
             </div>
           </div>
 

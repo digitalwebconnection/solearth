@@ -11,7 +11,7 @@ export const ProductGalleryAndStats: React.FC<ProductGalleryAndStatsProps> = ({
   product,
 }) => {
   const { openQuoteModal } = useQuoteModal();
-  const images = product.productImages || [];
+  const images = product.productSection.productImages || [];
   const [activeImage, setActiveImage] = useState(images[0] || "");
 
   useEffect(() => {
@@ -20,7 +20,7 @@ export const ProductGalleryAndStats: React.FC<ProductGalleryAndStatsProps> = ({
     } else {
       setActiveImage("");
     }
-  }, [product.productImages]);
+  }, [product.productSection.productImages]);
 
   const leftOverviewStats = (() => {
     const category = product.category || "";
@@ -72,8 +72,8 @@ export const ProductGalleryAndStats: React.FC<ProductGalleryAndStatsProps> = ({
     }
   })();
 
-  const datasheetLink = product.pdfUrls?.[0]?.url || "https://www.cleanenergycouncil.org.au/";
-  const datasheetLabel = product.pdfUrls?.[0]?.label || "Datasheet PDF";
+  const datasheetLink = product.productSection.pdfUrls?.[0]?.url || "https://www.cleanenergycouncil.org.au/";
+  const datasheetLabel = product.productSection.pdfUrls?.[0]?.label || "Datasheet PDF";
 
   return (
     <div className="bg-white mx-auto max-w-7xl px-4 sm:px-6 md:px-0 py-10">
@@ -171,10 +171,10 @@ export const ProductGalleryAndStats: React.FC<ProductGalleryAndStatsProps> = ({
           <div className="space-y-4">
             {/* Brand logo / header */}
             <div className="flex items-center gap-3">
-              {product.logoUrl ? (
+              {product.productSection.logoUrl ? (
                 <div className="h-25 bg-white rounded-xl flex items-center justify-center ">
                   <img
-                    src={product.logoUrl}
+                    src={product.productSection.logoUrl}
                     alt={`${product.brand} logo`}
                     className="max-h-full max-w-full object-contain"
                   />
@@ -183,10 +183,10 @@ export const ProductGalleryAndStats: React.FC<ProductGalleryAndStatsProps> = ({
                 <div className="flex items-center gap-1.5">
                   <div
                     className="w-2 h-4 rounded-xs"
-                    style={{ backgroundColor: product.brandColor }}
+                    style={{ backgroundColor: product.productSection.brandColor }}
                   />
                   <span className="text-base font-black tracking-tighter text-[#1B74BB]">
-                    {product.logoText}
+                    {product.productSection.logoText}
                   </span>
                 </div>
               )}
@@ -202,16 +202,16 @@ export const ProductGalleryAndStats: React.FC<ProductGalleryAndStatsProps> = ({
             {/* Title & subtitle */}
             <div className="space-y-1">
               <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight leading-tight">
-                {product.tagline}
+                {product.heroSection.tagline}
               </h2>
               <p className="text-[10px] font-black uppercase tracking-widest text-[#FCC200]">
-                {product.subtitle}
+                {product.heroSection.subtitle}
               </p>
             </div>
 
             {/* Intro text */}
             <div className="space-y-3 text-slate-800 text-xs md:text-sm leading-relaxed font-medium">
-              {product.intro.split('\n\n').map((paragraph, index) => (
+              {product.heroSection.intro.split('\n\n').map((paragraph, index) => (
                 <p key={index}>
                   {paragraph.trim()}
                 </p>

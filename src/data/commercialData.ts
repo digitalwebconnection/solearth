@@ -167,11 +167,11 @@ export const COMMERCIAL_STATS: CommercialStat[] = [
 export const COMMERCIAL_PAGES_DATA: Record<string, CommercialData> = {
   "30kw": {
     title: "30kW Commercial Solar",
-    tagline: "Perfect capacity for small businesses, offices, and local retail outlets",
+    tagline: "A reliable commercial solar solution designed to lower electricity bills and maximize long-term business savings.",
     savings: "Save up to $8,500 / year*",
-    heroTitle: "Premium 30kW Commercial Systems",
-    introTitle: "Optimize Your Daytime Operational Expenses",
-    introDesc: "Small offices, warehouses, and medical clinics run primarily during daylight hours. A 30kW commercial system directly offsets expensive peak corporate tariffs, yielding immediate payback and protection against energy cost volatility.",
+    heroTitle: "30kW Solar Panel System for Commercial Properties",
+    introTitle: "Reduce Business Electricity Costs with Commercial Solar Installation Australia",
+    introDesc: "A Commercial Solar Installation Australia solution helps businesses lower operating expenses, reduce dependence on rising electricity prices, and maximize energy savings during peak daytime operations. Ideal for warehouses, offices, manufacturing facilities, and retail businesses, commercial solar systems deliver long-term returns and improved energy efficiency. For larger energy requirements and future business expansion, consider a 50kW Solar System to generate even greater solar power and cost savings.",
     specsTabConfig: [
       {
         key: 'panels',
@@ -253,28 +253,37 @@ export const COMMERCIAL_PAGES_DATA: Record<string, CommercialData> = {
     ],
     trustSection: {
       tagline: "Trust & Quality",
-      title: "Compliance, Design & Protection",
-      desc: "We provide full system accountability, CEC-accredited design documentation, and structural safety guarantees for 30kW systems.",
-      cards: [
-        {
-          iconKey: "Award",
-          title: "Load Profile Sizing",
-          desc: "We model your 12-month interval data to size the commercial array precisely, ensuring maximum daytime offset without over-capitalising on grid exports.",
-          points: ["15-minute interval logging", "Solar generation overlays"]
-        },
-        {
-          iconKey: "ShieldCheck",
-          title: "Standards & Safety",
-          desc: "Full AS/NZS 1170.2 wind loading certificates, CEC compliance audits, dynamic export controls, and secondary grid protection relays are standard.",
-          points: ["Region C cyclone ratings", "AS 3000 electrical compliance"]
-        },
-        {
-          iconKey: "HeartHandshake",
-          title: "Active Management",
-          desc: "Live plant monitoring tracks string performance and issues automated alerts. Full system performance warranties protect your return on investment.",
-          points: ["24/7 telemetry monitoring", "Underperformance warnings"]
-        }
-      ],
+      title: "Commercial Solar System Design, Compliance & Performance",
+      desc: "Every commercial solar installation is engineered for maximum energy savings, regulatory compliance, and long-term system performance. Our expert team ensures your solar investment delivers reliable energy generation, reduced operating costs, and complete peace of mind.",
+    cards: [
+  {
+    iconKey: "Award",
+    title: "Energy Usage Analysis",
+    desc: "We assess your business electricity consumption patterns to design a commercial solar system that maximizes solar energy production, reduces electricity costs, and improves return on investment.",
+    points: [
+      "Detailed Energy Consumption Analysis",
+      "Optimized Solar System Sizing"
+    ]
+  },
+  {
+    iconKey: "ShieldCheck",
+    title: "Compliance & Safety Standards",
+    desc: "Our Commercial Solar Installation Australia solutions are designed to meet Australian electrical, structural, and safety regulations, ensuring reliable operation and long-term asset protection.",
+    points: [
+      "Australian Standards Compliant",
+      "Certified Electrical & Structural Safety"
+    ]
+  },
+  {
+    iconKey: "HeartHandshake",
+    title: "Smart Performance Monitoring",
+    desc: "Monitor your commercial solar power system in real time with advanced performance tracking, energy reporting, and automated alerts to maximize system efficiency and energy savings.",
+    points: [
+      "24/7 Solar System Monitoring",
+      "Automated Performance Alerts"
+    ]
+  }
+],
       videoSubtitle: "Australia's Most Trusted Solar Retailer",
       videoTitle: "Delivering High-Efficiency Commercial Power",
       videoQuote: "Our corporate division has designed and commissioned over 5MW of commercial solar systems across NSW and QLD. We coordinate closely with facilities managers and network distributors to deliver zero-downtime integration.",
@@ -286,37 +295,62 @@ export const COMMERCIAL_PAGES_DATA: Record<string, CommercialData> = {
     details: {
       panels: {
         title: "Tier 1 Solar Panels",
-        spec: "68 x High Output Modules",
-        desc: "Commercial-grade glass-glass modules built to withstand harsh coastal and inland wind ratings. Ideal for small to medium office rooftops with limited installation footprint.",
-        points: ["25-Year Warranty", "21.9% Module Efficiency", "Optimized temperature coefficient"]
+        spec: "68 × High-Efficiency Commercial Solar Panels",
+        desc: "Premium Tier 1 solar panels engineered for maximum energy generation, long-term reliability, and superior performance in Australian conditions. Designed for commercial solar installations, these high-output modules help businesses reduce electricity costs, improve energy efficiency, and maximize rooftop solar production.",
+        points: [
+          "High-Efficiency Commercial Solar Panels",
+          "Excellent Low-Light Energy Performance",
+          "Wind & Weather Resistant Design",
+          "Ideal for Offices, Warehouses & Commercial Buildings"
+        ]
       },
-      inverter: {
-        title: "Commercial Inverter",
-        spec: "25kW Three-Phase Core",
-        desc: "Sleek commercial-grade multi-MPPT inverter featuring integrated surge protection devices (SPDs). Perfectly sized for single-phase small business grid connections.",
-        points: ["10-Year Local Warranty", "98.5% Conversion Efficiency", "Active heat management"]
-      },
-      battery: {
-        title: "Commercial Battery Ready",
-        spec: "Expandable Smart Grid",
-        desc: "Fully compliant with commercial battery setups for overnight security lighting and server backups. Pre-wired battery connection points reduce future upgrade costs.",
-        points: ["Grid peak-shaving ready", "Scalable commercial design", "Emergency power options"]
-      },
-      mounting: {
-        title: "Commercial Mounts",
-        spec: "Penetration-Free Racking",
-        desc: "Premium tilt and klip-lok mounts engineered for flat roof and corrugated iron factory structures. Fully compatible with existing roof membranes — no penetrations required.",
-        points: ["10-Year Structural Warranty", "Wind-tunnel tested design", "Corrosion resistant anodized alloy"]
-      }
+   inverter: {
+  title: "Commercial Inverter",
+  spec: "25kW Three-Phase Core",
+  desc: "High-performance commercial solar inverter designed to maximize solar energy production, improve system efficiency, and support reliable grid-connected operation for Australian businesses. Ideal for commercial solar installations, offices, warehouses, and retail facilities seeking lower electricity costs and long-term energy savings.",
+  points: [
+    "25kW Three-Phase Commercial Inverter",
+    "High Solar Energy Production",
+    "Reliable Grid-Connected Operation",
+    "Ideal for Offices, Warehouses & Retail Facilities"
+  ]
+},
+
+battery: {
+  title: "Commercial Battery Ready",
+  spec: "Expandable Smart Grid",
+  desc: "Designed for future energy storage integration, this solution allows businesses to add commercial battery systems, increase energy independence, and maximize the value of their solar panels Australia investment. Pre-configured battery compatibility helps reduce future upgrade costs while supporting backup power and smarter energy management.",
+  points: [
+    "Commercial Battery Storage Ready",
+    "Future Energy Storage Integration",
+    "Backup Power Compatible",
+    "Smarter Energy Management"
+  ]
+},
+
+mounting: {
+  title: "Commercial Mounts",
+  spec: "Penetration-Free Racking",
+  desc: "Premium commercial solar mounting systems designed for maximum durability, structural integrity, and long-term performance. Compatible with warehouses, factories, office buildings, and industrial facilities, these mounting solutions ensure secure installation of solar panels Australia while maximizing rooftop energy generation.",
+  points: [
+    "Engineered Roof Mounting Solutions",
+    "Compatible with Commercial & Industrial Buildings",
+    "Maximum Structural Integrity",
+    "Long-Term Performance & Durability"
+  ]
+}
     }
   },
+
+
+
   "50kw": {
     title: "50kW Commercial Solar",
-    tagline: "Ideal system configuration for manufacturing plants, supermarkets, and schools",
+    tagline: "High-performance 50kW Solar Panel Systems designed to reduce business electricity costs, maximize solar energy generation, and deliver long-term savings for warehouses, factories, schools, supermarkets, and commercial facilities.",
     savings: "Save up to $14,000 / year*",
-    heroTitle: "Premium 50kW Commercial Systems",
-    introTitle: "High-Capacity Clean Power for Medium Enterprises",
-    introDesc: "With a 50kW solar footprint, businesses can drastically lower their scope 2 carbon emissions. Suitable for supermarkets with constant cold-storage draw and schools running multi-classroom heating networks.",
+    heroTitle: "50kW Solar Panel Systems for Australian Businesses",
+    introTitle: "Reduce Energy Costs with a Commercial Solar Panel System ",
+    introDesc: "A Commercial Solar Panel System helps businesses reduce electricity costs, improve energy efficiency, and generate reliable renewable energy. For smaller commercial operations, a 30kW Solar System offers a cost-effective solution with strong long-term energy savings.",
     specsTabConfig: [
       {
         key: 'panels',
@@ -398,28 +432,37 @@ export const COMMERCIAL_PAGES_DATA: Record<string, CommercialData> = {
     ],
     trustSection: {
       tagline: "Medium Enterprise Trust",
-      title: "Grid Compliance & Wind Sizing",
-      desc: "Engineered safety matrices, structural roof reinforcements, and grid protection systems customized for 50kW commercial designs.",
-      cards: [
-        {
-          iconKey: "Award",
-          title: "Peak Shaving Modeling",
-          desc: "We analyze high-resolution 15-minute energy spikes to optimize the 50kW system, keeping your demand charges consistently low.",
-          points: ["Spike-offset optimization", "Daily peak clipping audits"]
-        },
-        {
-          iconKey: "ShieldCheck",
-          title: "Commercial Certification",
-          desc: "Fully certified structures engineered to withstand local cyclone ratings, coupled with complete grid connection compliance approvals.",
-          points: ["Wind uplift certifications", "DNSP connection validation"]
-        },
-        {
-          iconKey: "HeartHandshake",
-          title: "Uptime Guarantees",
-          desc: "Active remote monitoring combined with rapid local dispatch technicians to maintain consistent generation performance year-round.",
-          points: ["98% system uptime pledge", "Fast-response service crews"]
-        }
-      ],
+      title: "Commercial Solar System Design, Compliance & Performance",
+      desc: "Every commercial solar panel system is engineered for maximum energy savings, grid compliance, and long-term reliability, helping businesses reduce electricity costs and improve operational efficiency.",
+    cards: [
+  {
+    iconKey: "Award",
+    title: "Energy Consumption Analysis",
+    desc: "We evaluate your business energy usage to optimize system sizing, maximize solar generation, and reduce peak demand charges for greater commercial energy savings.",
+    points: [
+      "Energy Usage Assessment",
+      "Peak Demand Reduction Strategy"
+    ]
+  },
+  {
+    iconKey: "ShieldCheck",
+    title: "Compliance & Safety Standards",
+    desc: "Our commercial solar installation solutions meet Australian electrical, structural, and grid connection requirements, ensuring safe and reliable long-term operation.",
+    points: [
+      "Australian Standards Compliant",
+      "Grid Connection & Safety Approved"
+    ]
+  },
+  {
+    iconKey: "HeartHandshake",
+    title: "Smart Performance Monitoring",
+    desc: "Advanced monitoring tools provide real-time visibility into solar energy production, system health, and performance trends to maximize return on investment.",
+    points: [
+      "24/7 System Monitoring",
+      "Automated Performance Alerts"
+    ]
+  }
+],
       videoSubtitle: "Enterprise Integration",
       videoTitle: "Powering Supermarkets and Schools Reliably",
       videoQuote: "For 50kW installations, we perform zero-disruption structural mounting integrations, guaranteeing that your roof structural integrity is certified and retail trading hours remain completely unaffected.",
@@ -428,40 +471,68 @@ export const COMMERCIAL_PAGES_DATA: Record<string, CommercialData> = {
       videoAuthorImage: "/images/solar/solar-engineer-panel.jpg",
       videoPlaceholderImage: "/images/solar/solar-installation-crew.jpg"
     },
-    details: {
-      panels: {
-        title: "Tier 1 Solar Panels",
-        spec: "112 x High Output Modules",
-        desc: "Advanced N-Type bifacial solar panels capturing additional power reflection from roof surfaces. Designed for medium-scale commercial rooftops with wide open exposure — maximizing bifacial gain from light albedo.",
-        points: ["30-Year Performance Warranty", "22.2% Module Efficiency", "Bifacial energy gain up to 15%"]
-      },
-      inverter: {
-        title: "Commercial Inverters",
-        spec: "50kW Multi-String Inverter",
-        desc: "Industrial grade inverter featuring string-level monitoring, AFCI safety protection, and active grid cooling. Designed for supermarkets and high-draw medium commercial environments.",
-        points: ["10-Year Local Warranty", "98.7% Peak Conversion", "Built-in Type II DC/AC SPDs"]
-      },
-      battery: {
-        title: "Battery Storage Ready",
-        spec: "High Voltage Ready",
-        desc: "Seamless integration with heavy-duty smart industrial batteries to control demand tariff thresholds. Perfect for cold storage facilities that require stable after-hours backup supply.",
-        points: ["Peak-shaving configuration", "Backup power for server arrays", "Flexible energy management"]
-      },
-      mounting: {
-        title: "Commercial Mounts",
-        spec: "Wind-Rated Heavy Framing",
-        desc: "Custom-engineered mounting brackets and frames certified for high wind loads (Region C compliant). Designed specifically for large supermarket and school rooftop installations.",
-        points: ["10-Year Structural Warranty", "Australian-sourced raw aluminum", "Klip-Lok sheet compatibility"]
-      }
-    }
+ details: {
+  panels: {
+    title: "Tier 1 Solar Panels",
+    spec: "112 x High Output Modules",
+    desc: "Premium Tier 1 Solar Panels engineered for maximum energy generation, helping businesses reduce electricity costs and improve long-term solar performance. Designed for commercial solar panel systems, these advanced bifacial modules capture direct and reflected sunlight to increase energy output across large-scale commercial rooftops.",
+    points: [
+      "High-Efficiency N-Type Bifacial Solar Panels",
+      "Maximum Energy Generation",
+      "Reduced Electricity Costs",
+      "Enhanced Bifacial Energy Output"
+    ]
   },
+
+  inverter: {
+    title: "Commercial Inverters",
+    spec: "50kW Multi-String Inverter",
+    desc: "High-performance commercial solar inverter designed to maximize energy generation, improve system efficiency, and deliver reliable power for commercial solar panel systems. Featuring advanced monitoring and smart energy management, it helps businesses reduce electricity costs and optimize solar performance.",
+    points: [
+      "50kW Smart Commercial Inverter",
+      "Advanced Performance Monitoring",
+      "Smart Energy Management",
+      "Reliable Commercial Power Output"
+    ]
+  },
+
+  battery: {
+    title: "Battery Storage Ready",
+    spec: "High Voltage Ready",
+    desc: "Built for modern commercial solar panel systems, this battery-ready solution enables businesses to maximize solar self-consumption, lower electricity costs, and maintain uninterrupted operations during power outages.",
+    points: [
+      "Commercial Energy Storage Ready",
+      "Maximize Solar Self-Consumption",
+      "Lower Electricity Costs",
+      "Backup Power Capability"
+    ]
+  },
+
+  mounting: {
+    title: "Commercial Mounts",
+    spec: "Wind-Rated Heavy Framing",
+    desc: "Premium mounting systems designed for commercial solar installations, delivering secure panel support, improved system longevity, and reliable performance in high-wind environments. Ideal for businesses seeking maximum rooftop solar efficiency and long-term energy savings.",
+    points: [
+      "Heavy-Duty Solar Racking Solutions",
+      "Secure Panel Support",
+      "High-Wind Performance",
+      "Long-Term System Durability"
+    ]
+  }
+}
+  },
+
+
+
+
+
   "100kw": {
     title: "100kW Commercial Solar",
-    tagline: "Maximum capacity offset for large-scale factories, cold storage, and logistics hubs",
+    tagline: "A powerful commercial solar solution for businesses seeking lower operating costs, greater energy independence, and improved sustainability. ",
     savings: "Save up to $30,000 / year*",
-    heroTitle: "Premium 100kW Commercial Systems",
-    introTitle: "Unlocking Zero-Emission Industrial Scale Operations",
-    introDesc: "For heavy industrial operators, agricultural pack houses, and large-scale manufacturing facilities, the 100kW configuration represents a highly cashflow-positive investment. Protects operations against tariff penalties.",
+    heroTitle: "100kW Solar Panel Systems in Australia ",
+    introTitle: "Maximize Energy Savings with Industrial Solar Power ",
+    introDesc: "A 100kW Solar Panel System helps large businesses reduce electricity costs, increase energy efficiency, and generate reliable renewable energy at scale. For smaller commercial facilities, a 30kW Solar System offers a cost-effective solution with strong energy savings and long-term performance. ",
     specsTabConfig: [
       {
         key: 'panels',
@@ -543,28 +614,37 @@ export const COMMERCIAL_PAGES_DATA: Record<string, CommercialData> = {
     ],
     trustSection: {
       tagline: "Industrial Scale Assurance",
-      title: "SCADA Control & High-Voltage Safety",
-      desc: "Full SCADA control capabilities, industrial protection relays, and AS/NZS 1170.2 certified installations for 100kW heavy power needs.",
-      cards: [
-        {
-          iconKey: "Award",
-          title: "SCADA Data Integration",
-          desc: "Industrial-grade monitoring links with your plant SCADA or BMS system, providing comprehensive line-level telemetry logs.",
-          points: ["SCADA/BMS direct support", "Modbus & Ethernet telemetry"]
-        },
-        {
-          iconKey: "ShieldCheck",
-          title: "Heavy-Industry Compliance",
-          desc: "Integrated grid protection relays and certified structural support structures approved for heavy wind shear on industrial rooftops.",
-          points: ["Industrial relay control", "Region D cyclonic certification"]
-        },
-        {
-          iconKey: "HeartHandshake",
-          title: "Yield & Asset Protection",
-          desc: "Proactive remote string diagnostics and annual thermal scans guarantee total system safety and maximum operational lifetime yield.",
-          points: ["Annual thermal imaging scans", "Remote string fault alerts"]
-        }
-      ],
+      title: "Advanced Commercial Solar Monitoring & Grid Compliance",
+      desc: "Our commercial solar power systems combine real-time performance monitoring, grid protection technology, and advanced safety controls to maximize energy generation, system reliability, and long-term business savings.",
+     cards: [
+  {
+    iconKey: "Award",
+    title: "Smart Solar Monitoring",
+    desc: "Monitor your commercial solar panel system with advanced energy analytics, real-time performance tracking, and automated reporting to optimize solar energy production and operational efficiency.",
+    points: [
+      "Real-Time Solar Performance Monitoring",
+      "Energy Usage & Production Analytics"
+    ]
+  },
+  {
+    iconKey: "ShieldCheck",
+    title: "Grid Compliance & Electrical Safety",
+    desc: "Designed to meet Australian standards, our commercial solar installations include advanced grid protection, electrical safety systems, and compliance documentation for reliable long-term operation.",
+    points: [
+      "Australian Standards Compliant",
+      "Grid Protection & Safety Controls"
+    ]
+  },
+  {
+    iconKey: "HeartHandshake",
+    title: "System Performance Protection",
+    desc: "Protect your solar investment with proactive monitoring, automated alerts, and preventive maintenance insights that help maximize energy yield and system lifespan.",
+    points: [
+      "Automated Fault Detection & Alerts",
+      "Long-Term Solar Performance Optimization"
+    ]
+  }
+],
       videoSubtitle: "Heavy Industrial Delivery",
       videoTitle: "Zero-Downtime Industrial Integration",
       videoQuote: "We understand that manufacturing and cold-storage operations cannot afford a minute of downtime. Our staged installation procedures guarantee zero impact on your production operations.",
@@ -573,32 +653,55 @@ export const COMMERCIAL_PAGES_DATA: Record<string, CommercialData> = {
       videoAuthorImage: "/images/solar/solar-engineer-panel.jpg",
       videoPlaceholderImage: "/images/solar/solar-tech-worker.jpg"
     },
-    details: {
-      panels: {
-        title: "Tier 1 Solar Panels",
-        spec: "225 x High Output Modules",
-        desc: "High-density monocrystalline panels optimized to maintain stable output even in high-temperature factory environments. Certified for industrial rooftop mounting with superior PID resistance.",
-        points: ["25-Year Product Warranty", "22.4% Module Efficiency", "Excellent light absorption profiles"]
-      },
-      inverter: {
-        title: "Commercial Inverters",
-        spec: "100kW Core Inverter Hub",
-        desc: "Premium commercial central inverter system with remote string monitoring and automated diagnostic alerts. Built for heavy industrial environments with advanced fault isolation and IP65 weatherproofing.",
-        points: ["10-Year Local Warranty", "98.9% High Efficiency", "Smart cooling technology"]
-      },
-      battery: {
-        title: "Commercial Battery Ready",
-        spec: "Industrial Energy Matrix",
-        desc: "Designed for commercial energy storage coupling, shielding factory motors from load startup voltage spikes. Full micro-grid capability for critical manufacturing lines requiring uninterrupted power.",
-        points: ["Demand charge reduction", "Micro-grid configurations", "Blackout protection for critical load"]
-      },
-      mounting: {
-        title: "Commercial Mounts",
-        spec: "Engineered Bracket Rails",
-        desc: "Fully certified roof clamps, aluminum structural channels, and marine-grade stainless hardware. Engineered to AS/NZS 1170.2 for all Australian cyclone and wind loading regions.",
-        points: ["10-Year Structural Warranty", "Full AS/NZS 1170.2 certification", "Optimal pitch framing options"]
-      }
-    }
+details: {
+  panels: {
+    title: "Tier 1 Solar Panels",
+    spec: "225 x High Output Modules",
+    desc: "Premium Tier 1 Solar Panels engineered for maximum energy generation and long-term reliability in demanding industrial environments. Designed for 100kW Solar Panel Systems, these high-performance modules help factories, warehouses, and manufacturing facilities reduce electricity costs while maximizing rooftop solar output.",
+    points: [
+      "225 × High-Efficiency Industrial Solar Panels",
+      "Maximum Energy Generation",
+      "Long-Term Industrial Reliability",
+      "Ideal for Factories, Warehouses & Manufacturing Facilities"
+    ]
+  },
+
+  inverter: {
+    title: "Commercial Inverters",
+    spec: "100kW Core Inverter Hub",
+    desc: "Advanced commercial solar inverter designed to maximize energy generation, improve system efficiency, and deliver reliable performance for large-scale industrial and commercial solar installations. Equipped with intelligent monitoring and smart energy management to help businesses reduce electricity costs and optimize solar output.",
+    points: [
+      "100kW High-Performance Commercial Inverter",
+      "Intelligent Monitoring System",
+      "Smart Energy Management",
+      "Optimized Solar Output"
+    ]
+  },
+
+  battery: {
+    title: "Commercial Battery Ready",
+    spec: "Industrial Energy Matrix",
+    desc: "Built for large-scale commercial solar power systems, this battery-ready solution enables businesses to maximize solar self-consumption, lower electricity costs, and maintain uninterrupted operations during outages or peak demand periods.",
+    points: [
+      "Smart Industrial Energy Management",
+      "Maximize Solar Self-Consumption",
+      "Lower Electricity Costs",
+      "Backup Power During Outages"
+    ]
+  },
+
+  mounting: {
+    title: "Commercial Mounts",
+    spec: "Engineered Bracket Rails",
+    desc: "Premium mounting solutions engineered for commercial solar installations, delivering secure panel support, enhanced system longevity, and reliable performance across large-scale industrial and commercial rooftops.",
+    points: [
+      "Heavy-Duty Industrial Solar Structures",
+      "Secure Panel Support",
+      "Enhanced System Longevity",
+      "Reliable Large-Scale Performance"
+    ]
+  }
+}
   }
 }
 

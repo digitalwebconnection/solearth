@@ -294,7 +294,7 @@ export default function ServicesSection() {
                 transition={{ duration: 0.6, delay: 0.15 }}
                 className="text-3xl  md:text-5xl font-serif font-bold mb-2 bg-linear-to-r from-[#0a1f44] to-[#1B74BB] bg-clip-text text-transparent"
               >
-                Comprehensive Solar Solutions
+          Comprehensive Energy Solutions for a Sustainable Future 
               </motion.h2>
 
               <motion.p
@@ -304,7 +304,7 @@ export default function ServicesSection() {
                 transition={{ duration: 0.6, delay: 0.25 }}
                 className="text-sm md:text-base leading-relaxed text-gray-800 max-w-2xl mx-auto"
               >
-                Scroll down the page normally to rotate horizontally step-by-step through our 25 capability systems.
+               Discover complete solar, battery, EV and energy solutions designed to maximize efficiency, savings and long-term performance.
               </motion.p>
             </div>
           </div>

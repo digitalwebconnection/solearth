@@ -199,11 +199,10 @@ export default function ProjectsGrid() {
             <span className="h-0.5 w-8 bg-[#FCC200] rounded-full" />
           </div>
           <h2 className="text-2xl sm:text-3xl md:text-5xl font-black text-slate-900 tracking-tight leading-tight">
-            Recent Projects Gallery
+           Solar Panel Project Showcase 
           </h2>
           <p className="text-xs sm:text-sm md:text-base leading-relaxed text-slate-900 font-semibold">
-            Select a category to filter our completed solar energy systems, and click on any card to view extensive engineering design and performance data.
-          </p>
+        View our Solar Panel Project Showcase of completed solar and battery projects across Australia, highlighting engineering excellence and long-term energy performance.  </p>
         </div>
 
         {/* Filter Tabs */}

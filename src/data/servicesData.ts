@@ -21,23 +21,23 @@ export interface ServiceData {
 
 export const SERVICES_PAGES_DATA: Record<string, ServiceData> = {
   "installation": {
-    title: "Solar Panel Installation",
-    heroSubtitle: "Clean Energy Council (CEC) Accredited Solar Engineering & Integration",
+    title: "Solar Panel Systems Installation in Sydney ",
+    heroSubtitle: "CEC-Accredited Solar Panel Systems Installation in Sydney, delivering expert system design, compliant installation, premium components, and long-term energy savings for homes and businesses.",
     heroImage: "/images/solar/solar-residential-house.jpg",
     introTitle: "Professional Installation Engineered for Australian Conditions",
     introDesc: "SolEarth Energy provides full end-to-end solar design and installation. Our licensed, CEC-accredited electrical engineers ensure that your solar array, string wiring, and smart inverters are set up safely to yield maximum power output for decades.",
     features: [
       {
-        title: "Site Survey & Engineering Design",
-        desc: "We analyze your roof pitch, shading angles, and electrical load parameters to custom-tailor a solar layout that maximizes sun exposure."
+        title: "Site Survey & Solar System Design",
+        desc: "Our comprehensive solar site assessment evaluates roof orientation, shading, energy usage, and electrical infrastructure to create a customized solar system design that maximizes energy generation and long-term savings."
       },
       {
-        title: "CEC Accredited Workmanship",
-        desc: "Our installers are highly certified professionals who follow all Australian safety standards, ensuring a robust, waterproof roof mounting setup."
+        title: "CEC Accredited Solar Installation",
+        desc: "Our CEC accredited solar installers follow Australian standards and industry best practices to ensure safe, compliant, and high-quality solar panel installation for lasting performance."
       },
       {
-        title: "Grid Connection & Smart Meters",
-        desc: "We handle the entire application and inspection process with your local distribution network to get your smart meter configured and online."
+        title: "Grid Connection & Smart Meter Setup",
+        desc: "We manage the complete grid connection approval and smart meter installation process, ensuring your solar power system is connected, compliant, and ready to export excess energy to the grid."
       }
     ],
     difference: [
@@ -61,23 +61,23 @@ export const SERVICES_PAGES_DATA: Record<string, ServiceData> = {
     ]
   },
   "cleaning": {
-    title: "Solar Panel Cleaning",
-    heroSubtitle: "Restore System Performance & Maximize Daily Clean Energy Yield",
+    title: "Solar Panel Cleaning Services in Australia",
+    heroSubtitle: "Professional solar panel cleaning services that help improve solar efficiency, maximize energy generation, and extend the lifespan of your solar power system across Australia.",
     heroImage: "/images/solar/solar-inverter-tech.jpg",
     introTitle: "Why Professional Cleaning Matters for Your Investment",
     introDesc: "Dust, leaves, salt-mist, and bird droppings build up over time and create localized hot spots, reducing your solar panel output by up to 20%. Professional cleaning removes this layer safely without scratching the delicate anti-reflective glass coatings.",
     features: [
       {
-        title: "Pure Water Washing Systems",
-        desc: "We use specialized de-ionized pure water filtration systems that clean panels cleanly without leaving streaks or mineral scale residue."
+        title: "Pure Water Solar Panel Cleaning",
+        desc: "Our solar panel cleaning service uses de-ionized pure water technology to remove dust, dirt, bird droppings, and contaminants without leaving residue, helping improve solar panel efficiency and maximize energy generation."
       },
       {
-        title: "Anti-Scratch Solar Brushes",
-        desc: "Our technicians utilize heavy-duty, ultra-soft rotating carbon brushes specifically designed not to micro-scratch solar glass coatings."
+        title: "Non-Abrasive Solar Cleaning Brushes",
+        desc: "We use specialized soft-bristle equipment designed for solar panel maintenance, ensuring effective cleaning without damaging solar glass, coatings, or panel surfaces."
       },
       {
-        title: "Safety Rigging & Roof Harnesses",
-        desc: "All technicians are fully trained in working at heights, using professional roof harness anchors, ropes, and scaffolding setup."
+        title: "Professional Roof Safety Systems",
+        desc: "Our trained technicians follow industry-approved safety procedures for solar panel cleaning services in Australia, using certified roof access systems and fall-protection equipment."
       }
     ],
     difference: [
@@ -101,23 +101,23 @@ export const SERVICES_PAGES_DATA: Record<string, ServiceData> = {
     ]
   },
   "maintenance": {
-    title: "Solar Panel Maintenance & Repairs",
-    heroSubtitle: "Diagnostic Testing, Compliance Audits, and Inverter System Repairs",
+    title: "Solar Panel System Maintenance in Australia ",
+    heroSubtitle: "Expert maintenance, fault detection, inverter repairs, and solar panel cleaning services designed to maximize solar performance and ensure reliable energy production year-round. ",
     heroImage: "/images/solar/battery-storage-unit.jpg",
     introTitle: "Professional System Health Audits & Fault Rectification",
     introDesc: "Is your inverter displaying a red warning light, or has your power generation dropped unexpectedly? SolEarth Energy's maintenance engineers conduct diagnostic testing to locate ground faults, hot spots, or wiring issues.",
     features: [
       {
-        title: "Inverter Diagnostic & Replacements",
-        desc: "We perform full diagnostics on GoodWe, Sungrow, Solis, and other leading inverter brands, managing warranty replacements when needed."
+        title: "Inverter Testing & Repair Services",
+        desc: "Our solar inverter maintenance service includes advanced diagnostics, fault detection, performance testing, and inverter repairs to restore system efficiency and maximize solar energy production."
       },
       {
-        title: "Thermal Imaging Inspections",
-        desc: "Using advanced thermal imaging cameras, we locate micro-cracks and hot-spot cells that could lead to panel degradation or safety hazards."
+        title: "Solar Panel Thermal Imaging Inspection",
+        desc: "Using advanced thermal imaging technology, we identify hot spots, faulty cells, wiring issues, and hidden defects that can reduce solar panel performance and energy output."
       },
       {
-        title: "Compliance & Safety Audits",
-        desc: "We audit older systems to ensure they comply with updated AS/NZS 5033 standards, upgrading isolators and conduit routing where needed."
+        title: "Solar System Safety & Compliance Audits",
+        desc: "Our solar panel system maintenance in Australia includes comprehensive safety inspections, compliance checks, and performance assessments to ensure your solar system operates safely, efficiently, and in accordance with Australian standards."
       }
     ],
     difference: [

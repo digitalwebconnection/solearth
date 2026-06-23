@@ -43,7 +43,7 @@ export const InstallationBestFor: React.FC<InstallationBestForProps> = ({
   );
 
   return (
-    <section ref={containerRef} className="relative bg-white py-0 md:py-20 px-4 sm:px-6 md:px-0 border-t border-slate-100">
+    <section ref={containerRef} className="relative bg-white py-0 md:py-0 px-4 sm:px-6 md:px-0 border-t border-slate-100">
 
       {/* Background Graphic elements */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -106,7 +106,7 @@ export const InstallationBestFor: React.FC<InstallationBestForProps> = ({
               </div>
 
               <div className="space-y-3">
-                {product.installation.map((item, idx) => (
+                {product.applicationsSection.installationBenefits.map((item, idx) => (
                   <div
                     key={idx}
                     className="p-4 sm:p-5 bg-slate-50/50 hover:bg-white border border-slate-200 hover:border-[#FCC200]/25 rounded-2xl shadow-xl shadow-slate-100 hover:shadow-2xl transition duration-200 flex items-start gap-4 group"
@@ -138,7 +138,7 @@ export const InstallationBestFor: React.FC<InstallationBestForProps> = ({
               </div>
 
               <div className="space-y-4 sm:space-y-5">
-                {product.bestFor.map((item, idx) => (
+                {product.applicationsSection.bestApplications.map((item, idx) => (
                   <div
                     key={idx}
                     className="p-4 sm:p-5 bg-slate-50/50 hover:bg-white border border-slate-200 hover:border-[#1B74BB]/25 rounded-2xl shadow-xl shadow-slate-100 hover:shadow-2xl transition duration-200 flex items-start gap-4 group"

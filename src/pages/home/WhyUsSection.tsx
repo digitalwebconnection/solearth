@@ -52,12 +52,11 @@ export default function WhyUsSection() {
             <span className="text-xs font-bold text-[#1B74BB] uppercase tracking-widest">Our Advantage</span>
             <span className="h-0.5 w-8 bg-[#FCC200] rounded-full" />
           </div>
-          <h2 className="text-3xl md:text-5xl font-serif font-bold leading-tight text-[#0a1f44] tracking-tight">
-            Why Australians Choose SolEarth
+          <h2 className="text-3xl md:text-5xl font-serif max-w-3xl mx-auto font-bold leading-tight text-[#0a1f44] tracking-tight">
+            Why Australians Choose SolEarth for Smart Energy Solutions 
           </h2>
           <p className="text-sm md:text-base leading-relaxed text-slate-900 max-w-7xl mx-auto">
-            We're committed to making your switch to solar seamless, affordable, and rewarding for decades to come.
-          </p>
+        Thousands of Australians trust SolEarth for reliable solar solutions, expert installation and long-term energy savings.   </p>
         </div>
 
         {/* Reasons Grid with Pixel Transition Cards */}

@@ -654,11 +654,11 @@ export default function ContactServices({ selectedSubject, onSelectService }: Co
             <span className="h-0.5 w-8 bg-[#FCC200] rounded-full" />
           </div>
           <h2 className="text-2xl sm:text-3xl md:text-5xl font-black text-slate-900 tracking-tight leading-tight">
-            Which Solutions Do You Need?
+Which Solar Solutions Australia Do You Need? 
           </h2>
           <p className="text-xs sm:text-sm md:text-base leading-relaxed text-slate-800 max-w-2xl mx-auto font-semibold">
-            Hover to peek inside our system folders; click to expand details and auto-select that option in the inquiry form below.
-          </p>
+        Explore Solar Solutions Australia tailored for homes and businesses, with solar, battery, and EV charging systems across Australia. 
+  </p>
         </div>
 
         {/* Services Grid */}
