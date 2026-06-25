@@ -1,80 +1,95 @@
-import { useState, useRef, useEffect } from 'react'
-import { gsap } from 'gsap'
-import logo from "../assets/Frame 1 (3).png"
-import { Link, useLocation } from 'react-router-dom'
-import { Sun, Zap, Battery, Award, Check, ChevronRight, Home, Building2, Wrench, X, Phone, Mail, ChevronDown, Sparkles } from 'lucide-react'
-import { useQuoteModal } from './QuoteModal'
+import { useState, useRef, useEffect } from "react";
+import { gsap } from "gsap";
+import logo from "../assets/Frame 1 (3).png";
+import { Link, useLocation } from "react-router-dom";
+import {
+  Sun,
+  Zap,
+  Battery,
+  Award,
+  Check,
+  ChevronRight,
+  Home,
+  Building2,
+  Wrench,
+  X,
+  Phone,
+  Mail,
+  ChevronDown,
+  Sparkles,
+} from "lucide-react";
+import { useQuoteModal } from "./QuoteModal";
 
 const NAV_LINKS = [
-  { label: 'Home', href: '/' },
-  { label: 'About Us', href: '/about' },
+  { label: "Home", href: "/" },
+  { label: "About Us", href: "/about" },
   {
-    label: 'Services',
-    href: '/#services',
+    label: "Services",
+    href: "/#services",
     children: [
-
       {
-        label: 'Residential Solar',
-        href: '/residential/6-6kw',
+        label: "Residential Solar",
+        href: "/residential/6-6kw",
         children: [
-          { label: '6.6kW Solar System', href: '/residential/6-6kw' },
-          { label: '10.3kW Solar System', href: '/residential/10-3kw' },
-          { label: '13.2kW Solar System', href: '/residential/13-2kw' },
-          { label: '20kW Solar System', href: '/residential/20kw' },
-          { label: 'Smart EV Charger', href: '/residential/ev-charger' },
-        ]
+          { label: "6.6kW Solar System", href: "/residential/6-6kw" },
+          { label: "10.3kW Solar System", href: "/residential/10-3kw" },
+          { label: "13.2kW Solar System", href: "/residential/13-2kw" },
+          { label: "20kW Solar System", href: "/residential/20kw" },
+          { label: "Smart EV Charger", href: "/residential/ev-charger" },
+        ],
       },
       {
-        label: 'Commercial Solar',
-        href: '/commercial/30kw',
+        label: "Commercial Solar",
+        href: "/commercial/30kw",
         children: [
-          { label: '30kW Solar System', href: '/commercial/30kw' },
-          { label: '50kW Solar System', href: '/commercial/50kw' },
-          { label: '100kW Solar System', href: '/commercial/100kw' },
-        ]
+          { label: "30kW Solar System", href: "/commercial/30kw" },
+          { label: "50kW Solar System", href: "/commercial/50kw" },
+          { label: "100kW Solar System", href: "/commercial/100kw" },
+        ],
       },
       {
-        label: 'Solar Services',
-        href: '/services/installation',
+        label: "Solar Services",
+        href: "/services/installation",
         children: [
-          { label: 'Solar Panel Installation', href: '/services/installation' },
-          { label: 'Solar Panel Cleaning', href: '/services/cleaning' },
-          { label: 'Solar Panel Maintenance', href: '/services/maintenance' },
-        ]
-      }
+          { label: "Solar Panel Installation", href: "/services/installation" },
+          { label: "Solar Panel Cleaning", href: "/services/cleaning" },
+          { label: "Solar Panel Maintenance", href: "/services/maintenance" },
+        ],
+      },
     ],
   },
   {
-    label: 'Products',
-    href: '/#products',
+    label: "Products",
+    href: "/#products",
     children: [
-      { label: 'Solar Panels', href: '/#products' },
-      { label: 'Inverters', href: '/#products' },
-      { label: 'Battery Systems', href: '/#battery' },
-      { label: 'EV Chargers', href: '/#products' },
+      { label: "Solar Panels", href: "/#products" },
+      { label: "Inverters", href: "/#products" },
+      { label: "Battery Systems", href: "/#battery" },
+      { label: "EV Chargers", href: "/#products" },
     ],
   },
-  { label: 'Our Projects', href: '/projects' },
-  { label: 'Contact Us', href: '/contact' },
-]
+  { label: "Our Projects", href: "/projects" },
+  { label: "Contact Us", href: "/contact" },
+];
 
 function DropdownMenu({
   items,
   isOpen,
   onClose,
 }: {
-  items: any[]
-  isOpen: boolean
-  onClose?: () => void
+  items: any[];
+  isOpen: boolean;
+  onClose?: () => void;
 }) {
-  const [hoveredItem, setHoveredItem] = useState<string | null>(null)
+  const [hoveredItem, setHoveredItem] = useState<string | null>(null);
 
   return (
     <div
-      className={`absolute top-full left-1/2 -translate-x-1/2 mt-3 w-64 bg-white rounded-lg shadow-lg border border-slate-205 z-50 transition-all duration-200 ${isOpen
-        ? 'opacity-100 translate-y-0 pointer-events-auto'
-        : 'opacity-0 -translate-y-2 pointer-events-none'
-        }`}
+      className={`absolute top-full left-1/2 -translate-x-1/2 mt-3 w-64 bg-white rounded-lg shadow-lg border border-slate-205 z-50 transition-all duration-200 ${
+        isOpen
+          ? "opacity-100 translate-y-0 pointer-events-auto"
+          : "opacity-0 -translate-y-2 pointer-events-none"
+      }`}
     >
       {/* Top Arrow Pointer */}
       <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-white border-t border-l border-slate-205 rotate-45 z-10" />
@@ -89,16 +104,14 @@ function DropdownMenu({
               key={item.label}
               className="relative"
               onMouseEnter={() => {
-                if (hasChildren) setHoveredItem(item.label)
+                if (hasChildren) setHoveredItem(item.label);
               }}
               onMouseLeave={() => {
-                if (hasChildren) setHoveredItem(null)
+                if (hasChildren) setHoveredItem(null);
               }}
             >
               {hasChildren ? (
-                <div
-                  className="w-full flex items-center justify-between px-5 py-3 text-xs font-bold text-slate-705 text-slate-700 hover:bg-[#1B74BB]/5 hover:text-[#1B74BB] transition-all duration-155 cursor-pointer border-b border-slate-50 last:border-b-0"
-                >
+                <div className="w-full flex items-center justify-between px-5 py-3 text-xs font-bold text-slate-705 text-slate-700 hover:bg-[#1B74BB]/5 hover:text-[#1B74BB] transition-all duration-155 cursor-pointer border-b border-slate-50 last:border-b-0">
                   <span>{item.label}</span>
                   <ChevronRight className="w-3.5 h-3.5 text-slate-900" />
                 </div>
@@ -115,10 +128,11 @@ function DropdownMenu({
               {/* Sub-sub dropdown menu */}
               {hasChildren && (
                 <div
-                  className={`absolute left-full top-0 ml-1 w-56 bg-white rounded-lg shadow-lg border border-slate-205 z-50 transition-all duration-200 ${isHovered
-                    ? 'opacity-100 translate-x-0 pointer-events-auto'
-                    : 'opacity-0 -translate-x-2 pointer-events-none'
-                    }`}
+                  className={`absolute left-full top-0 ml-1 w-56 bg-white rounded-lg shadow-lg border border-slate-205 z-50 transition-all duration-200 ${
+                    isHovered
+                      ? "opacity-100 translate-x-0 pointer-events-auto"
+                      : "opacity-0 -translate-x-2 pointer-events-none"
+                  }`}
                 >
                   <div className="py-1">
                     {item.children.map((subItem: any) => (
@@ -138,30 +152,74 @@ function DropdownMenu({
                 </div>
               )}
             </div>
-          )
+          );
         })}
       </div>
     </div>
-  )
+  );
 }
 
 const SERVICES_MAP = {
   "Residential Solar": [
-    { name: "6.6kW Solar System", subtitle: "Perfect for couples & small homes", href: "/residential/6-6kw" },
-    { name: "10.3kW Solar System", subtitle: "The gold standard for modern families", href: "/residential/10-3kw" },
-    { name: "13.2kW Solar System", subtitle: "Zero-compromise energy independence", href: "/residential/13-2kw" },
-    { name: "20kW Solar System", subtitle: "Large homes & multi-phase power", href: "/residential/20kw" },
-    { name: "Smart EV Charger", subtitle: "Smart vehicle charging integration", href: "/residential/ev-charger" },
+    {
+      name: "6.6kW Solar System",
+      subtitle: "Perfect for couples & small homes",
+      href: "/residential/6-6kw",
+    },
+    {
+      name: "10.3kW Solar System",
+      subtitle: "The gold standard for modern families",
+      href: "/residential/10-3kw",
+    },
+    {
+      name: "13.2kW Solar System",
+      subtitle: "Zero-compromise energy independence",
+      href: "/residential/13-2kw",
+    },
+    {
+      name: "20kW Solar System",
+      subtitle: "Large homes & multi-phase power",
+      href: "/residential/20kw",
+    },
+    {
+      name: "Smart EV Charger",
+      subtitle: "Smart vehicle charging integration",
+      href: "/residential/ev-charger",
+    },
   ],
   "Commercial Solar": [
-    { name: "30kW Solar System", subtitle: "Ideal for small offices & shops", href: "/commercial/30kw" },
-    { name: "50kW Solar System", subtitle: "Perfect for medium commercial builds", href: "/commercial/50kw" },
-    { name: "100kW Solar System", subtitle: "Maximum savings for large industries", href: "/commercial/100kw" },
+    {
+      name: "30kW Solar System",
+      subtitle: "Ideal for small offices & shops",
+      href: "/commercial/30kw",
+    },
+    {
+      name: "50kW Solar System",
+      subtitle: "Perfect for medium commercial builds",
+      href: "/commercial/50kw",
+    },
+    {
+      name: "100kW Solar System",
+      subtitle: "Maximum savings for large industries",
+      href: "/commercial/100kw",
+    },
   ],
   "Solar Services": [
-    { name: "Solar Panel Installation", subtitle: "CEC-accredited professional installation", href: "/services/installation" },
-    { name: "Solar Panel Cleaning", subtitle: "Maximize system efficiency & output", href: "/services/cleaning" },
-    { name: "Solar Panel Maintenance", subtitle: "Comprehensive health checks & repair", href: "/services/maintenance" },
+    {
+      name: "Solar Panel Installation",
+      subtitle: "CEC-accredited professional installation",
+      href: "/services/installation",
+    },
+    {
+      name: "Solar Panel Cleaning",
+      subtitle: "Maximize system efficiency & output",
+      href: "/services/cleaning",
+    },
+    {
+      name: "Solar Panel Maintenance",
+      subtitle: "Comprehensive health checks & repair",
+      href: "/services/maintenance",
+    },
   ],
 };
 
@@ -171,13 +229,15 @@ function ServicesMegaMenu({
   onMouseEnter,
   onMouseLeave,
 }: {
-  isOpen: boolean
-  onClose: () => void
-  onMouseEnter?: () => void
-  onMouseLeave?: () => void
+  isOpen: boolean;
+  onClose: () => void;
+  onMouseEnter?: () => void;
+  onMouseLeave?: () => void;
 }) {
-  const [activeCategory, setActiveCategory] = useState<"Residential Solar" | "Commercial Solar" | "Solar Services">("Residential Solar");
-  const { openQuoteModal } = useQuoteModal()
+  const [activeCategory, setActiveCategory] = useState<
+    "Residential Solar" | "Commercial Solar" | "Solar Services"
+  >("Residential Solar");
+  const { openQuoteModal } = useQuoteModal();
 
   const getInitialBadge = (name: string) => {
     if (name.includes("6.6kW")) return "6.6";
@@ -228,13 +288,13 @@ function ServicesMegaMenu({
     <div
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
-      className={`absolute top-full left-1/2 -translate-x-1/2 w-full max-w-4xl mt-3 bg-white/99 backdrop-blur-2xl rounded-lg shadow-[0_30px_80px_rgba(10,31,68,0.22),0_15px_40px_rgba(10,31,68,0.12)] border border-slate-200/50 overflow-hidden z-50 transition-all duration-300 transform origin-top ${isOpen
-        ? 'opacity-100 scale-y-100 pointer-events-auto'
-        : 'opacity-0 scale-y-95 pointer-events-none'
-        }`}
+      className={`absolute top-full left-1/2 -translate-x-1/2 w-full max-w-4xl mt-3 bg-white/99 backdrop-blur-2xl rounded-lg shadow-[0_30px_80px_rgba(10,31,68,0.22),0_15px_40px_rgba(10,31,68,0.12)] border border-slate-200/50 overflow-hidden z-50 transition-all duration-300 transform origin-top ${
+        isOpen
+          ? "opacity-100 scale-y-100 pointer-events-auto"
+          : "opacity-0 scale-y-95 pointer-events-none"
+      }`}
     >
       <div className="grid grid-cols-12 min-h-[420px]">
-
         {/* Left Side: Category Tabs (35% width / col-span-4) */}
         <div className="col-span-4 bg-slate-50/70 p-6 border-r border-slate-100 flex flex-col justify-between">
           <div className="space-y-3">
@@ -249,12 +309,16 @@ function ServicesMegaMenu({
                   <button
                     key={tab.id}
                     onMouseEnter={() => setActiveCategory(tab.id)}
-                    className={`w-full text-left p-3.5 rounded-lg flex items-center gap-4 transition-all duration-200 ${isActive
-                      ? "bg-white shadow-lg shadow-black/5 border border-slate-200 " + tab.activeBg
-                      : "hover:bg-slate-100/50 border border-transparent"
-                      }`}
+                    className={`w-full text-left p-3.5 rounded-lg flex items-center gap-4 transition-all duration-200 ${
+                      isActive
+                        ? "bg-white shadow-lg shadow-black/5 border border-slate-200 " +
+                          tab.activeBg
+                        : "hover:bg-slate-100/50 border border-transparent"
+                    }`}
                   >
-                    <div className={`p-2.5 rounded-xl shadow-lg shadow-black/5 ${tab.bgClass} ${tab.colorClass} shrink-0`}>
+                    <div
+                      className={`p-2.5 rounded-xl shadow-lg shadow-black/5 ${tab.bgClass} ${tab.colorClass} shrink-0`}
+                    >
                       {tab.icon}
                     </div>
                     <div>
@@ -278,17 +342,20 @@ function ServicesMegaMenu({
               <span>CEC Accredited</span>
             </div>
             <p className="text-[10.5px] leading-relaxed text-slate-900 font-medium">
-              Expert energy solutions and lifetime maintenance by CEC-accredited engineers.
+              Expert energy solutions and lifetime maintenance by CEC-accredited
+              engineers.
             </p>
             <button
               onClick={() => {
-                onClose()
-                openQuoteModal('Services Mega Menu assessment')
+                onClose();
+                openQuoteModal("Services Mega Menu assessment");
               }}
               className="inline-flex items-center gap-2 text-xs font-black text-[#FCC200] hover:text-[#1B74BB] transition group/btn cursor-pointer bg-transparent border-none p-0"
             >
               Get Free Assessment
-              <span className="transform group-hover/btn:translate-x-1 transition-transform">→</span>
+              <span className="transform group-hover/btn:translate-x-1 transition-transform">
+                →
+              </span>
             </button>
           </div>
         </div>
@@ -338,15 +405,17 @@ function ServicesMegaMenu({
           {/* Quick links footer inside content */}
           <div className="pt-4 border-t border-slate-100 flex justify-between items-center text-[10px] text-slate-900 font-semibold">
             <span className="flex items-center gap-1">
-              <Check className="w-3.5 h-3.5 text-emerald-500" /> 10-Year Workmanship
+              <Check className="w-3.5 h-3.5 text-emerald-500" /> 10-Year
+              Workmanship
             </span>
             <span className="flex items-center gap-1">
-              <Check className="w-3.5 h-3.5 text-emerald-500" /> CEC Certified Installers
+              <Check className="w-3.5 h-3.5 text-emerald-500" /> CEC Certified
+              Installers
             </span>
             <button
               onClick={() => {
-                onClose()
-                openQuoteModal('Services Mega Menu assessment')
+                onClose();
+                openQuoteModal("Services Mega Menu assessment");
               }}
               className="text-[#1B74BB] hover:text-[#FCC200] font-black uppercase tracking-wider flex items-center gap-1 transition-colors cursor-pointer bg-transparent border-none p-0"
             >
@@ -354,7 +423,6 @@ function ServicesMegaMenu({
             </button>
           </div>
         </div>
-
       </div>
     </div>
   );
@@ -385,7 +453,10 @@ const PRODUCTS_MAP = {
     { name: "FoxESS Battery", slug: "foxess-battery" },
     { name: "Growatt Battery Systems", slug: "growatt-battery-systems" },
     { name: "SAJ Battery Systems", slug: "saj-battery-systems" },
-    { name: "Anker Solix Battery Systems", slug: "anker-solix-battery-systems" },
+    {
+      name: "Anker Solix Battery Systems",
+      slug: "anker-solix-battery-systems",
+    },
     { name: "Sungrow Battery Systems", slug: "sungrow-battery-systems" },
     { name: "Alpha ESS Battery Systems", slug: "alpha-ess-battery-systems" },
     { name: "Neovolt Battery Systems", slug: "neovolt-battery-systems" },
@@ -399,13 +470,15 @@ function ProductsMegaMenu({
   onMouseEnter,
   onMouseLeave,
 }: {
-  isOpen: boolean
-  onClose: () => void
-  onMouseEnter?: () => void
-  onMouseLeave?: () => void
+  isOpen: boolean;
+  onClose: () => void;
+  onMouseEnter?: () => void;
+  onMouseLeave?: () => void;
 }) {
-  const [activeCategory, setActiveCategory] = useState<"Solar Panels" | "Solar Inverters" | "Solar Batteries">("Solar Panels");
-  const { openQuoteModal } = useQuoteModal()
+  const [activeCategory, setActiveCategory] = useState<
+    "Solar Panels" | "Solar Inverters" | "Solar Batteries"
+  >("Solar Panels");
+  const { openQuoteModal } = useQuoteModal();
 
   const getInitialBadge = (name: string) => {
     const cleaned = name
@@ -484,13 +557,13 @@ function ProductsMegaMenu({
     <div
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
-      className={`absolute top-full left-1/2 -translate-x-1/2 w-full max-w-4xl mt-3 bg-white/99 backdrop-blur-2xl rounded-lg shadow-[0_30px_80px_rgba(10,31,68,0.22),0_15px_40px_rgba(10,31,68,0.12)] border border-slate-200/50 overflow-hidden z-50 transition-all duration-300 transform origin-top ${isOpen
-        ? 'opacity-100 scale-y-100 pointer-events-auto'
-        : 'opacity-0 scale-y-95 pointer-events-none'
-        }`}
+      className={`absolute top-full left-1/2 -translate-x-1/2 w-full max-w-4xl mt-3 bg-white/99 backdrop-blur-2xl rounded-lg shadow-[0_30px_80px_rgba(10,31,68,0.22),0_15px_40px_rgba(10,31,68,0.12)] border border-slate-200/50 overflow-hidden z-50 transition-all duration-300 transform origin-top ${
+        isOpen
+          ? "opacity-100 scale-y-100 pointer-events-auto"
+          : "opacity-0 scale-y-95 pointer-events-none"
+      }`}
     >
       <div className="grid grid-cols-12 min-h-[420px]">
-
         {/* Left Side: Category Tabs (35% width / col-span-4) */}
         <div className="col-span-4 bg-slate-50/70 p-6 border-r border-slate-100 flex flex-col justify-between">
           <div className="space-y-3">
@@ -505,12 +578,15 @@ function ProductsMegaMenu({
                   <button
                     key={tab.id}
                     onMouseEnter={() => setActiveCategory(tab.id)}
-                    className={`w-full text-left p-3.5 rounded-lg flex items-center gap-4 transition-all duration-200 ${isActive
-                      ? `bg-white shadow-lg shadow-black/60 border border-slate-300 ${tab.activeBg}`
-                      : "hover:bg-slate-100/50 border border-transparent"
-                      }`}
+                    className={`w-full text-left p-3.5 rounded-lg flex items-center gap-4 transition-all duration-200 ${
+                      isActive
+                        ? `bg-white shadow-lg shadow-black/60 border border-slate-300 ${tab.activeBg}`
+                        : "hover:bg-slate-100/50 border border-transparent"
+                    }`}
                   >
-                    <div className={`p-2.5 rounded-xl shadow-lg shadow-black/30 ${tab.bgClass} ${tab.colorClass} shrink-0`}>
+                    <div
+                      className={`p-2.5 rounded-xl shadow-lg shadow-black/30 ${tab.bgClass} ${tab.colorClass} shrink-0`}
+                    >
                       {tab.icon}
                     </div>
                     <div>
@@ -534,17 +610,20 @@ function ProductsMegaMenu({
               <span>CEC Retailer</span>
             </div>
             <p className="text-[10.5px] leading-relaxed text-slate-900 font-medium">
-              SAA-accredited Tier-1 products engineered for severe Australian summer conditions.
+              SAA-accredited Tier-1 products engineered for severe Australian
+              summer conditions.
             </p>
             <button
               onClick={() => {
-                onClose()
-                openQuoteModal('Products Mega Menu assessment')
+                onClose();
+                openQuoteModal("Products Mega Menu assessment");
               }}
               className="inline-flex items-center gap-2 text-xs font-black text-[#FCC200] hover:text-[#1B74BB] transition group/btn cursor-pointer bg-transparent border-none p-0"
             >
               Get Free Assessment
-              <span className="transform group-hover/btn:translate-x-1 transition-transform">→</span>
+              <span className="transform group-hover/btn:translate-x-1 transition-transform">
+                →
+              </span>
             </button>
           </div>
         </div>
@@ -594,15 +673,16 @@ function ProductsMegaMenu({
           {/* Quick links footer inside content */}
           <div className="pt-4 border-t border-slate-100 flex justify-between items-center text-[10px] text-slate-900 font-semibold">
             <span className="flex items-center gap-1">
-              <Check className="w-3.5 h-3.5 text-emerald-500" /> 25-Year Warranties
+              <Check className="w-3.5 h-3.5 text-emerald-500" /> 25-Year
+              Warranties
             </span>
             <span className="flex items-center gap-1">
               <Check className="w-3.5 h-3.5 text-emerald-500" /> CEC Certified
             </span>
             <button
               onClick={() => {
-                onClose()
-                openQuoteModal('Products Mega Menu assessment')
+                onClose();
+                openQuoteModal("Products Mega Menu assessment");
               }}
               className="text-[#1B74BB] hover:text-[#FCC200] font-black uppercase tracking-wider flex items-center gap-1 transition-colors cursor-pointer bg-transparent border-none p-0"
             >
@@ -610,129 +690,165 @@ function ProductsMegaMenu({
             </button>
           </div>
         </div>
-
       </div>
     </div>
   );
 }
 
 export default function Navbar() {
-  const location = useLocation()
-  const [activeLink, setActiveLink] = useState('Home')
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null)
-  const [mobileOpen, setMobileOpen] = useState(false)
-  const [mobileExpanded, setMobileExpanded] = useState<string | null>(null)
-  const [mobileSubExpanded, setMobileSubExpanded] = useState<string | null>(null)
-  const { openQuoteModal } = useQuoteModal()
+  const location = useLocation();
+  const [activeLink, setActiveLink] = useState("Home");
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
+  const [mobileSubExpanded, setMobileSubExpanded] = useState<string | null>(
+    null,
+  );
+  const { openQuoteModal } = useQuoteModal();
 
-  const navRef = useRef<HTMLDivElement>(null)
-  const hoverTimeoutRef = useRef<any>(null)
+  const navRef = useRef<HTMLDivElement>(null);
+  const hoverTimeoutRef = useRef<any>(null);
 
   const handleDropdownOpen = (label: string) => {
     if (hoverTimeoutRef.current) {
-      clearTimeout(hoverTimeoutRef.current)
-      hoverTimeoutRef.current = null
+      clearTimeout(hoverTimeoutRef.current);
+      hoverTimeoutRef.current = null;
     }
-    setOpenDropdown(label)
-  }
+    setOpenDropdown(label);
+  };
 
   const handleDropdownClose = () => {
     if (hoverTimeoutRef.current) {
-      clearTimeout(hoverTimeoutRef.current)
+      clearTimeout(hoverTimeoutRef.current);
     }
     hoverTimeoutRef.current = setTimeout(() => {
-      setOpenDropdown(null)
-    }, 150)
-  }
+      setOpenDropdown(null);
+    }, 150);
+  };
 
   useEffect(() => {
     return () => {
       if (hoverTimeoutRef.current) {
-        clearTimeout(hoverTimeoutRef.current)
+        clearTimeout(hoverTimeoutRef.current);
       }
-    }
-  }, [])
+    };
+  }, []);
 
   useEffect(() => {
-    if (location.pathname === '/about') {
-      setActiveLink('About Us')
-    } else if (location.pathname === '/projects') {
-      setActiveLink('Our Projects')
-    } else if (location.pathname === '/contact') {
-      setActiveLink('Contact Us')
-    } else if (location.pathname === '/') {
-      if (location.hash === '#services') {
-        setActiveLink('Solar Services')
-      } else if (location.hash === '#products') {
-        setActiveLink('Products')
-      } else if (location.hash === '#contact') {
-        setActiveLink('Contact Us')
+    if (location.pathname === "/about") {
+      setActiveLink("About Us");
+    } else if (location.pathname === "/projects") {
+      setActiveLink("Our Projects");
+    } else if (location.pathname === "/contact") {
+      setActiveLink("Contact Us");
+    } else if (location.pathname.startsWith("/product/")) {
+      setActiveLink("Products");
+    } else if (
+      location.pathname.startsWith("/residential/") ||
+      location.pathname.startsWith("/commercial/") ||
+      location.pathname.startsWith("/services/")
+    ) {
+      setActiveLink("Services");
+    } else if (location.pathname === "/") {
+      if (location.hash === "#services") {
+        setActiveLink("Services");
+      } else if (
+        location.hash === "#products" ||
+        location.hash === "#battery"
+      ) {
+        setActiveLink("Products");
+      } else if (location.hash === "#contact") {
+        setActiveLink("Contact Us");
       } else {
-        setActiveLink('Home')
+        setActiveLink("Home");
       }
+    } else {
+      setActiveLink("");
     }
-  }, [location.pathname, location.hash])
+  }, [location.pathname, location.hash]);
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (navRef.current && !navRef.current.contains(e.target as Node)) {
-        setOpenDropdown(null)
-        setMobileOpen(false)
+        setOpenDropdown(null);
+        setMobileOpen(false);
       }
-    }
+    };
 
-    document.addEventListener('mousedown', handleClickOutside)
+    document.addEventListener("mousedown", handleClickOutside);
 
-    return () =>
-      document.removeEventListener('mousedown', handleClickOutside)
-  }, [])
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   // Lock body scroll when mobile menu is open
   useEffect(() => {
     if (mobileOpen) {
-      document.body.style.overflow = 'hidden'
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = ''
+      document.body.style.overflow = "";
     }
     return () => {
-      document.body.style.overflow = ''
-    }
-  }, [mobileOpen])
+      document.body.style.overflow = "";
+    };
+  }, [mobileOpen]);
 
   // Reset expanded subcategories when drawer closes or switches
   useEffect(() => {
     if (!mobileOpen) {
-      setMobileExpanded(null)
-      setMobileSubExpanded(null)
+      setMobileExpanded(null);
+      setMobileSubExpanded(null);
     }
-  }, [mobileOpen])
+  }, [mobileOpen]);
 
   useEffect(() => {
-    setMobileSubExpanded(null)
-  }, [mobileExpanded])
+    setMobileSubExpanded(null);
+  }, [mobileExpanded]);
 
   const handleMouseEnter = (e: React.MouseEvent<HTMLElement>) => {
-    const btn = e.currentTarget
-    const label = btn.querySelector('.pill-label')
-    const labelHover = btn.querySelector('.pill-label-hover')
+    const btn = e.currentTarget;
+    const label = btn.querySelector(".pill-label");
+    const labelHover = btn.querySelector(".pill-label-hover");
     if (label && labelHover) {
-      gsap.to(label, { y: -22, duration: 0.3, ease: 'power2.out', overwrite: 'auto' })
-      gsap.fromTo(labelHover,
+      gsap.to(label, {
+        y: -22,
+        duration: 0.3,
+        ease: "power2.out",
+        overwrite: "auto",
+      });
+      gsap.fromTo(
+        labelHover,
         { y: 22, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.3, ease: 'power2.out', overwrite: 'auto' }
-      )
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.3,
+          ease: "power2.out",
+          overwrite: "auto",
+        },
+      );
     }
-  }
+  };
 
   const handleMouseLeave = (e: React.MouseEvent<HTMLElement>) => {
-    const btn = e.currentTarget
-    const label = btn.querySelector('.pill-label')
-    const labelHover = btn.querySelector('.pill-label-hover')
+    const btn = e.currentTarget;
+    const label = btn.querySelector(".pill-label");
+    const labelHover = btn.querySelector(".pill-label-hover");
     if (label && labelHover) {
-      gsap.to(label, { y: 0, duration: 0.25, ease: 'power2.out', overwrite: 'auto' })
-      gsap.to(labelHover, { y: 22, opacity: 0, duration: 0.25, ease: 'power2.out', overwrite: 'auto' })
+      gsap.to(label, {
+        y: 0,
+        duration: 0.25,
+        ease: "power2.out",
+        overwrite: "auto",
+      });
+      gsap.to(labelHover, {
+        y: 22,
+        opacity: 0,
+        duration: 0.25,
+        ease: "power2.out",
+        overwrite: "auto",
+      });
     }
-  }
+  };
 
   return (
     <header className="fixed top-4 left-0 right-0 z-50 font-serif">
@@ -741,7 +857,6 @@ export default function Navbar() {
         className="relative w-[95%] mx-auto bg-white rounded-full border border-gray-200 shadow-[0_8px_30px_rgba(0,0,0,0.08)]"
       >
         <div className="flex items-center justify-between h-[74px] px-6 lg:px-4">
-
           {/* Logo */}
           <Link to="/" className="flex items-center shrink-0">
             <img
@@ -773,28 +888,28 @@ export default function Navbar() {
                 {link.children ? (
                   <button
                     onClick={() => {
-                      setActiveLink(link.label)
+                      setActiveLink(link.label);
                       setOpenDropdown(
-                        openDropdown === link.label ? null : link.label
-                      )
+                        openDropdown === link.label ? null : link.label,
+                      );
                     }}
-                    className={`flex items-center gap-1 px-3 py-2 text-[15px] font-semibold transition-all duration-200 overflow-hidden ${activeLink === link.label
-                      ? 'text-[#FCC200]'
-                      : 'text-[#1B74BB] hover:text-[#2AA9E4]'
-                      }`}
+                    className={`flex items-center gap-1 px-3 py-2 text-[15px] font-semibold transition-all duration-200 overflow-hidden ${
+                      activeLink === link.label
+                        ? "text-[#FCC200]"
+                        : "text-[#1B74BB] hover:text-[#2AA9E4]"
+                    }`}
                   >
                     <span className="relative inline-block overflow-hidden h-[22px] leading-[22px]">
-                      <span className="pill-label block">
-                        {link.label}
-                      </span>
+                      <span className="pill-label block">{link.label}</span>
                       <span className="pill-label-hover absolute left-0 top-0 block text-[#2AA9E4] translate-y-[22px] opacity-0">
                         {link.label}
                       </span>
                     </span>
 
                     <svg
-                      className={`w-4 h-4 transition-transform duration-300 ${openDropdown === link.label ? 'rotate-180' : ''
-                        }`}
+                      className={`w-4 h-4 transition-transform duration-300 ${
+                        openDropdown === link.label ? "rotate-180" : ""
+                      }`}
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -811,18 +926,17 @@ export default function Navbar() {
                   <Link
                     to={link.href}
                     onClick={() => {
-                      setActiveLink(link.label)
-                      setOpenDropdown(null)
+                      setActiveLink(link.label);
+                      setOpenDropdown(null);
                     }}
-                    className={`flex items-center gap-1 px-3 py-2 text-[15px] font-semibold transition-all duration-200 overflow-hidden ${activeLink === link.label
-                      ? 'text-[#FCC200]'
-                      : 'text-[#1B74BB] hover:text-[#2AA9E4]'
-                      }`}
+                    className={`flex items-center gap-1 px-3 py-2 text-[15px] font-semibold transition-all duration-200 overflow-hidden ${
+                      activeLink === link.label
+                        ? "text-[#FCC200]"
+                        : "text-[#1B74BB] hover:text-[#2AA9E4]"
+                    }`}
                   >
                     <span className="relative inline-block overflow-hidden h-[22px] leading-[22px]">
-                      <span className="pill-label block">
-                        {link.label}
-                      </span>
+                      <span className="pill-label block">{link.label}</span>
                       <span className="pill-label-hover absolute left-0 top-0 block text-[#2AA9E4] translate-y-[22px] opacity-0">
                         {link.label}
                       </span>
@@ -834,22 +948,23 @@ export default function Navbar() {
                   <div className="h-[3px] bg-[#FCC200] rounded-full mx-auto w-8" />
                 )}
 
-                {link.children && link.label !== 'Products' && link.label !== 'Services' && (
-                  <DropdownMenu
-                    items={link.children}
-                    isOpen={openDropdown === link.label}
-                    onClose={() => setOpenDropdown(null)}
-                  />
-                )}
+                {link.children &&
+                  link.label !== "Products" &&
+                  link.label !== "Services" && (
+                    <DropdownMenu
+                      items={link.children}
+                      isOpen={openDropdown === link.label}
+                      onClose={() => setOpenDropdown(null)}
+                    />
+                  )}
               </div>
             ))}
             {/* CTA */}
             <button
-              onClick={() => openQuoteModal('Navbar CTA')}
+              onClick={() => openQuoteModal("Navbar CTA")}
               className="hidden lg:flex items-center gap-2 bg-[#f5a623] hover:bg-[#e59c15] text-white font-bold px-8 py-3 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl cursor-pointer"
             >
               Get A Quote
-
               <svg
                 className="w-4 h-4"
                 fill="none"
@@ -865,8 +980,6 @@ export default function Navbar() {
               </svg>
             </button>
           </nav>
-
-
 
           {/* Mobile Menu Button */}
           <button
@@ -899,51 +1012,63 @@ export default function Navbar() {
 
         {/* Services Mega Menu centered to navbar */}
         <ServicesMegaMenu
-          isOpen={openDropdown === 'Services'}
+          isOpen={openDropdown === "Services"}
           onClose={() => setOpenDropdown(null)}
-          onMouseEnter={() => handleDropdownOpen('Services')}
+          onMouseEnter={() => handleDropdownOpen("Services")}
           onMouseLeave={handleDropdownClose}
         />
 
         {/* Products Mega Menu centered to navbar */}
         <ProductsMegaMenu
-          isOpen={openDropdown === 'Products'}
+          isOpen={openDropdown === "Products"}
           onClose={() => setOpenDropdown(null)}
-          onMouseEnter={() => handleDropdownOpen('Products')}
+          onMouseEnter={() => handleDropdownOpen("Products")}
           onMouseLeave={handleDropdownClose}
         />
 
         {/* Mobile Full Screen Menu Overlay */}
         <div
-          className={`fixed inset-0 z-50 lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${mobileOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
-            }`}
+          className={`fixed inset-0 z-50 lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+            mobileOpen
+              ? "opacity-100 pointer-events-auto"
+              : "opacity-0 pointer-events-none"
+          }`}
         >
           {/* Blur backdrop overlay */}
           <div
             className="absolute inset-0 bg-slate-900/60 backdrop-blur-md transition-opacity duration-300"
             onClick={() => {
               setMobileOpen(false);
-              document.body.style.overflow = 'unset';
+              document.body.style.overflow = "unset";
             }}
           />
 
           {/* Drawer contents */}
           <div
-            className={`absolute top-0 right-0 bottom-0 h-full w-[88%] max-w-[420px] bg-white flex flex-col justify-between transition-transform duration-300 ease-out shadow-2xl ${mobileOpen ? 'translate-x-0' : 'translate-x-full'
-              }`}
+            className={`absolute top-0 right-0 bottom-0 h-full w-[88%] max-w-[420px] bg-white flex flex-col justify-between transition-transform duration-300 ease-out shadow-2xl ${
+              mobileOpen ? "translate-x-0" : "translate-x-full"
+            }`}
           >
             {/* Header */}
             <div className="flex items-center justify-between px-6 py-5 border-b border-slate-100 shrink-0">
-              <Link to="/" onClick={() => {
-                setMobileOpen(false);
-                document.body.style.overflow = 'unset';
-              }} className="flex items-center shrink-0">
-                <img src={logo} alt="Solearth Energy" className="h-10 w-auto object-contain" />
+              <Link
+                to="/"
+                onClick={() => {
+                  setMobileOpen(false);
+                  document.body.style.overflow = "unset";
+                }}
+                className="flex items-center shrink-0"
+              >
+                <img
+                  src={logo}
+                  alt="Solearth Energy"
+                  className="h-10 w-auto object-contain"
+                />
               </Link>
               <button
                 onClick={() => {
                   setMobileOpen(false);
-                  document.body.style.overflow = 'unset';
+                  document.body.style.overflow = "unset";
                 }}
                 className="p-2 text-slate-900 hover:text-slate-800 hover:bg-slate-100 rounded-full transition-all duration-200 cursor-pointer"
               >
@@ -959,93 +1084,131 @@ export default function Navbar() {
                   const isExpanded = mobileExpanded === link.label;
 
                   return (
-                    <div key={link.label} className="border-b border-slate-50 pb-1.5 last:border-0 last:pb-0">
+                    <div
+                      key={link.label}
+                      className="border-b border-slate-50 pb-1.5 last:border-0 last:pb-0"
+                    >
                       {hasChildren ? (
                         <>
                           <button
                             className="w-full flex items-center justify-between py-3.5 text-left font-serif text-[17px] font-bold text-[#1B74BB] hover:text-[#FCC200] transition-colors"
-                            onClick={() => setMobileExpanded(isExpanded ? null : link.label)}
+                            onClick={() =>
+                              setMobileExpanded(isExpanded ? null : link.label)
+                            }
                           >
                             <span>{link.label}</span>
                             <ChevronDown
-                              className={`w-4 h-4 text-[#1B74BB] transition-transform duration-300 ${isExpanded ? 'rotate-180 text-[#FCC200]' : ''
-                                }`}
+                              className={`w-4 h-4 text-[#1B74BB] transition-transform duration-300 ${
+                                isExpanded ? "rotate-180 text-[#FCC200]" : ""
+                              }`}
                             />
                           </button>
 
                           {/* Smooth expanded submenu list */}
                           <div
-                            className={`pl-3 border-l-2 border-slate-100 overflow-hidden transition-all duration-300 ease-in-out ${isExpanded ? 'max-h-[1000px] opacity-100 mt-1 pb-3' : 'max-h-0 opacity-0 pointer-events-none'
-                              }`}
+                            className={`pl-3 border-l-2 border-slate-100 overflow-hidden transition-all duration-300 ease-in-out ${
+                              isExpanded
+                                ? "max-h-[1000px] opacity-100 mt-1 pb-3"
+                                : "max-h-0 opacity-0 pointer-events-none"
+                            }`}
                           >
-                            {link.label === 'Products' ? (
+                            {link.label === "Products" ? (
                               <div className="space-y-3 pt-1">
-                                {Object.entries(PRODUCTS_MAP).map(([category, items]) => {
-                                  const isSubExpanded = mobileSubExpanded === category;
-                                  return (
-                                    <div key={category} className="space-y-1">
-                                      <button
-                                        onClick={() => setMobileSubExpanded(isSubExpanded ? null : category)}
-                                        className="w-full flex items-center justify-between py-2 text-left text-[13px] font-black uppercase tracking-wider text-[#1B74BB] hover:text-[#FCC200] transition-colors"
-                                      >
-                                        <span>{category}</span>
-                                        <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${isSubExpanded ? 'rotate-180 text-[#FCC200]' : ''}`} />
-                                      </button>
-                                      
-                                      <div className={`grid grid-cols-1 gap-1.5 pl-2 border-l border-slate-100 overflow-hidden transition-all duration-300 ${isSubExpanded ? 'max-h-[350px] opacity-100 py-1' : 'max-h-0 opacity-0 pointer-events-none'}`}>
-                                        {items.map((item) => (
-                                          <Link
-                                            key={item.slug}
-                                            to={`/product/${item.slug}`}
-                                            className="flex items-center justify-between p-2 rounded-lg bg-slate-50 hover:bg-slate-100 text-xs font-bold text-slate-700 hover:text-[#FCC200] transition-colors"
-                                            onClick={() => {
-                                              setMobileOpen(false);
-                                              setMobileExpanded(null);
-                                              setMobileSubExpanded(null);
-                                              document.body.style.overflow = 'unset';
-                                            }}
-                                          >
-                                            <span>{item.name}</span>
-                                            <ChevronRight className="w-3.5 h-3.5 opacity-60" />
-                                          </Link>
-                                        ))}
+                                {Object.entries(PRODUCTS_MAP).map(
+                                  ([category, items]) => {
+                                    const isSubExpanded =
+                                      mobileSubExpanded === category;
+                                    return (
+                                      <div key={category} className="space-y-1">
+                                        <button
+                                          onClick={() =>
+                                            setMobileSubExpanded(
+                                              isSubExpanded ? null : category,
+                                            )
+                                          }
+                                          className="w-full flex items-center justify-between py-2 text-left text-[13px] font-black uppercase tracking-wider text-[#1B74BB] hover:text-[#FCC200] transition-colors"
+                                        >
+                                          <span>{category}</span>
+                                          <ChevronDown
+                                            className={`w-3.5 h-3.5 transition-transform duration-200 ${isSubExpanded ? "rotate-180 text-[#FCC200]" : ""}`}
+                                          />
+                                        </button>
+
+                                        <div
+                                          className={`grid grid-cols-1 gap-1.5 pl-2 border-l border-slate-100 overflow-hidden transition-all duration-300 ${isSubExpanded ? "max-h-[350px] opacity-100 py-1" : "max-h-0 opacity-0 pointer-events-none"}`}
+                                        >
+                                          {items.map((item) => (
+                                            <Link
+                                              key={item.slug}
+                                              to={`/product/${item.slug}`}
+                                              className="flex items-center justify-between p-2 rounded-lg bg-slate-50 hover:bg-slate-100 text-xs font-bold text-slate-700 hover:text-[#FCC200] transition-colors"
+                                              onClick={() => {
+                                                setMobileOpen(false);
+                                                setMobileExpanded(null);
+                                                setMobileSubExpanded(null);
+                                                document.body.style.overflow =
+                                                  "unset";
+                                              }}
+                                            >
+                                              <span>{item.name}</span>
+                                              <ChevronRight className="w-3.5 h-3.5 opacity-60" />
+                                            </Link>
+                                          ))}
+                                        </div>
                                       </div>
-                                    </div>
-                                  );
-                                })}
+                                    );
+                                  },
+                                )}
                               </div>
                             ) : (
                               <div className="space-y-3 pt-1">
                                 {link.children.map((child: any) => {
-                                  const isSubExpanded = mobileSubExpanded === child.label;
+                                  const isSubExpanded =
+                                    mobileSubExpanded === child.label;
                                   return (
-                                    <div key={child.label} className="space-y-1">
+                                    <div
+                                      key={child.label}
+                                      className="space-y-1"
+                                    >
                                       {child.children ? (
                                         <>
                                           <button
-                                            onClick={() => setMobileSubExpanded(isSubExpanded ? null : child.label)}
+                                            onClick={() =>
+                                              setMobileSubExpanded(
+                                                isSubExpanded
+                                                  ? null
+                                                  : child.label,
+                                              )
+                                            }
                                             className="w-full flex items-center justify-between py-2 text-left text-[13px] font-black uppercase tracking-wider text-[#1B74BB] hover:text-[#FCC200] transition-colors"
                                           >
                                             <span>{child.label}</span>
-                                            <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${isSubExpanded ? 'rotate-180 text-[#FCC200]' : ''}`} />
+                                            <ChevronDown
+                                              className={`w-3.5 h-3.5 transition-transform duration-200 ${isSubExpanded ? "rotate-180 text-[#FCC200]" : ""}`}
+                                            />
                                           </button>
-                                          <div className={`grid grid-cols-1 gap-1.5 pl-2 border-l border-slate-100 overflow-hidden transition-all duration-300 ${isSubExpanded ? 'max-h-[350px] opacity-100 py-1' : 'max-h-0 opacity-0 pointer-events-none'}`}>
-                                            {child.children.map((subChild: any) => (
-                                              <Link
-                                                key={subChild.label}
-                                                to={subChild.href}
-                                                className="flex items-center justify-between p-2 rounded-lg bg-slate-50 hover:bg-slate-100 text-xs font-bold text-slate-700 hover:text-[#FCC200] transition-colors"
-                                                onClick={() => {
-                                                  setMobileOpen(false);
-                                                  setMobileExpanded(null);
-                                                  setMobileSubExpanded(null);
-                                                  document.body.style.overflow = 'unset';
-                                                }}
-                                              >
-                                                <span>{subChild.label}</span>
-                                                <ChevronRight className="w-3.5 h-3.5 opacity-60" />
-                                              </Link>
-                                            ))}
+                                          <div
+                                            className={`grid grid-cols-1 gap-1.5 pl-2 border-l border-slate-100 overflow-hidden transition-all duration-300 ${isSubExpanded ? "max-h-[350px] opacity-100 py-1" : "max-h-0 opacity-0 pointer-events-none"}`}
+                                          >
+                                            {child.children.map(
+                                              (subChild: any) => (
+                                                <Link
+                                                  key={subChild.label}
+                                                  to={subChild.href}
+                                                  className="flex items-center justify-between p-2 rounded-lg bg-slate-50 hover:bg-slate-100 text-xs font-bold text-slate-700 hover:text-[#FCC200] transition-colors"
+                                                  onClick={() => {
+                                                    setMobileOpen(false);
+                                                    setMobileExpanded(null);
+                                                    setMobileSubExpanded(null);
+                                                    document.body.style.overflow =
+                                                      "unset";
+                                                  }}
+                                                >
+                                                  <span>{subChild.label}</span>
+                                                  <ChevronRight className="w-3.5 h-3.5 opacity-60" />
+                                                </Link>
+                                              ),
+                                            )}
                                           </div>
                                         </>
                                       ) : (
@@ -1056,7 +1219,8 @@ export default function Navbar() {
                                             setMobileOpen(false);
                                             setMobileExpanded(null);
                                             setMobileSubExpanded(null);
-                                            document.body.style.overflow = 'unset';
+                                            document.body.style.overflow =
+                                              "unset";
                                           }}
                                         >
                                           {child.label}
@@ -1076,7 +1240,7 @@ export default function Navbar() {
                           onClick={() => {
                             setMobileOpen(false);
                             setMobileExpanded(null);
-                            document.body.style.overflow = 'unset';
+                            document.body.style.overflow = "unset";
                           }}
                         >
                           {link.label}
@@ -1091,9 +1255,12 @@ export default function Navbar() {
               <div className="mt-8 p-4 bg-amber-50/70 border border-amber-200/50 rounded-2xl flex items-start gap-3">
                 <Sparkles className="w-5 h-5 text-[#FCC200] shrink-0 mt-0.5" />
                 <div>
-                  <h5 className="text-[11px] font-black uppercase tracking-widest text-[#1B74BB]">Government Rebate</h5>
+                  <h5 className="text-[11px] font-black uppercase tracking-widest text-[#1B74BB]">
+                    Government Rebate
+                  </h5>
                   <p className="text-[10px] leading-relaxed text-slate-600 font-semibold mt-0.5">
-                    NSW & QLD solar incentives available! Check your eligible system configuration rebates.
+                    NSW & QLD solar incentives available! Check your eligible
+                    system configuration rebates.
                   </p>
                 </div>
               </div>
@@ -1107,16 +1274,24 @@ export default function Navbar() {
                   className="flex flex-col items-center justify-center p-3 rounded-xl bg-white border border-slate-200 hover:border-[#1B74BB] hover:shadow-md transition group text-center"
                 >
                   <Phone className="w-4.5 h-4.5 text-[#FCC200] mb-1 group-hover:scale-110 transition-transform" />
-                  <span className="text-[9px] font-black uppercase text-slate-900 tracking-wider">Call Now</span>
-                  <span className="text-[11px] font-bold text-slate-800">0435 359 431</span>
+                  <span className="text-[9px] font-black uppercase text-slate-900 tracking-wider">
+                    Call Now
+                  </span>
+                  <span className="text-[11px] font-bold text-slate-800">
+                    0435 359 431
+                  </span>
                 </a>
                 <a
                   href="mailto:info@solearth.com.au"
                   className="flex flex-col items-center justify-center p-3 rounded-xl bg-white border border-slate-200 hover:border-[#1B74BB] hover:shadow-md transition group text-center"
                 >
                   <Mail className="w-4.5 h-4.5 text-blue-500 mb-1 group-hover:scale-110 transition-transform" />
-                  <span className="text-[9px] font-black uppercase text-slate-900 tracking-wider">Email Us</span>
-                  <span className="text-[11px] font-bold text-slate-800 truncate max-w-full">info@solearth...</span>
+                  <span className="text-[9px] font-black uppercase text-slate-900 tracking-wider">
+                    Email Us
+                  </span>
+                  <span className="text-[11px] font-bold text-slate-800 truncate max-w-full">
+                    info@solearth...
+                  </span>
                 </a>
               </div>
 
@@ -1124,8 +1299,8 @@ export default function Navbar() {
                 className="w-full flex items-center justify-center gap-2 bg-[#FCC200] hover:bg-[#e08900] text-white font-bold py-3.5 rounded-full shadow-lg shadow-[#FCC200]/15 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 cursor-pointer text-sm"
                 onClick={() => {
                   setMobileOpen(false);
-                  document.body.style.overflow = 'unset';
-                  openQuoteModal('Mobile Navbar Side Drawer');
+                  document.body.style.overflow = "unset";
+                  openQuoteModal("Mobile Navbar Side Drawer");
                 }}
               >
                 Get Free Assessment & Quote →
@@ -1135,5 +1310,5 @@ export default function Navbar() {
         </div>
       </div>
     </header>
-  )
+  );
 }
