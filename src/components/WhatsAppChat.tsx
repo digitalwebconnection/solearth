@@ -1,28 +1,38 @@
 import { useState, useEffect, useRef } from 'react'
-import { X, Send } from 'lucide-react'
+import { X, Send, Sparkles, MessageCircle } from 'lucide-react'
 
 // Constants for WhatsApp integration
 const WHATSAPP_NUMBER = '61400000000' // Replace with your actual WhatsApp business number
-const AGENT_NAME = 'SolEarth Support'
-const WELCOME_MESSAGE = 'Hi there! Welcome to SolEarth Energy. How can we help you power your home with clean energy today?'
+const AGENT_NAME = 'SolEarth Assistant'
 
-interface WhatsAppChatProps {
-  isSiteReady?: boolean
+const QUICK_OPTIONS = [
+  { label: '☀️ Get Free Quote', message: 'Hi, I would like to request a free solar quote for my home.' },
+  { label: '🔋 Battery Storage', message: 'Hello, I want to find out more about your solar battery systems.' },
+  { label: '💰 Check Rebates', message: 'Hi, I would like to check my eligibility for government solar rebates.' },
+  { label: '📞 Request Call', message: 'Hello, I would like to request a callback from a solar specialist.' },
+]
+
+interface Message {
+  id: string
+  sender: 'bot' | 'user'
+  text: string
+  time: string
 }
 
-export default function WhatsAppChat({ isSiteReady = true }: WhatsAppChatProps) {
+export default function WhatsAppChat({ isSiteReady = true }: { isSiteReady?: boolean }) {
   const [isOpen, setIsOpen] = useState(false)
   const [message, setMessage] = useState('')
+  const [messages, setMessages] = useState<Message[]>([])
+  const [isTyping, setIsTyping] = useState(false)
   const [hasOpenedOnce, setHasOpenedOnce] = useState(false)
   const [showNotification, setShowNotification] = useState(false)
   const chatEndRef = useRef<HTMLDivElement>(null)
 
-  // Auto-open chat after 3 seconds when the website is ready
+  // Auto-open chat after 4 seconds when the website is ready
   useEffect(() => {
     if (!isSiteReady) return
 
-    const timer = setTimeout(() => {
-      // Only auto-open if the user hasn't opened/interacted with it yet
+    const openTimer = setTimeout(() => {
       setIsOpen((prev) => {
         if (!prev && !hasOpenedOnce) {
           setHasOpenedOnce(true)
@@ -30,31 +40,72 @@ export default function WhatsAppChat({ isSiteReady = true }: WhatsAppChatProps) 
         }
         return prev
       })
-    }, 3000)
+    }, 4000)
 
-    // Also trigger notification badge slightly before opening or if closed
+    // Trigger notification badge slightly before opening
     const badgeTimer = setTimeout(() => {
-      setShowNotification((prev) => !isOpen ? true : prev)
-    }, 1500)
+      setShowNotification((prev) => (!isOpen ? true : prev))
+    }, 2000)
 
     return () => {
-      clearTimeout(timer)
+      clearTimeout(openTimer)
       clearTimeout(badgeTimer)
     }
   }, [isSiteReady, hasOpenedOnce, isOpen])
 
-  // Scroll to bottom when chat opens
+  // Simulated initial message typing timeline when chat window is first opened
   useEffect(() => {
-    if (isOpen) {
-      chatEndRef.current?.scrollIntoView({ behavior: 'smooth' })
+    if (isOpen && messages.length === 0) {
+      setHasOpenedOnce(true)
       setShowNotification(false)
+      setIsTyping(true)
+
+      const timer1 = setTimeout(() => {
+        setIsTyping(false)
+        const timeNow = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+        setMessages([
+          {
+            id: 'init-1',
+            sender: 'bot',
+            text: 'Hi there! Welcome to SolEarth Energy. ☀️',
+            time: timeNow,
+          },
+        ])
+
+        const timer2 = setTimeout(() => {
+          setIsTyping(true)
+          const timer3 = setTimeout(() => {
+            setIsTyping(false)
+            setMessages((prev) => [
+              ...prev,
+              {
+                id: 'init-2',
+                sender: 'bot',
+                text: 'How can we help you power your home with clean energy today? You can select a quick option below or type a message.',
+                time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+              },
+            ])
+          }, 1400)
+          return () => clearTimeout(timer3)
+        }, 650)
+
+        return () => clearTimeout(timer2)
+      }, 1100)
+
+      return () => clearTimeout(timer1)
     }
-  }, [isOpen])
+  }, [isOpen, messages.length])
+
+  // Scroll to bottom when messages list or typing state changes
+  useEffect(() => {
+    chatEndRef.current?.scrollIntoView({ behavior: 'smooth' })
+  }, [messages, isTyping])
 
   const handleOpenToggle = () => {
     setIsOpen(!isOpen)
     if (!isOpen) {
       setHasOpenedOnce(true)
+      setShowNotification(false)
     }
   }
 
@@ -62,40 +113,72 @@ export default function WhatsAppChat({ isSiteReady = true }: WhatsAppChatProps) 
     const text = textToSend || message
     if (!text.trim()) return
 
-    // Create the WhatsApp redirect URL
-    const encodedText = encodeURIComponent(text)
-    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedText}`
+    const timeNow = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+    const userMsg: Message = {
+      id: Date.now().toString(),
+      sender: 'user',
+      text: text,
+      time: timeNow,
+    }
 
-    // Redirect in a new tab
-    window.open(whatsappUrl, '_blank')
+    setMessages((prev) => [...prev, userMsg])
     setMessage('')
+    setIsTyping(true)
+
+    // Simulate bot thinking/typing response before redirecting
+    setTimeout(() => {
+      setIsTyping(false)
+      const botResponse: Message = {
+        id: (Date.now() + 1).toString(),
+        sender: 'bot',
+        text: 'Perfect! Redirecting you to WhatsApp for secure messaging with a specialist...',
+        time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+      }
+      setMessages((prev) => [...prev, botResponse])
+
+      // Redirect to WhatsApp after message confirmation
+      setTimeout(() => {
+        const encodedText = encodeURIComponent(text)
+        const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedText}`
+        window.open(whatsappUrl, '_blank')
+      }, 900)
+    }, 1300)
   }
 
-
-
   return (
-    <div className="fixed bottom-6 right-6 z-9999 font-sans">
+    <>
+      {/* Mobile backdrop overlay */}
+      {isOpen && (
+        <div
+          onClick={handleOpenToggle}
+          className="fixed inset-0 bg-black/40 backdrop-blur-xs z-9998 sm:hidden transition-opacity duration-300"
+        />
+      )}
+
       {/* ── Chat Window Box ── */}
       <div
-        className={`fixed bottom-24 right-4 left-4 sm:left-auto sm:right-6 sm:w-[350px] bg-[#0c1317] border border-emerald-500/20 rounded-2xl shadow-2xl flex flex-col transition-all duration-300 transform origin-bottom-right ${isOpen
-          ? 'scale-100 opacity-100 translate-y-0  pointer-events-auto'
-          : 'scale-75 opacity-0  translate-y-8 pointer-events-none'
-          }`}
+        className={`fixed z-9999 transition-all duration-300 ease-out transform bottom-4 left-4 right-4 mx-auto max-w-md h-[70vh] rounded-2xl border border-slate-200/50 shadow-2xl flex flex-col origin-bottom sm:bottom-24 sm:left-auto sm:right-6 sm:w-[360px] sm:h-[450px] sm:origin-bottom-right ${
+          isOpen
+            ? 'translate-y-0 opacity-100 scale-100 pointer-events-auto'
+            : 'translate-y-full opacity-0 scale-95 pointer-events-none sm:translate-y-8 sm:opacity-0 sm:scale-75'
+        }`}
       >
         {/* Header */}
-        <div className="bg-linear-to-r rounded-t-2xl from-emerald-600 to-teal-700 p-4 text-white flex items-center justify-between">
+        <div className="bg-linear-to-r rounded-t-2xl from-[#075e54] to-[#128c7e] p-4 text-white flex items-center justify-between shadow-md relative shrink-0">
+          
           <div className="flex items-center gap-3">
             {/* Agent Status Circle */}
             <div className="relative">
-              <div className="w-10 h-10 rounded-full bg-emerald-900 border border-emerald-400/30 flex items-center justify-center text-emerald-100 font-bold font-mono">
+              <div className="w-10 h-10 rounded-full bg-emerald-950/40 border border-white/20 flex items-center justify-center text-white font-extrabold text-sm tracking-wider font-sans shadow-inner">
                 SE
               </div>
-              <span className="absolute bottom-0 right-0 w-3 h-3 bg-emerald-400 border-2 border-[#0c1317] rounded-full animate-pulse" />
+              <span className="absolute bottom-0 right-0 w-3 h-3 bg-[#25d366] border-2 border-[#128c7e] rounded-full animate-pulse" />
             </div>
             <div>
-              <h4 className="font-bold text-sm leading-tight">{AGENT_NAME}</h4>
-              <p className="text-[10px] text-emerald-100/80 flex items-center gap-1">
-                <span>●</span> Online • Typically replies instantly
+              <h4 className="font-extrabold text-[15px] leading-tight text-white">{AGENT_NAME}</h4>
+              <p className="text-[11px] text-[#d1f4e0] font-semibold flex items-center gap-1 mt-0.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#25d366] inline-block animate-ping" />
+                Online • Replies instantly
               </p>
             </div>
           </div>
@@ -111,68 +194,117 @@ export default function WhatsAppChat({ isSiteReady = true }: WhatsAppChatProps) 
 
         {/* Message Log Area */}
         <div
-          className="flex-1 p-4 max-h-[300px] overflow-y-auto space-y-4 bg-opacity-30"
+          className="flex-1 p-4 overflow-y-auto space-y-3 bg-[#efeae2]"
           style={{
-            backgroundImage: 'radial-gradient(rgba(16, 185, 129, 0.05) 1px, transparent 1px)',
-            backgroundSize: '16px 16px'
+            backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%239C92AC' fill-opacity='0.04'%3E%3Cpath d='M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10S0 25.523 0 20s4.477-10 10-10zm10 8c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm40 40c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z'/%3E%3C/g%3E%3C/svg%3E")`,
           }}
         >
-          {/* Agent welcome message */}
-          <div className="flex gap-2 max-w-[85%]">
-            <div className="bg-[#202c33] text-[#e9edef] text-sm p-3 rounded-2xl rounded-tl-none shadow-md border border-white/5">
-              <p className="leading-relaxed">{WELCOME_MESSAGE}</p>
-              <span className="block text-[9px] text-[#8696a0] text-right mt-1.5">Just now</span>
+          {messages.map((msg) => (
+            <div
+              key={msg.id}
+              className={`flex flex-col max-w-[85%] ${
+                msg.sender === 'user' ? 'ml-auto items-end' : 'mr-auto items-start'
+              }`}
+            >
+              <div
+                className={`p-3 rounded-2xl text-xs md:text-sm shadow-xs border ${
+                  msg.sender === 'user'
+                    ? 'bg-[#d9fdd3] text-slate-800 rounded-tr-none border-[#b1e8a9]'
+                    : 'bg-white text-slate-800 rounded-tl-none border-slate-200/40'
+                }`}
+              >
+                <p className="leading-relaxed whitespace-pre-line font-medium">{msg.text}</p>
+                <span
+                  className={`block text-[9px] text-right mt-1 font-semibold ${
+                    msg.sender === 'user' ? 'text-slate-500' : 'text-slate-400'
+                  }`}
+                >
+                  {msg.time}
+                </span>
+              </div>
             </div>
-          </div>
+          ))}
+
+          {/* Typing Indicator */}
+          {isTyping && (
+            <div className="flex flex-col max-w-[85%] mr-auto items-start">
+              <div className="py-2.5 px-4 bg-white border border-slate-200/40 rounded-2xl rounded-tl-none shadow-xs flex gap-1 items-center">
+                <span className="w-1.5 h-1.5 bg-[#075e54]/50 rounded-full animate-bounce [animation-delay:-0.3s]" />
+                <span className="w-1.5 h-1.5 bg-[#075e54]/50 rounded-full animate-bounce [animation-delay:-0.15s]" />
+                <span className="w-1.5 h-1.5 bg-[#075e54]/50 rounded-full animate-bounce" />
+              </div>
+            </div>
+          )}
+
+          {/* Quick Option Chips (Visible only when user hasn't typed anything yet) */}
+          {messages.length >= 2 && !isTyping && messages.filter((m) => m.sender === 'user').length === 0 && (
+            <div className="pt-2 flex flex-col gap-2 relative z-10 font-sans">
+              <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider pl-1">
+                Frequently Asked:
+              </span>
+              <div className="grid grid-cols-2 gap-2">
+                {QUICK_OPTIONS.map((opt) => (
+                  <button
+                    key={opt.label}
+                    onClick={() => handleSendMessage(opt.message)}
+                    className="p-2 bg-white/90 backdrop-blur-xs hover:bg-emerald-50 text-left border border-slate-200 hover:border-emerald-300 rounded-xl text-[11px] font-bold text-slate-700 hover:text-emerald-800 shadow-xs hover:shadow-sm transition-all cursor-pointer flex items-center gap-1.5"
+                  >
+                    <Sparkles className="w-3 h-3 text-[#25d366] shrink-0" />
+                    <span className="line-clamp-2">{opt.label}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
 
           <div ref={chatEndRef} />
         </div>
 
         {/* Chat input footer */}
-        <div className="p-3 bg-[#1f2c34] flex items-center rounded-b-2xl gap-2 border-t border-white/5">
+        <div className="p-3 bg-[#f0f2f5] flex items-center rounded-b-2xl gap-2 border-t border-slate-200/50 pb-3">
           <input
             type="text"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             onKeyDown={(e) => e.key === 'Enter' && handleSendMessage()}
             placeholder="Type a message..."
-            className="flex-1 bg-[#2a3942] text-sm text-[#e9edef] placeholder-[#8696a0] rounded-full px-4 py-2 focus:outline-none focus:ring-1 focus:ring-emerald-500 border border-transparent"
+            className="flex-1 bg-white text-base sm:text-sm text-slate-800 placeholder-slate-400 rounded-full px-4 py-2.5 focus:outline-none focus:ring-1 focus:ring-[#128c7e] border border-slate-200"
           />
           <button
             onClick={() => handleSendMessage()}
-            className="w-9 h-9 rounded-full bg-emerald-500 hover:bg-emerald-400 text-white flex items-center justify-center shadow-md transition-all shrink-0 cursor-pointer hover:scale-105 active:scale-95"
+            className="w-10 h-10 rounded-full bg-[#128c7e] hover:bg-[#075e54] text-white flex items-center justify-center shadow-md transition-all shrink-0 cursor-pointer hover:scale-105 active:scale-95"
             aria-label="Send message to WhatsApp"
           >
-            <Send className="w-4 h-4" />
+            <Send className="w-4.5 h-4.5" />
           </button>
         </div>
       </div>
 
       {/* ── Floating Launcher Trigger Button ── */}
-      <button
-        onClick={handleOpenToggle}
-        className="relative w-14 h-14 rounded-full bg-emerald-500 hover:bg-emerald-400 text-white flex items-center justify-center shadow-[0_4px_20px_rgba(16,185,129,0.5)] transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer group"
-        aria-label="Open WhatsApp chat support"
-      >
-        {/* Pulsing outer boundary */}
-        <span className="absolute inset-0 rounded-full border border-emerald-400 animate-ping opacity-30 group-hover:opacity-40" />
+      <div className={`fixed bottom-6 right-6 z-9999 font-sans transition-all duration-300 ${isOpen ? 'hidden sm:block' : 'block'}`}>
+        <button
+          onClick={handleOpenToggle}
+          className="relative w-14 h-14 rounded-full bg-[#25d366] hover:bg-[#20ba5a] text-white flex items-center justify-center shadow-[0_5px_25px_rgba(37,211,102,0.4)] transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer group"
+          aria-label="Open WhatsApp chat support"
+        >
+          {/* Pulsing outer boundary */}
+          <span className="absolute inset-0 rounded-full border border-[#25d366] animate-ping opacity-35 group-hover:opacity-45" />
 
-        {/* Notification badge */}
-        {showNotification && !isOpen && (
-          <span className="absolute -top-1 -right-1 bg-red-500 text-white font-mono text-[9px] font-bold w-5 h-5 rounded-full flex items-center justify-center border-2 border-[#070b13] animate-bounce">
-            1
-          </span>
-        )}
+          {/* Notification badge */}
+          {showNotification && !isOpen && (
+            <span className="absolute -top-1 -right-1 bg-red-500 text-white font-mono text-[9px] font-bold w-5 h-5 rounded-full flex items-center justify-center border-2 border-white animate-bounce shadow-md">
+              1
+            </span>
+          )}
 
-        {/* Switch logo/close icon based on open state */}
-        {isOpen ? (
-          <X className="w-6 h-6 transition-transform duration-300 rotate-90" />
-        ) : (
-          <svg className="w-7 h-7 fill-current transition-transform duration-300 hover:rotate-12" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.6.95 3.498 1.45 5.441 1.451 5.378 0 9.754-4.379 9.757-9.761.002-2.607-1.011-5.059-2.855-6.903-1.843-1.844-4.29-2.859-6.899-2.86-5.385 0-9.76 4.379-9.763 9.762-.001 1.986.518 3.926 1.503 5.64l-.99 3.618 3.706-.972zm12.308-4.708c-.332-.167-1.968-.972-2.271-1.082-.303-.11-.524-.167-.744.167-.22.333-.852 1.082-1.045 1.303-.193.222-.387.248-.719.082-1.865-.935-3.118-1.636-4.377-3.799-.332-.57.332-.529.95-1.77.103-.207.052-.387-.026-.554-.077-.167-.744-1.79-1.018-2.454-.27-.648-.54-.56-.744-.57-.193-.01-.414-.011-.635-.011-.22 0-.58.082-.883.414-.303.333-1.157 1.13-1.157 2.753 0 1.623 1.182 3.193 1.348 3.414.166.222 2.328 3.555 5.639 4.986.788.341 1.403.544 1.883.697.792.251 1.512.215 2.081.129.635-.096 1.968-.804 2.244-1.58.277-.775.277-1.44.193-1.58-.083-.14-.303-.223-.635-.39z" />
-          </svg>
-        )}
-      </button>
-    </div>
+          {/* Switch logo/close icon based on open state */}
+          {isOpen ? (
+            <X className="w-6 h-6 transition-transform duration-300 rotate-90" />
+          ) : (
+            <MessageCircle className="w-7 h-7 stroke-2 fill-white text-[#25d366]" />
+          )}
+        </button>
+      </div>
+    </>
   )
 }

@@ -99,10 +99,11 @@ export default function AboutHero() {
 
 
       {/* Bottom Wave to Transition to Next Section */}
-      <div className="absolute -bottom-1 left-0 right-0 z-10 w-full overflow-hidden leading-none">
+      <div className="absolute -bottom-px left-0 right-0 z-10 w-full overflow-hidden leading-none">
         <svg
           viewBox="0 0 1440 80"
           fill="none"
+          preserveAspectRatio="none"
           xmlns="http://www.w3.org/2000/svg"
           className="relative block w-full h-[40px] lg:h-[80px]"
         >

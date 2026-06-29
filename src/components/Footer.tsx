@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, ChevronRight, Clock } from 'lucide-react';
-import logo from "../assets/Frame 1 (3).png";
+import logo from "../assets/Frame 1 (3).webp";
+import secLogo from "../assets/downloaded-images/sec-logo.svg";
 
 const QUICK_LINKS = [
   { label: 'Home', href: '/' },
@@ -138,7 +139,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-4">
             <img
-              src="https://aussiesunsolar.com.au/assets/sec-logo-D0BGLpHg.svg"
+              src={secLogo}
               alt="Smart Energy Council Logo"
               className="h-9 w-auto object-contain opacity-85 hover:opacity-100 transition"
             />

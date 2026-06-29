@@ -1,12 +1,15 @@
 import PixelTransition from '../../components/PixelTransition';
 import { Award, FileText, Zap, Handshake, CheckCircle2, Map } from 'lucide-react';
+import cecInstaller from '../../assets/downloaded-images/cec-installer.webp';
+import scienceBehindSolar from '../../assets/downloaded-images/science-behind-solar.webp';
+
 
 const reasons = [
   {
     title: 'CEC Accredited Installers',
     desc: 'All our engineers are Clean Energy Council accredited, ensuring the highest installation standards.',
     icon: Award,
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbiHj6oGG1ciRu1l1txSzsOzPn6ph2W-vyrg&s'
+    image: cecInstaller
   },
   {
     title: 'Government Rebates Applied',
@@ -30,7 +33,7 @@ const reasons = [
     title: 'Transparent Pricing',
     desc: 'No hidden fees. What you see in our quote is exactly what you pay — guaranteed.',
     icon: CheckCircle2,
-    image: 'https://gb.solar/wp-content/uploads/2024/12/The-Science-Behind-Solar-Panels_-Understanding-Efficiency-and-Durability.jpg'
+    image: scienceBehindSolar
   },
   {
     title: 'Local Australian Company',

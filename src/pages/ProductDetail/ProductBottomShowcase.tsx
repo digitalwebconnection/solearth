@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useToast } from "../ui/Toast";
 import { MessageSquare, Mail, ShieldCheck, Zap, Award, CheckCircle } from "lucide-react";
 import type { ProductData } from "../../data/products";
-import solarRoof1 from '../../assets/downloaded-images/solar-roof-1.jpg';
+import solarRoof1 from '../../assets/downloaded-images/solar-roof-1.webp';
 
 interface ProductBottomShowcaseProps {
   product: ProductData;

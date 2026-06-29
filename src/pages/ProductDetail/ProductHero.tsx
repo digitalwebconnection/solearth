@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { ChevronRight, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
 import { type ProductData } from "../../data/products";
-import solarRoof1 from '../../assets/downloaded-images/solar-roof-1.jpg';
+import solarRoof1 from '../../assets/downloaded-images/solar-roof-1.webp';
 
 interface ProductHeroProps {
   product: ProductData;

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Zap, ShieldCheck, DollarSign, Sun, Cpu, Home } from 'lucide-react';
 import { motion } from 'framer-motion';
-import batteryStorageImg from '../../assets/battery_storage.png';
+import batteryStorageImg from '../../assets/battery_storage.webp';
 
 export default function BatterySection() {
   const [activeMode, setActiveMode] = useState<'grid' | 'battery'>('battery');

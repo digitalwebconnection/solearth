@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
-import bgImage from '../../assets/HeroImages/solar-roof-street.jpg'
+import bgImage from '../../assets/HeroImages/solar-roof-street.webp'
 import { useQuoteModal } from '../../components/QuoteModal'
 
 export default function ProjectsHero() {
@@ -31,8 +31,6 @@ export default function ProjectsHero() {
 
       {/* Grid Pattern Overlay */}
       <div className="absolute inset-0 z-10 opacity-10 bg-[linear-gradient(to_right,#ffffff10_1px,transparent_1px),linear-gradient(to_bottom,#ffffff10_1px,transparent_1px)] bg-size-[4rem_4rem]" />
-
-
 
       {/* Hero Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6 md:mt-0 relative z-20 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -92,12 +90,12 @@ export default function ProjectsHero() {
         </div>
       </div>
 
-
       {/* Bottom Wave to Transition to Next Section */}
-      <div className="absolute -bottom-1 left-0 right-0 z-10 w-full overflow-hidden leading-none">
+      <div className="absolute -bottom-px left-0 right-0 z-10 w-full overflow-hidden leading-none">
         <svg
           viewBox="0 0 1440 80"
           fill="none"
+          preserveAspectRatio="none"
           xmlns="http://www.w3.org/2000/svg"
           className="relative block w-full h-[40px] lg:h-[80px]"
         >

@@ -10,47 +10,47 @@ import panel8 from "../assets/Panel/8.webp";
 import panel9 from "../assets/Panel/9.webp";
 import panel10 from "../assets/Panel/10.webp";
 // Jinko Solar page
-import j1 from "../assets/Jinko Solar/1.jpg";
-import j2 from "../assets/Jinko Solar/2.jpg";
+import j1 from "../assets/Jinko Solar/1.webp";
+import j2 from "../assets/Jinko Solar/2.webp";
 import pdf330 from "../assets/Jinko Solar/Jinko-330-cheetah-mono-perc.pdf";
 import pdf390 from "../assets/Jinko Solar/Jinko-Tiger-390W-Datasheet.pdf";
 import pdfji440 from "../assets/Jinko Solar/jinko-475w-n-type-neo-datasheet.pdf";
 // ja solar page
-import ja1 from "../assets/ja solar/JA-solar-panel-600-watt.jpg";
+import ja1 from "../assets/ja solar/JA-solar-panel-600-watt.webp";
 import ja2 from "../assets/ja solar/2.webp";
 import pdfja from "../assets/ja solar/c12d2b6d60d6f81.pdf";
 // AIKO Solar page
 import ai1 from "../assets/AIKO Solar/1.avif";
-import ai2 from "../assets/AIKO Solar/2.jpg";
+import ai2 from "../assets/AIKO Solar/2.webp";
 import pdfai from "../assets/AIKO Solar/Aiko-Neostar-475w.pdf";
 // Canadian Solar page
-import ca1 from "../assets/Canadian Solar/canadian-665watt-solar-panel.jpg";
-import ca2 from "../assets/Canadian Solar/BiHiKu-BiKu.png";
+import ca1 from "../assets/Canadian Solar/canadian-665watt-solar-panel.webp";
+import ca2 from "../assets/Canadian Solar/BiHiKu-BiKu.webp";
 import pdf1 from "../assets/Canadian Solar/Canadian-Hiku-330W-poly.pdf";
 // das-solar page
-import da1 from "../assets/das-solar/1.jfif";
-import da2 from "../assets/das-solar/2.png";
+import da1 from "../assets/das-solar/1.webp";
+import da2 from "../assets/das-solar/2.webp";
 import pdf440 from "../assets/das-solar/Datasheet-DAS-DH108ND-440.pdf";
 // DMEGC Solar  page
 import dm1 from "../assets/DMEGC Solar/1.webp";
 import dm2 from "../assets/DMEGC Solar/2.webp";
 import pdfB54 from "../assets/DMEGC Solar/EN-DMxxxM10RT-B54HBT-HST.pdf";
 // EGing PV solar page
-import eg1 from "../assets/EGing PV/1.png";
+import eg1 from "../assets/EGing PV/1.webp";
 import eg2 from "../assets/EGing PV/2.webp";
 import pdfeg1 from "../assets/EGing PV/EG-440N-Bifacial-DG.pdf";
 import pdfeg2 from "../assets/EGing PV/Eging-Datasheet-EG-440NT54-HLV_30-.pdf";
 // risen-solar page
 import ri1 from "../assets/risen-solar/1.avif";
-import ri2 from "../assets/risen-solar/2.jfif";
+import ri2 from "../assets/risen-solar/2.webp";
 import pdfri from "../assets/risen-solar/Risen-370W-Silver-Frame.pdf";
 // Trina Solar page
-import tr1 from "../assets/Trina Solar/1.jpg";
+import tr1 from "../assets/Trina Solar/1.webp";
 import tr2 from "../assets/Trina Solar/2.webp";
 import pdftr from "../assets/Trina Solar/Trina-Mono-perc-330w-HC.pdf";
 // Longi Solar page
-import lo1 from "../assets/Longi Solar/1.jpg";
-import lo2 from "../assets/Longi Solar/2.jfif";
+import lo1 from "../assets/Longi Solar/1.webp";
+import lo2 from "../assets/Longi Solar/2.webp";
 import pdflo from "../assets/Longi Solar/Longi-370W-Technical-Datasheet.pdf";
 // Solar Inverters logoes
 import inverter1 from "../assets/Inverters/2.webp";
@@ -60,35 +60,35 @@ import inverter4 from "../assets/Inverters/1.webp";
 import inverter5 from "../assets/Inverters/5.webp";
 import inverter6 from "../assets/Inverters/6.webp";
 // GoodWe Inverters
-import go1 from "../assets/GoodWe Inverters/goodwe-grid-tie-5kw-inverter.jpg";
+import go1 from "../assets/GoodWe Inverters/goodwe-grid-tie-5kw-inverter.webp";
 import go2 from "../assets/GoodWe Inverters/2.webp";
 import pdfgo from "../assets/GoodWe Inverters/GW_Lynx-F-G2-Series_Datasheet-AU.pdf";
 import pdfgo1 from "../assets/GoodWe Inverters/GW_EH_Datasheet-AU.pdf";
 // Sungrow
-import sungrow1 from "../assets/Sungrow/1.jpg";
+import sungrow1 from "../assets/Sungrow/1.webp";
 import sungrow2 from "../assets/Sungrow/2.webp";
 import pdfsg1 from "../assets/Sungrow/sungrow-5kW-single-phase.pdf";
 import pdfsg2 from "../assets/Sungrow/sungrow-5kw-three-phase.pdf";
 // Growatt Inverters
-import grow1 from "../assets/Growatt Inverters/1.jpg";
-import grow2 from "../assets/Growatt Inverters/2.jpg";
+import grow1 from "../assets/Growatt Inverters/1.webp";
+import grow2 from "../assets/Growatt Inverters/2.webp";
 import pdfgr1 from "../assets/Growatt Inverters/growatt-3-phase-inverter-3-6kw-TL3-latest-model.pdf";
 import pdfgr2 from "../assets/Growatt Inverters/growatt-3kW-single-phase-Inverter.pdf";
 // Solis
-import solis1 from "../assets/Solis/1.jpg";
-import solis2 from "../assets/Solis/2.jpg";
-import solis3 from "../assets/Solis/3.jpg";
+import solis1 from "../assets/Solis/1.webp";
+import solis2 from "../assets/Solis/2.webp";
+import solis3 from "../assets/Solis/3.webp";
 import pdfsolis1 from "../assets/Solis/solis-hybrid-5kw-inverter.pdf";
 import pdfsolis2 from "../assets/Solis/solis-single-phase.pdf";
 import pdfsolis3 from "../assets/Solis/solis-three-phase-5-20kW.pdf";
 // saj
-import saj1 from "../assets/saj/1.jpg";
-import saj2 from "../assets/saj/2.jpg";
+import saj1 from "../assets/saj/1.webp";
+import saj2 from "../assets/saj/2.webp";
 import pdfsaj1 from "../assets/saj/SAJ-5kW-1P-datasheet.pdf";
 import pdfsaj2 from "../assets/saj/SAJ-5-10kW-3P-datasheet.pdf";
 // Anker Solix
-import s1 from "../assets/Anker Solix/1.png";
-import s2 from "../assets/Anker Solix/2.jfif";
+import s1 from "../assets/Anker Solix/1.webp";
+import s2 from "../assets/Anker Solix/2.webp";
 import pdfsolix from "../assets/Anker Solix/Anker SOLIX X1 Hybrid Single-Phase_Datasheet_31-12-25.pdf";
 // logoes
 import battery1 from "../assets/Battery Partners/1.webp";
@@ -100,12 +100,12 @@ import battery8 from "../assets/Battery Partners/8.webp";
 import battery4 from "../assets/Battery Partners/4.webp";
 import battery5 from "../assets/Battery Partners/5.webp";
 // FoxESS
-import fox1 from "../assets/FoxESS/1.jpg";
-import fox2 from "../assets/FoxESS/2.png";
+import fox1 from "../assets/FoxESS/1.webp";
+import fox2 from "../assets/FoxESS/2.webp";
 import pdffox from "../assets/FoxESS/EN-EQ4800-Datasheet(AU)-V1.3-20250915.pdf";
 // growatt-battery-systems
-import growatt1 from "../assets/growatt bettry/1.png";
-import growatt2 from "../assets/growatt bettry/2.jfif";
+import growatt1 from "../assets/growatt bettry/1.webp";
+import growatt2 from "../assets/growatt bettry/2.webp";
 // saj-battery
 import sajo1 from "../assets/saj-battery/saj-battery.webp";
 import sajo2 from "../assets/saj-battery/1.webp";
@@ -116,15 +116,15 @@ import ank2 from "../assets/anker-solix-battery/2.webp";
 import pdfank from "../assets/anker-solix-battery/Spec-Anker-Solar-Battery.pdf";
 // sungrow-battery-systems
 import sun1 from "../assets/sungrow-battery/1.webp";
-import sun2 from "../assets/sungrow-battery/2.png";
+import sun2 from "../assets/sungrow-battery/2.webp";
 import pdfsun from "../assets/sungrow-battery/DS_20230721_SBR064_128_160_192_224_256_datasheet_V1_AU.pdf";
 // alpha-ess-battery-systems
 import alpha1 from "../assets/alpha-ess-battery/1.webp";
-import alpha2 from "../assets/alpha-ess-battery/2.jpg";
+import alpha2 from "../assets/alpha-ess-battery/2.webp";
 import pdfalp from "../assets/alpha-ess-battery/ALP_LV_2024.pdf";
 // neovolt-battery-systems
 import neo1 from "../assets/neovolt-battery/1.webp";
-import neo2 from "../assets/neovolt-battery/2.jpg";
+import neo2 from "../assets/neovolt-battery/2.webp";
 // sigenergy-battery-systems
 import sig1 from "../assets/sigenergy-battery/1.webp";
 import sig2 from "../assets/sigenergy-battery/2.webp";

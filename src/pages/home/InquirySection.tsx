@@ -1,10 +1,13 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Check } from 'lucide-react';
-import solarPanelImg from '../../assets/solar_panel_render.png';
-import expandingSolarImg from '../../assets/expanding_solar.png';
-import solarBatteryImg from '../../assets/solar_battery_hybrid.png';
-import batteryStorageImg from '../../assets/battery_storage.png';
+import solarPanelImg from '../../assets/solar_panel_render.webp';
+import expandingSolarImg from '../../assets/expanding_solar.webp';
+import solarBatteryImg from '../../assets/solar_battery_hybrid.webp';
+import batteryStorageImg from '../../assets/battery_storage.webp';
+import allBatteryNew from '../../assets/downloaded-images/all-battery-new.webp';
+import batteryNew from '../../assets/downloaded-images/battery-new.webp';
+import smartCubeAllInOne from '../../assets/downloaded-images/smart-cube-all-in-one.webp';
 
 const tabImageMap: Record<string, string> = {
   'new-solar': solarPanelImg,
@@ -412,18 +415,18 @@ export default function InquirySection() {
             }}
             className="w-full max-w-7xl flex relative z-10  justify-between"
           >
-            <img 
-              src="https://hexasolarsolutions.com.au/wp-content/uploads/2026/02/All-Battery-New-2.png" 
+             <img 
+              src={allBatteryNew} 
               alt="Premium Compatible Batteries" 
               className="w-full h-auto max-h-[200px] object-contain drop-shadow-[0_20px_35px_rgba(0,0,0,0.08)] group-hover:scale-[1.02] transition-transform duration-500"
             />
             <img 
-              src="https://hexasolarsolutions.com.au/wp-content/uploads/2024/07/Battery-New.webp" 
+              src={batteryNew} 
               alt="Premium Compatible Batteries" 
               className="w-full h-auto max-h-[200px] object-contain drop-shadow-[0_20px_35px_rgba(0,0,0,0.08)] group-hover:scale-[1.02] transition-transform duration-500"
             />
             <img 
-              src="https://www.energy-storage.news/wp-content/uploads/2024/06/Smart-Cube-All-in-one.jpg" 
+              src={smartCubeAllInOne} 
               alt="Premium Compatible Batteries" 
               className="w-full h-auto max-h-[200px] object-contain drop-shadow-[0_20px_35px_rgba(0,0,0,0.08)] group-hover:scale-[1.02] transition-transform duration-500"
             />

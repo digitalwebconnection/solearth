@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Leaf, Zap, HeartHandshake } from 'lucide-react'
+import sustainabilityCore from '../../assets/downloaded-images/sustainability-core.webp';
+import scienceBehindSolar from '../../assets/downloaded-images/science-behind-solar.webp';
 
 export default function AboutValues() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null)
@@ -12,7 +14,7 @@ export default function AboutValues() {
       title: 'Sustainability at Core',
       desc: 'We are committed to reducing the global carbon footprint by empowering everyday Australians to harness the clean, limitless power of the sun.',
       color: 'text-emerald-500 bg-emerald-55 border-emerald-100',
-      bgImage: 'https://www.tatapower.com/adobe/dynamicmedia/deliver/dm-aid--2368fbcc-c209-4949-a331-27e88d1aa428/body-1-img.png?preferwebp=true&quality=85'
+      bgImage: sustainabilityCore
     },
     {
       id: '02',
@@ -28,7 +30,7 @@ export default function AboutValues() {
       title: 'Local Integrity',
       desc: 'As a local Australian business, we do not believe in pushy sales tactics. We offer transparent pricing, honest energy projections, and genuine advice.',
       color: 'text-[#2AA9E4] bg-sky-55 border-sky-100',
-      bgImage: 'https://gb.solar/wp-content/uploads/2024/12/The-Science-Behind-Solar-Panels_-Understanding-Efficiency-and-Durability.jpg'
+      bgImage: scienceBehindSolar
     },
   ]
 

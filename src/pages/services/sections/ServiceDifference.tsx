@@ -17,10 +17,10 @@ export default function ServiceDifference({ difference }: ServiceDifferenceProps
   return (
     <div className="bg-slate-50 text-slate-800 py-12 md:py-20 border-t border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 space-y-5">
-        
+
         {/* ── 2-Column Split Difference Layout ── */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
-          
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 md:items-start">
+
           {/* Left Column: Sticky Editorial Statement */}
           <div className="lg:col-span-5 lg:sticky lg:top-32 space-y-6">
             <span className="text-[10px] text-[#FCC200] bg-[#FCC200]/10 border border-[#FCC200]/30 px-3 py-1 rounded-full font-black uppercase tracking-widest inline-block">
@@ -37,8 +37,8 @@ export default function ServiceDifference({ difference }: ServiceDifferenceProps
           {/* Right Column: Spaced, Cardless List of Difference Points */}
           <div className="lg:col-span-7 space-y-10 lg:pl-6">
             {difference.map((item, idx) => (
-              <div 
-                key={idx} 
+              <div
+                key={idx}
                 className="group flex gap-4 sm:gap-5 border-b border-slate-200/80 pb-8 last:border-0 last:pb-0"
               >
                 {/* Clean, compact icon bubble */}
@@ -61,7 +61,7 @@ export default function ServiceDifference({ difference }: ServiceDifferenceProps
         </div>
 
       </div>
-     
+
     </div>
   )
 }

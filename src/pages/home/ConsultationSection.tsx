@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Phone, ArrowRight } from 'lucide-react';
-import supportAgent from '../../assets/support-agent-headset.png';
+import supportAgent from '../../assets/support-agent-headset.webp';
 import { useQuoteModal } from '../../components/QuoteModal';
 
 export default function ConsultationSection() {

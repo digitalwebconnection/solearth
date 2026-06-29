@@ -95,7 +95,7 @@ function App() {
       infinite: false,
     })
 
-    ;(window as unknown as Record<string, unknown>).lenis = lenis
+      ; (window as unknown as Record<string, unknown>).lenis = lenis
 
     let raf: number
     const loop = (time: number) => {

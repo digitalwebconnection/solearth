@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-import supportPerson from '../../assets/downloaded-images/support-person.jpg';
+import supportPerson from '../../assets/downloaded-images/support-person.webp';
 
 export const ContactCTA: React.FC = () => {
   return (

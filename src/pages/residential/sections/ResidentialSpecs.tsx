@@ -82,7 +82,7 @@ export default function ResidentialSpecs({
             <h2 className="text-2xl sm:text-3xl md:text-5xl font-serif font-bold text-[#1B74BB] leading-tight max-w-5xl mx-auto">
               {introTitle}
             </h2>
-            <p className="text-xs sm:text-sm md:text-base leading-relaxed text-slate-900 max-w-7xl mx-auto">
+            <p className="text-xs sm:text-sm md:text-base text-justify md:text-center leading-relaxed text-slate-900 max-w-7xl mx-auto">
               {introDesc}
             </p>
           </div>

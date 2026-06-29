@@ -80,7 +80,7 @@ export default function CommercialSpecs({
   const data: SystemDetail = details[tab.key as keyof typeof details]
 
   return (
-    <section className="relative bg-white py-12 md:py-20 overflow-hidden" ref={ref}>
+    <section className="relative bg-white py-8 md:py-20 overflow-hidden" ref={ref}>
       {/* Progress bar keyframe animation */}
       <style>{`
         @keyframes tabProgress {
@@ -111,7 +111,7 @@ export default function CommercialSpecs({
             <h2 className="text-xl sm:text-3xl max-w-5xl mx-auto md:text-5xl font-serif font-bold text-[#1B74BB] leading-tight">
               {introTitle}
             </h2>
-            <p className="text-xs sm:text-sm md:text-base leading-relaxed text-slate-800 max-w-7xl mx-auto font-semibold">
+            <p className="text-xs sm:text-sm md:text-base leading-relaxed text-slate-800 max-w-7xl mx-auto font-semibold text-justify md:text-center">
               {introDesc}
             </p>
           </div>

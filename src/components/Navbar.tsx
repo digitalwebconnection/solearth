@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { gsap } from "gsap";
-import logo from "../assets/Frame 1 (3).png";
+import logo from "../assets/Frame 1 (3).webp";
 import { Link, useLocation } from "react-router-dom";
 import {
   Sun,
@@ -85,14 +85,14 @@ function DropdownMenu({
 
   return (
     <div
-      className={`absolute top-full left-1/2 -translate-x-1/2 mt-3 w-64 bg-white rounded-lg shadow-lg border border-slate-205 z-50 transition-all duration-200 ${
+      className={`absolute top-full left-1/2 -translate-x-1/2 mt-3 w-64 bg-white rounded-lg border border-slate-205 z-50 transition-all  duration-200 ${
         isOpen
           ? "opacity-100 translate-y-0 pointer-events-auto"
           : "opacity-0 -translate-y-2 pointer-events-none"
       }`}
     >
       {/* Top Arrow Pointer */}
-      <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-white border-t border-l border-slate-205 rotate-45 z-10" />
+      <div className="absolute -top-1.5 left-1/2  -translate-x-1/2 w-3 h-3 bg-white border-t border-l border-slate-205 rotate-45 z-10" />
 
       <div className="relative bg-white rounded-lg overflow-hidden z-20 py-1">
         {items.map((item) => {

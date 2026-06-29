@@ -15,7 +15,13 @@
 }
 
 /* Force all titles / headings in the website to be serif */
-h1, h2, h3, h4, h5, h6, .font-serif-heading {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-serif-heading {
   font-family: "Lora", ui-serif, Georgia, Cambria, serif !important;
 }
 

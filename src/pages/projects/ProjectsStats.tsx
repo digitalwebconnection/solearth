@@ -39,7 +39,7 @@ export default function ProjectsStats() {
   ]
 
   return (
-    <section className="py-12 md:py-16 relative">
+    <section className="py-12 md:py-16 relative bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-0">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-6 sm:gap-y-8 lg:gap-y-0 divide-y sm:divide-y-0 lg:divide-x divide-slate-200 text-center">
           {stats.map((stat, idx) => {

@@ -1,11 +1,11 @@
 import { useState } from 'react'
 import { X, Sparkles, MapPin, ShieldCheck, Info } from 'lucide-react'
-import img1 from '../../assets/HeroImages/1.jpeg'
-import img2 from '../../assets/HeroImages/2.jpeg'
-import img3 from '../../assets/HeroImages/3.jpeg'
-import img4 from '../../assets/HeroImages/4.jpeg'
-import img5 from '../../assets/HeroImages/5.jpeg'
-import img6 from '../../assets/HeroImages/6.jpeg'
+import img1 from '../../assets/HeroImages/1.webp'
+import img2 from '../../assets/HeroImages/2.webp'
+import img3 from '../../assets/HeroImages/3.webp'
+import img4 from '../../assets/HeroImages/4.webp'
+import img5 from '../../assets/HeroImages/5.webp'
+import img6 from '../../assets/HeroImages/6.webp'
 
 
 interface Project {
