@@ -66,7 +66,7 @@ export default function ConsultationSection() {
 
               {/* 24/7 Phone callout */}
               <a
-                href="tel:1300504912"
+                href="tel:61435359431"
                 className="flex items-center gap-3.5 text-left group cursor-pointer"
               >
                 <div className="h-11 w-11 rounded-full bg-white flex items-center justify-center text-[#022D62] shrink-0 shadow-md">
@@ -74,7 +74,7 @@ export default function ConsultationSection() {
                 </div>
                 <div>
                   <div className="text-sm sm:text-base font-black text-white group-hover:text-slate-200 transition-colors">
-                    24/7 Support: 1300 504 912
+                    24/7 Support: +61 435 359 431
                   </div>
                 </div>
               </a>

@@ -26,6 +26,8 @@ export default function ContactFormSection({ selectedSubject, setSelectedSubject
     }
   }, [selectedSubject])
 
+  const [isSubmitting, setIsSubmitting] = useState(false)
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target
     setFormData((prev) => ({ ...prev, [name]: value }))
@@ -34,13 +36,34 @@ export default function ContactFormSection({ selectedSubject, setSelectedSubject
     }
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Simulate API call
-    setTimeout(() => {
-      setFormSubmitted(true)
-      toast.success("Message sent successfully! Our team will contact you shortly.")
-    }, 850)
+    setIsSubmitting(true)
+    try {
+      const form = new FormData()
+      form.append("access_key", "a7519716-2587-431c-8bdb-7bcfce010f90")
+      form.append("name", `${formData.firstName} ${formData.lastName}`)
+      form.append("email", formData.email)
+      form.append("phone", formData.phone)
+      form.append("subject", formData.subject)
+      form.append("message", formData.message)
+
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: form
+      })
+      const data = await response.json()
+      if (data.success) {
+        setFormSubmitted(true)
+        toast.success("Message sent successfully! Our team will contact you shortly.")
+      } else {
+        toast.error("Something went wrong. Please try again.")
+      }
+    } catch (err) {
+      toast.error("Network error. Please try again.")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -79,8 +102,8 @@ export default function ContactFormSection({ selectedSubject, setSelectedSubject
                 </div>
                 <div>
                   <h4 className="text-slate-900 text-[10px] font-black uppercase tracking-wider mb-1">Call Hotline</h4>
-                  <a href="tel:0435359431" className="text-slate-800 font-extrabold text-sm hover:text-[#1B74BB] transition">
-                    0435 359 431
+                  <a href="tel:61435359431" className="text-slate-800 font-extrabold text-sm hover:text-[#1B74BB] transition">
+                    +61 435 359 431
                   </a>
                   <p className="text-slate-900 text-xs mt-0.5 font-semibold">Call us Mon–Fri, closes 5pm</p>
                 </div>
@@ -225,9 +248,10 @@ export default function ContactFormSection({ selectedSubject, setSelectedSubject
                     <div className="pt-2">
                       <button
                         type="submit"
-                        className="w-full flex items-center justify-center rounded-xl bg-[#1B74BB] hover:bg-[#003375] transition-colors py-4 px-6 text-white font-extrabold text-sm tracking-wider uppercase gap-2 cursor-pointer shadow-md hover:shadow-lg active:scale-[0.99] border-none"
+                        disabled={isSubmitting}
+                        className="w-full flex items-center justify-center rounded-xl bg-[#1B74BB] hover:bg-[#003375] transition-colors py-4 px-6 text-white font-extrabold text-sm tracking-wider uppercase gap-2 cursor-pointer shadow-md hover:shadow-lg active:scale-[0.99] border-none disabled:opacity-75 disabled:cursor-not-allowed"
                       >
-                        <span>Send Message</span>
+                        <span>{isSubmitting ? "Sending..." : "Send Message"}</span>
                         <Send className="w-4 h-4" />
                       </button>
                     </div>

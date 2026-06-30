@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useState, useEffect } from 'react'
 import { X, Send, Zap, CheckCircle } from 'lucide-react'
 import { useToast } from '../pages/ui/Toast'
+import logo from '../assets/Frame 1 (3).webp'
 
 interface QuoteModalContextType {
   openQuoteModal: (source?: string) => void
@@ -44,15 +45,39 @@ export const QuoteModalProvider: React.FC<{ children: React.ReactNode }> = ({ ch
 
   const reset = () => { setName(''); setEmail(''); setPhone(''); setSuburb(''); setSystemType('residential'); setBillRange('$200-$400') }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     if (!name.trim() || !email.trim() || !phone.trim()) { toast.error('Please fill in all required fields.'); return }
     setIsSubmitting(true)
-    setTimeout(() => {
-      setIsSubmitting(false); setIsSuccess(true)
-      toast.success('Quote request submitted successfully!')
-      setTimeout(() => { setIsSuccess(false); reset(); closeQuoteModal() }, 1500)
-    }, 1800)
+    try {
+      const form = new FormData()
+      form.append("access_key", "a7519716-2587-431c-8bdb-7bcfce010f90")
+      form.append("name", name)
+      form.append("email", email)
+      form.append("phone", phone)
+      form.append("suburb", suburb)
+      form.append("systemType", systemType)
+      form.append("billRange", billRange)
+      form.append("source", source)
+      form.append("subject", `New Solar Quote Request via Modal (Source: ${source})`)
+
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: form
+      })
+      const data = await response.json()
+      if (data.success) {
+        setIsSuccess(true)
+        toast.success('Quote request submitted successfully!')
+        setTimeout(() => { setIsSuccess(false); reset(); closeQuoteModal() }, 1500)
+      } else {
+        toast.error('Something went wrong. Please try again.')
+      }
+    } catch (err) {
+      toast.error('Network error. Please try again.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   // Compact shared styles
@@ -79,9 +104,13 @@ export const QuoteModalProvider: React.FC<{ children: React.ReactNode }> = ({ ch
             <div className="shrink-0 px-4 pt-3 pb-2.5 border-b border-slate-800">
 
               <div className="flex items-center justify-between">
-                <div className="flex items-center gap-1.5">
-                  <Zap className="w-3.5 h-3.5 text-amber-400 animate-pulse shrink-0" />
-                  <span className="text-[9px] font-bold text-amber-400 tracking-[0.15em] uppercase">Solar Grid Estimation</span>
+                <div className="flex items-center gap-2">
+                  <img src={logo} alt="SolEarth Energy Logo" className="h-8 w-auto object-contain" />
+                  <span className="h-4 w-px bg-slate-800" />
+                  <div className="flex items-center gap-1">
+                    <Zap className="w-3 h-3 text-amber-400 animate-pulse shrink-0" />
+                    <span className="text-[9px] font-bold text-amber-400 tracking-[0.15em] uppercase">Solar Grid Estimation</span>
+                  </div>
                 </div>
                 <button onClick={closeQuoteModal} aria-label="Close"
                   className="p-1.5 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white transition-colors cursor-pointer">
@@ -165,7 +194,7 @@ export const QuoteModalProvider: React.FC<{ children: React.ReactNode }> = ({ ch
             {!isSuccess && (
               <div className="shrink-0 px-4 pb-5 pt-2.5 border-t border-slate-800 bg-[#070d1a]">
                 <button type="submit" form="qf" disabled={isSubmitting}
-                  className="w-full h-11 flex items-center justify-center gap-2 rounded-xl font-bold text-sm text-white bg-gradient-to-r from-amber-600 via-amber-500 to-orange-500 hover:from-amber-700 hover:to-orange-600 active:scale-[0.98] transition-all duration-200 shadow-lg disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer">
+                  className="w-full h-11 flex items-center justify-center gap-2 rounded-xl font-bold text-sm text-white bg-linear-to-r from-amber-600 via-amber-500 to-orange-500 hover:from-amber-700 hover:to-orange-600 active:scale-[0.98] transition-all duration-200 shadow-lg disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer">
                   {isSubmitting ? (
                     <>
                       <svg className="animate-spin h-4 w-4" fill="none" viewBox="0 0 24 24">
@@ -190,7 +219,8 @@ export const QuoteModalProvider: React.FC<{ children: React.ReactNode }> = ({ ch
   )
 }
 
-export const useQuoteModal = () => {
+export const 
+useQuoteModal = () => {
   const context = useContext(QuoteModalContext)
   if (!context) throw new Error('useQuoteModal must be used within a QuoteModalProvider')
   return context

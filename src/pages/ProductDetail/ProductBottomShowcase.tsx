@@ -16,7 +16,7 @@ export const ProductBottomShowcase: React.FC<ProductBottomShowcaseProps> = ({ pr
     event.preventDefault();
     setIsSubmitting(true);
     const formData = new FormData(event.target as HTMLFormElement);
-    formData.append("access_key", "f3cef460-e2ec-49da-adab-5f4180bdf046");
+    formData.append("access_key", "a7519716-2587-431c-8bdb-7bcfce010f90");
     const response = await fetch("https://api.web3forms.com/submit", { method: "POST", body: formData });
     const data = await response.json();
     setIsSubmitting(false);

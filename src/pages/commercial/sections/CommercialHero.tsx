@@ -25,21 +25,43 @@ export default function CommercialHero({
   })
   const [loading, setLoading] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setLoading(true)
-    setTimeout(() => {
-      setLoading(false)
-      toast.success('Our commercial engineering team will call you back within 1 business day.')
-      setFormData({
-        businessName: '',
-        contactPerson: '',
-        email: '',
-        phone: '',
-        address: '',
-        bill: 'Under $1,500',
+    try {
+      const form = new FormData()
+      form.append("access_key", "a7519716-2587-431c-8bdb-7bcfce010f90")
+      form.append("businessName", formData.businessName)
+      form.append("contactPerson", formData.contactPerson)
+      form.append("email", formData.email)
+      form.append("phone", formData.phone)
+      form.append("address", formData.address)
+      form.append("bill", formData.bill)
+      form.append("subject", `Commercial Proposal Request from ${formData.businessName}`)
+
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: form
       })
-    }, 1500)
+      const data = await response.json()
+      if (data.success) {
+        toast.success('Our commercial engineering team will call you back within 1 business day.')
+        setFormData({
+          businessName: '',
+          contactPerson: '',
+          email: '',
+          phone: '',
+          address: '',
+          bill: 'Under $1,500',
+        })
+      } else {
+        toast.error('Something went wrong. Please try again.')
+      }
+    } catch (err) {
+      toast.error('Network error. Please try again.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (

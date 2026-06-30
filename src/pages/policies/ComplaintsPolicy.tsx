@@ -35,8 +35,8 @@ export default function ComplaintsPolicy() {
             You can lodge a complaint through any of the following channels:
           </p>
           <ul className="list-disc pl-6 text-xs sm:text-sm md:text-base font-medium space-y-2">
-            <li><strong>Email:</strong> Send an email with your project ID and a description of the issue to <a href="mailto:complaints@solearth.com.au" className="text-[#1B74BB] hover:underline font-bold">complaints@solearth.com.au</a>.</li>
-            <li><strong>Phone:</strong> Call our hotline at <strong>1300 111 111</strong> and request to speak with a Customer Service Supervisor.</li>
+            <li><strong>Email:</strong> Send an email with your project ID and a description of the issue to <a href="mailto:info@solearthenergy.com.au" className="text-[#1B74BB] hover:underline font-bold">info@solearthenergy.com.au</a>.</li>
+            <li><strong>Phone:</strong> Call our hotline at <strong>+61 435 359 431</strong> and request to speak with a Customer Service Supervisor.</li>
             <li><strong>Post:</strong> Write to our compliance team at Suite 3.01, 45 Clarence Street, Sydney NSW 2000.</li>
           </ul>
         </section>
@@ -81,11 +81,11 @@ export default function ComplaintsPolicy() {
             </div>
             <div className="flex items-center gap-3">
               <Phone className="w-4 h-4 text-[#FCC200] shrink-0" />
-              <span>1300 111 111</span>
+              <span>+61 435 359 431</span>
             </div>
             <div className="flex items-center gap-3">
               <Mail className="w-4 h-4 text-[#FCC200] shrink-0" />
-              <a href="mailto:complaints@solearth.com.au" className="hover:underline text-[#1B74BB]">complaints@solearth.com.au</a>
+              <a href="mailto:info@solearthenergy.com.au" className="hover:underline text-[#1B74BB]">info@solearthenergy.com.au</a>
             </div>
           </div>
         </section>

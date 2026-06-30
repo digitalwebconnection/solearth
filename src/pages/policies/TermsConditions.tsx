@@ -82,11 +82,11 @@ export default function TermsConditions() {
             </div>
             <div className="flex items-center gap-3">
               <Phone className="w-4 h-4 text-[#FCC200] shrink-0" />
-              <span>1300 111 111</span>
+              <span>+61 435 359 431</span>
             </div>
             <div className="flex items-center gap-3">
               <Mail className="w-4 h-4 text-[#FCC200] shrink-0" />
-              <a href="mailto:admin@solearth.com.au" className="hover:underline text-[#1B74BB]">admin@solearth.com.au</a>
+              <a href="mailto:info@solearthenergy.com.au" className="hover:underline text-[#1B74BB]">info@solearthenergy.com.au</a>
             </div>
           </div>
         </section>

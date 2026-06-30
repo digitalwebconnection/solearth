@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import { X, Send, Sparkles, MessageCircle } from 'lucide-react'
 
 // Constants for WhatsApp integration
-const WHATSAPP_NUMBER = '61400000000' // Replace with your actual WhatsApp business number
+const WHATSAPP_NUMBER = '61435359431' // Replace with your actual WhatsApp business number
 const AGENT_NAME = 'SolEarth Assistant'
 
 const QUICK_OPTIONS = [
@@ -157,15 +157,14 @@ export default function WhatsAppChat({ isSiteReady = true }: { isSiteReady?: boo
 
       {/* ── Chat Window Box ── */}
       <div
-        className={`fixed z-9999 transition-all duration-300 ease-out transform bottom-4 left-4 right-4 mx-auto max-w-md h-[70vh] rounded-2xl border border-slate-200/50 shadow-2xl flex flex-col origin-bottom sm:bottom-24 sm:left-auto sm:right-6 sm:w-[360px] sm:h-[450px] sm:origin-bottom-right ${
-          isOpen
+        className={`fixed z-9999 transition-all duration-300 ease-out transform bottom-4 left-4 right-4 mx-auto max-w-md h-[70vh] rounded-2xl border border-slate-200/50 shadow-2xl flex flex-col origin-bottom sm:bottom-24 sm:left-auto sm:right-6 sm:w-[360px] sm:h-[450px] sm:origin-bottom-right ${isOpen
             ? 'translate-y-0 opacity-100 scale-100 pointer-events-auto'
             : 'translate-y-full opacity-0 scale-95 pointer-events-none sm:translate-y-8 sm:opacity-0 sm:scale-75'
-        }`}
+          }`}
       >
         {/* Header */}
         <div className="bg-linear-to-r rounded-t-2xl from-[#075e54] to-[#128c7e] p-4 text-white flex items-center justify-between shadow-md relative shrink-0">
-          
+
           <div className="flex items-center gap-3">
             {/* Agent Status Circle */}
             <div className="relative">
@@ -202,22 +201,19 @@ export default function WhatsAppChat({ isSiteReady = true }: { isSiteReady?: boo
           {messages.map((msg) => (
             <div
               key={msg.id}
-              className={`flex flex-col max-w-[85%] ${
-                msg.sender === 'user' ? 'ml-auto items-end' : 'mr-auto items-start'
-              }`}
+              className={`flex flex-col max-w-[85%] ${msg.sender === 'user' ? 'ml-auto items-end' : 'mr-auto items-start'
+                }`}
             >
               <div
-                className={`p-3 rounded-2xl text-xs md:text-sm shadow-xs border ${
-                  msg.sender === 'user'
+                className={`p-3 rounded-2xl text-xs md:text-sm shadow-xs border ${msg.sender === 'user'
                     ? 'bg-[#d9fdd3] text-slate-800 rounded-tr-none border-[#b1e8a9]'
                     : 'bg-white text-slate-800 rounded-tl-none border-slate-200/40'
-                }`}
+                  }`}
               >
                 <p className="leading-relaxed whitespace-pre-line font-medium">{msg.text}</p>
                 <span
-                  className={`block text-[9px] text-right mt-1 font-semibold ${
-                    msg.sender === 'user' ? 'text-slate-500' : 'text-slate-400'
-                  }`}
+                  className={`block text-[9px] text-right mt-1 font-semibold ${msg.sender === 'user' ? 'text-slate-500' : 'text-slate-400'
+                    }`}
                 >
                   {msg.time}
                 </span>

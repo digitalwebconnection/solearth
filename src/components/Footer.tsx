@@ -15,7 +15,7 @@ const OFFICES = [
   {
     state: 'Head Office — Norwest',
     address: 'Suite 20/1 Maitland Pl',
-    address2: 'Norwest NSW 2153',
+    address2: 'Norwest NSW 2153, Australia',
   },
 ];
 
@@ -77,8 +77,8 @@ export default function Footer() {
                 </div>
                 <div>
                   <h5 className="text-slate-900 text-[10px] font-black uppercase tracking-wider">Call Us</h5>
-                  <a href="tel:0435359431" className="text-slate-800 text-xs md:text-sm font-black hover:text-[#1B74BB] transition">
-                    0435 359 431
+                  <a href="tel:+61435359431" className="text-slate-800 text-xs md:text-sm font-black hover:text-[#1B74BB] transition">
+                    +61 435 359 431
                   </a>
                 </div>
               </li>
@@ -141,7 +141,7 @@ export default function Footer() {
             <img
               src={secLogo}
               alt="Smart Energy Council Logo"
-              className="h-9 w-auto object-contain opacity-85 hover:opacity-100 transition"
+              className="h-18 w-auto object-contain opacity-85 hover:opacity-100 transition"
             />
           </div>
 

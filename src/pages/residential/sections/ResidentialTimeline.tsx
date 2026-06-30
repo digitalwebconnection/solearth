@@ -199,10 +199,10 @@ export default function ResidentialTimeline({ timeline, header }: ResidentialTim
                   </span>
 
                   <a
-                    href="tel:1300672194"
+                    href="tel:435359431"
                     className="bg-[#1B74BB] hover:bg-[#FCC200] text-white text-[10px] font-black uppercase tracking-wider py-2.5 px-5 rounded-lg transition shadow-md w-full sm:w-auto text-center border-none"
                   >
-                    Call 1300 672 194
+                    Call +61 435 359 431
                   </a>
                 </div>
 

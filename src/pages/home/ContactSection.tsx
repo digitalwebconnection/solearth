@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { motion, useInView, animate } from 'framer-motion'
 import { Phone, Mail, MapPin, Clock, Sun, Shield, Zap, ArrowRight } from 'lucide-react'
+import { useToast } from '../ui/Toast'
 
 /* ── Animated counter hook ─────────────────────────────── */
 function useCounter(end: number, duration = 1.8, inView: boolean) {
@@ -30,10 +31,12 @@ function Particle({ x, y, delay, size }: { x: string; y: string; delay: number; 
 }
 
 export default function ContactSection() {
+  const toast = useToast()
   const [form, setForm] = useState({
     name: '', email: '', phone: '', address: '', interest: 'Residential Solar',
   })
   const [sent, setSent] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   const statsRef = useRef<HTMLDivElement>(null)
   const statsInView = useInView(statsRef, { once: true })
@@ -41,9 +44,38 @@ export default function ContactSection() {
   const rating = useCounter(49, 1.5, statsInView)  // 49 → displays as 4.9
   const warranty = useCounter(25, 1.2, statsInView)
 
-  const handleSubmit = (e: React.FormEvent) => { e.preventDefault(); setSent(true) }
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    try {
+      const formData = new FormData()
+      formData.append("access_key", "a7519716-2587-431c-8bdb-7bcfce010f90")
+      formData.append("name", form.name)
+      formData.append("email", form.email)
+      formData.append("phone", form.phone)
+      formData.append("address", form.address)
+      formData.append("interest", form.interest)
+      formData.append("subject", `New Solar Journey Lead (${form.interest})`)
 
-  const inputCls = "w-full bg-white/5 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-white/35 focus:outline-none focus:border-[#F8A800]/70 focus:bg-white/8 transition-all duration-300"
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      })
+      const data = await response.json()
+      if (data.success) {
+        setSent(true)
+        toast.success("Quote request sent successfully!")
+      } else {
+        toast.error("Something went wrong. Please try again.")
+      }
+    } catch (err) {
+      toast.error("Network error. Please try again.")
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
+  const inputCls = "w-full bg-white/5 border border-white/15 rounded-xl px-4 py-3 text-sm text-black placeholder-white/35 focus:outline-none focus:border-[#F8A800]/70 focus:bg-white/8 transition-all duration-300"
   const labelCls = "block text-[10px] font-black uppercase tracking-widest text-white/50 mb-2"
 
   const particles = [
@@ -203,9 +235,9 @@ export default function ContactSection() {
             {/* Contact chips */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-4">
               {[
-                { href: 'tel:1300672194', icon: Phone, label: 'Call Free', value: '1300 672 194', bg: '#1B74BB', hoverBorder: '#28A8E4' },
+                { href: 'tel:61435359431', icon: Phone, label: 'Call Free', value: '+61 435 359 431', bg: '#1B74BB', hoverBorder: '#28A8E4' },
                 { href: 'mailto:info@solearth.com.au', icon: Mail, label: 'Email Us', value: 'info@solearth.com.au', bg: '#F8A800', hoverBorder: '#F8A800' },
-                { href: '#', icon: MapPin, label: 'Office', value: 'Chermside, QLD 4032', bg: '#10B981', hoverBorder: '#10B981' },
+                { href: '#', icon: MapPin, label: 'Office', value: 'Suite 20/1 Maitland Pl, Norwest NSW 2153, Australia', bg: '#10B981', hoverBorder: '#10B981' },
               ].map((c, i) => (
                 <motion.a
                   key={c.label}
@@ -371,12 +403,13 @@ export default function ContactSection() {
 
                     <motion.button
                       type="submit"
+                      disabled={isSubmitting}
                       initial={{ opacity: 0, y: 8 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.65 }}
                       whileHover={{ scale: 1.02, boxShadow: '0 0 35px rgba(27,116,187,0.55)' }}
                       whileTap={{ scale: 0.98 }}
-                      className="group w-full mt-2 flex items-center justify-center gap-3 bg-linear-to-r from-[#1B74BB] to-[#28A8E4] text-white font-extrabold py-4 rounded-2xl transition-all duration-300 shadow-lg text-sm uppercase tracking-wider relative overflow-hidden"
+                      className="group w-full mt-2 flex items-center justify-center gap-3 bg-linear-to-r from-[#1B74BB] to-[#28A8E4] text-white font-extrabold py-4 rounded-2xl transition-all duration-300 shadow-lg text-sm uppercase tracking-wider relative overflow-hidden disabled:opacity-60 disabled:cursor-not-allowed"
                     >
                       {/* Button shine sweep */}
                       <motion.span
@@ -385,7 +418,7 @@ export default function ContactSection() {
                         whileHover={{ x: '200%' }}
                         transition={{ duration: 0.6 }}
                       />
-                      <span className="relative z-10">Get My Free Quote</span>
+                      <span className="relative z-10">{isSubmitting ? "Submitting..." : "Get My Free Quote"}</span>
                       <ArrowRight className="w-4 h-4 relative z-10 group-hover:translate-x-1 transition-transform" />
                     </motion.button>
 

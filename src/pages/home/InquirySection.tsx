@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Check } from 'lucide-react';
+import { useToast } from '../ui/Toast';
 import solarPanelImg from '../../assets/solar_panel_render.webp';
 import expandingSolarImg from '../../assets/expanding_solar.webp';
 import solarBatteryImg from '../../assets/solar_battery_hybrid.webp';
@@ -54,8 +55,10 @@ const formFieldVariants = {
 } as const;
 
 export default function InquirySection() {
+  const toast = useToast();
   const [selectedTab, setSelectedTab] = useState('new-solar');
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -77,9 +80,35 @@ export default function InquirySection() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setFormSubmitted(true);
+    setIsSubmitting(true);
+    try {
+      const form = new FormData();
+      form.append("access_key", "a7519716-2587-431c-8bdb-7bcfce010f90");
+      form.append("name", formData.name);
+      form.append("email", formData.email);
+      form.append("phone", formData.phone);
+      form.append("address", formData.address);
+      form.append("category", selectedTab);
+      form.append("subject", `Inquiry: ${OPTION_TABS.find(t => t.id === selectedTab)?.label || selectedTab}`);
+
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: form
+      });
+      const data = await response.json();
+      if (data.success) {
+        setFormSubmitted(true);
+        toast.success("Inquiry sent successfully!");
+      } else {
+        toast.error("Something went wrong. Please try again.");
+      }
+    } catch (err) {
+      toast.error("Network error. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -276,9 +305,12 @@ export default function InquirySection() {
                     <motion.div variants={formFieldVariants} className="mt-4 flex justify-center md:justify-start">
                       <button
                         type="submit"
-                        className="flex items-center rounded-xl overflow-hidden bg-linear-to-r from-[#28A8E4] to-[#1B74BB] hover:opacity-95 transition-all duration-300 shadow-lg shadow-[#1B74BB]/15 hover:shadow-xl text-white group cursor-pointer"
+                        disabled={isSubmitting}
+                        className="flex items-center rounded-xl overflow-hidden bg-linear-to-r from-[#28A8E4] to-[#1B74BB] hover:opacity-95 transition-all duration-300 shadow-lg shadow-[#1B74BB]/15 hover:shadow-xl text-white group cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
                       >
-                        <span className="px-6 py-3.5 font-extrabold text-xs tracking-wider uppercase">Send Message</span>
+                        <span className="px-6 py-3.5 font-extrabold text-xs tracking-wider uppercase">
+                          {isSubmitting ? "Sending..." : "Send Message"}
+                        </span>
                         <span className="bg-[#0e4875] px-4 py-3.5 flex items-center justify-center self-stretch border-l border-white/10 group-hover:pl-5 group-hover:pr-3 transition-all duration-350">
                           <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-1.5 transition-transform duration-300" />
                         </span>

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import man from '../../../public/images/solar/rivew.jfif';
 
 interface Testimonial {
   name: string;
@@ -10,53 +11,42 @@ interface Testimonial {
 
 const testimonials: Testimonial[] = [
   {
-    name: 'James & Sarah Mitchell',
+    name: 'Jayla Houston',
     location: 'Kellyville, NSW',
-    text: 'From the initial consultation to the final installation, SolEarth Energy made the whole process incredibly smooth. Our electricity bills have dropped by $180 a month!',
-    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&q=80',
+    text: 'Excellent',
+    avatar: man,
   },
   {
-    name: 'Priya Patel',
+    name: 'N Zaidaalvin',
     location: 'Chermside, QLD',
-    text: 'Absolutely professional team. They explained everything in detail and finished the job in one day. The app monitoring is fantastic — I can see my savings in real time!',
-    avatar: 'https://images.unsplash.com/photo-1494790108755-2616b612b048?w=120&q=80',
+    text: 'Good place',
+    avatar:man,
   },
   {
-    name: 'Mark Thompson',
+    name: 'Ekky Firman',
     location: 'Parramatta, NSW',
-    text: 'Got three quotes and SolEarth had the best price and the best warranty. 8 months in and the system is performing above expectations. Highly recommend!',
-    avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=120&q=80',
+    text: 'Kushal personally followed up a week after installation to make sure everything was performing as expected and to answer any questions we had about the monitoring system.',
+    avatar: man,
   },
   {
-    name: 'Chloe & Liam Davies',
+    name: 'Aaaa Maaa',
     location: 'Geelong, VIC',
-    text: "The customer service was exceptional. They handled all the council permits and grid approvals for us. We're now generating 100% of our daily power!",
-    avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=120&q=80',
+    text: "Called with a technical question on a Saturday and someone actually picked up and resolved my concern within the conversation, no ticket system or callback wait",
+    avatar: man,
   },
   {
-    name: 'David Chen',
+    name: 'Clayton Murphy',
     location: 'Adelaide, SA',
-    text: 'Super happy with our new hybrid solar and battery storage. It feels great to be completely self-sufficient and protected from blackout surges.',
-    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=120&q=80',
+    text: 'Kushal personally followed up a week after installation to make sure everything was performing as expected and to answer any questions we had about the monitoring system.',
+    avatar: man,
   },
   {
-    name: 'Samantha Cooper',
+    name: 'krijan prajapati',
     location: 'Newcastle, NSW',
-    text: 'SolEarth installed a 10kW system at our business workshop. The energy offset has significantly lowered our operating costs. Outstanding return on investment.',
-    avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=120&q=80',
+    text: 'Brilliant work Kaushal your work is very professional. You installed my battery in 1 day.. and no unnecessary conduits all cabels passed through the wall keeps very clean',
+    avatar: man,
   },
-  {
-    name: 'Aaron Wilson',
-    location: 'Gold Coast, QLD',
-    text: 'Professional, transparent, and prompt. No pushy sales calls — just high-quality advice and a top-tier installation team. Five stars all round.',
-    avatar: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=120&q=80',
-  },
-  {
-    name: 'Olivia Martin',
-    location: 'Toowoomba, QLD',
-    text: 'Our quarterly bill went from $850 down to a credit of $35! The solar battery is amazing and the installation was extremely neat and tidy.',
-    avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=120&q=80',
-  },
+
 ];
 
 export default function TestimonialsSection() {

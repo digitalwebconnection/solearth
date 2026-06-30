@@ -29,20 +29,41 @@ export default function ResidentialHero({
   })
   const [loading, setLoading] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setLoading(true)
-    setTimeout(() => {
-      setLoading(false)
-      toast.success('Thank you. Our solar energy consultants will contact you shortly.')
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        address: '',
-        bill: 'Under $500',
+    try {
+      const form = new FormData()
+      form.append("access_key", "a7519716-2587-431c-8bdb-7bcfce010f90")
+      form.append("name", formData.name)
+      form.append("email", formData.email)
+      form.append("phone", formData.phone)
+      form.append("address", formData.address)
+      form.append("bill", formData.bill)
+      form.append("subject", "Free Residential Solar Assessment Request")
+
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: form
       })
-    }, 1500)
+      const data = await response.json()
+      if (data.success) {
+        toast.success('Thank you. Our solar energy consultants will contact you shortly.')
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          address: '',
+          bill: 'Under $500',
+        })
+      } else {
+        toast.error('Something went wrong. Please try again.')
+      }
+    } catch (err) {
+      toast.error('Network error. Please try again.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (

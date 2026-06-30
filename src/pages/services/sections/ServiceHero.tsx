@@ -74,11 +74,11 @@ export default function ServiceHero({ title, heroSubtitle, heroImage }: ServiceH
             </button>
 
             <a
-              href="tel:1300672194"
+              href="tel:61435359431"
               className="inline-flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 text-white font-black text-xs uppercase tracking-wider px-6 py-4 rounded-xl transition-all duration-200"
             >
               <Phone className="w-4 h-4 text-[#FCC200]" />
-              Call 1300 672 194
+              Call +61 435 359 431
             </a>
           </div>
         </div>
@@ -104,10 +104,10 @@ export default function ServiceHero({ title, heroSubtitle, heroImage }: ServiceH
             </p>
 
             <a
-              href="tel:1300672194"
+              href="tel:61435359431"
               className="relative z-10 block text-center bg-white hover:bg-[#FCC200] hover:text-black text-[#1B74BB] font-black py-2.5 rounded-xl transition text-xs uppercase tracking-wider shadow-md"
             >
-              Call 1300 672 194
+              Call +61 435 359 431
             </a>
           </div>
         </div>

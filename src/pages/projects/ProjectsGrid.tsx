@@ -1,11 +1,64 @@
 import { useState } from 'react'
 import { X, Sparkles, MapPin, ShieldCheck, Info } from 'lucide-react'
-import img1 from '../../assets/HeroImages/1.webp'
-import img2 from '../../assets/HeroImages/2.webp'
-import img3 from '../../assets/HeroImages/3.webp'
-import img4 from '../../assets/HeroImages/4.webp'
-import img5 from '../../assets/HeroImages/5.webp'
-import img6 from '../../assets/HeroImages/6.webp'
+import img1 from '../../assets/project image/1.jpeg'
+import img2 from '../../assets/project image/2.jpeg'
+import img3 from '../../assets/project image/3.jpeg'
+import img4 from '../../assets/project image/5.jpeg'
+import img5 from '../../assets/project image/6.jpeg'
+import img6 from '../../assets/project image/7.jpeg'
+import img7 from '../../assets/project image/8.jpeg'
+
+import vid10 from '../../assets/project image/10.mp4'
+import vid11 from '../../assets/project image/11.mp4'
+import vid12 from '../../assets/project image/12.mp4'
+import vid4 from '../../assets/project image/4.mp4'
+import vid8 from '../../assets/project image/8.mp4'
+import vid9 from '../../assets/project image/9.mp4'
+
+const videos = [
+  {
+    id: 1,
+    title: 'Off-Grid Farmstead Inverter Commissioning',
+    desc: 'Setting up the 20kVA Selectronic SP PRO interactive inverter for 100% off-grid reliability.',
+    src: vid10,
+    category: 'Off-Grid',
+  },
+  {
+    id: 2,
+    title: 'Premium Black-Contact Panel Mounting',
+    desc: 'On-roof installation showing the secure mounting of premium black panels on a residential tin roof.',
+    src: vid11,
+    category: 'Installation',
+  },
+  {
+    id: 3,
+    title: 'CEC-Accredited Smart Battery Cabling',
+    desc: 'Detailed look at compliance-focused high-voltage battery cabling and connection work.',
+    src: vid12,
+    category: 'Battery Storage',
+  },
+  {
+    id: 4,
+    title: 'Residential Solar Array Aerial Flyover',
+    desc: 'Drone footage of a newly finished premium residential solar and battery storage installation.',
+    src: vid4,
+    category: 'Showcase',
+  },
+  {
+    id: 5,
+    title: 'Commercial Warehouse Solar Array Layout',
+    desc: 'Walkthrough of the 120kW commercial solar array on a warehouse rooftop.',
+    src: vid8,
+    category: 'Commercial',
+  },
+  {
+    id: 6,
+    title: 'Tesla Powerwall 3 Grid Gateway Retrofit',
+    desc: 'Commissioning and app sync of a newly retrofitted Tesla Powerwall 3 backup gateway.',
+    src: vid9,
+    category: 'Battery Retrofit',
+  },
+]
 
 
 interface Project {
@@ -173,6 +226,28 @@ export default function ProjectsGrid() {
         role: 'Retired Architect'
       }
     },
+    {
+      id: 7,
+      title: 'Industrial Cold Storage Facility',
+      category: 'commercial',
+      categoryLabel: 'Commercial & Industrial',
+      location: 'Murarrie, QLD',
+      size: '250kW Commercial Array',
+      image: img7,
+      panels: 'Jinko Solar 475W Tiger Neo TOPCon (526 units)',
+      inverter: 'Sungrow 110kW + FIMER 100kW Inverters',
+      dailyYield: '1,050 kWh Avg.',
+      annualSavings: '$62,000+',
+      commissionDate: 'January 2026',
+      description: 'A utility-scale commercial installation designed to offset the heavy constant cooling loads of a major cold storage warehouse.',
+      challenge: 'The facility operates 24/7 refrigeration systems requiring highly stable voltage inputs and experiencing massive morning startup power spikes.',
+      solution: 'We engineered a 250kW rooftop system matched with dual-MPPT commercial inverters. The layout utilizes tilt frames to maximize winter generation when refrigeration loads remain high but solar angles are low.',
+      testimonial: {
+        quote: 'Solearth designed and installed the system during our busiest season without interrupting operations. Our energy costs are down significantly.',
+        author: 'Marcus Vance',
+        role: 'Operations Director'
+      }
+    }
   ]
 
   const filteredProjects = activeTab === 'all'
@@ -273,6 +348,58 @@ export default function ProjectsGrid() {
             <p className="text-xs text-slate-900 font-semibold mt-1">We are updating this category soon.</p>
           </div>
         )}
+
+        {/* ── VIDEO GALLERY SECTION ── */}
+        <div className="mt-20 pt-16 border-t border-slate-200">
+          <div className="text-center max-w-3xl mx-auto mb-10 md:mb-12 space-y-4">
+            <div className="flex items-center justify-center space-x-2.5">
+              <span className="h-0.5 w-8 bg-[#FCC200] rounded-full" />
+              <span className="text-xs font-bold text-[#1B74BB] uppercase tracking-widest">On-Site Footage</span>
+              <span className="h-0.5 w-8 bg-[#FCC200] rounded-full" />
+            </div>
+            <h3 className="text-xl sm:text-2xl md:text-4xl font-black text-slate-900 tracking-tight leading-tight">
+              Real Installation Video Gallery
+            </h3>
+            <p className="text-xs sm:text-sm leading-relaxed text-slate-650 font-semibold">
+              Watch our CEC-accredited solar installers and engineering teams in action across various commercial, residential, and off-grid project sites.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {videos.map((vid) => (
+              <div
+                key={vid.id}
+                className="group bg-[#0c1524] rounded-2xl border border-slate-800 overflow-hidden flex flex-col justify-between hover:border-[#1B74BB]/60 hover:-translate-y-1 transition-all duration-300 shadow-xl shadow-slate-300"
+              >
+                <div>
+                  {/* Video Player */}
+                  <div className="relative h-60 bg-black flex items-center justify-center overflow-hidden">
+                    <video
+                      src={vid.src}
+                      controls
+                      playsInline
+                      preload="metadata"
+                      className="w-full h-full object-cover"
+                    />
+                    <span className="absolute top-4 left-4 bg-[#FCC200] text-slate-950 text-[9px] font-black uppercase tracking-wider px-3 py-1 rounded-full shadow-md z-10">
+                      {vid.category}
+                    </span>
+                  </div>
+
+                  {/* Info */}
+                  <div className="p-5 sm:p-6 text-left space-y-2">
+                    <h3 className="text-base sm:text-lg font-black text-white leading-snug group-hover:text-[#2AA9E4] transition-colors line-clamp-1">
+                      {vid.title}
+                    </h3>
+                    <p className="text-xs text-slate-400 leading-relaxed line-clamp-2">
+                      {vid.desc}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
 
       </div>
 

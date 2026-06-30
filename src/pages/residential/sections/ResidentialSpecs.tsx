@@ -195,10 +195,10 @@ export default function ResidentialSpecs({
               <p className="text-[10px] text-slate-100/90 font-medium">Chat directly with a certified CEC engineer</p>
             </div>
             <a
-              href="tel:1300672194"
+              href="tel:61435359431"
               className="bg-white text-[#E28000] hover:bg-[#1B74BB] hover:text-white text-xs font-black uppercase tracking-wider py-2.5 px-4 rounded-lg transition shrink-0 text-center"
             >
-              Call 1300 672 194
+              Call +61 435 359 431
             </a>
           </div>
         </div>

@@ -82,10 +82,10 @@ export default function ContactHero() {
               <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
             </button>
             <a
-              href="tel:0435359431"
+              href="tel:61435359431"
               className="bg-white/10 hover:bg-white/20 border border-white/30 text-white font-bold px-6 sm:px-10 py-3.5 rounded-full text-xs sm:text-base backdrop-blur-sm transition-all duration-300 flex items-center justify-center cursor-pointer text-center"
             >
-              Call 0435 359 431
+              Call +61 435 359 431
             </a>
           </motion.div>
         </div>

@@ -280,11 +280,11 @@ export default function CommercialSpecs({
 
             <div className="flex flex-col sm:flex-row gap-3 shrink-0 w-full sm:w-auto">
               <a
-                href="tel:1300672194"
+                href="tel:61435359431"
                 className="group inline-flex items-center justify-center gap-2 bg-black text-white hover:bg-[#1B74BB] font-black text-xs uppercase tracking-wider px-7 py-3.5 rounded-xl shadow-lg transition-all duration-300"
               >
                 <Phone className="w-4 h-4" />
-                Call 1300 672 194
+                Call +61 435 359 431
               </a>
               <button
                 onClick={() => openQuoteModal('Commercial Specs Feasibility')}

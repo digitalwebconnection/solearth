@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useToast } from '../ui/Toast';
 import {
   PhoneCall,
   FileEdit,
@@ -20,14 +21,14 @@ interface StepData {
   duration: string;
 }
 
-export default function Process() {
+export default function   Process() {
   const steps: StepData[] = [
     {
       num: '01',
       icon: PhoneCall,
       title: 'Free Energy Audit',
       desc: 'We analyse your quarterly electricity bills and use satellite mapping to check roof shade.',
-      image: '/images/solar/solar-tech-worker.jpg',
+      image: '/images/solar/SOLAR-ENERGY-AUDIT-SWAMI-ENERGY.png',
       bulletPoints: [
         'Detailed analysis of energy consumption history',
         '3D roof space assessment using satellite imaging',
@@ -80,8 +81,36 @@ export default function Process() {
     }
   ];
 
+  const toast = useToast();
   const [showPopup, setShowPopup] = useState(false);
   const [selectedStep, setSelectedStep] = useState<StepData | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleProposalSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    try {
+      const formData = new FormData(e.currentTarget);
+      formData.append("access_key", "a7519716-2587-431c-8bdb-7bcfce010f90");
+      formData.append("subject", "New Solar Proposal Request via Process Timeline Modal");
+
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+      const data = await response.json();
+      if (data.success) {
+        setShowPopup(false);
+        toast.success("Thank you! Our engineering team will contact you shortly.");
+      } else {
+        toast.error("Something went wrong. Please try again.");
+      }
+    } catch (err) {
+      toast.error("Network error. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <section id="process" aria-label="Solar System Installation Process" className="relative overflow-hidden py-10">
@@ -300,20 +329,20 @@ export default function Process() {
 
             {/* ── SCROLLABLE BODY / FORM ── */}
             <div className="flex-1 overflow-y-auto overscroll-contain px-4 py-3">
-              <form id="proposal-form" onSubmit={(e) => { e.preventDefault(); setShowPopup(false); alert("Thank you! Our engineering team will contact you shortly."); }}
+              <form id="proposal-form" onSubmit={handleProposalSubmit}
                 className="space-y-3">
 
                 {/* Name + Phone — 2-col always */}
                 <div className="grid grid-cols-2 gap-2">
                   <div className="min-w-0">
                     <label className="block text-[9px] font-bold text-slate-600 uppercase tracking-wider mb-1">Name *</label>
-                    <input type="text" required
+                    <input type="text" required name="name"
                       className="w-full px-3 py-2 rounded-lg border border-slate-200 focus:border-[#1B74BB] focus:ring-1 focus:ring-[#1B74BB] outline-none text-sm text-slate-800 bg-slate-50"
                       placeholder="John Doe" />
                   </div>
                   <div className="min-w-0">
                     <label className="block text-[9px] font-bold text-slate-600 uppercase tracking-wider mb-1">Phone *</label>
-                    <input type="tel" required
+                    <input type="tel" required name="phone"
                       className="w-full px-3 py-2 rounded-lg border border-slate-200 focus:border-[#1B74BB] focus:ring-1 focus:ring-[#1B74BB] outline-none text-sm text-slate-800 bg-slate-50"
                       placeholder="0400 123 456" />
                   </div>
@@ -322,7 +351,7 @@ export default function Process() {
                 {/* Email */}
                 <div>
                   <label className="block text-[9px] font-bold text-slate-600 uppercase tracking-wider mb-1">Email *</label>
-                  <input type="email" required
+                  <input type="email" required name="email"
                     className="w-full px-3 py-2 rounded-lg border border-slate-200 focus:border-[#1B74BB] focus:ring-1 focus:ring-[#1B74BB] outline-none text-sm text-slate-800 bg-slate-50"
                     placeholder="john@example.com" />
                 </div>
@@ -334,9 +363,10 @@ export default function Process() {
               <button
                 type="submit"
                 form="proposal-form"
-                className="w-full py-2.5 bg-linear-to-r from-orange-500 to-amber-500 hover:opacity-95 active:scale-[0.98] text-white font-extrabold text-sm rounded-xl shadow-lg transition-all cursor-pointer"
+                disabled={isSubmitting}
+                className="w-full py-2.5 bg-linear-to-r from-orange-500 to-amber-500 hover:opacity-95 active:scale-[0.98] text-white font-extrabold text-sm rounded-xl shadow-lg transition-all cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                Send Proposal Request
+                {isSubmitting ? "Sending..." : "Send Proposal Request"}
               </button>
             </div>
           </div>
