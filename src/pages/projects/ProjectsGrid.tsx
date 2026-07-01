@@ -8,6 +8,7 @@ import img5 from '../../assets/project image/6.jpeg'
 import img6 from '../../assets/project image/7.jpeg'
 import img7 from '../../assets/project image/8.jpeg'
 
+// Gallary video   
 import vid10 from '../../assets/project image/10.mp4'
 import vid11 from '../../assets/project image/11.mp4'
 import vid12 from '../../assets/project image/12.mp4'
