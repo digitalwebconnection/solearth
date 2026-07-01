@@ -1,149 +1,106 @@
-import { useEffect, useState } from 'react'
-import { useQuoteModal } from '../../components/QuoteModal'
+import { useEffect, useState } from "react";
 
 const slides = [
-  {
-    img: '/images/solar/solar-panel-rooftop.jpg',
-    headline: 'Solar Installation in Australia for a Brighter Future ',
-    sub: 'Save up to $2,500 a year with expert solar installation in Australia from Australia\'s trusted solar specialists.',
-  },
-  {
-    img: '/images/solar/solar-workers-roof.jpg',
-    headline: 'Premium Solar Panels & Solar Power Systems in Australia',
-    sub: 'High-efficiency solar solutions designed to reduce electricity bills, maximize energy savings, and increase energy independence.',
-  },
-  {
-    img: '/images/solar/solar-sunset-array.jpg',
-    headline: 'Australia\'s Trusted Solar Power Solutions',
-    sub: 'Premium solar panels, battery storage, and expert installation for long-term energy savings.',
-  },
-]
+  { img: "/images/solar/solar-panel-rooftop.jpg" },
+  { img: "/images/solar/solar-workers-roof.jpg" },
+  { img: "/images/solar/solar-sunset-array.jpg" },
+];
 
-export default function   HeroSection() {
-  const [current, setCurrent] = useState(0)
-  const [animating, setAnimating] = useState(false)
+export default function HeroSection() {
+  const [current, setCurrent] = useState(0);
+  const [mouse, setMouse] = useState({ x: 0, y: 0 });
 
+  // Auto Slide
   useEffect(() => {
     const timer = setInterval(() => {
-      setAnimating(true)
-      setTimeout(() => {
-        setCurrent((c) => (c + 1) % slides.length)
-        setAnimating(false)
-      }, 500)
-    }, 5000)
-    return () => clearInterval(timer)
-  }, [])
+      setCurrent((prev) => (prev + 1) % slides.length);
+    }, 5000);
 
-  const { openQuoteModal } = useQuoteModal()
-  const slide = slides[current]
+    return () => clearInterval(timer);
+  }, []);
+
+  // Mouse Parallax
+  const handleMouseMove = (e: { currentTarget: { getBoundingClientRect: () => any; }; clientX: number; clientY: number; }) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+
+    const x = ((e.clientX - rect.left) / rect.width - 0.5) * 20;
+    const y = ((e.clientY - rect.top) / rect.height - 0.5) * 20;
+
+    setMouse({ x, y });
+  };
+
+  const handleMouseLeave = () => {
+    setMouse({ x: 0, y: 0 });
+  };
+
+  // Click Left = Previous | Right = Next
+  const handleClick = (e: { currentTarget: { getBoundingClientRect: () => any; }; clientX: number; }) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+
+    if (e.clientX < rect.width / 2) {
+      setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
+    } else {
+      setCurrent((prev) => (prev + 1) % slides.length);
+    }
+  };
 
   return (
-    <section className="relative h-full md:h-[88vh] min-h-[600px] overflow-hidden">
-      {/* Background image */}
-      {slides.map((s, i) => (
+    <section
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      onClick={handleClick}
+      className="relative h-full md:h-[95vh] min-h-[600px] overflow-hidden cursor-pointer select-none"
+    >
+      {/* Background Images */}
+      {slides.map((slide, index) => (
         <div
-          key={i}
-          className="absolute inset-0 transition-opacity duration-1000"
-          style={{ opacity: i === current ? 1 : 0 }}
+          key={index}
+          className={`absolute inset-0 transition-opacity duration-1000 ${
+            current === index ? "opacity-100" : "opacity-0"
+          }`}
         >
           <img
-            src={s.img}
-            alt=""
-            className="w-full h-full object-cover"
+            src={slide.img}
+            alt={`Slide ${index + 1}`}
+            draggable={false}
+            className="absolute inset-0 w-[110%] h-[110%] object-cover transition-transform duration-300 ease-out"
+            style={{
+              transform: `translate(${mouse.x}px, ${mouse.y}px) scale(1.08)`,
+            }}
           />
         </div>
       ))}
 
-      {/* Dark overlay gradient */}
-      <div className="absolute inset-0 bg-linear-to-r from-[#0a1f44]/90 via-[#0a1f44]/70 to-transparent" />
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-black/20 z-10" />
 
-      {/* Content */}
-      <div className="relative z-10 h-full flex items-center my-25 md:my-0 ">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-0  w-full">
-          <div className="max-w-4xl">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-[#FCC200]/20 border border-[#FCC200]/40 text-[#FCC200] text-xs font-bold tracking-widest uppercase px-4 py-2 rounded-full mb-2">
-              <span className="w-2 h-2 bg-[#FCC200] rounded-full animate-pulse" />
-              Trusted By 12,000+ Australians
-            </div>
-
-            {/* Headline */}
-            <h1
-              className={`text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-extrabold text-white leading-tight mb-6 transition-all duration-500 ${animating ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'
-                }`}
-              style={{ whiteSpace: 'pre-line' }}
-            >
-              {slide.headline}
-            </h1>
-
-            <p
-              className={`text-sm sm:text-base md:text-lg text-gray-200 mb-8 leading-relaxed transition-all duration-500 delay-100 ${animating ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'
-                }`}
-            >
-              {slide.sub}
-            </p>
-
-            {/* CTAs */}
-            <div className="flex flex-wrap gap-4">
-              <a
-                href="#packages"
-                className="bg-[#FCC200] hover:bg-[#e6af00] text-black font-bold px-10 py-2 rounded-full text-base transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-0.5"
-              >
-                View Solar Packages →
-              </a>
-              <button
-                onClick={() => openQuoteModal('Homepage Hero')}
-                className="bg-white/10 hover:bg-white/20 border-2 border-white/20 text-white font-bold px-10 py-2 rounded-full text-base backdrop-blur-sm transition-all duration-300 cursor-pointer"
-              >
-                Get Free Quote
-              </button>
-            </div>
-
-            {/* Trust badges */}
-            <div className="flex flex-wrap gap-5 md:gap-10 mt-10">
-              {[
-                { val: '12K+', label: 'Installations' },
-                { val: '10yr', label: 'Warranty' },
-                { val: '$2.5K', label: 'Avg Savings/yr' },
-                { val: '4.9★', label: 'Google Rating' },
-              ].map((b) => (
-                <div key={b.label} className="flex flex-col">
-                  <span className="text-2xl font-extrabold text-[#FCC200]">{b.val}</span>
-                  <span className="text-gray-300 text-xs font-medium">{b.label}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Slide indicators */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-10">
-        {slides.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => setCurrent(i)}
-            className={`h-1.5 rounded-full transition-all duration-300 ${i === current ? 'w-8 bg-[#FCC200]' : 'w-2 bg-white/40'
-              }`}
-          />
-        ))}
-      </div>
-
-      {/* Bottom wave */}
-      <div className="absolute -bottom-px left-0 right-0 z-10 w-full overflow-hidden leading-none">
+      {/* Bottom Wave */}
+      <div className="absolute -bottom-px left-0 right-0 z-20 w-full overflow-hidden leading-none">
         <svg
           viewBox="0 0 1440 80"
-          fill="none"
           preserveAspectRatio="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="relative block w-full h-[40px] lg:h-[80px]"
+          className="w-full h-[40px] lg:h-[80px]"
         >
           <path
-            d="M0 80L60 66.7C120 53.3 240 26.7 360 20C480 13.3 600 26.7 720 33.3C840 40 960 40 1080 36.7C1200 33.3 1320 26.7 1380 23.3L1440 20V80H1380C1320 80 1200 80 1080 80C960 80 840 80 720 80C600 80 480 80 360 80C240 80 120 80 60 80H0Z"
             fill="white"
+            d="M0 80L60 66.7C120 53.3 240 26.7 360 20C480 13.3 600 26.7 720 33.3C840 40 960 40 1080 36.7C1200 33.3 1320 26.7 1380 23.3L1440 20V80H0Z"
           />
         </svg>
       </div>
+
+      {/* Navigation Hint */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex gap-3">
+        {slides.map((_, index) => (
+          <div
+            key={index}
+            className={`h-2 rounded-full transition-all duration-300 ${
+              current === index
+                ? "w-8 bg-white"
+                : "w-2 bg-white/50"
+            }`}
+          />
+        ))}
+      </div>
     </section>
-  )
+  );
 }
