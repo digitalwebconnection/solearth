@@ -16,7 +16,7 @@ export default function AboutHero() {
       {/* Static Background Image with Ken Burns zoom entry effect */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <motion.img
-          src="/images/solar/solar-panel-rooftop.jpg"
+          src="/images/solar/solar-panel-rooftop.webp"
           alt="Premium Solar Panels Close Up"
           initial={{ scale: 1.1, opacity: 0 }}
           animate={{ scale: 1.02, opacity: 1 }}

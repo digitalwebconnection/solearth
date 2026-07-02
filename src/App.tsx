@@ -1,26 +1,28 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, Suspense, lazy } from 'react'
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import { HelmetProvider } from 'react-helmet-async'
 import Lenis from 'lenis'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
-import HomeMain from './pages/home/HomeMain'
-import AboutMain from './pages/about/AboutMain'
-import ProjectsMain from './pages/projects/ProjectsMain'
-import ContactMain from './pages/contact/ContactMain'
 import ContactSection from './pages/home/ContactSection'
-import ProductDetailMain from './pages/ProductDetail'
-import PrivacyPolicy from './pages/policies/PrivacyPolicy'
-import TermsConditions from './pages/policies/TermsConditions'
-import ComplaintsPolicy from './pages/policies/ComplaintsPolicy'
-import ResidentialMain from './pages/residential/ResidentialMain'
-import CommercialMain from './pages/commercial/CommercialMain'
-import ServiceMain from './pages/services/ServiceMain'
 import { ToastProvider } from './pages/ui/Toast'
 import Preloader from './components/Preloader'
 import { QuoteModalProvider } from './components/QuoteModal'
 import CookieConsent from './components/CookieConsent'
 import WhatsAppChat from './components/WhatsAppChat'
+
+// Lazy loaded page components
+const HomeMain = lazy(() => import('./pages/home/HomeMain'))
+const AboutMain = lazy(() => import('./pages/about/AboutMain'))
+const ProjectsMain = lazy(() => import('./pages/projects/ProjectsMain'))
+const ContactMain = lazy(() => import('./pages/contact/ContactMain'))
+const ProductDetailMain = lazy(() => import('./pages/ProductDetail'))
+const PrivacyPolicy = lazy(() => import('./pages/policies/PrivacyPolicy'))
+const TermsConditions = lazy(() => import('./pages/policies/TermsConditions'))
+const ComplaintsPolicy = lazy(() => import('./pages/policies/ComplaintsPolicy'))
+const ResidentialMain = lazy(() => import('./pages/residential/ResidentialMain'))
+const CommercialMain = lazy(() => import('./pages/commercial/CommercialMain'))
+const ServiceMain = lazy(() => import('./pages/services/ServiceMain'))
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -50,19 +52,21 @@ function AppContent() {
     <>
       <Navbar />
       <main className="flex-1">
-        <Routes>
-          <Route path="/" element={<HomeMain />} />
-          <Route path="/about" element={<AboutMain />} />
-          <Route path="/projects" element={<ProjectsMain />} />
-          <Route path="/contact" element={<ContactMain />} />
-          <Route path="/product/:slug" element={<ProductDetailMain />} />
-          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="/terms-conditions" element={<TermsConditions />} />
-          <Route path="/complaints-policy" element={<ComplaintsPolicy />} />
-          <Route path="/residential/:slug" element={<ResidentialMain />} />
-          <Route path="/commercial/:slug" element={<CommercialMain />} />
-          <Route path="/services/:slug" element={<ServiceMain />} />
-        </Routes>
+        <Suspense fallback={<div className="min-h-screen bg-white" />}>
+          <Routes>
+            <Route path="/" element={<HomeMain />} />
+            <Route path="/about" element={<AboutMain />} />
+            <Route path="/projects" element={<ProjectsMain />} />
+            <Route path="/contact" element={<ContactMain />} />
+            <Route path="/product/:slug" element={<ProductDetailMain />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-conditions" element={<TermsConditions />} />
+            <Route path="/complaints-policy" element={<ComplaintsPolicy />} />
+            <Route path="/residential/:slug" element={<ResidentialMain />} />
+            <Route path="/commercial/:slug" element={<CommercialMain />} />
+            <Route path="/services/:slug" element={<ServiceMain />} />
+          </Routes>
+        </Suspense>
       </main>
       {location.pathname !== '/contact' && <ContactSection />}
       <Footer />

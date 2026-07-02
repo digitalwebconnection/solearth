@@ -15,19 +15,19 @@ const reasons = [
     title: 'Government Rebates Applied',
     desc: 'We handle all the paperwork so you automatically receive maximum STC government rebates.',
     icon: FileText,
-    image: '/images/solar/solar-residential-house.jpg'
+    image: '/images/solar/solar-residential-house.webp'
   },
   {
     title: 'Premium Tier-1 Panels',
     desc: 'We only install Tier-1 bankable solar panels with proven performance and longevity.',
     icon: Zap,
-    image: '/images/solar/solar-panel-rooftop.jpg'
+    image: '/images/solar/solar-panel-rooftop.webp'
   },
   {
     title: 'After-Sales Support',
     desc: 'Our dedicated support team is available 7 days a week for monitoring, servicing and advice.',
     icon: Handshake,
-    image: '/images/solar/solar-engineer-panel.jpg'
+    image: '/images/solar/solar-engineer-panel.webp'
   },
   {
     title: 'Transparent Pricing',
@@ -39,7 +39,7 @@ const reasons = [
     title: 'Local Australian Company',
     desc: 'Proudly Australian-owned and operated with offices in NSW and QLD.',
     icon: Map,
-    image: '/images/solar/solar-aerial-farm.jpg'
+    image: '/images/solar/solar-aerial-farm.webp'
   }
 ];
 
@@ -79,6 +79,7 @@ export default function WhyUsSection() {
                   <img
                     src={r.image}
                     alt={r.title}
+                    loading="lazy"
                     className="w-full h-full object-cover transition-transform duration-700 scale-105 group-hover:scale-100"
                   />
                   {/* Title overlay */}

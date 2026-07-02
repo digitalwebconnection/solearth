@@ -32,7 +32,7 @@ export default function Products() {
       accent: '#f5a623',
       title: 'High-Efficiency N-Type TOPCon Solar Panels for Maximum Energy Output ',
       subtitle: 'Generate more power with advanced N-Type TOPCon solar panels engineered for maximum efficiency and long-term savings. ',
-      image: '/images/solar/commercial-solar-roof.jpg',
+      image: '/images/solar/commercial-solar-roof.webp',
       specs: [
         { label: 'Cell Technology', value: 'N-Type TOPCon' },
         { label: 'Max Power Output', value: '440W – 475W' },
@@ -62,7 +62,7 @@ export default function Products() {
       accent: '#38bdf8',
       title: 'Smart Hybrid Solar Inverters for Performance & Energy Savings ',
       subtitle: 'Intelligent hybrid solar inverters designed to optimize solar generation, battery storage and grid usage for maximum efficiency and long-term energy savings.',
-      image: '/images/solar/solar-commercial-farm.jpg',
+      image: '/images/solar/solar-commercial-farm.webp',
       specs: [
         { label: 'Inverter Type', value: 'Hybrid (Solar + Battery + Grid)' },
         { label: 'Max Efficiency', value: 'Up to 98.6%' },
@@ -91,7 +91,7 @@ export default function Products() {
       accent: '#4ade80',
       title: 'Smart Home Battery Storage for Reliable Day & Night Power ',
       subtitle: 'LFP home battery systems store excess solar energy, reduce grid dependence and provide reliable backup power for homes across Australia. ',
-      image: '/images/solar/solar-sunset-array.jpg',
+      image: '/images/solar/solar-sunset-array.webp',
       specs: [
         { label: 'Battery Chemistry', value: 'LiFePO4 — Cobalt Free' },
         { label: 'Usable Capacity', value: '5 kWh – 30 kWh (Stackable)' },
@@ -120,7 +120,7 @@ export default function Products() {
       accent: '#a78bfa',
       title: 'Smart Solar-Powered EV Charging Built for Efficiency & Long-Term Savings ',
       subtitle: 'Smart solar-integrated EV charging stations help homes and businesses charge electric vehicles efficiently using clean energy while reducing electricity costs. ',
-      image: '/images/solar/battery-storage-unit.jpg',
+      image: '/images/solar/battery-storage-unit.webp',
       specs: [
         { label: 'Charging Power', value: '7.4 kW – 22 kW AC' },
         { label: 'Connector Type', value: 'Type 2 Tethered (Universal)' },

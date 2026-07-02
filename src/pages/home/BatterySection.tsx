@@ -45,6 +45,7 @@ export default function BatterySection() {
               <img
                 src={batteryStorageImg}
                 alt="SolEarth Smart Battery Storage System"
+                loading="lazy"
                 className="max-h-[75%] object-contain group-hover/panel:scale-[1.02] transition-transform duration-500"
               />
 

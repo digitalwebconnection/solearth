@@ -202,7 +202,7 @@ export default function InquirySection() {
                 )}
                 {/* Small Thumbnail image */}
                 <span className={`w-6 h-6 rounded-lg overflow-hidden flex items-center justify-center shrink-0 border transition-all duration-300 ${isActive ? 'border-white/20 bg-white/10' : 'border-gray-200 bg-gray-50'}`}>
-                  <img src={tabImageMap[tab.id]} className="w-full h-full object-cover scale-110" alt="" />
+                  <img src={tabImageMap[tab.id]} loading="lazy" className="w-full h-full object-cover scale-110" alt="" />
                 </span>
                 <span className="relative z-10">{tab.label}</span>
               </motion.button>
@@ -411,6 +411,7 @@ export default function InquirySection() {
                     }}
                     src={tabImageMap[selectedTab]}
                     alt="Premium Solar System component"
+                    loading="lazy"
                     className="w-full h-auto max-h-[420px] object-contain relative z-10 "
                   />
                 </motion.div>
@@ -450,16 +451,19 @@ export default function InquirySection() {
              <img 
               src={allBatteryNew} 
               alt="Premium Compatible Batteries" 
+              loading="lazy"
               className="w-full h-auto max-h-[200px] object-contain drop-shadow-[0_20px_35px_rgba(0,0,0,0.08)] group-hover:scale-[1.02] transition-transform duration-500"
             />
             <img 
               src={batteryNew} 
               alt="Premium Compatible Batteries" 
+              loading="lazy"
               className="w-full h-auto max-h-[200px] object-contain drop-shadow-[0_20px_35px_rgba(0,0,0,0.08)] group-hover:scale-[1.02] transition-transform duration-500"
             />
             <img 
               src={smartCubeAllInOne} 
               alt="Premium Compatible Batteries" 
+              loading="lazy"
               className="w-full h-auto max-h-[200px] object-contain drop-shadow-[0_20px_35px_rgba(0,0,0,0.08)] group-hover:scale-[1.02] transition-transform duration-500"
             />
           </motion.div>

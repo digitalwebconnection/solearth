@@ -123,7 +123,7 @@ export const COMMERCIAL_CASE_STUDIES: CaseStudy[] = [
     paybackYears: '3.8 yrs',
     co2Offset: '128 tonnes',
     panelCount: 225,
-    image: '/images/solar/commercial-solar-roof.jpg',
+    image: '/images/solar/commercial-solar-roof.webp',
     highlight: 'Reduced electricity costs by 73% in year one, enabling expansion into second facility.',
     tags: ['100kW System', 'Three-Phase', 'Battery-Ready'],
   },
@@ -137,7 +137,7 @@ export const COMMERCIAL_CASE_STUDIES: CaseStudy[] = [
     paybackYears: '4.2 yrs',
     co2Offset: '64 tonnes',
     panelCount: 112,
-    image: '/images/solar/solar-commercial-farm.jpg',
+    image: '/images/solar/solar-commercial-farm.webp',
     highlight: 'Cold-storage and HVAC load fully offset during peak trading hours — a net-zero daytime operation.',
     tags: ['50kW System', 'Cold Storage Offset', 'Demand Reduction'],
   },
@@ -151,7 +151,7 @@ export const COMMERCIAL_CASE_STUDIES: CaseStudy[] = [
     paybackYears: '4.5 yrs',
     co2Offset: '34 tonnes',
     panelCount: 68,
-    image: '/images/solar/solar-residential-house.jpg',
+    image: '/images/solar/solar-residential-house.webp',
     highlight: 'Full NABERS energy commitment met in year two, attracting premium corporate tenants.',
     tags: ['30kW System', 'ESG Compliance', 'NABERS Rating'],
   },
@@ -185,7 +185,7 @@ export const COMMERCIAL_PAGES_DATA: Record<string, CommercialData> = {
         bg: 'bg-amber-50',
         textColor: 'text-amber-600',
         borderActive: 'border-amber-400',
-        image: '/images/solar/solar-panel-rooftop.jpg',
+        image: '/images/solar/solar-panel-rooftop.webp',
       },
       {
         key: 'inverter',
@@ -199,7 +199,7 @@ export const COMMERCIAL_PAGES_DATA: Record<string, CommercialData> = {
         bg: 'bg-blue-50',
         textColor: 'text-blue-600',
         borderActive: 'border-blue-400',
-        image: '/images/solar/solar-sunset-array.jpg',
+        image: '/images/solar/solar-sunset-array.webp',
       },
       {
         key: 'battery',
@@ -213,7 +213,7 @@ export const COMMERCIAL_PAGES_DATA: Record<string, CommercialData> = {
         bg: 'bg-emerald-50',
         textColor: 'text-emerald-600',
         borderActive: 'border-emerald-400',
-        image: '/images/solar/solar-residential-house.jpg',
+        image: '/images/solar/solar-residential-house.webp',
       },
       {
         key: 'mounting',
@@ -227,7 +227,7 @@ export const COMMERCIAL_PAGES_DATA: Record<string, CommercialData> = {
         bg: 'bg-violet-50',
         textColor: 'text-violet-600',
         borderActive: 'border-violet-400',
-        image: '/images/solar/solar-panel-detail.jpg',
+        image: '/images/solar/solar-panel-detail.webp',
       },
     ],
     processSteps: [
@@ -289,8 +289,8 @@ export const COMMERCIAL_PAGES_DATA: Record<string, CommercialData> = {
       videoQuote: "Our corporate division has designed and commissioned over 5MW of commercial solar systems across NSW and QLD. We coordinate closely with facilities managers and network distributors to deliver zero-downtime integration.",
       videoAuthor: "Marcus Vance",
       videoAuthorTitle: "Director of Commercial Projects",
-      videoAuthorImage: "/images/solar/solar-tech-worker.jpg",
-      videoPlaceholderImage: "/images/solar/solar-aerial-farm.jpg"
+      videoAuthorImage: "/images/solar/solar-tech-worker.webp",
+      videoPlaceholderImage: "/images/solar/solar-aerial-farm.webp"
     },
     details: {
       panels: {
@@ -364,7 +364,7 @@ mounting: {
         bg: 'bg-orange-50',
         textColor: 'text-orange-600',
         borderActive: 'border-orange-400',
-        image: '/images/solar/solar-residential-house.jpg',
+        image: '/images/solar/solar-residential-house.webp',
       },
       {
         key: 'inverter',
@@ -378,7 +378,7 @@ mounting: {
         bg: 'bg-sky-50',
         textColor: 'text-sky-600',
         borderActive: 'border-sky-400',
-        image: '/images/solar/solar-sunset-array.jpg',
+        image: '/images/solar/solar-sunset-array.webp',
       },
       {
         key: 'battery',
@@ -392,7 +392,7 @@ mounting: {
         bg: 'bg-teal-50',
         textColor: 'text-teal-600',
         borderActive: 'border-teal-400',
-        image: '/images/solar/solar-commercial-farm.jpg',
+        image: '/images/solar/solar-commercial-farm.webp',
       },
       {
         key: 'mounting',
@@ -406,7 +406,7 @@ mounting: {
         bg: 'bg-rose-50',
         textColor: 'text-rose-600',
         borderActive: 'border-rose-400',
-        image: '/images/solar/solar-ground-mounted.jpg',
+        image: '/images/solar/solar-ground-mounted.webp',
       },
     ],
     processSteps: [
@@ -468,8 +468,8 @@ mounting: {
       videoQuote: "For 50kW installations, we perform zero-disruption structural mounting integrations, guaranteeing that your roof structural integrity is certified and retail trading hours remain completely unaffected.",
       videoAuthor: "Sarah Jenkins",
       videoAuthorTitle: "Senior Grid Integration Lead",
-      videoAuthorImage: "/images/solar/solar-engineer-panel.jpg",
-      videoPlaceholderImage: "/images/solar/solar-installation-crew.jpg"
+      videoAuthorImage: "/images/solar/solar-engineer-panel.webp",
+      videoPlaceholderImage: "/images/solar/solar-installation-crew.webp"
     },
  details: {
   panels: {
@@ -546,7 +546,7 @@ mounting: {
         bg: 'bg-yellow-50',
         textColor: 'text-yellow-600',
         borderActive: 'border-yellow-400',
-        image: '/images/solar/solar-sunset-array.jpg',
+        image: '/images/solar/solar-sunset-array.webp',
       },
       {
         key: 'inverter',
@@ -560,7 +560,7 @@ mounting: {
         bg: 'bg-indigo-50',
         textColor: 'text-indigo-600',
         borderActive: 'border-indigo-400',
-        image: '/images/solar/solar-inverter-tech.jpg',
+        image: '/images/solar/solar-inverter-tech.webp',
       },
       {
         key: 'battery',
@@ -574,7 +574,7 @@ mounting: {
         bg: 'bg-green-50',
         textColor: 'text-green-600',
         borderActive: 'border-green-500',
-        image: '/images/solar/commercial-solar-roof.jpg',
+        image: '/images/solar/commercial-solar-roof.webp',
       },
       {
         key: 'mounting',
@@ -588,7 +588,7 @@ mounting: {
         bg: 'bg-slate-100',
         textColor: 'text-slate-800',
         borderActive: 'border-slate-400',
-        image: '/images/solar/solar-aerial-farm.jpg',
+        image: '/images/solar/solar-aerial-farm.webp',
       },
     ],
     processSteps: [
@@ -650,8 +650,8 @@ mounting: {
       videoQuote: "We understand that manufacturing and cold-storage operations cannot afford a minute of downtime. Our staged installation procedures guarantee zero impact on your production operations.",
       videoAuthor: "David Chen",
       videoAuthorTitle: "Chief Industrial Engineer",
-      videoAuthorImage: "/images/solar/solar-engineer-panel.jpg",
-      videoPlaceholderImage: "/images/solar/solar-tech-worker.jpg"
+      videoAuthorImage: "/images/solar/solar-engineer-panel.webp",
+      videoPlaceholderImage: "/images/solar/solar-tech-worker.webp"
     },
 details: {
   panels: {

@@ -23,7 +23,7 @@ export const SERVICES_PAGES_DATA: Record<string, ServiceData> = {
   "installation": {
     title: "Solar Panel Systems Installation in Sydney ",
     heroSubtitle: "CEC-Accredited Solar Panel Systems Installation in Sydney, delivering expert system design, compliant installation, premium components, and long-term energy savings for homes and businesses.",
-    heroImage: "/images/solar/solar-residential-house.jpg",
+    heroImage: "/images/solar/solar-residential-house.webp",
     introTitle: "Professional Installation Engineered for Australian Conditions",
     introDesc: "SolEarth Energy provides full end-to-end solar design and installation. Our licensed, CEC-accredited electrical engineers ensure that your solar array, string wiring, and smart inverters are set up safely to yield maximum power output for decades.",
     features: [
@@ -63,7 +63,7 @@ export const SERVICES_PAGES_DATA: Record<string, ServiceData> = {
   "cleaning": {
     title: "Solar Panel Cleaning Services in Australia",
     heroSubtitle: "Professional solar panel cleaning services that help improve solar efficiency, maximize energy generation, and extend the lifespan of your solar power system across Australia.",
-    heroImage: "/images/solar/solar-inverter-tech.jpg",
+    heroImage: "/images/solar/solar-inverter-tech.webp",
     introTitle: "Why Professional Cleaning Matters for Your Investment",
     introDesc: "Dust, leaves, salt-mist, and bird droppings build up over time and create localized hot spots, reducing your solar panel output by up to 20%. Professional cleaning removes this layer safely without scratching the delicate anti-reflective glass coatings.",
     features: [
@@ -103,7 +103,7 @@ export const SERVICES_PAGES_DATA: Record<string, ServiceData> = {
   "maintenance": {
     title: "Solar Panel System Maintenance in Australia ",
     heroSubtitle: "Expert maintenance, fault detection, inverter repairs, and solar panel cleaning services designed to maximize solar performance and ensure reliable energy production year-round. ",
-    heroImage: "/images/solar/battery-storage-unit.jpg",
+    heroImage: "/images/solar/battery-storage-unit.webp",
     introTitle: "Professional System Health Audits & Fault Rectification",
     introDesc: "Is your inverter displaying a red warning light, or has your power generation dropped unexpectedly? SolEarth Energy's maintenance engineers conduct diagnostic testing to locate ground faults, hot spots, or wiring issues.",
     features: [

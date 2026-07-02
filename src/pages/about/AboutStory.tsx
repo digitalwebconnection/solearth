@@ -27,7 +27,7 @@ export default function AboutStory() {
             >
               <div className="absolute inset-0 bg-[#2AA9E4]/10 rounded-3xl transform rotate-2 scale-102" />
               <img
-                src="/images/solar/solar-panel-rooftop.jpg"
+                src="/images/solar/solar-panel-rooftop.webp"
                 alt="Solar Panels Installation"
                 className="relative z-10 rounded-3xl shadow-xl w-full h-[250px] sm:h-[350px] lg:h-[400px] object-cover"
               />
@@ -53,7 +53,7 @@ export default function AboutStory() {
                 className="w-full h-full rounded-2xl border-4 border-white shadow-2xl overflow-hidden"
               >
                 <img
-                  src="/images/solar/solar-engineer-panel.jpg"
+                  src="/images/solar/solar-engineer-panel.webp"
                   alt="Solar Technical Installation"
                   className="w-full h-full object-cover"
                 />

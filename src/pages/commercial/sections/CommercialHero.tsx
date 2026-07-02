@@ -69,7 +69,7 @@ export default function CommercialHero({
       {/* Background Graphic overlay with Ken Burns entry zoom */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <motion.img
-          src="/images/solar/solar-residential-house.jpg"
+          src="/images/solar/solar-residential-house.webp"
           alt="Commercial Solar Panels"
           initial={{ scale: 1.15, opacity: 0 }}
           animate={{ scale: 1, opacity: 0.22 }}

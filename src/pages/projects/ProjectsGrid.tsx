@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { X, Sparkles, MapPin, ShieldCheck, Info } from 'lucide-react'
+import { X, Sparkles, MapPin, ShieldCheck, Info } from 'lucide-react' 
 import img1 from '../../assets/project image/1.jpeg'
 import img2 from '../../assets/project image/2.jpeg'
 import img3 from '../../assets/project image/3.jpeg'
@@ -60,8 +60,7 @@ const videos = [
     category: 'Battery Retrofit',
   },
 ]
-
-
+ 
 interface Project {
   id: number
   title: string

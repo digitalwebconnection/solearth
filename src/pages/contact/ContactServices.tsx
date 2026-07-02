@@ -511,9 +511,9 @@ const serviceItems = [
     badgeColor: 'bg-amber-500/10 text-amber-600',
     variant: 'ravi' as FolderVariant,
     images: [
-      '/images/solar/solar-panel-rooftop.jpg',
-      '/images/solar/solar-residential-house.jpg',
-      '/images/solar/solar-hero-wide.jpg'
+      '/images/solar/solar-panel-rooftop.webp',
+      '/images/solar/solar-residential-house.webp',
+      '/images/solar/solar-hero-wide.webp'
     ],
     subjectValue: 'Residential Solar',
     inclusions: [
@@ -529,9 +529,9 @@ const serviceItems = [
     badgeColor: 'bg-[#2AA9E4]/10 text-sky-600',
     variant: 'kubera' as FolderVariant,
     images: [
-      '/images/solar/solar-aerial-farm.jpg',
-      '/images/solar/solar-ground-mounted.jpg',
-      '/images/solar/solar-panel-detail.jpg'
+      '/images/solar/solar-aerial-farm.webp',
+      '/images/solar/solar-ground-mounted.webp',
+      '/images/solar/solar-panel-detail.webp'
     ],
     subjectValue: 'Commercial Solar',
     inclusions: [
@@ -547,9 +547,9 @@ const serviceItems = [
     badgeColor: 'bg-emerald-500/10 text-emerald-600',
     variant: 'shakti' as FolderVariant,
     images: [
-      '/images/solar/solar-inverter-tech.jpg',
-      '/images/solar/commercial-solar-roof.jpg',
-      '/images/solar/solar-panel-closeup.jpg'
+      '/images/solar/solar-inverter-tech.webp',
+      '/images/solar/commercial-solar-roof.webp',
+      '/images/solar/solar-panel-closeup.webp'
     ],
     subjectValue: 'Battery Storage',
     inclusions: [
@@ -565,9 +565,9 @@ const serviceItems = [
     badgeColor: 'bg-purple-500/10 text-purple-600',
     variant: 'hari' as FolderVariant,
     images: [
-      '/images/solar/ev-charging-solar.jpg',
-      '/images/solar/battery-storage-unit.jpg',
-      '/images/solar/solar-smart-home.jpg'
+      '/images/solar/ev-charging-solar.webp',
+      '/images/solar/battery-storage-unit.webp',
+      '/images/solar/solar-smart-home.webp'
     ],
     subjectValue: 'System Upgrade',
     inclusions: [
@@ -583,9 +583,9 @@ const serviceItems = [
     badgeColor: 'bg-rose-500/10 text-rose-600',
     variant: 'ardra' as FolderVariant,
     images: [
-      '/images/solar/solar-commercial-farm.jpg',
-      '/images/solar/solar-tech-worker.jpg',
-      '/images/solar/solar-panel-closeup.jpg'
+      '/images/solar/solar-commercial-farm.webp',
+      '/images/solar/solar-tech-worker.webp',
+      '/images/solar/solar-panel-closeup.webp'
     ],
     subjectValue: 'System Upgrade',
     inclusions: [
@@ -601,9 +601,9 @@ const serviceItems = [
     badgeColor: 'bg-blue-500/10 text-blue-600',
     variant: 'rudras' as FolderVariant,
     images: [
-      '/images/solar/solar-installation-crew.jpg',
-      '/images/solar/solar-engineer-panel.jpg',
-      '/images/solar/solar-tech-worker.jpg'
+      '/images/solar/solar-installation-crew.webp',
+      '/images/solar/solar-engineer-panel.webp',
+      '/images/solar/solar-tech-worker.webp'
     ],
     subjectValue: 'Maintenance',
     inclusions: [

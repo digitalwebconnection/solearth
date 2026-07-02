@@ -20,7 +20,7 @@ export default function ResidentialTrust() {
           <div className="pt-4 border-t border-white/10 flex items-center gap-4">
             <div className="w-10 h-10 rounded-full bg-white/10 overflow-hidden">
               <img
-                src="/images/solar/solar-engineer-panel.jpg"
+                src="/images/solar/solar-engineer-panel.webp"
                 alt="Customer advisor"
                 className="w-full h-full object-cover"
               />
@@ -35,7 +35,7 @@ export default function ResidentialTrust() {
         {/* Video Mockup Frame */}
         <div className="lg:col-span-6 bg-slate-900 relative min-h-[300px] flex items-center justify-center group">
           <img
-            src="/images/solar/solar-aerial-farm.jpg"
+            src="/images/solar/solar-aerial-farm.webp"
             alt="Solearth installation video preview"
             className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500"
           />

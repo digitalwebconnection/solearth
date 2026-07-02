@@ -114,6 +114,7 @@ export default function BrandPartnersSection() {
                     <img
                       src={logo}
                       alt={`${group.category} logo ${idx + 1}`}
+                      loading="lazy"
                       className="max-h-20 w-auto object-contain"
                     />
                   </motion.div>

@@ -110,7 +110,7 @@ export const RESIDENTIAL_PAGES_DATA: Record<string, ResidentialData> = {
     heroBannerSub: "Complete system from just $3,990* fully installed",
     introTitle: "Power Your Home with High-Performance Residential Solar Systems ",
     introDesc: "Our residential solar systems are designed to help Australian homeowners reduce electricity bills, increase energy independence, and enjoy reliable clean energy. Whether you're upgrading your home's energy efficiency or considering a larger 20kW solar system, we provide tailored solar solutions for every household. ",
-    backgroundImage: "/images/solar/solar-panel-rooftop.jpg",
+    backgroundImage: "/images/solar/solar-panel-rooftop.webp",
     timeline: DEFAULT_SOLAR_TIMELINE,
     timelineHeader: {
       badge: "Installation Journey",
@@ -128,7 +128,7 @@ export const RESIDENTIAL_PAGES_DATA: Record<string, ResidentialData> = {
           "Excellent Low-Light Energy Production",
           "Salt-Mist & Corrosion Resistant"
         ],
-        image: "/images/solar/solar-panel-rooftop.jpg"
+        image: "/images/solar/solar-panel-rooftop.webp"
       },
       inverter: {
         title: "5kW Wi-Fi Enabled Solar Inverter",
@@ -140,7 +140,7 @@ export const RESIDENTIAL_PAGES_DATA: Record<string, ResidentialData> = {
           "IP66 Weather Protection Rating",
           "10-Year Manufacturer Warranty"
         ],
-        image: "/images/solar/solar-inverter-tech.jpg"
+        image: "/images/solar/solar-inverter-tech.webp"
       },
       battery: {
         title: "Hybrid Solar & Battery Compatible",
@@ -152,7 +152,7 @@ export const RESIDENTIAL_PAGES_DATA: Record<string, ResidentialData> = {
           "Smart Energy Management Features",
           "Virtual Power Plant (VPP) Compatible"
         ],
-        image: "/images/solar/solar-inverter-tech.jpg"
+        image: "/images/solar/solar-inverter-tech.webp"
       },
       installation: {
         title: "CEC Accredited Solar Installation",
@@ -164,7 +164,7 @@ export const RESIDENTIAL_PAGES_DATA: Record<string, ResidentialData> = {
           "Safety Switch & Compliance Checks",
           "10-Year Workmanship Warranty"
         ],
-        image: "/images/solar/solar-installation-crew.jpg"
+        image: "/images/solar/solar-installation-crew.webp"
       }
     },
     educational: {
@@ -210,7 +210,7 @@ export const RESIDENTIAL_PAGES_DATA: Record<string, ResidentialData> = {
     heroBannerSub: "Optimized dual-tracker layout from $5,490* installed",
     introTitle: "Maximize Solar Savings & Reduce Rising Electricity Costs ",
     introDesc: "A 10.3kW Solar Power System in Australia is ideal for medium to large households looking to lower electricity bills and generate more solar energy. For higher power needs, homeowners can upgrade to a 13kW Solar System or a 20kW Solar System for greater energy production, increased savings, and enhanced energy independence. ",
-    backgroundImage: "/images/solar/solar-residential-house.jpg",
+    backgroundImage: "/images/solar/solar-residential-house.webp",
     timeline: DEFAULT_SOLAR_TIMELINE,
     timelineHeader: {
       badge: "System Setup",
@@ -228,7 +228,7 @@ export const RESIDENTIAL_PAGES_DATA: Record<string, ResidentialData> = {
           "Low-Light & High-Temperature Performance",
           "Anti-Soiling & Corrosion Resistant"
         ],
-        image: "/images/solar/solar-residential-house.jpg"
+        image: "/images/solar/solar-residential-house.webp"
       },
       inverter: {
         title: "8.2kW Smart Solar Inverter",
@@ -240,7 +240,7 @@ export const RESIDENTIAL_PAGES_DATA: Record<string, ResidentialData> = {
           "Dual MPPT for Maximum Energy Yield",
           "10-Year Manufacturer Warranty"
         ],
-        image: "/images/solar/solar-inverter-tech.jpg"
+        image: "/images/solar/solar-inverter-tech.webp"
       },
       battery: {
         title: "Solar Battery Compatible System",
@@ -252,7 +252,7 @@ export const RESIDENTIAL_PAGES_DATA: Record<string, ResidentialData> = {
           "Long-Life Lithium Battery Support",
           "Smart Energy Management Features"
         ],
-        image: "/images/solar/solar-inverter-tech.jpg"
+        image: "/images/solar/solar-inverter-tech.webp"
       },
       installation: {
         title: "CEC Accredited Solar Installation",
@@ -264,7 +264,7 @@ export const RESIDENTIAL_PAGES_DATA: Record<string, ResidentialData> = {
           "Premium Cabling & Safety Protection",
           "Utility Application & Approval Managed"
         ],
-        image: "/images/solar/solar-installation-crew.jpg"
+        image: "/images/solar/solar-installation-crew.webp"
       }
     },
     educational: {
@@ -307,7 +307,7 @@ export const RESIDENTIAL_PAGES_DATA: Record<string, ResidentialData> = {
     heroBannerSub: "High capacity system with hybrid configuration options",
     introTitle: "Premium Solar Panels for Home with Maximum Energy Generation",
     introDesc: "Get more from your rooftop with premium solar panels for home, designed to deliver higher energy output, lower electricity bills, and greater energy independence. Ideal for households with high power consumption, electric vehicles, and all-electric lifestyles, this high-performance solution helps maximize solar savings and long-term value. For larger energy requirements, explore our 20kW Solar System options, engineered for maximum solar generation, battery compatibility, and future-ready energy solutions. ",
-    backgroundImage: "/images/solar/solar-hero-wide.jpg",
+    backgroundImage: "/images/solar/solar-hero-wide.webp",
     timeline: DEFAULT_SOLAR_TIMELINE,
     timelineHeader: {
       badge: "Project Delivery",
@@ -325,7 +325,7 @@ export const RESIDENTIAL_PAGES_DATA: Record<string, ResidentialData> = {
           "Advanced N-Type Cell Technology",
           "Superior Low-Light Performance"
         ],
-        image: "/images/solar/solar-panel-rooftop.jpg"
+        image: "/images/solar/solar-panel-rooftop.webp"
       },
       inverter: {
         title: "10kW Three-Phase Solar Inverter",
@@ -337,7 +337,7 @@ export const RESIDENTIAL_PAGES_DATA: Record<string, ResidentialData> = {
           "Real-Time Solar Monitoring",
           "10-Year Manufacturer Warranty"
         ],
-        image: "/images/solar/solar-inverter-tech.jpg"
+        image: "/images/solar/solar-inverter-tech.webp"
       },
       battery: {
         title: "Hybrid Solar Battery Storage System",
@@ -349,7 +349,7 @@ export const RESIDENTIAL_PAGES_DATA: Record<string, ResidentialData> = {
           "Smart Energy Management",
           "App-Based Battery Monitoring"
         ],
-        image: "/images/solar/solar-inverter-tech.jpg"
+        image: "/images/solar/solar-inverter-tech.webp"
       },
       installation: {
         title: "CEC Accredited Solar Installation",
@@ -361,7 +361,7 @@ export const RESIDENTIAL_PAGES_DATA: Record<string, ResidentialData> = {
           "Switchboard & Safety Assessment",
           "Australian Standards Compliant"
         ],
-        image: "/images/solar/solar-installation-crew.jpg"
+        image: "/images/solar/solar-installation-crew.webp"
       }
     },
     educational: {
@@ -404,7 +404,7 @@ export const RESIDENTIAL_PAGES_DATA: Record<string, ResidentialData> = {
     heroBannerSub: "Ultimate energy independence with three-phase support",
     introTitle: "Power More with a 20kW Solar Power System in Australia ",
     introDesc: "A 20kW Solar Power System in Australia is ideal for large homes, acreage properties, and high-energy households seeking maximum energy generation and lower electricity bills. Designed to support EV charging, air conditioning, pools, and all-electric lifestyles, it delivers exceptional long-term savings and energy independence. For smaller households, a 6.6kW Solar System may be a suitable alternative, offering reliable solar performance and cost-effective energy savings.",
-    backgroundImage: "/images/solar/solar-smart-home.jpg",
+    backgroundImage: "/images/solar/solar-smart-home.webp",
     timeline: DEFAULT_SOLAR_TIMELINE,
     timelineHeader: {
       badge: "EPC Timeline",
@@ -422,7 +422,7 @@ export const RESIDENTIAL_PAGES_DATA: Record<string, ResidentialData> = {
           "Excellent Low-Light Performance",
           "Advanced TOPCon Cell Technology"
         ],
-        image: "/images/solar/solar-residential-house.jpg"
+        image: "/images/solar/solar-residential-house.webp"
       },
       inverter: {
         title: "15kW / 20kW Three-Phase Solar Inverter",
@@ -434,7 +434,7 @@ export const RESIDENTIAL_PAGES_DATA: Record<string, ResidentialData> = {
           "Multi-MPPT Performance Optimization",
           "10-Year Manufacturer Warranty"
         ],
-        image: "/images/solar/solar-inverter-tech.jpg"
+        image: "/images/solar/solar-inverter-tech.webp"
       },
       battery: {
         title: "Battery Storage Ready System",
@@ -446,7 +446,7 @@ export const RESIDENTIAL_PAGES_DATA: Record<string, ResidentialData> = {
           "Smart Energy Management",
           "Virtual Power Plant (VPP) Compatible"
         ],
-        image: "/images/solar/solar-inverter-tech.jpg"
+        image: "/images/solar/solar-inverter-tech.webp"
       },
       installation: {
         title: "CEC Accredited Solar Installation",
@@ -458,7 +458,7 @@ export const RESIDENTIAL_PAGES_DATA: Record<string, ResidentialData> = {
           "Structural & Electrical Safety Checks",
           "End-to-End Project Management"
         ],
-        image: "/images/solar/solar-installation-crew.jpg"
+        image: "/images/solar/solar-installation-crew.webp"
       }
     },
     educational: {
@@ -501,7 +501,7 @@ export const RESIDENTIAL_PAGES_DATA: Record<string, ResidentialData> = {
     heroBannerSub: "Charge your EV with 100% free solar power",
     introTitle: "EV Charging Station for Home Powered by Solar ",
     introDesc: " Charge your electric vehicle smarter with an EV Charging Station for Home that integrates seamlessly with your solar power system. Use excess solar energy to power your EV, reduce charging costs, and increase energy independence while maximizing your renewable energy investment. Pair your charger with a 13.2kW Solar Panel System for higher solar generation, faster EV charging, and greater long-term savings. ",
-    backgroundImage: "/images/solar/ev-charging-solar.jpg",
+    backgroundImage: "/images/solar/ev-charging-solar.webp",
     timeline: [
       {
         num: "01",
@@ -568,7 +568,7 @@ export const RESIDENTIAL_PAGES_DATA: Record<string, ResidentialData> = {
           "Dynamic Load Management",
           "Lower Electricity Bills"
         ],
-        image: "/images/solar/ev-charging-solar.jpg"
+        image: "/images/solar/ev-charging-solar.webp"
       },
       inverter: {
         title: "Smart EV Charger Installation",
@@ -580,7 +580,7 @@ export const RESIDENTIAL_PAGES_DATA: Record<string, ResidentialData> = {
           "IP65 Weatherproof Protection",
           "Real-Time Energy Monitoring"
         ],
-        image: "/images/solar/solar-inverter-tech.jpg"
+        image: "/images/solar/solar-inverter-tech.webp"
       },
       battery: {
         title: "Solar Battery Storage Integration",
@@ -592,7 +592,7 @@ export const RESIDENTIAL_PAGES_DATA: Record<string, ResidentialData> = {
           "Solar Battery Compatibility",
           "Priority Charging Controls"
         ],
-        image: "/images/solar/solar-inverter-tech.jpg"
+        image: "/images/solar/solar-inverter-tech.webp"
       },
       installation: {
         title: "Licensed EV Charger Installation",
@@ -604,7 +604,7 @@ export const RESIDENTIAL_PAGES_DATA: Record<string, ResidentialData> = {
           "System Testing & Commissioning",
           "Installation Warranty Included"
         ],
-        image: "/images/solar/solar-installation-crew.jpg"
+        image: "/images/solar/solar-installation-crew.webp"
       }
     },
     educational: {

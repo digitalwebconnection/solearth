@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 
 const slides = [
-  { img: "/images/solar/solar-panel-rooftop.jpg" },
-  { img: "/images/solar/solar-workers-roof.jpg" },
-  { img: "/images/solar/solar-sunset-array.jpg" },
+  { img: "/images/solar/solar-panel-rooftop.webp" },
+  { img: "/images/solar/solar-workers-roof.webp" },
+  { img: "/images/solar/solar-sunset-array.webp" },
 ];
 
 export default function HeroSection() {
@@ -63,6 +63,8 @@ export default function HeroSection() {
             src={slide.img}
             alt={`Slide ${index + 1}`}
             draggable={false}
+            loading={index === 0 ? "eager" : "lazy"}
+            {...(index === 0 ? { fetchPriority: "high" } : {})}
             className="absolute inset-0 w-[110%] h-[110%] object-cover transition-transform duration-300 ease-out"
             style={{
               transform: `translate(${mouse.x}px, ${mouse.y}px) scale(1.08)`,

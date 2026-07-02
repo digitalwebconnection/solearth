@@ -32,7 +32,7 @@ import {
 const SERVICES_LIST = [
   {
      text: 'Residential Solar',
-    image: '/images/solar/solar-panel-rooftop.jpg',
+    image: '/images/solar/solar-panel-rooftop.webp',
     icon: Sun,
     title: 'Residential Solar Installation',
     desc: 'Custom rooftop solar installations tailored to your household energy footprint. Minimize grid dependency and maximize clean energy generation.',
@@ -40,7 +40,7 @@ const SERVICES_LIST = [
   },
   {
     text: 'Commercial Solar',
-    image: '/images/solar/solar-residential-house.jpg',
+    image: '/images/solar/solar-residential-house.webp',
     icon: Building2,
     title: 'Commercial Solar Installation',
     desc: 'Scale up your business with scalable rooftop arrays designed to cut operational electricity expenses and fulfill green corporate objectives.',
@@ -48,7 +48,7 @@ const SERVICES_LIST = [
   },
   {
     text: 'Industrial Solar',
-    image: '/images/solar/commercial-solar-roof.jpg',
+    image: '/images/solar/commercial-solar-roof.webp',
     icon: Factory,
     title: 'Industrial Solar Solutions',
     desc: 'Heavy-duty solar architectures engineered for manufacturing plants, cold stores, and warehouses requiring peak power delivery.',
@@ -56,7 +56,7 @@ const SERVICES_LIST = [
   },
   {
     text: 'Panel Maintenance',
-    image: '/images/solar/solar-panel-closeup.jpg',
+    image: '/images/solar/solar-panel-closeup.webp',
     icon: Wrench,
     title: 'Solar Panel Maintenance',
     desc: 'Preventative check-ups, electrical testing, and performance optimization to ensure your systems generate maximum power indefinitely.',
@@ -64,7 +64,7 @@ const SERVICES_LIST = [
   },
   {
     text: 'Panel Cleaning',
-    image: '/images/solar/solar-inverter-tech.jpg',
+    image: '/images/solar/solar-inverter-tech.webp',
     icon: Droplet,
     title: 'Solar Panel Cleaning',
     desc: 'Professional dirt, dust, and pollen removal to restore obstructed sunlight absorption and boost conversion rates by up to 25%.',
@@ -72,7 +72,7 @@ const SERVICES_LIST = [
   },
   {
     text: 'System Inspection',
-    image: '/images/solar/ev-charging-solar.jpg',
+    image: '/images/solar/ev-charging-solar.webp',
     icon: ShieldAlert,
     title: 'Solar System Inspection',
     desc: 'Full integrity checks covering wire routing, inverter efficiency, structural racking, and safety switches.',
@@ -80,7 +80,7 @@ const SERVICES_LIST = [
   },
   {
     text: 'Battery Storage',
-    image: '/images/solar/solar-sunset-array.jpg',
+    image: '/images/solar/solar-sunset-array.webp',
     icon: BatteryCharging,
     title: 'Battery Storage Solutions',
     desc: 'Store surplus solar power generated during peak sun hours for evening operation or blackout protection.',
@@ -88,7 +88,7 @@ const SERVICES_LIST = [
   },
   {
     text: 'Inverter Installation',
-    image: '/images/solar/solar-commercial-farm.jpg',
+    image: '/images/solar/solar-commercial-farm.webp',
     icon: Cpu,
     title: 'Solar Inverter Installation',
     desc: 'Install high-efficiency microinverters or central string inverters that convert DC solar power to household AC safely.',
@@ -96,7 +96,7 @@ const SERVICES_LIST = [
   },
   {
     text: 'Inverter Replacement',
-    image: '/images/solar/solar-sunset-array.jpg',
+    image: '/images/solar/solar-sunset-array.webp',
     icon: RefreshCw,
     title: 'Solar Inverter Replacement',
     desc: 'Upgrade aging or faulty string inverters to restore your system output and unlock advanced smart home features.',
@@ -104,7 +104,7 @@ const SERVICES_LIST = [
   },
   {
     text: 'EV Charging',
-    image: '/images/solar/battery-storage-unit.jpg',
+    image: '/images/solar/battery-storage-unit.webp',
     icon: Zap,
     title: 'EV Charger Installation',
     desc: 'Integrate a level 2 smart electric vehicle charger that runs directly off your surplus rooftop solar power.',
@@ -112,7 +112,7 @@ const SERVICES_LIST = [
   },
   {
     text: 'Energy Consultation',
-    image: '/images/solar/solar-tech-worker.jpg',
+    image: '/images/solar/solar-tech-worker.webp',
     icon: MessagesSquare,
     title: 'Solar Energy Consultation',
     desc: 'Personalized bill audit and site compatibility assessment to map out the perfect custom renewable pathway.',
@@ -120,7 +120,7 @@ const SERVICES_LIST = [
   },
   {
     text: 'System Design',
-    image: '/images/solar/solar-aerial-farm.jpg',
+    image: '/images/solar/solar-aerial-farm.webp',
     icon: Layout,
     title: 'Solar System Design',
     desc: 'Precision CAD layout design mapping solar panel locations, string paths, inverter positioning, and conduit routes.',
@@ -128,7 +128,7 @@ const SERVICES_LIST = [
   },
   {
     text: 'Net Metering Assist',
-    image: '/images/solar/solar-tech-worker.jpg',
+    image: '/images/solar/solar-tech-worker.webp',
     icon: Scale,
     title: 'Net Metering Assistance',
     desc: 'Complete handling of grid connection approvals and feed-in tariff enrollment so you get paid for excess solar export.',
@@ -136,7 +136,7 @@ const SERVICES_LIST = [
   },
   {
     text: 'Performance Monitor',
-    image: '/images/solar/solar-installation-crew.jpg',
+    image: '/images/solar/solar-installation-crew.webp',
     icon: LineChart,
     title: 'Solar Performance Monitoring',
     desc: 'Real-time dashboard tracking solar yield, domestic consumption, grid flows, and module health warnings on your phone.',
@@ -144,7 +144,7 @@ const SERVICES_LIST = [
   },
   {
     text: 'Upgrades & Expansion',
-    image: '/images/solar/solar-tech-worker.jpg',
+    image: '/images/solar/solar-tech-worker.webp',
     icon: ArrowUpRight,
     title: 'Solar Upgrades & Expansion',
     desc: 'Increase your panel capacity or install additional strings to handle growing household power demands from new appliances.',
@@ -152,7 +152,7 @@ const SERVICES_LIST = [
   },
   {
     text: 'Ground-Mounted Solar',
-    image: '/images/solar/solar-panel-detail.jpg',
+    image: '/images/solar/solar-panel-detail.webp',
     icon: Layers,
     title: 'Ground-Mounted Solar Systems',
     desc: 'Ideal for rural acreages or commercial land blocks where rooftop space is limited or shaded. Optimized directional orientation.',
@@ -160,7 +160,7 @@ const SERVICES_LIST = [
   },
   {
     text: 'Rooftop Solar Systems',
-    image: '/images/solar/commercial-solar-roof.jpg',
+    image: '/images/solar/commercial-solar-roof.webp',
     icon: Home,
     title: 'Rooftop Solar Systems',
     desc: 'Standard sloped and flat roof installations utilizing secure, lightweight, corrosion-free racking brackets.',
@@ -168,7 +168,7 @@ const SERVICES_LIST = [
   },
   {
     text: 'Off-Grid Solutions',
-    image: '/images/solar/solar-panel-detail.jpg',
+    image: '/images/solar/solar-panel-detail.webp',
     icon: Radio,
     title: 'Off-Grid Solar Solutions',
     desc: 'Autonomous solar packages featuring battery banks and backup generators designed for remote locations without grid access.',
@@ -176,7 +176,7 @@ const SERVICES_LIST = [
   },
   {
     text: 'Hybrid Solar Systems',
-    image: '/images/solar/solar-tech-worker.jpg',
+    image: '/images/solar/solar-tech-worker.webp',
     icon: Activity,
     title: 'Hybrid Solar Systems',
     desc: 'The best of both worlds: maintain your grid connection while managing intelligent battery storage to mitigate high-tariff periods.',
@@ -184,7 +184,7 @@ const SERVICES_LIST = [
   },
   {
     text: 'Solar Financing',
-    image: '/images/solar/commercial-solar-roof.jpg',
+    image: '/images/solar/commercial-solar-roof.webp',
     icon: Coins,
     title: 'Solar Financing Assistance',
     desc: 'Access flexible, green financing plans and interest-free options designed to yield immediate monthly power savings.',
@@ -192,7 +192,7 @@ const SERVICES_LIST = [
   },
   {
     text: 'Warranty Support',
-    image: '/images/solar/solar-tech-worker.jpg',
+    image: '/images/solar/solar-tech-worker.webp',
     icon: ShieldCheck,
     title: 'Solar Warranty Support',
     desc: 'Comprehensive local support covering performance warranties on solar modules, inverters, and our 10-year installation warranty.',
@@ -200,7 +200,7 @@ const SERVICES_LIST = [
   },
   {
     text: 'Solar Repair Services',
-    image: '/images/solar/solar-inverter-tech.jpg',
+    image: '/images/solar/solar-inverter-tech.webp',
     icon: PenTool,
     title: 'Solar Repair Services',
     desc: 'Rapid fault isolation and replacement of broken modules, damaged MC4 connectors, or failed DC isolation switches.',
@@ -208,7 +208,7 @@ const SERVICES_LIST = [
   },
   {
     text: 'Efficiency Audits',
-    image: '/images/solar/solar-smart-home.jpg',
+    image: '/images/solar/solar-smart-home.webp',
     icon: ClipboardCheck,
     title: 'Energy Efficiency Audits',
     desc: 'Analyze full building energy profiles to locate heat leakages, parasitic loads, and optimize heavy equipment cycles.',
@@ -216,7 +216,7 @@ const SERVICES_LIST = [
   },
   {
     text: 'Smart Management',
-    image: '/images/solar/solar-sunset-array.jpg',
+    image: '/images/solar/solar-sunset-array.webp',
     icon: Brain,
     title: 'Smart Energy Management',
     desc: 'AI-driven load orchestration automatically routing solar power to high-consumption devices during peak production hours.',
@@ -224,7 +224,7 @@ const SERVICES_LIST = [
   },
   {
     text: 'Carbon Consulting',
-    image: '/images/solar/solar-panel-rooftop.jpg',
+    image: '/images/solar/solar-panel-rooftop.webp',
     icon: Leaf,
     title: 'Carbon Footprint Reduction',
     desc: 'Accredit your business under carbon-neutral frameworks. Calculate emission offset credits and plan clean-energy transition models.',

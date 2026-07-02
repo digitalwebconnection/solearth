@@ -28,7 +28,7 @@ export default function   Process() {
       icon: PhoneCall,
       title: 'Free Energy Audit',
       desc: 'We analyse your quarterly electricity bills and use satellite mapping to check roof shade.',
-      image: '/images/solar/SOLAR-ENERGY-AUDIT-SWAMI-ENERGY.png',
+      image: '/images/solar/SOLAR-ENERGY-AUDIT-SWAMI-ENERGY.webp',
       bulletPoints: [
         'Detailed analysis of energy consumption history',
         '3D roof space assessment using satellite imaging',
@@ -42,7 +42,7 @@ export default function   Process() {
       icon: FileEdit,
       title: 'Custom Engineering Design',
       desc: 'Our engineers structure a premium system configuration to optimize energy offset.',
-      image: '/images/solar/solar-engineer-panel.jpg',
+      image: '/images/solar/solar-engineer-panel.webp',
       bulletPoints: [
         'Optimal panel layout for maximum solar absorption',
         'Premium inverter and battery sizing tailored to you',
@@ -56,7 +56,7 @@ export default function   Process() {
       icon: HardHat,
       title: 'Professional Installation',
       desc: 'CEC-accredited local technicians install your systems with absolute structural security.',
-      image: '/images/solar/solar-residential-house.jpg',
+      image: '/images/solar/solar-residential-house.webp',
       bulletPoints: [
         'CEC-accredited electrical technicians',
         'Premium quality racking and framing mounts',
@@ -70,7 +70,7 @@ export default function   Process() {
       icon: Radio,
       title: 'Grid Connection & Support',
       desc: 'We complete government inspections, connect you to the grid, and configure real-time apps.',
-      image: '/images/solar/solar-tech-worker.jpg',
+      image: '/images/solar/solar-tech-worker.webp',
       bulletPoints: [
         'Grid export authorization paperwork handling',
         'Real-time mobile app tracking setup (Wi-Fi/4G)',
@@ -154,6 +154,7 @@ export default function   Process() {
                     <img
                       src={step.image}
                       alt={step.title}
+                      loading="lazy"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     />
                     <div className="absolute inset-0 bg-linear-to-t from-slate-950/60 to-transparent" />
@@ -254,7 +255,7 @@ export default function   Process() {
             <div className="flex-1 overflow-y-auto overscroll-contain px-4 py-3 space-y-3">
               {/* Image */}
               <div className="relative h-36 sm:h-48 rounded-xl overflow-hidden shadow-sm shrink-0">
-                <img src={selectedStep.image} alt={selectedStep.title} className="w-full h-full object-cover" />
+                <img src={selectedStep.image} alt={selectedStep.title} loading="lazy" className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-linear-to-t from-slate-950/60 to-transparent" />
                 <div className="absolute bottom-2 left-2 h-8 w-8 rounded-lg bg-white text-[#1B74BB] flex items-center justify-center shadow-md">
                   {(() => { const I = selectedStep.icon; return <I className="w-4 h-4" />; })()}

@@ -22,7 +22,7 @@ export default function AboutValues() {
       title: 'Innovation & Performance',
       desc: 'We continuously evaluate cutting-edge solar technologies, hybrid battery systems, and smart home solutions to deliver maximum efficiency.',
       color: 'text-amber-500 bg-amber-55 border-amber-100',
-      bgImage: '/images/solar/solar-residential-house.jpg'
+      bgImage: '/images/solar/solar-residential-house.webp'
     },
     {
       id: '03',

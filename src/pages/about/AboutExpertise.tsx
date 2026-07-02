@@ -27,7 +27,7 @@ export default function AboutExpertise() {
       shortDesc: 'Power your home with premium Residential Solar Installation in Australia designed to reduce electricity bills and maximize long-term energy savings.',
       detailedDesc: ' Power your home with premium Residential Solar Installation in Australia designed to reduce electricity bills and maximize long-term energy savings. Our CEC-certified solar experts install high-performance solar systems tailored for Australian homes, delivering reliable renewable energy, battery storage integration, and smart energy monitoring.',
       tagline: 'Empowering Australian homes with solar independence.',
-      img: '/images/solar/solar-panel-rooftop.jpg',
+      img: '/images/solar/solar-panel-rooftop.webp',
       tag: 'Residential Solar',
       color: 'bg-emerald-500 border-emerald-100 text-emerald-600',
       features: [
@@ -45,7 +45,7 @@ export default function AboutExpertise() {
       shortDesc: 'Reduce operating costs and future-proof your business with industry-leading Commercial Solar Installation in Australia.',
       detailedDesc: 'Reduce operating costs and future-proof your business with industry-leading Commercial Solar Installation in Australia. We design and install high-performance solar energy systems for offices, warehouses, manufacturing facilities, retail centres, farms, and industrial properties. Our CEC-accredited team delivers tailored commercial solar solutions that help businesses lower electricity expenses, improve sustainability, and maximize long-term ROI.',
       tagline: 'Offsetting operational costs through sustainable commercial design.',
-      img: '/images/solar/solar-residential-house.jpg',
+      img: '/images/solar/solar-residential-house.webp',
       tag: 'Commercial Solar',
       color: 'bg-amber-500 border-amber-100 text-amber-600',
       features: [
@@ -63,7 +63,7 @@ export default function AboutExpertise() {
       shortDesc: 'Powering heavy machinery, factories, and logistics fleets with utility-scale solar arrays. Complete EPC project management.',
       detailedDesc: 'Power large-scale industrial operations with advanced Industrial Solar EPC Solutions in Australia. Our turnkey Engineering, Procurement, and Construction (EPC) services help factories, manufacturing plants, warehouses, mining facilities, and logistics hubs reduce energy costs, improve operational efficiency, and achieve sustainability goals. We deliver end-to-end industrial solar projects designed for maximum performance, reliability, and long-term ROI.',
       tagline: 'Mega-watt scale solar engineering for heavy industrial assets.',
-      img: '/images/solar/solar-ground-mounted.jpg',
+      img: '/images/solar/solar-ground-mounted.webp',
       tag: 'Industrial EPC',
       color: 'bg-[#2AA9E4] border-sky-100 text-sky-600',
       features: [

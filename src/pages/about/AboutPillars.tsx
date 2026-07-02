@@ -11,7 +11,7 @@ export default function AboutPillars() {
       icon: Sun,
       title: 'Premium Engineering',
       desc: 'We install high-performance Tier-1 panels and state-of-the-art inverters designed to maximize clean energy output, even in harsh Australian heat.',
-      img: '/images/solar/solar-residential-house.jpg',
+      img: '/images/solar/solar-residential-house.webp',
       color: 'from-amber-500/20 to-amber-600/20 border-amber-500/30 text-amber-400'
     },
     {
@@ -19,7 +19,7 @@ export default function AboutPillars() {
       icon: Shield,
       title: 'Uncompromised Safety',
       desc: 'Safety is at our core. Every single technician is a fully certified, CEC-accredited installer working to strict safety guidelines and Australian electrical regulations.',
-      img: '/images/solar/solar-engineer-panel.jpg',
+      img: '/images/solar/solar-engineer-panel.webp',
       color: 'from-sky-500/20 to-sky-600/20 border-[#2AA9E4]/30 text-sky-400'
     },
     {
@@ -27,7 +27,7 @@ export default function AboutPillars() {
       icon: Users,
       title: 'Customer-First Approach',
       desc: 'We make transitioning to solar easy. Our domestic customer care and engineering teams guide you through every design, rebate filing, and maintenance phase.',
-      img: '/images/solar/solar-tech-worker.jpg',
+      img: '/images/solar/solar-tech-worker.webp',
       color: 'from-blue-500/20 to-blue-600/20 border-blue-500/30 text-blue-400'
     },
     {
@@ -35,7 +35,7 @@ export default function AboutPillars() {
       icon: Award,
       title: 'Industry Warranties',
       desc: 'Rest easy with warranties that protect your pocket. Enjoy a 25-year panel performance warranty and a 10-year workmanship warranty on our professional installations.',
-      img: '/images/solar/solar-smart-home.jpg',
+      img: '/images/solar/solar-smart-home.webp',
       color: 'from-emerald-500/20 to-emerald-600/20 border-emerald-500/30 text-emerald-400'
     }
   ]

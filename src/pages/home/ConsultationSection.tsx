@@ -88,6 +88,7 @@ export default function ConsultationSection() {
             <img
               src={supportAgent}
               alt="Friendly SolEarth consultant support team specialist"
+              loading="lazy"
               className="absolute inset-0 w-full h-full object-cover object-center lg:object-bottom-right"
             />
           </div>

@@ -66,7 +66,7 @@ export default function ResidentialSpecs({
     },
   ]
 
-  const featuredSolarPanelImage = details.panels.image || "/images/solar/solar-panel-rooftop.jpg"
+  const featuredSolarPanelImage = details.panels.image || "/images/solar/solar-panel-rooftop.webp"
 
   return (
     <section className="py-12 md:py-10 bg-slate-50 text-slate-800 relative overflow-hidden">
