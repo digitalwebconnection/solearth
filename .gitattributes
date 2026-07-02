@@ -1,0 +1,16 @@
+# Treat all image and media files as binary and exclude them from text diffs
+*.png -diff
+*.jpg -diff
+*.jpeg -diff
+*.webp -diff
+*.jfif -diff
+*.gif -diff
+*.ico -diff
+*.svg -diff
+*.mp4 -diff
+*.webm -diff
+
+# Exclude static assets directories from diffs
+public/images/** -diff
+public/assets/** -diff
+src/assets/** -diff
